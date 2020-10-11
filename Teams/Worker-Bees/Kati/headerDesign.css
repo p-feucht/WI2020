@@ -3,6 +3,7 @@
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 10px;
+    display: flex;
   }
   
   /* Style the header links */
@@ -24,14 +25,14 @@
   
   /*style the logo*/
     .logo {
-      width: 70%;
-      height: 70%;
+      width: 250px;
+      float: left;
   }
   /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
   
   /* Change the background color on mouse-over */
   .header a:hover {
-    background-color: #ddd;
+    background-color: yellow;
     color: black;
   }
   
@@ -42,13 +43,17 @@
   }*/
   
   /* Float the link section to the right */
-  .header-content {
-    width: calc(100% / 3);
-    float: left;
-    text-align: left;
-    display: block;
+  .header-content-middle{
+      width: auto;
+      margin: auto;
+      float: left;
+      size: 30%;
   }
-
+  .header-content-right {
+    width: auto;
+    float: left;
+    text-align: center;
+  }
   /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
   @media screen and (max-width: 700px) {
     .header {
