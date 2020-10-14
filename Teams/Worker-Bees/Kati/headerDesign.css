@@ -42,7 +42,7 @@
 /* Change the background color on mouse-over */
 
 .header a:hover {
-    background-color: yellow;
+    background-color: #feca57;
     color: black;
 }
 

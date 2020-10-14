@@ -1,0 +1,50 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #feca57;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 33.33%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  
+  #Werkzeug {background-image: url(pics/Werkzeug.jpg);
+    height: 100%; /* You must set a specified height */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;  /* Resize the background image to cover the entire container */
+  }
+  #Werkstatt {background-image: url(pics/werkstatt.jpg);
+    height: 100%; /* You must set a specified height */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;  /* Resize the background image to cover the entire container */
+  }
+  #Dienst {background-image: url(pics/Dienst.jpg);
+    height: 100%; /* You must set a specified height */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;  /* Resize the background image to cover the entire container */
+  }
