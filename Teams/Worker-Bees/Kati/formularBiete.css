@@ -23,8 +23,21 @@ fieldset {
     margin-bottom: 10px;
 }
 
-#footer {
-    text-align: center;
+.footer_info {
+    text-align: left;
     color: grey;
+    background-color: #f1f1f1;
     padding: 16px;
+}
+
+.contact {
+    padding: 10px;
+}
+
+.footer_end {
+    text-align: center;
+}
+
+.contact a {
+    margin: 5px;
 }
