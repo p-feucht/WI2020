@@ -29,14 +29,33 @@
         </div>
     </div>
 
+    <div class="yellow-banner"></div>
+
 <script src="categoriesTabFunctions.js"></script>
 <button class="tablink" onclick="openPage('Werkzeug', this)">Werkzeug</button>
-<button class="tablink" onclick="openPage('Werkstatt', this)" id="defaultOpen">Werkstatt</button>
+<button class="tablink" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
 <button class="tablink" onclick="openPage('Dienst', this)">Dienst</button>
 
 <div id="Werkzeug" class="tabcontent">
-  <h3>Home</h3>
-  <p>Home is where the heart is..</p>
+  
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<div class="card">
+  <img src="pics/werkstatt.jpg" alt="Denim Jeans" class = "offer-image">
+  <div class="offer-content">
+    <h1>Tailored Jeans</h1>
+    <p class="price">$19.99</p>
+    <p>Some text about the jeans..</p>
+    <p><button>Add to Cart</button></p>
+  </div>
+</div>
+
 </div>
 
 <div id="Werkstatt" class="tabcontent">
