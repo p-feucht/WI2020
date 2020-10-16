@@ -1,18 +1,16 @@
-#menu{
-    margin: 0;
-}
-h1{
+#main{
     text-align: center;
     margin:0;
     padding:0;
 }
 
-ul.horizontal{
+.horizontal{
     margin:0;
     padding:0;
     }
-    ul.horizontal li{
-        display:block;
-        float:left;
+    .horizontal li{
+        display:inline-block;
+        margin-left:-3px; 
+        margin-bottom:1px;
         padding:0 10px;
         }
