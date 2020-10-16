@@ -1,3 +1,10 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    /*font-family: font-family: Verdana, Helvetica, Roboto, Calibri, 'Trebuchet MS', sans-serif;*/
+    margin: 0px;
+}
+
+
 /* Style the header with a grey background and some padding */
 
 .header {
