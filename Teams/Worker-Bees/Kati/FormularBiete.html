@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Worker Bees</title>
+    <meta name="description" content="">
+    <link href="headerDesign.css" rel="stylesheet">
+    <link href="formularBiete.css" rel="stylesheet">
+    <!-- <link href="slide.js"> -->
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="pics/logoKomplett.png" class="logo">
+
+        <div class="header-content-middle">
+            <a href="#home">Ich biete</a>
+            <a href="#contact">Ich suche</a>
+            <a href="#about">Tipps & Tricks</a>
+        </div>
+
+        <div class="header-content-right">
+            <a class="anmReg" href="#anmeldung">Anmelden</a>
+            <a class="anmReg" href="#registrierung">Registrieren</a>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!--Slider-->
+        <section>
+            <img class="mySlides" src="pics/smith.jpg" style="width:100%">
+            <img class="mySlides" src="pics/werkstatt.jpg" style="width:100%">
+            <img class="mySlides" src="pics/tools.jpg" style="width:100%">
+        </section>
+        <script src="slide.js"></script>
+
+        <div class="yellow-container">
+
+
+            <div class="explanation">
+
+                <!-- Text über Formular -->
+                <h3>Schreibe ein Angebot</h3>
+                </p>
+                Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
+                </p>
+
+                <!----Formular -->
+                <form action="mailto:support@workerbees.com" method="post">
+
+                    <p>Kategorie:</p>
+                    <fieldset>
+                        <input type="radio" id="werkzeug_maschine" name="Kategorie" value="Werkzeug oder Maschine">
+                        <label for="werkzeug_maschine"> Werkzeug</label>
+                        <input type="radio" id="räumlichkeit" name="Kategorie" value="Räumlichkeit">
+                        <label for="räumlichkeit"> Werkstatt</label>
+                        <input type="radio" id="material" name="Kategorie" value="Material">
+                        <label for="material">Material</label>
+                        <input type="radio" id="sonstiges" name="Kategorie" value="Sonstiges">
+                        <label for="sonstiges">Sonstiges</label>
+                    </fieldset>
+                    <br>
+
+                    <label>
+                        Beginndatum des Angebots:   
+                        <input type="date" id="begDat">
+                        Endedatum des Angebots:
+                        <input type="date" id="endeDat">
+                    </label>
+                    <br>
+
+                    <label>Name
+                    <input type="text" name="Name" value="" size="30" maxlength="50"> 
+                    </label>
+                    <br>
+
+                    <label>E-mail
+                        <input type="text" name="E-mail" value="" size="30" maxlength="50"> 
+                    </label>
+                    <br>
+
+                    <label>Beschreibung </label>
+                    <br>
+                    <textarea id="beschreibung" name="beschreibung" rows="7" cols="50">
+                    </textarea>
+                    <br>
+
+                    <button type="button">Datei Upload</button>
+                    <br>
+
+                    <p>Nach Erstellung des Eintrags können Interessenten dein Angebot sehen und dich kontaktieren.</p>
+
+
+                    <input type="Submit" name="Eintrag erstellen" value="Eintrag erstellen">
+
+                </form>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="footer_info">
+                <img src="pics/logoKomplett.png" class="logo" alt="Worker Bees Logo" width="207" height="60">
+                <br>
+                <br>
+                <br>
+                <div class="contact">
+                    <p>WorkerBees e.V.
+                        <br> Musterstraße 25
+                        <br> 86712 Musterstadt
+                    </p>
+                    <a href="mailto:support@workerbees.com">support@workerbees.com</a>
+                    <br> +49 172 906 212
+                </div>
+            </div>
+            <div class="footer_end">
+                <p>Copyright 2020 | WorkerBees e.V.</p>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

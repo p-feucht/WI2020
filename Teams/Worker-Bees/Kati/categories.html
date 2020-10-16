@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Worker Bees</title>
+    <meta name="description" content="">
+    <link href="headerDesign.css" rel="stylesheet">
+    <link href="categoriesDesign.css" rel="stylesheet">
+    <link href="footerDesign.css" rel="stylesheet">
+
+    <link href="categoriesTabFunctions.js">
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="pics/logoKomplett.png" class="logo">
+
+        <div class="header-content-middle">
+            <a href="FormularBiete.html">Ich biete</a>
+            <a href="#contact">Ich suche</a>
+            <a href="#about">Tipps & Tricks</a>
+        </div>
+
+        <div class="header-content-right">
+            <a class="anmReg" href="#anmeldung">Anmelden</a>
+            <a class="anmReg" href="#registrierung">Registrieren</a>
+        </div>
+    </div>
+
+    <div class="yellow-banner"></div>
+
+<script src="categoriesTabFunctions.js"></script>
+<button class="tablink" onclick="openPage('Werkzeug', this)">Werkzeug</button>
+<button class="tablink" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
+<button class="tablink" onclick="openPage('Dienst', this)">Dienst</button>
+
+<div id="Werkzeug" class="tabcontent">
+  
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<div class="card">
+  <img src="pics/werkstatt.jpg" alt="Denim Jeans" class = "offer-image">
+  <div class="offer-content">
+    <h1>Tailored Jeans</h1>
+    <p class="price">$19.99</p>
+    <p>Some text about the jeans..</p>
+    <p><button>Add to Cart</button></p>
+  </div>
+</div>
+
+</div>
+
+<div id="Werkstatt" class="tabcontent">
+  <h3>News</h3>
+  <p>Some news this fine day!</p>
+</div>
+
+<div id="Dienst" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+</body>
+
+</html>
