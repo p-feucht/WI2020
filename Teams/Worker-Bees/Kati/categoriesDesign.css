@@ -1,0 +1,142 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+
+  .yellow-banner {
+    background-color: #feca57;
+    height: 50px;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #feca57;
+    color: white;
+    font-weight: normal;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 33.33%;
+  }
+  
+  .tablink:hover {
+    background-color: #d4a337;
+  }
+
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  
+  #Werkzeug {background-image: url(pics/Werkzeug.jpg);
+    height: 100%; /* You must set a specified height */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;  /* Resize the background image to cover the entire container */
+  }
+  #Werkstatt {background-image: url(pics/werkstatt.jpg);
+    height: 100%; /* You must set a specified height */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;  /* Resize the background image to cover the entire container */
+  }
+  #Dienst {background-image: url(pics/Dienst.jpg);
+    height: 100%; /* You must set a specified height */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;  /* Resize the background image to cover the entire container */
+  }
+
+  /* Design of the tab-contents */
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #feca57;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  form.example button:hover {
+    background: #d4a337;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /*Design for offer cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 380%;
+    height: 200px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+  .offer-image {
+    height: 100%;
+    float: left;
+    border-radius: 8px;
+  }
+
+  .offer-content {
+    float: left;
+    text-align: center;
+    font-family: arial;
+  }
