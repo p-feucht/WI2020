@@ -2,6 +2,7 @@ body {
     font-family: Verdana, Geneva, sans-serif;
     /*font-family: font-family: Verdana, Helvetica, Roboto, Calibri, 'Trebuchet MS', sans-serif;*/
     margin: 0px;
+    padding: 0px;
 }
 
 
@@ -34,6 +35,11 @@ body {
     float: right;
 }
 
+.content {
+    margin: 0px;
+    padding: 0px;
+}
+
 
 /*style the logo*/
 
@@ -48,7 +54,7 @@ body {
 
 /* Change the background color on mouse-over */
 
-.header a:hover {
+.header-content-middle a:hover {
     background-color: #feca57;
     color: black;
 }
@@ -86,4 +92,37 @@ body {
         text-align: left;
         width: 100%;
     }
+}
+
+
+/*style footer and its "impressum" information*/
+
+.footer {
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer_info {
+    text-align: left;
+    color: grey;
+    background-color: #f1f1f1;
+    padding: 16px;
+}
+
+.footer_slogan {
+    padding-left: 16px;
+}
+
+#contact {
+    padding-left: 16px;
+    padding-top: 5px;
+    color: black;
+}
+
+.footer_end {
+    text-align: center;
+}
+
+.contact a {
+    margin: 5px;
 }

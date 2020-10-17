@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -7,18 +7,20 @@
     <meta name="description" content="">
     <link href="headerDesign.css" rel="stylesheet">
     <link href="formularBiete.css" rel="stylesheet">
-    <!-- <link href="slide.js"> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
 
 </head>
 
 <body>
     <div class="header">
-        <img src="pics/logoKomplett.png" class="logo">
-
+        <a href="firstPage.html"> <img src="pics/logoKomplett.png" class="logo">
+        </a>
         <div class="header-content-middle">
             <a class="biete" href="FormularBiete.html">Ich biete</a>
             <a href="#tips">Tipps & Tricks</a>
             <a href="#aboutUs">Über uns</a>
+            <a href="FormularBiete.html#contact">Impressum</a>
         </div>
 
         <div class="header-content-right">
@@ -28,7 +30,6 @@
     </div>
 
     <div class="content">
-
         <!--Slider-->
         <section>
             <img class="mySlides" src="pics/smith.jpg" style="width:100%">
@@ -44,84 +45,210 @@
 
                 <!-- Text über Formular -->
                 <h3>Schreibe ein Angebot</h3>
+                <p>
+                    Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
                 </p>
-                Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
-                </p>
 
-                <!----Formular -->
-                <form action="mailto:support@workerbees.com" method="post">
+                <form name="myForm" action="/action_page.php" method="post ">
 
-                    <p>Kategorie:</p>
-                    <fieldset>
-                        <input type="radio" id="werkzeug_maschine" name="Kategorie" value="Werkzeug oder Maschine">
-                        <label for="werkzeug_maschine"> Werkzeug</label>
-                        <input type="radio" id="räumlichkeit" name="Kategorie" value="Räumlichkeit">
-                        <label for="räumlichkeit"> Werkstatt</label>
-                        <input type="radio" id="material" name="Kategorie" value="Material">
-                        <label for="material">Material</label>
-                        <input type="radio" id="sonstiges" name="Kategorie" value="Sonstiges">
-                        <label for="sonstiges">Sonstiges</label>
-                    </fieldset>
-                    <br>
-
-                    <label>
-                        Beginndatum des Angebots:   
-                        <input type="date" id="begDat">
-                        Endedatum des Angebots:
-                        <input type="date" id="endeDat">
+                    <div>
+                        <label> 
+                        <input type="radio" name="kategorie" value="Werkzeug" checked="checked"> Werkzeug
                     </label>
+                        <label> 
+                        <input type="radio" name="kategorie" value="Werkstatt"> Werkstatt
+                    </label>
+                        <label> 
+                        <input type="radio" name="kategorie" value="Dienstleistung"> Dienstleistung
+                    </label>
+                    </div>
+
+
+
+
+
+                    <label>Angebotstitel
+                  <input type="text" name="title" value=" " size="30" maxlength="50"> 
+              </label>
                     <br>
 
-                    <label>Name
-                    <input type="text" name="Name" value="" size="30" maxlength="50"> 
-                    </label>
-                    <br>
-
-                    <label>E-mail
-                        <input type="text" name="E-mail" value="" size="30" maxlength="50"> 
-                    </label>
-                    <br>
+                    <label for="begDat">
+                  Beginndatum </label><br>
+                    <input type="date" id="begDat"><br>
+                    <label for="endeDat">
+                  Endedatum </label><br>
+                    <input type="date" id="endeDat"><br>
 
                     <label>Beschreibung </label>
                     <br>
-                    <textarea id="beschreibung" name="beschreibung" rows="7" cols="50">
-                    </textarea>
+                    <textarea id="beschreibung " name="beschreibung " rows="7 " cols="50 ">
+              </textarea>
+                    <br>
+                    <br>
+                    <button type="button">Bild Upload</button>
+                    <br>
                     <br>
 
-                    <button type="button">Datei Upload</button>
-                    <br>
 
+                    <div class="Werkzeug selectt">
+                        <label>Preis/Tag
+                      <input type="text " name="Preis/Tag" value=" " size="30" maxlength="4"> 
+                    </label>
+                        <br>
+                        <input type="checkbox" id="bierBez" name="bierBez" unchecked>
+                        <label for="bierBez">In Flaschen Bier bezahlen</label>
+                        <br>
+
+                        <label>Straße
+                    <input type="text" name="Adresse" value=" " size="30" maxlength="30"> 
+                </label>
+                        <label>Hausnummer
+                    <input type="text" name="Hausnummer" value=" " size="30" maxlength="4"> 
+                </label>
+                        <br>
+
+                        <label>Postleitzahl
+                    <input type="text" name="PLZ" value=" " size="30" maxlength="10"> 
+                </label>
+                        <br>
+                        <label>Ort
+                    <input type="text" name="Ort" value=" " size="30" maxlength="40"> 
+                </label>
+                        <br>
+                    </div>
+
+
+
+
+
+                    <div class="Werkstatt selectt">
+                        <label>Preis/Tag
+                    <input type="text " name="Preis/Tag" value=" " size="30" maxlength="20"> 
+                </label>
+                        <br>
+
+                        <label>Straße
+                <input type="text" name="Adresse" value=" " size="30" maxlength="30"> 
+            </label>
+                        <br>
+
+                        <label>Hausnummer
+                <input type="text" name="Hausnummer" value=" " size="30" maxlength="10"> 
+            </label>
+                        <br>
+
+                        <label>Postleitzahl
+                <input type="text" name="PLZ" value=" " size="30" maxlength="10"> 
+            </label>
+                        <br>
+                        <label>Ort
+                <input type="text" name="Ort" value=" " size="30" maxlength="40"> 
+            </label>
+                        <br>
+
+                        <form>
+                            <label>besondere Ausstattung:
+                          <fieldset>
+                            <ul>
+                              <li> 
+                                <label>
+                                  <input type="checkbox" name="ausstattung" value="Standbohrmaschine">
+                                  Standbohrmaschine
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                   <input type="checkbox" name="ausstattung" value="Drechselbank">
+                                   Drechselbank
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                  <input type="checkbox" name="ausstattung" value="Schleifmaschine">
+                                  Schleifmaschine
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                <input type="checkbox" name="ausstattung" value="elektrische Standsägen">
+                                elektrische Standsägen
+                              </label>
+                            </li>
+                            <li>
+                                <label>
+                              <input type="checkbox" name="ausstattung" value="Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)">
+                              Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)
+                            </label>
+                            </li>
+                            </ul>
+                            </fieldset>
+                        </form>
+                        <br>
+                    </div>
+
+
+
+
+                    <div class="Dienstleistung selectt">
+                        <label>Bezahlart
+                      <select name="bezahlart" size="5">
+                        <option>Preis/Stunde</option>
+                        <option>Fixpreis</option>
+                      </select>
+                    </label>
+
+                        <label>Preis
+                      <input type="text " name="Preis" value=" " size="30" maxlength="20"> 
+                    </label>
+                        <br>
+                    </div>
+
+
+                    <br>
                     <p>Nach Erstellung des Eintrags können Interessenten dein Angebot sehen und dich kontaktieren.</p>
-
-
-                    <input type="Submit" name="Eintrag erstellen" value="Eintrag erstellen">
-
+                    <input type="submit" name="Eintrag erstellen " value="Eintrag erstellen">
                 </form>
+
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('input[type="radio"]').click(function() {
+                            var inputValue = $(this).attr("value");
+                            var targetBox = $("." + inputValue);
+                            $(".selectt").not(targetBox).hide();
+                            $(targetBox).show();
+                        });
+                    });
+                </script>
             </div>
+
+
         </div>
 
 
-        <div class="footer">
-            <div class="footer_info">
-                <img src="pics/logoKomplett.png" class="logo" alt="Worker Bees Logo" width="207" height="60">
+        <div class="footer ">
+            <div class="footer_info ">
+                <img src="pics/logoKomplett.png " class="logo " alt="Worker Bees Logo " width="207 " height="60 ">
                 <br>
                 <br>
                 <br>
-                <div class="contact">
+
+                <div class="footer_slogan ">
+                    <p> Come to craft</p>
+                </div>
+                <div id="contact ">
                     <p>WorkerBees e.V.
                         <br> Musterstraße 25
                         <br> 86712 Musterstadt
                     </p>
-                    <a href="mailto:support@workerbees.com">support@workerbees.com</a>
+                    <a href="mailto:support@workerbees.com ">support@workerbees.com</a>
                     <br> +49 172 906 212
                 </div>
             </div>
-            <div class="footer_end">
+            <div class="footer_end ">
                 <p>Copyright 2020 | WorkerBees e.V.</p>
             </div>
 
         </div>
-
 
     </div>
 </body>
