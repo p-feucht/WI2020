@@ -95,7 +95,7 @@ body {
 }
 
 
-/*style footer and its "impressum" information*/
+/*style footer and its "impressum" information in it*/
 
 .footer {
     margin: 0px;
@@ -104,13 +104,13 @@ body {
 
 .footer_info {
     text-align: left;
-    color: grey;
     background-color: #f1f1f1;
     padding: 16px;
 }
 
 .footer_slogan {
     padding-left: 16px;
+    color: grey;
 }
 
 #contact {
@@ -121,6 +121,7 @@ body {
 
 .footer_end {
     text-align: center;
+    color: grey;
 }
 
 .contact a {
