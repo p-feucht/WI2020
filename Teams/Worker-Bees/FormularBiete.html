@@ -38,6 +38,7 @@
         </section>
         <script src="JavaScript/slide.js"></script>
 
+
         <div class="yellow-container">
 
 
@@ -53,7 +54,7 @@
 
                     <div>
                         <label> 
-                        <input type="radio" name="kategorie" value="Werkzeug" checked="checked"> Werkzeug
+                        <input type="radio" name="kategorie" value="Werkzeug"> Werkzeug
                     </label>
                         <label> 
                         <input type="radio" name="kategorie" value="Werkstatt"> Werkstatt
@@ -68,7 +69,7 @@
 
 
                     <label>Angebotstitel
-                  <input type="text" name="title" value=" " size="30" maxlength="50"> 
+                  <input id="title" type="text" name="title" value=" " size="30" maxlength="20"> 
               </label>
                     <br>
 
@@ -81,7 +82,7 @@
 
                     <label>Beschreibung </label>
                     <br>
-                    <textarea id="beschreibung " name="beschreibung " rows="7 " cols="50 ">
+                    <textarea id="beschreibung" name="beschreibung" rows="7" cols="50">
               </textarea>
                     <br>
                     <br>
@@ -91,28 +92,28 @@
 
 
                     <div class="Werkzeug selectt">
-                        <label>Preis/Tag
-                      <input type="text " name="Preis/Tag" value=" " size="30" maxlength="4"> 
+                        <label>Preis/Tag (in €)
+                      <input type="number" name="Preis/Tag" value=" " size="30" maxlength="4"> 
                     </label>
                         <br>
                         <input type="checkbox" id="bierBez" name="bierBez" unchecked>
-                        <label for="bierBez">In Flaschen Bier bezahlen</label>
+                        <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         <br>
 
                         <label>Straße
                     <input type="text" name="Adresse" value=" " size="30" maxlength="30"> 
                 </label>
                         <label>Hausnummer
-                    <input type="text" name="Hausnummer" value=" " size="30" maxlength="4"> 
+                    <input type="number" name="Hausnummer" value=" " size="30" maxlength="4"> 
                 </label>
                         <br>
 
                         <label>Postleitzahl
-                    <input type="text" name="PLZ" value=" " size="30" maxlength="10"> 
+                    <input type="number" name="PLZ" value=" " size="30" maxlength="5"> 
                 </label>
                         <br>
                         <label>Ort
-                    <input type="text" name="Ort" value=" " size="30" maxlength="40"> 
+                    <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
                 </label>
                         <br>
                     </div>
@@ -122,27 +123,27 @@
 
 
                     <div class="Werkstatt selectt">
-                        <label>Preis/Tag
-                    <input type="text " name="Preis/Tag" value=" " size="30" maxlength="20"> 
+                        <label>Preis/Tag (in €)
+                    <input type="number" name="Preis/Tag" value=" " size="30" maxlength="4"> 
                 </label>
                         <br>
 
                         <label>Straße
-                <input type="text" name="Adresse" value=" " size="30" maxlength="30"> 
+                <input type="text" name="Straße" value=" " size="30" maxlength="30"> 
             </label>
                         <br>
 
                         <label>Hausnummer
-                <input type="text" name="Hausnummer" value=" " size="30" maxlength="10"> 
+                <input type="number" name="Hausnummer" value=" " size="30" maxlength="4"> 
             </label>
                         <br>
 
                         <label>Postleitzahl
-                <input type="text" name="PLZ" value=" " size="30" maxlength="10"> 
+                <input type="number" name="PLZ" value=" " size="30" maxlength="5"> 
             </label>
                         <br>
                         <label>Ort
-                <input type="text" name="Ort" value=" " size="30" maxlength="40"> 
+                <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
             </label>
                         <br>
 
@@ -177,19 +178,17 @@
                             <li>
                                 <label>
                               <input type="checkbox" name="ausstattung" value="Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)">
-                              Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)
+                              Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.) vorhanden und verwendbar
                             </label>
                             </li>
                             </ul>
                             </fieldset>
                         </form>
-                        <br>
+
                     </div>
 
-
-
-
                     <div class="Dienstleistung selectt">
+
                         <label>Bezahlart
                       <select name="bezahlart" size="5">
                         <option>Preis/Stunde</option>
@@ -197,17 +196,18 @@
                       </select>
                     </label>
 
-                        <label>Preis
-                      <input type="text " name="Preis" value=" " size="30" maxlength="20"> 
+                        <label>Preis (in €)
+                      <input type="number" name="Preis" value=" " size="30" maxlength="4"> 
                     </label>
                         <br>
                     </div>
 
 
-                    <br>
                     <p>Nach Erstellung des Eintrags können Interessenten dein Angebot sehen und dich kontaktieren.</p>
-                    <input type="submit" name="Eintrag erstellen " value="Eintrag erstellen">
+                    <input type="submit" name="Eintrag erstellen" value="Eintrag erstellen">
+                    <br>
                 </form>
+
 
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -219,10 +219,15 @@
                         });
                     });
                 </script>
+
             </div>
 
 
         </div>
+
+
+        <!--Notiz: <progress value="40" max="100"></progress> für Fortschrittsanzeige (wenn Formular über mehrere Seiten geht)-->
+
 
 
         <div class="footer">
