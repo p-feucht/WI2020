@@ -1,0 +1,16 @@
+#main{
+    text-align: center;
+    margin:0;
+    padding:0;
+}
+
+.horizontal{
+    margin:0;
+    padding:0;
+    }
+    .horizontal li{
+        display:inline-block;
+        margin-left:-3px; 
+        margin-bottom:1px;
+        padding: 5px;
+        }
