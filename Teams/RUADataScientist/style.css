@@ -1,4 +1,33 @@
 /* Kommentar */
 html{
-    background-color: grey;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+
+    .aboutContainer{
+        display: grid;
+    }
+    
+    .aboutContainer>div{
+        margin: 0px 30px 0px 30px;
+    }
+    .aboutContainer>img{
+        margin: 50px auto;
+        max-width: 30%;
+        height: auto;
+        align-self: center;
+    }
+
+ @media screen and (min-width: 801px) {
+
+    .aboutContainer{
+     grid-template-columns: 60% 40%;
+    }
+    .aboutContainer>div{
+        margin: 40px 80px 0px 80px;
+    }
+    .aboutContainer>img{
+        max-width: 50%;
+    }
+ }
