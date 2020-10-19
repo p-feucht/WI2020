@@ -1,0 +1,46 @@
+            .yellow-container {
+                background-color: #feca57;
+            }
+            
+            .explanation {
+                width: 70%;
+                margin-left: 7%;
+                padding-top: 20px;
+            }
+            
+            .mySlides {
+                height: 10%;
+            }
+            
+            .header a.biete {
+                background-color: #feca57;
+            }
+            
+            input,
+            label,
+            fieldset {
+                margin-bottom: 10px;
+            }
+            
+            .selectt {
+                display: none;
+            }
+            
+            input[type="submit"] {
+                font-size: 1.3em;
+                padding: 5px 12px;
+                font-family: Verdana, Geneva, sans-serif;
+                font-weight: 300;
+                color: black;
+                border: 1px solid silver;
+                background-image: linear-gradient(to top, gainsboro 0%, white 90%);
+                border-radius: 20px;
+            }
+            
+            .form input[type="text"],
+            .form textarea {
+                width: 100%;
+                min-width: 100%;
+                box-sizing: border-box;
+                padding: 4px;
+            }

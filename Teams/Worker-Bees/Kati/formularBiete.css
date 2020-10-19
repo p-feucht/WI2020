@@ -1,42 +1,27 @@
-.yellow-container {
-    background-color: #feca57;
-}
-
-.explanation {
-    width: 70%;
-    margin-left: 7%;
-    padding-top: 20px;
-}
-
-.mySlides {
-    height: 10%;
-}
-
-.header a.biete {
-    background-color: #feca57;
-}
-
-input,
-label,
-fieldset {
-    margin-bottom: 10px;
-}
-
-.footer_info {
-    text-align: left;
-    color: grey;
-    background-color: #f1f1f1;
-    padding: 16px;
-}
-
-.contact {
-    padding: 10px;
-}
-
-.footer_end {
-    text-align: center;
-}
-
-.contact a {
-    margin: 5px;
-}
+            .yellow-container {
+                background-color: #feca57;
+            }
+            
+            .explanation {
+                width: 70%;
+                margin-left: 7%;
+                padding-top: 20px;
+            }
+            
+            .mySlides {
+                height: 10%;
+            }
+            
+            .header a.biete {
+                background-color: #feca57;
+            }
+            
+            input,
+            label,
+            fieldset {
+                margin-bottom: 10px;
+            }
+            
+            .selectt {
+                display: none;
+            }
