@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="images/logoBiene.png" />
     <title>Worker Bees</title>
     <meta name="description" content="">
     <link href="CSS/headerDesign.css" rel="stylesheet">
@@ -13,7 +14,9 @@
 
 </head>
 
-<body>
+<body onload="openTab()">
+<!-- activate Tab opening -->
+
     <div class="header">
         <img src="images/logoKomplett.png" class="logo">
 
@@ -32,9 +35,9 @@
     <div class="yellow-banner"></div>
 
 <script src="JavaScript/categoriesTabFunctions.js"></script>
-<button class="tablink" onclick="openPage('Werkzeug', this)">Werkzeug</button>
-<button class="tablink" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
-<button class="tablink" onclick="openPage('Dienst', this)">Dienst</button>
+<button class="tablink" id="Werkzeug-Ang" onclick="openPage('Werkzeug', this)">Werkzeug</button>
+<button class="tablink" id="Werkstatt-Ang" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
+<button class="tablink" id="Dienst-Ang" onclick="openPage('Dienst', this)">Dienst</button>
 
 <div id="Werkzeug" class="tabcontent">
   
