@@ -1,3 +1,11 @@
+/* browser-Einstellungen zurücksetzen */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
     height: 100%;
@@ -41,19 +49,22 @@ body, html {
     height: 100%;
   }
   
-  #Werkzeug {background-image: url(css-images/category-background1.jpg);
+  #Werkzeug {
+    background-image: url(css-images/category-background1.jpg);
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;  /* Resize the background image to cover the entire container */
   }
-  #Werkstatt {background-image: url(css-images/category-background2.jpg);
+  #Werkstatt {
+    background-image: url(css-images/category-background2.jpg);
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;  /* Resize the background image to cover the entire container */
   }
-  #Dienst {background-image: url(css-images/category-background3.jpg);
+  #Dienst {
+    background-image: url(css-images/category-background3.jpg);
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */

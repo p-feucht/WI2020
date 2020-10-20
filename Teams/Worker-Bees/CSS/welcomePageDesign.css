@@ -3,22 +3,29 @@
     margin: 0px;
     padding: 0px;
     border: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* add yellow background */
 .body {
     background-color: #feca57;
 }
+.card-anbieten {
+    background-color: white;
+    width: 350px;
+    padding: 50px;
+}
+
 .categories {
     margin: auto;
-    width: 90%;
     size: 100%;
     display: flex;
+    background-color: white;
 }
 
 .categories a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .categoryPics {
@@ -32,20 +39,35 @@
     width: calc(100% / 3);
     float: left;
     /*makes div align right after div before*/
-    border: 2px solid grey;
+    border: none;
     border-radius: 50px;
     /* round corners */
     padding: 10px;
     margin: 15px;
     text-align: center;
-    background-color: white;
+    background-color: black;
 }
 
 .category:hover {
-    background-color: #ddd;
+    background-color: rgb(83, 83, 83);
     cursor: pointer;
 }
 
 .yellow-container {
+    background-image: url("css-images/beehive-pattern.jpg");
+    background-size: 100%;
+    padding: 150px;
+    background-repeat: repeat;
+}
+
+.los-button {
+    height: 40px;
+    width: 100px;
     background-color: #feca57;
+    margin-top: 20px;
+}
+
+.los-button:hover {
+    background-color: #d4a337;
+    cursor: pointer;
 }
