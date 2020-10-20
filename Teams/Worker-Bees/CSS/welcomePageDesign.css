@@ -1,3 +1,14 @@
+/* browser-Einstellungen zurücksetzen */
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+/* add yellow background */
+.body {
+    background-color: #feca57;
+}
 .categories {
     margin: auto;
     width: 90%;
@@ -37,10 +48,4 @@
 
 .yellow-container {
     background-color: #feca57;
-}
-
-.philosophy {
-    width: 300px;
-    margin-left: 7%;
-    padding-top: 20px;
 }
