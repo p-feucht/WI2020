@@ -21,6 +21,8 @@
     size: 100%;
     display: flex;
     background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .categories a {
@@ -53,7 +55,7 @@
     cursor: pointer;
 }
 
-.yellow-container {
+.background-container {
     background-image: url("css-images/beehive-pattern.jpg");
     background-size: 100%;
     padding: 150px;
@@ -70,4 +72,13 @@
 .los-button:hover {
     background-color: #d4a337;
     cursor: pointer;
+}
+
+.yellow-container {
+    background-image: url("css-images/beehive-pattern.jpg");
+    background-size: 100%;
+    color: black;
+    font-size: xx-large;
+    height: 500px;
+    width: 100%;
 }
