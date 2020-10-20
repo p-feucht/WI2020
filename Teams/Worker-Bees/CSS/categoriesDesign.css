@@ -36,19 +36,19 @@ body, html {
     height: 100%;
   }
   
-  #Werkzeug {background-image: url(css-images/Werkzeug.jpg);
+  #Werkzeug {background-image: url(css-images/category-background1.jpg);
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;  /* Resize the background image to cover the entire container */
   }
-  #Werkstatt {background-image: url(css-images/werkstatt.jpg);
+  #Werkstatt {background-image: url(css-images/category-background2.jpg);
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;  /* Resize the background image to cover the entire container */
   }
-  #Dienst {background-image: url(css-images/Dienst.jpg);
+  #Dienst {background-image: url(css-images/category-background3.jpg);
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -84,8 +84,8 @@ body, html {
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
   }
   
   form.example button:hover {
@@ -106,7 +106,7 @@ body, html {
     height: 200px;
     margin: 20px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 50px;
   }
   
   .price {
@@ -132,7 +132,7 @@ body, html {
   .offer-image {
     height: 100%;
     float: left;
-    border-radius: 8px;
+    border-radius: 50px;
   }
 
   .offer-content {
