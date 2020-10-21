@@ -15,12 +15,13 @@
 
 <body>
     <div class="header">
-        <img src="pics/logoKomplett.png" class="logo">
-
+        <a href="firstPage.html"> <img src="pics/logoKomplett.png" class="logo">
+        </a>
         <div class="header-content-middle">
-            <a href="FormularBiete.html">Ich biete</a>
-            <a href="#contact">Ich suche</a>
-            <a href="#about">Tipps & Tricks</a>
+            <a class="biete" href="FormularBiete.html">Ich biete</a>
+            <a href="#tips">Tipps & Tricks</a>
+            <a href="#aboutUs">Über uns</a>
+            <a href="#impress">Impressum</a>
         </div>
 
         <div class="header-content-right">
@@ -31,42 +32,49 @@
 
     <div class="yellow-banner"></div>
 
+<<<<<<< HEAD
 <script src="categoriesTabFunctions.js"></script>
-<button class="tablink" onclick="openPage('Werkzeug', this)">Werkzeug</button>
+<button class="tablink" href = "#Werkzeug-Tab" onclick="openPage('Werkzeug', this)">Werkzeug</button>
 <button class="tablink" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
 <button class="tablink" onclick="openPage('Dienst', this)">Dienst</button>
+=======
+    <script src="categoriesTabFunctions.js"></script>
+    <button class="tablink" onclick="openPage('Werkzeug', this)">Werkzeug</button>
+    <button class="tablink" onclick="openPage('Werkstatt', this)">Werkstatt</button>
+    <button class="tablink" onclick="openPage('Dienst', this)">Dienst</button>
 
-<div id="Werkzeug" class="tabcontent">
-  
-<!-- Load icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div id="Werkzeug" class="tabcontent">
+>>>>>>> 1b626e2ec8e920c1d95c0b716d4b2a69b7566c14
 
-<!-- The form -->
-<form class="example" action="action_page.php">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-<div class="card">
-  <img src="pics/werkstatt.jpg" alt="Denim Jeans" class = "offer-image">
-  <div class="offer-content">
-    <h1>Tailored Jeans</h1>
-    <p class="price">$19.99</p>
-    <p>Some text about the jeans..</p>
-    <p><button>Add to Cart</button></p>
-  </div>
-</div>
+        <!-- Load icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</div>
+        <!-- The form -->
+        <form class="example" action="action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="card">
+            <img src="pics/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
+            <div class="offer-content">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
 
-<div id="Werkstatt" class="tabcontent">
-  <h3>News</h3>
-  <p>Some news this fine day!</p>
-</div>
+    </div>
 
-<div id="Dienst" class="tabcontent">
-  <h3>Contact</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
-</div>
+    <div id="Werkstatt" class="tabcontent">
+        <h3>News</h3>
+        <p>Some news this fine day!</p>
+    </div>
+
+    <div id="Dienst" class="tabcontent">
+        <h3>Contact</h3>
+        <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
 
 </body>
 
