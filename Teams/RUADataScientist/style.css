@@ -10,11 +10,14 @@ html{
     }
     
     .aboutContainer>div{
-        margin: 0px 30px 0px 30px;
+        align-self: center;
+        margin-left: 40px;
+        margin-right: 40px;
     }
     .aboutContainer>img{
-        margin: 50px auto;
-        max-width: 30%;
+        margin: auto;
+        max-width: 40%;
+        min-width: 30%;
         height: auto;
         align-self: center;
     }
@@ -22,10 +25,11 @@ html{
  @media screen and (min-width: 801px) {
 
     .aboutContainer{
-     grid-template-columns: 60% 40%;
+     grid-template-columns: 70% 30%;
     }
     .aboutContainer>div{
-        margin: 40px 80px 0px 80px;
+        align-self: center;
+        margin-left: 50px;
     }
     .aboutContainer>img{
         max-width: 50%;
