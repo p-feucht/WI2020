@@ -24,11 +24,27 @@ function openPage(pageName, elmnt) {
     elmnt.style.color = "#feca57";
     elmnt.style.fontWeight = "800";
     elmnt.style.textShadow = "2px 2px #000000";
+
+    // change hash
+    location.hash = "#" + elmnt.id;
 }
 
-function openTab(id) {
+function openTab() {
 // Get the element with id="defaultOpen" and click on it
-document.getElementById(id).click();
+var hash = window.location.hash.substring(1);
+if (hash == 'Werkzeug-Ang') {
+  var elmnt = document.getElementById(hash);
+  openPage('Werkzeug',elmnt);
+}
+else if (hash == 'Werkstatt-Ang') {
+  var elmnt = document.getElementById(hash);
+  openPage('Werkstatt',elmnt);
+}
+else if (hash == 'Dienst-Ang') {
+  var elmnt = document.getElementById(hash);
+  openPage('Dienst',elmnt);
+}
+
 }
 
 function openSearch() {
