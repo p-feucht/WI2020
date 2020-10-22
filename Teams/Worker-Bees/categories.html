@@ -10,6 +10,13 @@
     <link href="CSS/categoriesDesign.css" rel="stylesheet">
     <link href="JavaScript/categoriesTabFunctions.js">
 
+    <!-- date picker links (https://www.daterangepicker.com/)-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
+
+
 </head>
 
 <body onload="openTab()">
@@ -45,7 +52,7 @@
 <script src="JavaScript/categoriesTabFunctions.js"></script>
 <button class="tablink" id="Werkzeug-Ang" onclick="openPage('Werkzeug', this)">Werkzeug</button>
 <button class="tablink" id="Werkstatt-Ang" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
-<button class="tablink" id="Dienst-Ang" onclick="openPage('Dienst', this)">Dienst</button>
+<button class="tablink" id="Dienst-Ang" onclick="openPage('Dienst', this)">Dienstleistung</button>
 
     <div id="Werkzeug" class="tabcontent">
 
@@ -53,9 +60,19 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- The form -->
-        <form class="example" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search">
+        <form class="search" action="action_page.php">
+
+            <select id="category-select">
+                <option value="werkzeug" selected="selected">Werkzeug</option>
+                <option value="werkstatt" >Werkstatt</option>
+                <option value="Dienstleisung">Dienstleistung</option>
+            </select>
+            <input type="text" id="free-text" placeholder="Was suchst du?">
+            <div class="icon"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></div>
+            <input type="text" name="datefilter" value="" />
+            <script type="text/javascript">datePicker()</script>
             <button type="submit"><i class="fa fa-search"></i></button>
+
         </form>
 
         <div class="card">

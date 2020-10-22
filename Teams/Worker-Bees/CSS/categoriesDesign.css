@@ -78,22 +78,48 @@ body, html {
   }
   
   /* Style the search field */
-  form.example input[type=text] {
+  form.search input[type=text] {
     padding: 10px;
     font-size: 17px;
+    height: 50px;
     border: 1px solid grey;
+    border-left: white;
+    border-right: white;
     float: left;
-    width: 80%;
-    background: #f1f1f1;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    width: 25%;
+    background: white;
   }
-  
+
+  #category-select {
+    padding: 11px;
+    font-size: 17px;
+    height: 50px;
+    border: 1px solid grey;
+    border-right: 1px solid white;
+    float: left;
+    width: 25%;
+    background: white;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+  .icon {
+    padding: 10px;
+    height: 50px;
+    min-width: 40px;
+    border: 1px solid grey;
+    border-left: white;
+    border-right: white;
+    float: left;
+    width: 4%;
+    background: white;
+  }
+
   /* Style the submit button */
-  form.example button {
+  form.search button {
     float: left;
     width: 20%;
     padding: 10px;
+    height: 50px;
     background: #feca57;
     color: white;
     font-size: 17px;
@@ -104,12 +130,12 @@ body, html {
     border-bottom-right-radius: 50px;
   }
   
-  form.example button:hover {
+  form.search button:hover {
     background: #d4a337;
   }
   
   /* Clear floats */
-  form.example::after {
+  form.search::after {
     content: "";
     clear: both;
     display: table;
