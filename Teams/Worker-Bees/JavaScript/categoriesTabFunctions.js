@@ -21,9 +21,9 @@ function openPage(pageName, elmnt) {
 
   // Add the specific color to the button used to open the tab content
   elmnt.style.backgroundColor = color;
-  elmnt.style.color = "#feca57";
+  elmnt.style.color = "black";
   elmnt.style.fontWeight = "800";
-  elmnt.style.textShadow = "2px 2px #000000";
+  //elmnt.style.textShadow = "2px 2px white";
 
   // change hash
   location.hash = "#" + elmnt.id;
