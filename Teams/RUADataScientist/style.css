@@ -4,6 +4,27 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+  
+    .paralax{
+        background: url(https://4kwallpapers.com/images/walls/thumbs_2t/1495.jpg) no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100px;
+        display: grid;
+    }  
+
+    .quoteText{
+        font-style: italic; 
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        color:white; 
+    }
+
+    .quoteText>h1{
+    }
+
+    .quoteText>h2{
+    }
 
     .aboutContainer{
         display: grid;
@@ -24,6 +45,9 @@ html{
 
  @media screen and (min-width: 801px) {
 
+    .paralax{
+        height: 300px;
+    }
     .aboutContainer{
      grid-template-columns: 70% 30%;
     }
