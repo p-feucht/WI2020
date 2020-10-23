@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUA Data Scientist Topics</title>
+    <link rel="stylesheet" href="css/topics.css" />
+
+</head>
+
+<body>
+    <h1>Topics</h1>
+    <button type="button" id="open">Data Science</button>
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close" onclick="closePop()">
+                +
+            </div>
+            <div class="box_header"></div>
+            <h2>Data Science</h2>
+            <img class="topicImg" src="data:image/png;base64,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">
+
+
+            <div class="box_text">
+                <p>
+                    Data Science bezeichnet generell die Extraktion von Wissen aus Daten. Data Science ist ein interdisziplinäres Wissenschaftsfeld, welches wissenschaftlich fundierte Methoden, Prozesse, Algorithmen und Systeme zur Extraktion von Erkenntnissen, Mustern und
+                    Schlüssen sowohl aus strukturierten als auch unstrukturierten Daten ermöglicht[3][4]. Der Studiengang Data Science verwendet Techniken und Theorien aus den Fächern Mathematik, Statistik und Informationstechnologie, einschließlich der
+                    Signalverarbeitung, verwendet Wahrscheinlichkeitsmodelle des maschinellen Lernens, des statistischen Lernens, der Programmierung, der Datentechnik, der Mustererkennung, der Prognostik, der Modellierung von Unsicherheiten und der Datenlagerung.
+                    Personen, die im Bereich Data Science arbeiten, werden als Data Scientist bzw. Datenwissenschaftler bezeichnet, wobei meist speziellere oder Spezialisierungen anderer, übergeordneter Berufsbezeichnungen üblich sind (z. B. Statistiker,
+                    Informatiker).
+                </p>
+            </div>
+            <div class="box_link">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>
+                        https://de.wikipedia.org/wiki/Data_Science
+                    </li>
+                    <li>
+                        https://www.datarobot.com/wiki/data-science/
+                    </li>
+
+                </ul>
+            </div>
+            <div class="box_info">
+                <p> Date: 22.10.2020</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/topics.js" type="text/javascript"></script>
+</body>
+
+</html>
