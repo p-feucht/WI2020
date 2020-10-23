@@ -26,9 +26,9 @@ function openPage(pageName, elmnt) {
     elmnt.style.textShadow = "2px 2px #000000";
 }
 
-function openDefault() {
+function openTab(id) {
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+document.getElementById(id).click();
 }
 
 function openSearch() {
