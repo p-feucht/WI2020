@@ -90,16 +90,23 @@ CONTENT
     color:white; 
 }
 
+.aboutSpace{
+    background-color: red;
+}
 .aboutContainer{
     display: grid;
     text-align: left;
 }
 
 .aboutContainer>div{
-    
     margin-left: 40px;
     margin-right: 40px;
 }
+
+.aboutContainer>div>p{
+    text-align: justify;
+}
+
 .aboutContainer>img{
     margin: auto;
     max-width: 40%;
@@ -160,12 +167,16 @@ RESPOSIVE
     .paralax{
         height: 300px;
     }
+
     .aboutContainer{
      grid-template-columns: 70% 30%;
     }
+
     .aboutContainer>div{
-        align-self: left;
-        margin-left: 50px;
+        margin-left: 170px;
+    }
+    .aboutContainer>div>p{
+        text-align: left;
     }
     .aboutContainer>img{
         max-width: 50%;
