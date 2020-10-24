@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 24. Okt 2020 um 17:43
+-- Erstellungszeit: 24. Okt 2020 um 21:29
 -- Server-Version: 10.3.22-MariaDB-1:10.3.22+maria~stretch
 -- PHP-Version: 7.1.33
 
@@ -65,6 +65,7 @@ CREATE TABLE `AngebotWerkstatt` (
   `username Ersteller` varchar(15) DEFAULT NULL,
   `Werkstatt_ID` int(11) NOT NULL,
   `Preis/Tag` decimal(6,2) DEFAULT NULL,
+  `BezInBier` tinyint(1) DEFAULT NULL,
   `Ausstattung` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -111,7 +112,8 @@ CREATE TABLE `Dienstleistung` (
   `username Ersteller` varchar(15) NOT NULL,
   `ID` int(11) NOT NULL,
   `Preisart (pro Stunde oder DL)` tinyint(1) NOT NULL,
-  `Preis` decimal(6,2) NOT NULL
+  `Preis` decimal(6,2) NOT NULL,
+  `BezInBier` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
