@@ -35,13 +35,13 @@ button:disabled:hover{
 }
 
 .myContainer{
- max-width: 400px;
+ max-width: 800px;
  margin: 20px auto 0 auto;
 }
 
 #stepProgressBar{
   display: flex;
-  width: 300px;
+  width: 800px;
   margin: 0 auto;
   margin-bottom: 30px;
   justify-content: space-between;
@@ -53,15 +53,15 @@ button:disabled:hover{
 }
 
 .step-text{
-  margin-bottom: 10px;
+  margin:aut0;
   color: green;
 }
 
 .bullet{
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
   border-radius: 100%;
-  border: 1px solid green;
+  border: 2px solid rgb(151, 153, 151);
   color: green;
   display: inline-block;
   position: relative;
@@ -77,10 +77,10 @@ button:disabled:hover{
 .bullet.completed::after{
   content: '';
   position: absolute;
-  height: 1px;
-  width: 55px;
+  height: 3px;
+  width: 95px;
   background-color: green;
-  right: -61px;
+  right: -91px;
   bottom:10px;
 }
 
