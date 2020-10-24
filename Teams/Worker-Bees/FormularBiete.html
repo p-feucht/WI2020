@@ -113,7 +113,7 @@
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="7" cols="50">
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
                         </textarea>
                     </div>
 
@@ -214,7 +214,6 @@
                             </fieldset>
                         </div>
 
-
                         <div class="formblock">
                             <label>Gib die <b>Anschrift</b> der angebotenen Werkstatt an</label>
                             <br>
@@ -222,12 +221,10 @@
                             <input type="text" name="Straße" value=" " size="30" maxlength="30">
                             </label>
                             <br>
-
                             <label>Hausnummer
                             <input type="number" name="Hausnummer" value=" " size="4" maxlength="4"> 
                         </label>
                             <br>
-
                             <label>Postleitzahl
                             <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
                         </label>
@@ -242,30 +239,22 @@
 
                     <div class="Dienstleistung selectt">
                         <div class="formblock">
-                            <label>Bezahlart </label>
-                            <select name="Bezahlart" size="5">
+                            <label>Gib die <b>Art der Bezahlung</b> an </label>
+                            <br>
+                            <select name="Bezahlart">
                                 <option>Preis/Stunde</option>
                                 <option>Fixpreis</option>
                             </select>
-
-
-
-                            <label>Gib den <b>Preis</b> deiner Dienstleistung an </label>
                             <br>
-                            <input type="number" name="Preis/Tag" value="" size="4" maxlength="4">
-                            <label>€/Tag</label>
+                            <label>Betrag
+                            </label>
+                            <input type="number" name="Preis" value="" size="4" maxlength="4">
+                            <label>€</label>
                             <br>
                             <input type="checkbox" id="bierBez" name="bierBez" unchecked>
                             <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
-
-
-                        <label>Preis (in €)
-                      <input type="number" name="Preis" value=" " size="30" maxlength="4"> 
-                    </label>
-                        <br>
                     </div>
-
 
                     <p>Nach Erstellung des Angebots können Interessenten dein Angebot sehen und dich kontaktieren.</p>
                     <div class=unterüberschrift>
