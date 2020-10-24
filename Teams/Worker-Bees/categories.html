@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <link href="CSS/headerDesign.css" rel="stylesheet">
         <link href="CSS/categoriesDesign.css" rel="stylesheet">
-        <link href="JavaScript/categoriesTabFunctions.js">
+        <link href="JavaScript/categoriesFunctions.js">
     
         <!-- date picker links (https://www.daterangepicker.com/)-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -16,6 +16,9 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
     
+        <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrJoGLdsBz5xPFlFs-RiG2TPTnELEfOk&libraries=places&callback=initAutocomplete"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/locationSearchDesign.css" />
+        <script src="JavaScript/locationSearch.js"></script>
     
     </head>
 
@@ -42,7 +45,7 @@
 
     <div class="yellow-banner"></div>
 
-<script src="JavaScript/categoriesTabFunctions.js"></script>
+<script src="JavaScript/categoriesFunctions.js"></script>
 <button class="tablink" id="Werkzeug-Ang" onclick="openPage('Werkzeug', this)">Werkzeug</button>
 <button class="tablink" id="Werkstatt-Ang" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
 <button class="tablink" id="Dienst-Ang" onclick="openPage('Dienst', this)">Dienstleistung</button>
@@ -52,15 +55,13 @@
         <!-- Load icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- The form -->
-        <form class="search" action="action_page.php">
+        <!-- The search field -->
+        <form class="search" action="">
 
-            <select id="category-select">
-                <option value="werkzeug" selected="selected">Werkzeug </option>
-                <option value="werkstatt" >Werkstatt</option>
-                <option value="Dienstleisung">Dienstleistung</option>
-            </select>
             <input type="text" id="free-text" placeholder="Was suchst du?">
+            <script src="JavaScript/locationSearch.js"></script>
+            <input id="autocomplete" class="controls" type="text" placeholder="Wo brauchst du es?"/>
+            <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrJoGLdsBz5xPFlFs-RiG2TPTnELEfOk&libraries=places&callback=initAutocomplete"></script>
             <div class="icon"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></div>
             <input type="text" name="datefilter" value="" placeholder="Wann passt es dir am besten?"/>
             <script type="text/javascript" >datePicker()</script>
