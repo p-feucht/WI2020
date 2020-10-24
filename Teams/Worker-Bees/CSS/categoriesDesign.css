@@ -51,27 +51,14 @@ body, html {
     height: 100%;
   }
   
-  #Werkzeug {
+  .tabcontent {
     background-color: white;
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;  /* Resize the background image to cover the entire container */
   }
-  #Werkstatt {
-    background-color: white;
-    height: 100%; /* You must set a specified height */
-    background-position: top; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;  /* Resize the background image to cover the entire container */
-  }
-  #Dienst {
-    background-color: white;
-    height: 100%; /* You must set a specified height */
-    background-position: top; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;  /* Resize the background image to cover the entire container */
-  }
+
 
   /* Design of the tab-contents */
 
@@ -80,29 +67,23 @@ body, html {
   }
   
   /* Style the search field */
-  form.search input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    height: 50px;
-    border: 1px solid grey;
-    border-left: white;
-    border-right: white;
-    float: left;
-    width: 25%;
-    background: white;
-  }
-
-  #category-select {
+  form.search input[type=text], #autocomplete {
     padding: 11px;
     font-size: 17px;
     height: 50px;
     border: 1px solid grey;
-    border-right: 1px solid white;
+    border-right: white;
+    border-left: white ;
     float: left;
     width: 25%;
     background: white;
+    outline: none;
+  }
+
+  #free-text {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    border-left: 1px solid grey;
   }
 
   .icon {
@@ -131,6 +112,7 @@ body, html {
     cursor: pointer;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+    outline: none;
   }
   
   form.search button:hover {
