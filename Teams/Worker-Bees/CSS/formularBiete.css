@@ -1,10 +1,12 @@
             .yellow-container {
-                background-color: #feca57;
+                background-color: white;
+                width: 100%;
             }
             
             .explanation {
-                width: 70%;
+                width: auto;
                 margin-left: 7%;
+                margin-right: 7%;
                 padding-top: 20px;
             }
             
@@ -16,14 +18,31 @@
                 background-color: #feca57;
             }
             
+            .formblock {
+                border-color: #bdc3c7;
+                border-width: 1px;
+                border-style: solid;
+                margin: 10px;
+            }
+            
             input,
             label,
             fieldset {
-                margin-bottom: 10px;
+                margin: 15px;
             }
             
             .selectt {
                 display: none;
+            }
+            
+            button {
+                padding: 5px 12px;
+                font-family: Verdana, Geneva, sans-serif;
+                font-weight: 300;
+                color: black;
+                border: 1px solid silver;
+                background-image: linear-gradient(to top, gainsboro 0%, white 90%);
+                border-radius: 20px;
             }
             
             input[type="submit"] {
