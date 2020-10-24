@@ -4,28 +4,6 @@
     border: none;
 }
 
-  
-    .paralax{
-        background: url(https://4kwallpapers.com/images/walls/thumbs_2t/1495.jpg) no-repeat center;
-        background-size: cover;
-        background-attachment: fixed;
-        height: 100px;
-        display: grid;
-    }  
-
-    .quoteText{
-        font-style: italic; 
-        margin: auto;
-        background-color: rgba(0, 0, 0, 0.5);
-        color:white; 
-    }
-
-    .quoteText>h1{
-    }
-
-    .quoteText>h2{
-    }
-
 h4 {
     font-weight: inherit;
     font-size: 3vh;
@@ -96,23 +74,6 @@ CONTENT
     max-width: 100%;
 }
 
-.aboutContainer{
-    display: grid;
-}
-
-.aboutContainer>div{
-    align-self: center;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-.aboutContainer>img{
-    margin: auto;
-    max-width: 40%;
-    min-width: 30%;
-    height: auto;
-    align-self: center;
-}
-
 /*
 FOOTER
 */
@@ -161,17 +122,4 @@ RESPOSIVE
 
 @media screen and (min-width: 801px) {
 
-    .paralax{
-        height: 300px;
-    }
-    .aboutContainer{
-     grid-template-columns: 70% 30%;
-    }
-    .aboutContainer>div{
-        align-self: center;
-        margin-left: 50px;
-    }
-    .aboutContainer>img{
-        max-width: 50%;
-    }
  }

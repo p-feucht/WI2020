@@ -14,9 +14,9 @@ body, html {
   }
 
   .yellow-banner {
-    background-color: black;
-    color: white;
-    padding: 50px;
+    background-image: url(css-images/beehive-pattern.jpg);
+    height: 100px;
+    background-size: 100%;
   }
 
   .philosophy {
@@ -27,11 +27,12 @@ body, html {
   
   /* Style tab links */
   .tablink {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: normal;
     float: left;
-    border: none;
+    border-radius: 50px;
+    border-bottom: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
@@ -40,7 +41,7 @@ body, html {
   }
   
   .tablink:hover {
-    background-color: rgba(83, 83, 83, 0.308);
+    background-color: rgba(83, 83, 83, 0.164);
   }
 
   /* Style the tab content (and add height:100% for full page content) */
@@ -51,21 +52,21 @@ body, html {
   }
   
   #Werkzeug {
-    background-image: url(css-images/category-background1.jpg);
+    background-color: white;
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;  /* Resize the background image to cover the entire container */
   }
   #Werkstatt {
-    background-image: url(css-images/category-background2.jpg);
+    background-color: white;
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;  /* Resize the background image to cover the entire container */
   }
   #Dienst {
-    background-image: url(css-images/category-background3.jpg);
+    background-color: white;
     height: 100%; /* You must set a specified height */
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -103,6 +104,7 @@ body, html {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
   }
+
   .icon {
     padding: 10px;
     height: 50px;
@@ -173,6 +175,11 @@ body, html {
   }
 
   .card:hover {
-    background-color: #6d6a6a9a;
+    background-color: rgba(83, 83, 83, 0.164);
     cursor: pointer;
+  }
+
+
+  .iframe {
+    border: none;
   }

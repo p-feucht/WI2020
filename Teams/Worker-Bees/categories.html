@@ -1,23 +1,23 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<head>
-    <meta charset="utf-8">
-    <link rel="icon" href="images/logoBiene.png" />
-    <title>Worker Bees</title>
-    <meta name="description" content="">
-    <link href="CSS/headerDesign.css" rel="stylesheet">
-    <link href="CSS/categoriesDesign.css" rel="stylesheet">
-    <link href="JavaScript/categoriesTabFunctions.js">
-
-    <!-- date picker links (https://www.daterangepicker.com/)-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
-
-
-</head>
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="images/logoBiene.png" />
+        <title>Worker Bees</title>
+        <meta name="description" content="">
+        <link href="CSS/headerDesign.css" rel="stylesheet">
+        <link href="CSS/categoriesDesign.css" rel="stylesheet">
+        <link href="JavaScript/categoriesTabFunctions.js">
+    
+        <!-- date picker links (https://www.daterangepicker.com/)-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
+    
+    
+    </head>
 
 <body onload="openTab()">
 <!-- activate Tab opening -->
@@ -40,14 +40,7 @@
 </div>
 
 
-    <div class="yellow-banner">
-        <div class="philosophy">
-            <h3>Den großen Traum verwirklichen.</h3>
-            <p class="philosophy-text">
-                Jetzt ist der Moment, um deinen Traum Wirklichkeit werden zu lassen. Auf unserer Seite findest du alles, was dich bis jetzt daran gehindert hat. Worauf wartest du?
-            </p>
-        </div>
-    </div>
+    <div class="yellow-banner"></div>
 
 <script src="JavaScript/categoriesTabFunctions.js"></script>
 <button class="tablink" id="Werkzeug-Ang" onclick="openPage('Werkzeug', this)">Werkzeug</button>
@@ -69,8 +62,8 @@
             </select>
             <input type="text" id="free-text" placeholder="Was suchst du?">
             <div class="icon"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></div>
-            <input type="text" name="datefilter" value="" />
-            <script type="text/javascript">datePicker()</script>
+            <input type="text" name="datefilter" value="" placeholder="Wann passt es dir am besten?"/>
+            <script type="text/javascript" >datePicker()</script>
             <button type="submit"><i class="fa fa-search"></i></button>
 
         </form>
