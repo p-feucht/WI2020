@@ -8,8 +8,11 @@
     <meta name="description" content="">
     <link href="CSS/headerDesign.css" rel="stylesheet">
     <link href="CSS/formularBiete.css" rel="stylesheet">
+    <link href="CSS/datepicker.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </head>
 
@@ -40,6 +43,7 @@
         <script src="JavaScript/slide.js"></script>
 
 
+
         <div class="yellow-container">
 
 
@@ -67,12 +71,18 @@
 
 
 
-
-
                     <label>Angebotstitel
-                  <input id="title" type="text" name="title" value=" " size="30" maxlength="20"> 
-              </label>
+                         <input id="title" type="text" name="title" value=" " size="30" maxlength="30"> 
+                    </label>
                     <br>
+
+                    <div class="container">
+                        <label>Angebotszeitraum 
+                        <input type="text" class="form-control date" placeholder="Wähle die Tage aus an denen dein Angebot buchbar ist">
+                    </label>
+                    </div>
+                    <script src="JavaScript/datepicker.js"></script>
+
 
                     <label for="begDat">
                   Beginndatum </label><br>
@@ -80,6 +90,24 @@
                     <label for="endeDat">
                   Endedatum </label><br>
                     <input type="date" id="endeDat"><br>
+
+                    <label>Straße
+                        <input type="text" name="Straße" value=" " size="30" maxlength="30"> 
+                    </label>
+                    <br>
+
+                    <label>Hausnummer
+                        <input type="number" name="Hausnummer" value=" " size="4" maxlength="4"> 
+                    </label>
+                    <br>
+
+                    <label>Postleitzahl
+                        <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
+                    </label>
+                    <br>
+                    <label>Ort
+                        <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
+                    </label>
 
                     <label>Beschreibung </label>
                     <br>
@@ -100,23 +128,6 @@
                         <input type="checkbox" id="bierBez" name="bierBez" unchecked>
                         <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         <br>
-
-                        <label>Straße
-                    <input type="text" name="Adresse" value=" " size="30" maxlength="30"> 
-                </label>
-                        <label>Hausnummer
-                    <input type="number" name="Hausnummer" value=" " size="30" maxlength="4"> 
-                </label>
-                        <br>
-
-                        <label>Postleitzahl
-                    <input type="number" name="PLZ" value=" " size="30" maxlength="5"> 
-                </label>
-                        <br>
-                        <label>Ort
-                    <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
-                </label>
-                        <br>
                     </div>
 
 
@@ -127,25 +138,6 @@
                         <label>Preis/Tag (in €)
                     <input type="number" name="Preis/Tag" value=" " size="30" maxlength="4"> 
                 </label>
-                        <br>
-
-                        <label>Straße
-                <input type="text" name="Straße" value=" " size="30" maxlength="30"> 
-            </label>
-                        <br>
-
-                        <label>Hausnummer
-                <input type="number" name="Hausnummer" value=" " size="30" maxlength="4"> 
-            </label>
-                        <br>
-
-                        <label>Postleitzahl
-                <input type="number" name="PLZ" value=" " size="30" maxlength="5"> 
-            </label>
-                        <br>
-                        <label>Ort
-                <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
-            </label>
                         <br>
 
                         <form>
