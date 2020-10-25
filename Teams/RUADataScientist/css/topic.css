@@ -1,0 +1,25 @@
+.head img {
+    height: 250px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+}
+
+.head {
+    text-align: left;
+    margin: 5px;
+}
+
+.info {
+    text-align: left;
+}
+
+.info h4 {
+    border-bottom: 5px outset blue;
+}
+
+.info p {
+    font-size: 16px;
+    text-align: justify;
+}
