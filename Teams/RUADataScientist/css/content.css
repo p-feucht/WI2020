@@ -1,24 +1,13 @@
 @charset "utf-8";
 
 /* CSS Document */
-
-body {
-    margin: 0px;
-    padding: 0px;
-}
-
-ul {
+#autoWidth {
     list-style: none;
 }
 
-a {
-    font-family: calibri;
-    font-weight: bold;
-}
-
 .button {
-    position: relative;
-    top: 3vh;
+    /*position: relative;
+    top: 3vh;*/
     background-color: #008CBA;
     color: white;
     padding: 15px 32px;
@@ -35,15 +24,15 @@ a {
 .button span {
     cursor: pointer;
     display: inline-block;
-    position: relative;
+    /*position: relative;*/
     transition: 0.5s;
 }
 
 .button span:after {
     content: '\00bb';
-    position: absolute;
+    /*position: absolute;*/
     opacity: 0;
-    top: 0;
+    /*top: 0;*/
     right: -20px;
     transition: 0.5s;
 }
@@ -70,17 +59,17 @@ h1 {
 }
 
 .header {
-    position: relative;
-    top: 5vh;
+    /*position: relative;
+    top: 5vh;*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .container {
-    position: relative;
+    /*position: relative;
     top: 10vh;
-    left: 15%;
+    left: 15%;*/
     width: 70%;
     height: 50vh;
     background-color: lightblue;
