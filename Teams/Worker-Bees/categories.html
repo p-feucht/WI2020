@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <link href="CSS/headerDesign.css" rel="stylesheet">
     <link href="CSS/categoriesDesign.css" rel="stylesheet">
-    <link href="JavaScript/categoriesTabFunctions.js">
+    <link href="JavaScript/categoriesFunctions.js">
 
     <!-- date picker links (https://www.daterangepicker.com/)-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -16,76 +16,72 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
 
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrJoGLdsBz5xPFlFs-RiG2TPTnELEfOk&libraries=places&callback=initAutocomplete"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/locationSearchDesign.css" />
+    <script src="JavaScript/locationSearch.js"></script>
 
 </head>
 
 <body onload="openTab()">
-<!-- activate Tab opening -->
+    <!-- activate Tab opening -->
 
-<div class="header">
+    <div class="header">
 
-  <a href="firstPage.html"> <img src="images/logoKomplett.png" class="logo">
-  </a>
-  <div class="header-content-middle">
-      <a class="biete" href="FormularBiete.html">Ich biete</a>
-      <a href="#tips">Tipps & Tricks</a>
-      <a href="#aboutUs">Über uns</a>
-      <a href="firstPage.html#contact">Impressum</a>
-  </div>
+        <a href="firstPage.html"> <img src="images/logoKomplett.png" class="logo">
+        </a>
+        <div class="header-content-middle">
+            <a class="biete" href="FormularBiete.html">Ich biete</a>
+            <a href="#tips">Tipps & Tricks</a>
+            <a href="#aboutUs">Über uns</a>
+            <a href="firstPage.html#contact">Impressum</a>
+        </div>
 
-  <div class="header-content-right">
-      <a class="anmReg" href="#anmeldung">Anmelden</a>
-      <a class="anmReg" href="#registrierung">Registrieren</a>
-  </div>
-</div>
-
-
-    <div class="yellow-banner">
-        <div class="philosophy">
-            <h3>Den großen Traum verwirklichen.</h3>
-            <p class="philosophy-text">
-                Jetzt ist der Moment, um deinen Traum Wirklichkeit werden zu lassen. Auf unserer Seite findest du alles, was dich bis jetzt daran gehindert hat. Worauf wartest du?
-            </p>
+        <div class="header-content-right">
+            <a class="anmReg" href="#anmeldung">Anmelden</a>
+            <a class="anmReg" href="#registrierung">Registrieren</a>
         </div>
     </div>
 
-<script src="JavaScript/categoriesTabFunctions.js"></script>
-<button class="tablink" id="Werkzeug-Ang" onclick="openPage('Werkzeug', this)">Werkzeug</button>
-<button class="tablink" id="Werkstatt-Ang" onclick="openPage('Werkstatt', this)" >Werkstatt</button>
-<button class="tablink" id="Dienst-Ang" onclick="openPage('Dienst', this)">Dienstleistung</button>
+
+    <div class="yellow-banner"></div>
+
+    <script src="JavaScript/categoriesFunctions.js"></script>
+    <button class="tablink" id="Werkzeug-Ang" onclick="openPage('Werkzeug', this)">Werkzeug</button>
+    <button class="tablink" id="Werkstatt-Ang" onclick="openPage('Werkstatt', this)">Werkstatt</button>
+    <button class="tablink" id="Dienst-Ang" onclick="openPage('Dienst', this)">Dienstleistung</button>
 
     <div id="Werkzeug" class="tabcontent">
 
         <!-- Load icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- The form -->
-        <form class="search" action="action_page.php">
+        <!-- The search field -->
+        <form class="search" action="">
 
-            <select id="category-select">
-                <option value="werkzeug" selected="selected">Werkzeug </option>
-                <option value="werkstatt" >Werkstatt</option>
-                <option value="Dienstleisung">Dienstleistung</option>
-            </select>
             <input type="text" id="free-text" placeholder="Was suchst du?">
+            <script src="JavaScript/locationSearch.js"></script>
+            <input id="autocomplete" class="controls" type="text" placeholder="Wo brauchst du es?" />
+            <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrJoGLdsBz5xPFlFs-RiG2TPTnELEfOk&libraries=places&callback=initAutocomplete"></script>
             <div class="icon"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></div>
-            <input type="text" name="datefilter" value="" />
-            <script type="text/javascript">datePicker()</script>
+            <input type="text" name="datefilter" value="" placeholder="Wann passt es dir am besten?" />
+            <script type="text/javascript">
+                datePicker()
+            </script>
             <button type="submit"><i class="fa fa-search"></i></button>
 
         </form>
 
         <div class="card">
             <img src="images/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
-            <p class ="card-lp"><img src = "images/place-icon.svg" alt="location"> München
-            <span class="price">100€ / Tag</span></p>
+            <p class="card-lp"><img src="images/place-icon.svg" alt="location"> München
+                <span class="price">100€ / Tag</span></p>
             <h2>Bester Schraubenschlüssel in town.</h1>
         </div>
 
         <div class="card">
             <img src="images/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
-            <p class ="card-lp"><img src = "images/place-icon.svg" alt="location"> Berlin
-            <span class="price">0€ / Tag</span></p>
+            <p class="card-lp"><img src="images/place-icon.svg" alt="location"> Berlin
+                <span class="price">0€ / Tag</span></p>
             <h2>alte Schreibmachine.</h1>
         </div>
     </div>

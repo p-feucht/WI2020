@@ -1,109 +1,107 @@
 /* browser-Einstellungen zurücksetzen */
+
 * {
-  margin: 0px;
-  padding: 0px;
-  border: none;
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* Set height of body and the document to 100% to enable "full page tabs" */
-body, html {
+
+body,
+html {
     height: 100%;
     margin: 0;
     font-family: Arial;
-  }
+}
 
-  .yellow-banner {
-    background-color: black;
-    color: white;
-    padding: 50px;
-  }
+.yellow-banner {
+    background-image: url(css-images/beehive-pattern.jpg);
+    height: 100px;
+    background-size: 100%;
+}
 
-  .philosophy {
+.philosophy {
     width: 300px;
     margin-left: 7%;
     padding-top: 20px;
 }
-  
-  /* Style tab links */
-  .tablink {
-    background-color: black;
-    color: white;
+
+
+/* Style tab links */
+
+.tablink {
+    background-color: white;
+    color: black;
     font-weight: normal;
     float: left;
-    border: none;
+    border-radius: 50px;
+    border-bottom: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     font-size: 20px;
     width: 33.33%;
-  }
-  
-  .tablink:hover {
-    background-color: rgba(83, 83, 83, 0.308);
-  }
+}
 
-  /* Style the tab content (and add height:100% for full page content) */
-  .tabcontent {
+.tablink:hover {
+    background-color: rgba(83, 83, 83, 0.164);
+}
+
+
+/* Style the tab content (and add height:100% for full page content) */
+
+.tabcontent {
     display: none;
     padding: 100px 20px;
     height: 100%;
-  }
-  
-  #Werkzeug {
-    background-image: url(css-images/category-background1.jpg);
-    height: 100%; /* You must set a specified height */
-    background-position: top; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;  /* Resize the background image to cover the entire container */
-  }
-  #Werkstatt {
-    background-image: url(css-images/category-background2.jpg);
-    height: 100%; /* You must set a specified height */
-    background-position: top; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;  /* Resize the background image to cover the entire container */
-  }
-  #Dienst {
-    background-image: url(css-images/category-background3.jpg);
-    height: 100%; /* You must set a specified height */
-    background-position: top; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;  /* Resize the background image to cover the entire container */
-  }
+}
 
-  /* Design of the tab-contents */
+.tabcontent {
+    background-color: white;
+    height: 100%;
+    /* You must set a specified height */
+    background-position: top;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
 
-  * {
+
+/* Design of the tab-contents */
+
+* {
     box-sizing: border-box;
-  }
-  
-  /* Style the search field */
-  form.search input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    height: 50px;
-    border: 1px solid grey;
-    border-left: white;
-    border-right: white;
-    float: left;
-    width: 25%;
-    background: white;
-  }
+}
 
-  #category-select {
+
+/* Style the search field */
+
+form.search input[type=text],
+#autocomplete {
     padding: 11px;
     font-size: 17px;
     height: 50px;
     border: 1px solid grey;
-    border-right: 1px solid white;
+    border-right: white;
+    border-left: white;
     float: left;
     width: 25%;
     background: white;
+    outline: none;
+}
+
+#free-text {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-  }
-  .icon {
+    border-left: 1px solid grey;
+}
+
+.icon {
     padding: 10px;
     height: 50px;
     min-width: 40px;
@@ -113,10 +111,12 @@ body, html {
     float: left;
     width: 4%;
     background: white;
-  }
+}
 
-  /* Style the submit button */
-  form.search button {
+
+/* Style the submit button */
+
+form.search button {
     float: left;
     width: 20%;
     padding: 10px;
@@ -125,25 +125,31 @@ body, html {
     color: white;
     font-size: 17px;
     border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
+    border-left: none;
+    /* Prevent double borders */
     cursor: pointer;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-  }
-  
-  form.search button:hover {
+    outline: none;
+}
+
+form.search button:hover {
     background: #d4a337;
-  }
-  
-  /* Clear floats */
-  form.search::after {
+}
+
+
+/* Clear floats */
+
+form.search::after {
     content: "";
     clear: both;
     display: table;
-  }
+}
 
-  /*Design for offer cards */
-  .card {
+
+/*Design for offer cards */
+
+.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 450px;
     min-width: 300px;
@@ -154,25 +160,30 @@ body, html {
     border-radius: 50px;
     padding: 10px;
     float: left;
-  }
+}
 
-  .card-lp {
+.card-lp {
     color: grey;
     font-size: 20px;
     text-align: left;
-  }
-  .price {
+}
+
+.price {
     float: right;
     padding: 5px;
-  }
-  
-  .offer-image {
+}
+
+.offer-image {
     width: 100%;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-  }
+}
 
-  .card:hover {
-    background-color: #6d6a6a9a;
+.card:hover {
+    background-color: rgba(83, 83, 83, 0.164);
     cursor: pointer;
-  }
+}
+
+.iframe {
+    border: none;
+}

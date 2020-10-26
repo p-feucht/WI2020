@@ -10,56 +10,18 @@
 .body {
     background-color: #feca57;
 }
-.card-anbieten {
-    background-color: white;
-    width: 350px;
-    padding: 50px;
-}
-
-.categories {
-    margin: auto;
-    size: 100%;
-    display: flex;
-    background-color: white;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.categories a {
-    text-decoration: none;
-    color: white;
-}
-
-.categoryPics {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    border-radius: 50px;
-}
-
-.category {
-    width: calc(100% / 3);
-    float: left;
-    /*makes div align right after div before*/
-    border: none;
-    border-radius: 50px;
-    /* round corners */
-    padding: 10px;
-    margin: 15px;
-    text-align: center;
-    background-color: black;
-}
-
-.category:hover {
-    background-color: rgb(83, 83, 83);
-    cursor: pointer;
-}
 
 .background-container {
     background-image: url("css-images/beehive-pattern.jpg");
     background-size: 100%;
-    padding: 150px;
+    padding: 15%;
     background-repeat: repeat;
+}
+
+.card-anbieten {
+    background-color: white;
+    max-width: 350px;
+    padding: 50px;
 }
 
 .los-button {
@@ -74,10 +36,52 @@
     cursor: pointer;
 }
 
-.yellow-container {
-    background-image: url("css-images/beehive-pattern.jpg");
-    background-size: 100%;
+.category-section {
+    size: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    display: flex;
+}
+
+.category {
+    background-color: white;
+    width: calc(100% / 3);
+    float: left;
+    /*makes div align right after div before*/
+    border: none;
+    border-radius: 50px;
+    /* round corners */
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 15px;
+    text-align: center;
+    text-emphasis: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.category a {
+    text-decoration: none;
     color: black;
+}
+
+.categoryPics {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    border-radius: 50px;
+}
+
+.category:hover {
+    background-color:rgba(83, 83, 83, 0.164);
+    cursor: pointer;
+}
+
+
+.yellow-container {
+    background-color: black;
+    background-size: 100%;
+    color: white;
     font-size: xx-large;
     height: 500px;
     width: 100%;

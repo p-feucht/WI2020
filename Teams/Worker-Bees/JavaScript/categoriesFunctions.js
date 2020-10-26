@@ -11,7 +11,7 @@ function openPage(pageName, elmnt) {
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].style.backgroundColor = "";
-    tablinks[i].style.color = "#FFFFFF";
+    tablinks[i].style.color = "black";
     tablinks[i].style.fontWeight = "400";
     tablinks[i].style.textShadow = "none";
   }

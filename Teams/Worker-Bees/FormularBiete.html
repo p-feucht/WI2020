@@ -8,8 +8,17 @@
     <meta name="description" content="">
     <link href="CSS/headerDesign.css" rel="stylesheet">
     <link href="CSS/formularBiete.css" rel="stylesheet">
+    <link href="CSS/datepicker.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- date picker links (https://www.daterangepicker.com/)-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
+
 
 </head>
 
@@ -40,172 +49,220 @@
         <script src="JavaScript/slide.js"></script>
 
 
+
         <div class="yellow-container">
 
 
-            <div class="explanation">
+            <div class="explanation_and_form">
 
                 <!-- Text über Formular -->
-                <h3>Schreibe ein Angebot</h3>
+                <h2>Schreibe ein Angebot</h2>
                 <p>
                     Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
                 </p>
 
                 <form name="myForm" action="/action_page.php" method="post ">
 
-                    <div>
-                        <label> 
-                        <input type="radio" name="kategorie" value="Werkzeug"> Werkzeug
-                    </label>
-                        <label> 
-                        <input type="radio" name="kategorie" value="Werkstatt"> Werkstatt
-                    </label>
-                        <label> 
-                        <input type="radio" name="kategorie" value="Dienstleistung"> Dienstleistung
-                    </label>
+                    <div class=formblock>
+
+                        <label>Wähle eine <b>Angebotskategorie</b></label>
+                        <br>
+                        <input type="radio" name="kategorie" value="Werkzeug"> Werkzeug verleihen
+
+                        <input type="radio" name="kategorie" value="Werkstatt"> Werkstatt vermieten
+
+                        <input type="radio" name="kategorie" value="Dienstleistung"> Dienstleistung anbieten
+
                     </div>
 
 
+                    <div class=formblock>
+                        <label>Gib deinem Angebot einen <b>Titel</b></label>
+                        <br>
+                        <input id="title" type="text" name="title" value=" " size="30" maxlength="30">
+                        <div class=unterüberschrift>
+                            <label>Tipp: Nutze Begriffe, die andere 
+                                Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
+                        </div>
+                    </div>
+
+                    <div class="formblock">
+                        <label>Wähle einen <b>Angebotszeitraum </b>
+
+                            <div class="container">
+                                <input type="text" class="form-control date" placeholder="Pick the multiple dates">
+                            </div>	
+                            <script src="JavaScript/datepicker.js"></script>
+
+                        <input type="text" name="datefilter" value="" placeholder="Wann passt es dir am besten?" />
+                        <script type="text/javascript">
+                            datePicker()
+                        </script>
+                    </div>
 
 
-
-                    <label>Angebotstitel
-                  <input id="title" type="text" name="title" value=" " size="30" maxlength="20"> 
-              </label>
-                    <br>
-
-                    <label for="begDat">
+                    <div class="formblock">
+                        <label for="begDat">
                   Beginndatum </label><br>
-                    <input type="date" id="begDat"><br>
-                    <label for="endeDat">
+                        <input type="date" id="begDat"><br>
+                        <label for="endeDat">
                   Endedatum </label><br>
-                    <input type="date" id="endeDat"><br>
+                        <input type="date" id="endeDat"><br>
+                    </div>
 
-                    <label>Beschreibung </label>
-                    <br>
-                    <textarea id="beschreibung" name="beschreibung" rows="7" cols="50">
-              </textarea>
-                    <br>
-                    <br>
-                    <button type="button">Bild Upload</button>
-                    <br>
-                    <br>
+                    <div class="formblock">
+                        <label>Füge eine <b>Beschreibung</b> hinzu</label>
+                        <br>
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
+                        </textarea>
+                    </div>
+
+                    <div class="formblock">
+                        <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
+                        <br>
+                        <button type="button">Bild Upload</button>
+                        <div class=unterüberschrift>
+                            <label>noch ist kein Bild ausgewählt</label>
+                        </div>
+                    </div>
 
 
                     <div class="Werkzeug selectt">
-                        <label>Preis/Tag (in €)
-                      <input type="number" name="Preis/Tag" value=" " size="30" maxlength="4"> 
-                    </label>
-                        <br>
-                        <input type="checkbox" id="bierBez" name="bierBez" unchecked>
-                        <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
-                        <br>
 
-                        <label>Straße
-                    <input type="text" name="Adresse" value=" " size="30" maxlength="30"> 
-                </label>
-                        <label>Hausnummer
-                    <input type="number" name="Hausnummer" value=" " size="30" maxlength="4"> 
-                </label>
-                        <br>
+                        <div class="formblock">
+                            <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet </label>
+                            <br>
+                            <input type="number" name="Preis/Tag" value="" size="4" maxlength="4">
+                            <label>€/Tag</label>
+                            <br>
+                            <input type="checkbox" id="bierBez" name="bierBez" unchecked>
+                            <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
+                        </div>
 
-                        <label>Postleitzahl
-                    <input type="number" name="PLZ" value=" " size="30" maxlength="5"> 
-                </label>
-                        <br>
-                        <label>Ort
-                    <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
-                </label>
-                        <br>
+                        <div class="formblock">
+                            <label>Damit Interessenten wissen, wo deinen Angebotsgegenstand abholen können, gib deine <b>Anschrift</b> an</label>
+                            <br>
+                            <label>Straße
+                            <input type="text" name="Straße" value=" " size="30" maxlength="30">
+                            </label>
+                            <br>
+
+                            <label>Hausnummer
+                            <input type="number" name="Hausnummer" value=" " size="4" maxlength="4"> 
+                        </label>
+                            <br>
+
+                            <label>Postleitzahl
+                            <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
+                        </label>
+                            <br>
+                            <label>Ort
+                            <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
+                        </label>
+                        </div>
+
                     </div>
-
-
 
 
 
                     <div class="Werkstatt selectt">
-                        <label>Preis/Tag (in €)
-                    <input type="number" name="Preis/Tag" value=" " size="30" maxlength="4"> 
-                </label>
-                        <br>
+                        <div class="formblock">
+                            <label>Gib den <b>Preis</b> an, das Buchen deiner Werkstatt <b>pro Tag</b> kostet </label>
+                            <br>
+                            <input type="number" name="Preis/Tag" value="" size="4" maxlength="4">
+                            <label>€/Tag</label>
+                            <br>
+                            <input type="checkbox" id="bierBez" name="bierBez" unchecked>
+                            <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
+                        </div>
 
-                        <label>Straße
-                <input type="text" name="Straße" value=" " size="30" maxlength="30"> 
-            </label>
-                        <br>
-
-                        <label>Hausnummer
-                <input type="number" name="Hausnummer" value=" " size="30" maxlength="4"> 
-            </label>
-                        <br>
-
-                        <label>Postleitzahl
-                <input type="number" name="PLZ" value=" " size="30" maxlength="5"> 
-            </label>
-                        <br>
-                        <label>Ort
-                <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
-            </label>
-                        <br>
-
-                        <form>
-                            <label>besondere Ausstattung:
-                          <fieldset>
-                            <ul>
-                              <li> 
-                                <label>
+                        <div class="formblock">
+                            <label>Gib an, ob deine Werkstatt besondere <b>Ausstattungsmerkmale</b> besitzt </label>
+                            <fieldset>
+                                <ul>
+                                    <li>
+                                        <label>
                                   <input type="checkbox" name="ausstattung" value="Standbohrmaschine">
                                   Standbohrmaschine
                                 </label>
-                            </li>
-                            <li>
-                                <label>
+                                    </li>
+                                    <li>
+                                        <label>
                                    <input type="checkbox" name="ausstattung" value="Drechselbank">
-                                   Drechselbank
+                                   Drechselbank/Drehbank
                                 </label>
-                            </li>
-                            <li>
-                                <label>
+                                    </li>
+                                    <li>
+                                        <label>
                                   <input type="checkbox" name="ausstattung" value="Schleifmaschine">
                                   Schleifmaschine
                                 </label>
-                            </li>
-                            <li>
-                                <label>
+                                    </li>
+                                    <li>
+                                        <label>
                                 <input type="checkbox" name="ausstattung" value="elektrische Standsägen">
                                 elektrische Standsägen
                               </label>
-                            </li>
-                            <li>
-                                <label>
+                                    </li>
+                                    <li>
+                                        <label>
                               <input type="checkbox" name="ausstattung" value="Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)">
                               Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.) vorhanden und verwendbar
                             </label>
-                            </li>
-                            </ul>
+                                    </li>
+                                </ul>
                             </fieldset>
-                        </form>
+                        </div>
 
+                        <div class="formblock">
+                            <label>Gib die <b>Anschrift</b> der angebotenen Werkstatt an</label>
+                            <br>
+                            <label>Straße
+                            <input type="text" name="Straße" value=" " size="30" maxlength="30">
+                            </label>
+                            <br>
+                            <label>Hausnummer
+                            <input type="number" name="Hausnummer" value=" " size="4" maxlength="4"> 
+                        </label>
+                            <br>
+                            <label>Postleitzahl
+                            <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
+                        </label>
+                            <br>
+                            <label>Ort
+                            <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
+                        </label>
+                        </div>
                     </div>
+
+
 
                     <div class="Dienstleistung selectt">
-
-                        <label>Bezahlart
-                      <select name="bezahlart" size="5">
-                        <option>Preis/Stunde</option>
-                        <option>Fixpreis</option>
-                      </select>
-                    </label>
-
-                        <label>Preis (in €)
-                      <input type="number" name="Preis" value=" " size="30" maxlength="4"> 
-                    </label>
-                        <br>
+                        <div class="formblock">
+                            <label>Gib die <b>Art der Bezahlung</b> an </label>
+                            <br>
+                            <select name="Bezahlart">
+                                <option>Preis/Stunde</option>
+                                <option>Fixpreis</option>
+                            </select>
+                            <br>
+                            <label>Betrag
+                            </label>
+                            <input type="number" name="Preis" value="" size="4" maxlength="4">
+                            <label>€</label>
+                            <br>
+                            <input type="checkbox" id="bierBez" name="bierBez" unchecked>
+                            <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
+                        </div>
                     </div>
 
-
-                    <p>Nach Erstellung des Eintrags können Interessenten dein Angebot sehen und dich kontaktieren.</p>
-                    <input type="submit" name="Eintrag erstellen" value="Eintrag erstellen">
+                    <p>Nach Erstellung des Angebots können Interessenten dein Angebot sehen und dich kontaktieren.</p>
+                    <div class=unterüberschrift>
+                        <p>Nur bei
+                            <t>workerbees</t> registrierte Personen können dein Angebot sehen. Die angegebenen Daten werden gemäß Datenschutzrichtlinie xy nicht an Dritte weitergegeben und nach Löschung des Angebots eliminiert. Auch ist ein Versand von Reklame
+                            an angegebene Anschriften ausgeschlossen.</p>
+                    </div>
+                    <input type="submit" name="Angebot erstellen" value="Angebot erstellen">
                     <br>
                 </form>
 

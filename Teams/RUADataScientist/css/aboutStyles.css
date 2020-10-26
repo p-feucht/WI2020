@@ -1,0 +1,66 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.paralax{
+    background: url(https://4kwallpapers.com/images/walls/thumbs_2t/1495.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100px;
+    display: grid;
+}  
+
+.quoteText{
+    font-style: italic; 
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color:white; 
+}
+
+.aboutSpace{
+    background-color: red;
+}
+.aboutContainer{
+    display: grid;
+    text-align: left;
+}
+
+.aboutContainer>div{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.aboutContainer>div>p{
+    text-align: justify;
+}
+
+.aboutContainer>img{
+    margin: auto;
+    max-width: 40%;
+    min-width: 30%;
+    height: auto;
+    align-self: center;
+}
+
+@media screen and (min-width: 801px) {
+
+    .paralax{
+        height: 300px;
+    }
+
+    .aboutContainer{
+     grid-template-columns: 70% 30%;
+    }
+
+    .aboutContainer>div{
+        margin-left: 170px;
+    }
+    .aboutContainer>div>p{
+        text-align: left;
+    }
+    .aboutContainer>img{
+        max-width: 50%;
+    }
+ }
