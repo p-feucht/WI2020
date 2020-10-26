@@ -160,6 +160,7 @@ form.search::after {
     border-radius: 50px;
     padding: 10px;
     float: left;
+    vertical-align: top;
 }
 
 .card-lp {
@@ -174,9 +175,11 @@ form.search::after {
 }
 
 .offer-image {
+  object-fit: cover;
     width: 100%;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
+    height: 60%;
 }
 
 .card:hover {
