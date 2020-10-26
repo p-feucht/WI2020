@@ -21,11 +21,12 @@
 #logo{
     text-align:left;
 }
-footer{
-    background-color:#ffbfbf;
-}
+
 nav{
     background-color: #ffbfbf;
+}
+footer{
+    background-color:#ffbfbf;
 }
 body{
     text-align: center;
