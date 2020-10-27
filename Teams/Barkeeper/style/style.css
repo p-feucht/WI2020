@@ -2,6 +2,7 @@
     text-align: center;
     margin:auto;
     padding:auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .horizontal{
@@ -30,4 +31,9 @@ footer{
 }
 body{
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+a:hover {
+    background-color: #D66B7C;
+    color: #000000;
 }
