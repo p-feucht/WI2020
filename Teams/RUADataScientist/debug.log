@@ -1,4 +1,0 @@
-[1019/080905.743:ERROR:directory_reader_win.cc(43)] FindFirstFile: Das System kann den angegebenen Pfad nicht finden. (0x3)
-[1020/151215.769:ERROR:directory_reader_win.cc(43)] FindFirstFile: Das System kann den angegebenen Pfad nicht finden. (0x3)
-[1025/091010.013:ERROR:directory_reader_win.cc(43)] FindFirstFile: Das System kann den angegebenen Pfad nicht finden. (0x3)
-[1027/105005.485:ERROR:directory_reader_win.cc(43)] FindFirstFile: Das System kann den angegebenen Pfad nicht finden. (0x3)

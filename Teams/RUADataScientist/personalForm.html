@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <title>Test yourself!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/personalForm.css">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="icon" type="image/ico" href="pictures/icon.svg" />
+<body>
+
+<div class="container">
+    <form id ="Form1">
+        <h2>What is Deep Learning is asked to have a long Question? </h2>
+        <div class="seperator"> 
+            <input type="radio" id="f-option" name="selector">
+            <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
+        </div>
+        <div class="seperator"> 
+            <input type="radio" id="s-option" name="selector">
+            <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
+        </div> 
+        <div class="seperator"> 
+            <input type="radio" id="t-option" name="selector">
+            <label for="t-option">Cats, solo sen saksn si us plau</label>
+        </div> 
+        <div class="btn-box">
+            <button type="button" id="Next1">Next</button>
+        </div>     
+    </form>
+
+    <form id ="Form2">
+        <h2>Why is this a short Question? </h2>
+        <div class="seperator"> 
+            <input type="radio" id="f-option" name="selector">
+            <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
+        </div>
+        <div class="seperator"> 
+            <input type="radio" id="s-option" name="selector">
+            <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
+        </div> 
+        <div class="seperator"> 
+            <input type="radio" id="t-option" name="selector">
+            <label for="t-option">Cats, solo sen saksn si us plau</label>
+        </div> 
+        <div class="btn-box">
+            <button type="button" id="Back1">Back</button>
+            <button type="button" id="Next2">Next</button>
+        </div>     
+    </form>
+
+    <form id ="Form3">
+        <h2> Why is a word to statslkfd?</h2>
+        <div class="seperator"> 
+            <input type="radio" id="f-option" name="selector">
+            <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
+        </div>
+        <div class="seperator"> 
+            <input type="radio" id="s-option" name="selector">
+            <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
+        </div> 
+        <div class="seperator"> 
+            <input type="radio" id="t-option" name="selector">
+            <label for="t-option">Cats, solo sen saksn si us plau</label>
+        </div>
+        <div class="btn-box">
+            <button type="button" id="Back2">Back</button>
+            <button type="button">Submit</button>
+        </div>     
+    </form>
+
+    <dvi class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>1</small></div> 
+        <div class="step-col"><small>2</small></div>   
+        <div class="step-col"><small>3</small></div>   
+    </dvi>
+</div>
+
+<script>
+
+    var Form1 = document.getElementById("Form1");  
+    var Form2 = document.getElementById("Form2");  
+    var Form3 = document.getElementById("Form3");  
+    
+    var Next1 = document.getElementById("Next1");
+    var Next2 = document.getElementById("Next2");
+    var Back1 = document.getElementById("Back1");
+    var Back2 = document.getElementById("Back2");
+
+    var progress = document.getElementById("progress");
+
+    Next1.onclick = function(){
+        Form1.style.left = "-450px";
+        Form2.style.left = "40px";
+        progress.style.width = "240px";
+    }
+
+    Back1.onclick = function(){
+        Form1.style.left = "40px";
+        Form2.style.left = "450px";
+        progress.style.width = "120px";
+    }
+
+    Next2.onclick = function(){
+        Form2.style.left = "-450px";
+        Form3.style.left = "40px";
+        progress.style.width = "360px";
+    }
+
+    Back2.onclick = function(){
+        Form2.style.left = "40px";
+        Form3.style.left = "450px";
+        progress.style.width = "240px";
+    }
+</script>
+
+</body>
+</html>
