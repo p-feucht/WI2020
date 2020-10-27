@@ -130,3 +130,8 @@ input[type="submit"] {
     box-sizing: border-box;
     padding: 4px;
 }
+
+#FehlerBeiValidierung {
+    color: red;
+    ;
+}

@@ -6,13 +6,17 @@
     <title>Worker Bees</title>
     <link rel="icon" href="images/logoBiene.png" />
     <meta name="description" content="">
+
     <link href="CSS/headerDesign.css" rel="stylesheet">
     <link href="CSS/formularBiete.css" rel="stylesheet">
     <link href="CSS/datepicker.css" rel="stylesheet">
+
     <link href="JavaScript/formular.js">
+    <!--
     <script src="https://code.jquery.com/jquery-3.4.1.min.js">
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    -->
+
 
     <!-- date picker links (https://www.daterangepicker.com/)-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -20,22 +24,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
 
-
-    <script type="text/javascript">
-        function pruefeFormular() {
-            if (document.formularFuerAngebot.title.value == "") {
-                alert("Bitte gib einen Angebotstitel ein.");
-                document.Formular.title.focus();
-                return false;
-            }
-            if (document.formularFuerAngebot.beschreibung.value == "") {
-                alert("Bitte gib eine Angebotsbeschreibung ein.");
-                document.Formular.beschreibung.focus();
-                return false;
-
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -63,7 +51,7 @@
             <img class="mySlides" src="images/tools.jpg" style="width:100%">
         </section>
         <script src="JavaScript/formular.js"></script>
-
+        <!--End of Slider-->
 
 
         <div class="yellow-container">
@@ -104,7 +92,7 @@
 
                     <div class="formblock">
                         <label>Wähle einen <b>Angebotszeitraum </b>
-<br>
+                        <br>
                         <input type="text" name="datefilter" value="" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
                         <script type="text/javascript">
                             datePicker();
@@ -124,7 +112,7 @@
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
+                        <textarea id="beschreibung" name="beschreibung" value="" rows="9" cols="1">
                         </textarea>
                     </div>
 
@@ -168,7 +156,7 @@
                         </label>
                             <br>
                             <label>Ort
-                            <input type="text" name="Ort" value=" " size="30" maxlength="30" required> 
+                            <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
                         </label>
                         </div>
 
@@ -310,6 +298,10 @@
                         });
                     });
                 </script>
+                <div id="FehlerBeiValidierung">
+                    <p id="Fehlermeldung">
+                    </p>
+                </div>
 
             </div>
 
