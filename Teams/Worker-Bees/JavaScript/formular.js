@@ -48,13 +48,15 @@ function datePicker() {
 }*/
 function pruefeFormular() {
     if (document.formularFuerAngebot.title.value == "") {
-        alert("Bitte gib einen Angebotstitel ein.");
-        document.Formular.title.focus();
+        document.getElementById("Fehlermeldung").innerHTML = "Bitte Angebotstitel eingeben";
+        //   alert("Bitte gib einen Angebotstitel ein.");
+        // document.Formular.title.focus();
         return false;
     }
     if (document.formularFuerAngebot.beschreibung.value == "") {
-        alert("Bitte gib eine Angebotsbeschreibung ein.");
-        document.Formular.beschreibung.focus();
+        document.getElementById("Fehlermeldung").innerHTML = "Bitte Angebotsbeschreibung eingeben";
+        //alert("Bitte gib eine Angebotsbeschreibung ein.");
+        // document.Formular.beschreibung.focus();
         return false;
 
     }
