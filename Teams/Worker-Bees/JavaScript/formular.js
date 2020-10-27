@@ -14,6 +14,8 @@ function carousel() {
     setTimeout(carousel, 3000);
 }
 
+
+
 function datePicker() {
 
     $('input[name="datefilter"]').daterangepicker({
@@ -35,11 +37,37 @@ function datePicker() {
 }
 
 
-/*
 
+
+/*
 function datePicker() {
     $('.datefilter').datepicker({
         multidate: true,
         format: 'dd-mm-yyyy'
     });
 }*/
+function pruefeFormular() {
+    if (document.formularFuerAngebot.title.value == "") {
+        alert("Bitte gib einen Angebotstitel ein.");
+        document.Formular.title.focus();
+        return false;
+    }
+    if (document.formularFuerAngebot.beschreibung.value == "") {
+        alert("Bitte gib eine Angebotsbeschreibung ein.");
+        document.Formular.beschreibung.focus();
+        return false;
+
+    }
+
+    var radios = document.getElementsByName("kategorie");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;
+    }
+
+    if (!formValid) alert("Bitte wähle eine Angebotskategorie aus bevor du fortfährst");
+    return formValid;
+}
