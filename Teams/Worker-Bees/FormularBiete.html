@@ -9,6 +9,7 @@
     <link href="CSS/headerDesign.css" rel="stylesheet">
     <link href="CSS/formularBiete.css" rel="stylesheet">
     <link href="CSS/datepicker.css" rel="stylesheet">
+    <link href="JavaScript/formular.js">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -61,7 +62,7 @@
             <img class="mySlides" src="images/werkstatt.jpg" style="width:100%">
             <img class="mySlides" src="images/tools.jpg" style="width:100%">
         </section>
-        <script src="JavaScript/slide.js"></script>
+        <script src="JavaScript/formular.js"></script>
 
 
 
@@ -96,27 +97,20 @@
                         <br>
                         <input id="title" type="text" name="title" value="" size="30" maxlength="30">
                         <div class=unterüberschrift>
-                            <label>Tipp: Nutze Begriffe, die andere 
-                                Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
+                            <label>Tipp: Nutze Begriffe, die andere Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
                         </div>
 
                     </div>
 
                     <div class="formblock">
                         <label>Wähle einen <b>Angebotszeitraum </b>
-
-                            <div class="container">
-                                <input type="text" class="form-control date" placeholder="Pick the multiple dates">
-                            </div>	
-                            <script src="JavaScript/datepicker.js"></script>
-
-                        <input type="text" name="datefilter" value="" placeholder="Wann passt es dir am besten?" />
+<br>
+                        <input type="text" name="datefilter" value="" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
                         <script type="text/javascript">
-                            datePicker()
+                            datePicker();
                         </script>
                     </div>
-
-
+<!--
                     <div class="formblock">
                         <label for="begDat">
                   Beginndatum </label><br>
@@ -125,6 +119,7 @@
                   Endedatum </label><br>
                         <input type="date" id="endeDat" required><br>
                     </div>
+                    -->
 
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
