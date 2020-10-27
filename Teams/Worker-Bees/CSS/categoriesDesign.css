@@ -5,16 +5,12 @@
     padding: 0px;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
-
 /* Set height of body and the document to 100% to enable "full page tabs" */
-
-body,
-html {
+body, html {
     height: 100%;
-    margin: 0;
-    font-family: Arial;
 }
 
 .yellow-banner {
@@ -23,13 +19,10 @@ html {
     background-size: 100%;
 }
 
-.philosophy {
-    width: 300px;
-    margin-left: 7%;
-    padding-top: 20px;
+.place-icon {
+    height: 25px;
+    vertical-align: top;
 }
-
-
 /* Style tab links */
 
 .tablink {
@@ -38,11 +31,11 @@ html {
     font-weight: normal;
     float: left;
     border-radius: 50px;
-    border-bottom: none;
+    border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    font-size: 20px;
+    font-size: 18px;
     width: 33.33%;
 }
 
@@ -50,34 +43,14 @@ html {
     background-color: rgba(83, 83, 83, 0.164);
 }
 
-
 /* Style the tab content (and add height:100% for full page content) */
 
 .tabcontent {
     display: none;
+    background-color: white;
     padding: 100px 20px;
     height: 100%;
 }
-
-.tabcontent {
-    background-color: white;
-    height: 100%;
-    /* You must set a specified height */
-    background-position: top;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
-}
-
-
-/* Design of the tab-contents */
-
-* {
-    box-sizing: border-box;
-}
-
 
 /* Style the search field */
 
@@ -125,8 +98,7 @@ form.search button {
     color: white;
     font-size: 17px;
     border: 1px solid grey;
-    border-left: none;
-    /* Prevent double borders */
+    border-left: none; /* Prevent double borders */
     cursor: pointer;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -151,6 +123,7 @@ form.search::after {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: 12;
     max-width: 450px;
     min-width: 300px;
     width: 30%;
@@ -175,7 +148,7 @@ form.search::after {
 }
 
 .offer-image {
-  object-fit: cover;
+    object-fit: cover;
     width: 100%;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;

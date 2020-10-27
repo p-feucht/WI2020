@@ -14,6 +14,7 @@ function openPage(pageName, elmnt) {
     tablinks[i].style.color = "black";
     tablinks[i].style.fontWeight = "400";
     tablinks[i].style.textShadow = "none";
+    tablinks[i].style.backgroundColor = "none";
   }
 
   // Show the specific tab content
@@ -23,7 +24,6 @@ function openPage(pageName, elmnt) {
   elmnt.style.backgroundColor = color;
   elmnt.style.color = "black";
   elmnt.style.fontWeight = "800";
-  //elmnt.style.textShadow = "2px 2px white";
 
   // change hash
   location.hash = "#" + elmnt.id;
