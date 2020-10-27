@@ -28,6 +28,15 @@
 .unterüberschrift {
     font-size: smaller;
     color: #bdc3c7;
+    padding-left: 0;
+}
+
+.unterüberschrift textarea {
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #bdc3c7;
+    min-height: 30px;
+    background-color: white;
 }
 
 b {
@@ -44,7 +53,8 @@ select {
 }
 
 textarea {
-    width: 80%;
+    width: 90%;
+    margin-right: 30px;
 }
 
 .selectt {
