@@ -20,22 +20,13 @@ function openPage(pageName, elmnt) {
     document.getElementById(pageName).style.display = "block";
   
     // Add the specific color to the button used to open the tab content
-    elmnt.style.backgroundColor = color;
+    elmnt.style.backgroundColor = "yellow";
     elmnt.style.color = "#feca57";
-    elmnt.style.fontWeight = "800";
+    elmnt.style.fontWeight = "400";
     elmnt.style.textShadow = "2px 2px #000000";
 }
 
 function openTab(id) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById(id).click();
-}
-
-function openSearch() {
-  document.getElementById("myOverlay").style.display = "block";
-}
-
-// Close the full screen search box
-function closeSearch() {
-  document.getElementById("myOverlay").style.display = "none";
 }
