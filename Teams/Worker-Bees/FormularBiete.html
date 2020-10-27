@@ -35,35 +35,6 @@
             }
         }
     </script>
-
-    <script type="text/javascript">
-        function pruefeFormu() {
-            var f = formularFuerAngebot;
-            var fehler = "";
-
-            if (document.formularFuerAngebot.title.value == "") {
-                fehler += "- der Angebotstitel";
-            }
-
-            if (document.formularFuerAngebot.beschreibung.value == "") {
-                fehler += "- die Angebotsbeschreibung";
-            }
-
-            <!--
-            if (f.onlex_password.value == "") {
-                fehler += "- Anti-Spam-Kontrolle\n";
-            } -->
-
-            if (fehler != "") {
-                var fehlertext = "Die folgenden Felder wurden nicht vollständig ausgefüllt:\n\n";
-                fehlertext += fehler;
-                alert(fehlertext + "\nBitte fülle die Informationen noch aus. Danke.");
-                return false;
-            }
-            return true;
-        }
-    </script>
-
 </head>
 
 <body>
@@ -105,7 +76,7 @@
                     Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
                 </p>
 
-                <form name="formularFuerAngebot" action="" method="post" onsubmit="return pruefeFormular(this);">
+                <form name="formularFuerAngebot" action="/action_page.php" method="post" onsubmit="return pruefeFormular(this);">
 
                     <div class=formblock>
 
@@ -149,10 +120,10 @@
                     <div class="formblock">
                         <label for="begDat">
                   Beginndatum </label><br>
-                        <input type="date" id="begDat"><br>
+                        <input type="date" id="begDat" required><br>
                         <label for="endeDat">
                   Endedatum </label><br>
-                        <input type="date" id="endeDat"><br>
+                        <input type="date" id="endeDat" required><br>
                     </div>
 
                     <div class="formblock">
@@ -175,7 +146,7 @@
                     <div class="Werkzeug selectt">
 
                         <div class="formblock">
-                            <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet </label>
+                            <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet</label>
                             <br>
                             <input type="number" name="Preis/Tag" value="" size="4" maxlength="4">
                             <label>€/Tag</label>
@@ -202,7 +173,7 @@
                         </label>
                             <br>
                             <label>Ort
-                            <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
+                            <input type="text" name="Ort" value=" " size="30" maxlength="30" required> 
                         </label>
                         </div>
 
