@@ -1,25 +1,58 @@
-.head img {
-    height: 250px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 10px;
-}
-
 .head {
     text-align: left;
-    margin: 5px;
+    margin-top: 2vh;
+    margin-left: 20vh;
+}
+
+.content {
+    display: grid;
+    width: 85%;
+    height: 100%;
+    margin-left: 20vh;
+    background-color: rgb(212, 245, 247);
+    border-radius: 12px;
 }
 
 .info {
     text-align: left;
+    height: 98%;
+    width: 80%;
+    margin: 2px;
+}
+
+.info img {
+    margin-left: 100px;
+    margin-top: 5px;
+    border-radius: 24px;
+    border: 2px outset green;
+    height: 380px;
+    width: 350px;
+}
+
+.info ul {
+    margin-left: 17px;
+    font-size: 24px;
+    color: black;
+}
+
+.info li {
+    margin-left: 5px;
 }
 
 .info h4 {
-    border-bottom: 5px outset blue;
+    border-bottom: 5px outset rgb(93, 191, 204);
+    border-bottom-left-radius: 10px;
+    margin-top: 30px;
 }
 
 .info p {
-    font-size: 16px;
+    font-size: 24px;
     text-align: justify;
+    width: 80%;
+    margin-top: 5px;
+}
+
+.info li a {
+    font-size: 24px;
+    color: black;
 }
