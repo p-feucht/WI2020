@@ -26,7 +26,7 @@
 }
 .storyButton {
     height: 40px;
-    width: 110px;
+    width: 155px;
     background-color: #feca57;
     margin-top: 20px;
 }
@@ -37,7 +37,7 @@
 }
 .businessOwnerButton {
     height: 40px;
-    width: 200px;
+    width: 155px;
     background-color: #feca57;
     margin-top: 20px;
 }
@@ -52,26 +52,28 @@
     float: left;
     width: 100%;
     margin-bottom: 16px;
-    padding: 0 8px;
+    /* padding-right: 100px;
+    padding-left: 40px; */
+    padding: 0px;
     text-align: center;
   }
 
 /* Three columns side by side */
 .column {
     float: left;
-    width: 33.3%;
+    width: 32.0%;
     margin-bottom: 16px;
     padding: 0 8px;
   }
   
   /* Display the columns below each other instead of side by side on small screens */
-  @media screen and (max-width: 650px) {
+  /* @media screen and (max-width: 650px) {
     .column {
       width: 100%;
       display: block;
       text-align: center;
     }
-  }
+  } */
   
   /* Add some shadows to create a card effect */
   .card {
