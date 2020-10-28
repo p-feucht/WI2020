@@ -1,16 +1,9 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    /*font-family: font-family: Verdana, Helvetica, Roboto, Calibri, 'Trebuchet MS', sans-serif;*/
-    margin: 0px;
-    padding: 0px;
-}
 
 
-/* Style the header with a grey background and some padding */
-
+/* Style the header */
 .header {
     overflow: hidden;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
    /* background-color: #f1f1f1; */
@@ -19,7 +12,6 @@ body {
 }
 
 /*style the logo*/
-
 .logo {
     width: 350px;
     float: left;
