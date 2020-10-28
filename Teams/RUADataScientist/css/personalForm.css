@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -41,7 +41,7 @@ h2{
 }
 
 form section{
-    background-color: yellow;
+    background-color: transparent;
 }
 
 form section input{
