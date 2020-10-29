@@ -3,14 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="icon" href="images/logoBiene.png" />
     <title>Worker Bees</title>
     <meta name="description" content="">
-    <link href="CSS/headerDesign.css" rel="stylesheet">
-    <link href="CSS/welcomePageDesign.css" rel="stylesheet">
-
-    <!-- Load icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="CSS/index.css" rel="stylesheet">
 
 </head>
 
@@ -54,30 +49,7 @@
 
     <div class="yellow-container">Hier kommen noch Beispielangebote hin</div>
     
-    <div class="footer">
-        <div class="footer_info">
-            <img src="images/logoKomplett.png" class="logo" alt="Worker Bees Logo" width="207" height="60">
-            <br>
-            <br>
-            <br>
-
-            <div class="footer_slogan">
-                <p> Come to craft</p>
-            </div>
-            <div id="contact">
-                <p>WorkerBees e.V.
-                    <br> Musterstraße 25
-                    <br> 86712 Musterstadt
-                </p>
-                <a href="mailto:support@workerbees.com">support@workerbees.com</a>
-                <br> +49 172 906 212
-            </div>
-        </div>
-        <div class="footer_end">
-            <p>Copyright 2020 | WorkerBees e.V.</p>
-        </div>
-
-    </div>
+    <?php include "PHP/footer.php";?>  
 
 </body>
 
