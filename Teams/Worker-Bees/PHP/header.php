@@ -16,7 +16,7 @@
 
         <a href="index.php"> <img src="images/logoKomplett.png" class="logo"></a>
         <div class="header-content-middle">
-            <a class="biete" href="FormularBiete.html">Ich biete</a>
+            <a class="biete" href="FormularBiete.php">Ich biete</a>
             <a href="#tips">Tipps & Tricks</a>
             <a class="aboutus" href="aboutUs.html">Über uns</a>
             <a href="firstPage.html#contact">Impressum</a>
