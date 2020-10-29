@@ -1,9 +1,9 @@
 <?php
 // good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
-$servername = "134.119.225.132:3304";
-$username = "db277447_1066";
-$password = "WWI22018";
-$dbname = "db277447_1066";
+$servername = "localhost";
+$username = "feucht-wwids19_admin";
+$password = "wwids19kurs";
+$dbname = "feucht-wwids19_db1";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -20,7 +20,7 @@ else {
     $email = $conn->real_escape_string($_POST["email"]);
     $nachricht = $conn->real_escape_string($_POST["nachricht"]);
 
-    $sql = "INSERT INTO wwi218_form (vorname, nachname, email, nachricht)
+    $sql = "INSERT INTO wids19_form (vorname, nachname, email, nachricht)
     VALUES ('$vorname', '$nachname', '$email', '$nachricht')";
     
     echo $sql;
