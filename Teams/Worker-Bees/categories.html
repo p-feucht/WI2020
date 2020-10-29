@@ -49,8 +49,8 @@
         </div>
 
         <div class="header-content-right">
-            <a class="anmReg" href="#anmeldung">Anmelden</a>
-            <a class="anmReg" href="#registrierung">Registrieren</a>
+            <a href="#Anmeldung" class="headerButton">Anmelden</a>
+            <a href="categories.html#Werkstatt-Ang" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
         </div>
     </div>
 
@@ -121,7 +121,7 @@
             <div class="modal-body">
                 <h3 class="modal-offerName">Bester Schraubenschlüssel in Town.</h3>
                 <p class="modal-namelocation">katomato95    
-                  <img src="images/place-icon.svg" class="place-icon" alt="location">Berlin
+                  <img src="images/place-icon.svg" class="place-icon" alt="location">Genaue Adresse <!--has to be the exact location here!-->
                 </p>
 
                 <div class="modal-content-split">
@@ -142,8 +142,18 @@
                 </div>
 
                 <form class="modal-booking-window">
-                    this is a form
+                    <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
+                    <input type="text" name="datefilter" value="" placeholder="Wähle ein Datum" />
+                    <script type="text/javascript">datePicker()</script>
+                    <p class="modal-booking-text">Gesamtbetrag:    1000 €<br>
+                        <input type="checkbox" name="bierZahlung">
+                        <label for="bierZahlung"> Ich möchte in Bier bezahlen (1000 Bier)</label><br>
+                    </p>
+
+                    <button type="button" class="submitBooking">Jetzt buchen</button>
                 </form>
+
+                
 
             </div>
             <div class="modal-footer"></div>

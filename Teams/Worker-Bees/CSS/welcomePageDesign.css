@@ -48,15 +48,16 @@
     background-color: white;
     width: calc(100% / 3);
     float: left;
-    /*makes div align right after div before*/
+    /* text:*/
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    /*box:*/
     border: none;
     border-radius: 50px;
-    /* round corners */
     padding: 10px;
     padding-bottom: 20px;
     margin: 15px;
-    text-align: center;
-    text-emphasis: bold;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -83,6 +84,6 @@
     background-size: 100%;
     color: white;
     font-size: xx-large;
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
