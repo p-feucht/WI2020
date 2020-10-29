@@ -70,6 +70,6 @@ function pruefeFormular() {
         i++;
     }
 
-    if (!formValid) alert("Bitte wähle eine Angebotskategorie aus bevor du fortfährst");
+    if (!formValid) alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
     return formValid;
 }

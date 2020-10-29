@@ -15,7 +15,7 @@ if (!$conn) {
 else {
     echo "Connected successfully";
     echo "<br>";
-    $vorname = $conn->real_escape_string($_POST["vorname"]);
+    $vorname = $conn->real_escape_string($_POST["vorname"]); //der Wert der in Vorname geschriben wurde wird aufbereitet und in Variable geschrieben
     $nachname = $conn->real_escape_string($_POST["nachname"]);
     $email = $conn->real_escape_string($_POST["email"]);
     $nachricht = $conn->real_escape_string($_POST["nachricht"]);
