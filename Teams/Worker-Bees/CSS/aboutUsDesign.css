@@ -20,13 +20,13 @@
 
 .aboutUs {
     background-color: white;
-    width: 320px;
+    width: 300px;
     padding: 35px;
     text-align: center;
 }
 .storyButton {
     height: 40px;
-    width: 155px;
+    width: 145px;
     background-color: #feca57;
     margin-top: 20px;
 }
@@ -37,7 +37,7 @@
 }
 .businessOwnerButton {
     height: 40px;
-    width: 155px;
+    width: 145px;
     background-color: #feca57;
     margin-top: 20px;
 }
