@@ -171,7 +171,7 @@
                                 }
                             ?>
                             <br>
-                            <input type="checkbox" id="bierBez" name="bierBez" unchecked>
+                            <input type="checkbox" id="bierBez1" name="bierBez1" value="1" unchecked>
                             <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
 
@@ -208,12 +208,11 @@
                             <input type="number" name="PreisProTag" value="" size="4" maxlength="4">
                             <label>€/Tag</label>
                             <?php if("PreisProTag"<0){
-                                <br>
                                 echo "Der Preis muss einen positiven Wert haben.";
                                 }
                             ?>
                             <br>
-                            <input type="checkbox" id="bierBez" name="bierBez" unchecked>
+                            <input type="checkbox" id="bierBez2" name="bierBez2" value="1" unchecked>
                             <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
 
@@ -291,13 +290,12 @@
                             </label>
                             <input type="number" name="Preis" value="" size="4" maxlength="4">
                             <?php if("Preis"<0){
-                                <br>
                                 echo "Der Preis muss einen positiven Wert haben.";
                                 }
                             ?>
                             <label>€</label>
                             <br>
-                            <input type="checkbox" id="bierBez" name="bierBez" unchecked>
+                            <input type="checkbox" id="bierBez3" name="bierBez3" value="1" unchecked>
                             <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
                     </div>
