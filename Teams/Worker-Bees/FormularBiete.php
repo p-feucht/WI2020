@@ -41,7 +41,7 @@
 
         <div class="header-content-right">
             <a href="#Anmeldung" class="headerButton">Anmelden</a>
-            <a href="categories.html#Werkstatt-Ang" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
+            <a href="categories.html#Werkstatt-Ang" class="headerButton" id="headerSearch"><i class="fa fa-search"></i></a>
         </div>
     </div>
 
@@ -67,7 +67,7 @@
                     Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
                 </p>
 
-                <form name="formularFuerAngebot" action="/action_page.php" method="post" onsubmit="return pruefeFormular(this);">
+                <form name="formularFuerAngebot" action="formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular(this);">
 
                     <div class=formblock>
 
@@ -127,20 +127,55 @@
                         </div>
                     </div>
 
+                    <div class="formblock">
+                        <label>Gib bitte deine <b>Anschrift</b> an</label>
+                        <div class="unterüberschrift">
+                            <!--wenn Dienstleistung gewählt, in Javascript noch ergänzen:<textarea readonly disabled="disabled">Falls deine angebotene Dienstleistung an einem bestimmten Ort stattfindet, gib bitte dessen gesamte Adresse an. Fall du die Dienstleistung bei den Interessenten ausführen möchtest, gib bitte mindestens deinen Ort an, damit
+                            klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
+                        </div>
+                        <label>Vorname
+                            <input type="text" name="Vorname" value="" size="20" maxlength="20">
+                            </label>
+                        <br>
+                        <label>Nachname
+                            <input type="text" name="Nachname" value="" size="30" maxlength="30">
+                            </label>
+                        <br>
+                        <label>Straße
+                            <input type="text" name="Straße" value="" size="30" maxlength="30">
+                            </label>
+                        <br>
+                        <label>Hausnummer
+                        <input type="number" name="Hausnummer" value="" size="4" maxlength="4"> 
+                    </label>
+                        <br>
+                        <label>Postleitzahl
+                        <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
+                    </label>
+                        <br>
+                        <label>Ort
+                        <input type="text" name="Ort" value="" size="30" maxlength="30"> 
+                    </label>
+                    </div>
+
 
                     <div class="Werkzeug selectt">
 
                         <div class="formblock">
                             <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet</label>
                             <br>
-                            <input type="number" name="Preis/Tag" value="" size="4" maxlength="4">
+                            <input type="number" name="PreisProTag" value="" size="4" maxlength="4">
                             <label>€/Tag</label>
+                            <?php if("PreisProTag"<0){
+                                echo "Der Preis muss einen positiven Wert haben.";
+                                }
+                            ?>
                             <br>
                             <input type="checkbox" id="bierBez" name="bierBez" unchecked>
                             <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
 
-                        <div class="formblock">
+                        <!--<div class="formblock">
                             <label>Damit Interessenten wissen, wo deinen Angebotsgegenstand abholen können, gib deine <b>Anschrift</b> an</label>
                             <br>
                             <label>Straße
@@ -149,7 +184,7 @@
                             <br>
 
                             <label>Hausnummer
-                            <input type="number" name="Hausnummer" value=" " size="4" maxlength="4"> 
+                            <input type="number" name="Hnr" value=" " size="4" maxlength="4"> 
                         </label>
                             <br>
 
@@ -160,7 +195,7 @@
                             <label>Ort
                             <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
                         </label>
-                        </div>
+                    </div>-->
 
                     </div>
 
@@ -170,8 +205,13 @@
                         <div class="formblock">
                             <label>Gib den <b>Preis</b> an, das Buchen deiner Werkstatt <b>pro Tag</b> kostet </label>
                             <br>
-                            <input type="number" name="Preis/Tag" value="" size="4" maxlength="4">
+                            <input type="number" name="PreisProTag" value="" size="4" maxlength="4">
                             <label>€/Tag</label>
+                            <?php if("PreisProTag"<0){
+                                <br>
+                                echo "Der Preis muss einen positiven Wert haben.";
+                                }
+                            ?>
                             <br>
                             <input type="checkbox" id="bierBez" name="bierBez" unchecked>
                             <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
@@ -183,38 +223,38 @@
                                 <ul>
                                     <li>
                                         <label>
-                                  <input type="checkbox" name="ausstattung" value="Standbohrmaschine">
+                                  <input type="checkbox" name="a1_Bohr" value="Standbohrmaschine">
                                   Standbohrmaschine
                                 </label>
                                     </li>
                                     <li>
                                         <label>
-                                   <input type="checkbox" name="ausstattung" value="Drechselbank">
+                                   <input type="checkbox" name="a2_Drechsel" value="Drechselbank">
                                    Drechselbank/Drehbank
                                 </label>
                                     </li>
                                     <li>
                                         <label>
-                                  <input type="checkbox" name="ausstattung" value="Schleifmaschine">
+                                  <input type="checkbox" name="a3_Schleif" value="Schleifmaschine">
                                   Schleifmaschine
                                 </label>
                                     </li>
                                     <li>
                                         <label>
-                                <input type="checkbox" name="ausstattung" value="elektrische Standsägen">
+                                <input type="checkbox" name="a4_Säge" value="elektrische Standsägen">
                                 elektrische Standsägen
                               </label>
                                     </li>
                                     <li>
                                         <label>
-                              <input type="checkbox" name="ausstattung" value="Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)">
+                              <input type="checkbox" name="a5_Kleinteil" value="Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)">
                               Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.) vorhanden und verwendbar
                             </label>
                                     </li>
                                 </ul>
                             </fieldset>
                         </div>
-
+                        <!--
                         <div class="formblock">
                             <label>Gib die <b>Anschrift</b> der angebotenen Werkstatt an</label>
                             <br>
@@ -233,7 +273,7 @@
                             <label>Ort
                             <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
                         </label>
-                        </div>
+                        </div>-->
                     </div>
 
 
@@ -250,36 +290,23 @@
                             <label>Betrag
                             </label>
                             <input type="number" name="Preis" value="" size="4" maxlength="4">
+                            <?php if("Preis"<0){
+                                <br>
+                                echo "Der Preis muss einen positiven Wert haben.";
+                                }
+                            ?>
                             <label>€</label>
                             <br>
                             <input type="checkbox" id="bierBez" name="bierBez" unchecked>
                             <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
-
-                        <div class="formblock">
-                            <label>Gib deine <b>Anschrift</b> an</label>
-                            <div class="unterüberschrift">
-                                <textarea readonly disabled="disabled">Falls deine angebotene Dienstleistung an einem bestimmten Ort stattfindet, gib bitte dessen gesamte Adresse an. Fall du die Dienstleistung bei den Interessenten ausführen möchtest, gib bitte mindestens deinen Ort an, damit klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>
-                            </div>
-                            <label>Straße
-                                <input type="text" name="Straße" value="" size="30 " maxlength="30">
-                                </label>
-                            <br>
-                            <label>Hausnummer
-                            <input type="number" name="Hausnummer" value="" size="4" maxlength="4"> 
-                        </label>
-                            <br>
-                            <label>Postleitzahl
-                            <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
-                        </label>
-                            <br>
-                            <label>Ort
-                            <input type="text" name="Ort" value="" size="30" maxlength="30"> 
-                        </label>
-                        </div>
                     </div>
 
+
+
+                    <br>
                     <p>Nach Erstellung des Angebots können Interessenten dein Angebot sehen und dich kontaktieren.</p>
+                    <br>
                     <div class=unterüberschrift>
                         <p>Nur bei
                             <t>workerbees</t> registrierte Personen können dein Angebot sehen. Die angegebenen Daten werden gemäß Datenschutzrichtlinie xy nicht an Dritte weitergegeben und nach Löschung des Angebots eliminiert. Auch ist ein Versand von Reklame
