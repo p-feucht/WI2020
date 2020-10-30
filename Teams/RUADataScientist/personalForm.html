@@ -3,25 +3,27 @@
     <title>Test yourself!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/personalForm.css">
     <!--<link rel="stylesheet" href="style.css">-->
     <link rel="icon" type="image/ico" href="pictures/icon.svg" />
 <body>
 
+<!--CONTENT-->
 <div class="container">
-    <form action="sent.php" method="GET">
+    <form action="result.php" method="POST">
         <section id ="Form1">
             <h2>What is Deep Learning? </h2>
             <div class="seperator"> 
-                <input type="radio" id="f-option" name="input1">
+                <input type="radio" id="0" name="knowledge_1" value="0">
                 <label for="f-option">A subfield of machine learning concerned with algorithms inspired by the structure and function of the brain.  </label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="s-option" name="input1">
+                <input type="radio" id="1" name="knowledge_1" value="1">
                 <label for="s-option">A process of discovering patterns in large data sets involving methods at the intersection of machine learning, statistics and database systems.</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="t-option" name="input1">
+                <input type="radio" id="2" name="knowledge_1" value="2">
                 <label for="t-option">A dicipline that concerns the collection, organization, analysis, interpretation and presentation of data. </label>
             </div> 
             <div class="btn-box">
@@ -32,15 +34,15 @@
         <section id ="Form2">
             <h2>Why is this a short Question? </h2>
             <div class="seperator"> 
-                <input type="radio" id="f-option" name="input2">
+                <input type="radio" id="1" name="likert_1" value="1">
                 <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="s-option" name="input2">
+                <input type="radio" id="2" name="likert_1" value="2">
                 <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="t-option" name="input2">
+                <input type="radio" id="3" name="likert_1" value="3">
                 <label for="t-option">Cats, solo sen saksn si us plau</label>
             </div> 
             <div class="btn-box">
@@ -52,15 +54,15 @@
         <section id ="Form3">
             <h2> Why has this question so many words, that I have to redo my positioning?</h2>
             <div class="seperator"> 
-                <input type="radio" id="f-option" name="input3">
+                <input type="radio" id="1" name="likert_2" value="1">
                 <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="s-option" name="input3">
+                <input type="radio" id="2" name="likert_2" value="2">
                 <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="t-option" name="input3">
+                <input type="radio" id="3" name="likert_2" value="3">
                 <label for="t-option">Cats, solo sen saksn si us plau</label>
             </div>
             <div class="btn-box">
@@ -114,6 +116,5 @@
         progress.style.width = "240px";
     }
 </script>
-
 </body>
 </html>
