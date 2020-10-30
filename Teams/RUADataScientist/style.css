@@ -6,10 +6,12 @@ GENERAL STYLES
     margin: 0px;
     padding: 0px;
     border: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
     text-align: center;
+    line-height: 2;
 }
 
 /*
