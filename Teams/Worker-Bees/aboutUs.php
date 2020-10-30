@@ -6,17 +6,12 @@
     <link rel="icon" href="images/logoBiene.png" />
     <title>Worker Bees</title>
     <meta name="description" content="">
-    <link href="CSS/headerDesign.css" rel="stylesheet">
-    <!-- <link href="CSS/footerDesign.css" rel="stylesheet"> -->
     <link href="CSS/aboutUsDesign.css" rel="stylesheet">
-
-    <!-- Load icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
 </head>
 
 <body>
+<?php include "PHP/header.php";?>
     <div class="header">
 
         <a href="firstPage.html"> <img src="images/logoKomplett.png" class="logo"> 
