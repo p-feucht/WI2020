@@ -37,8 +37,8 @@
             <div class="aboutUs">
                 <h2>Hier erfährst Du alles über die Geschichte von Worker Bees und kannst das fleißige Team kennenlernen.
                 </h2>
-                <a href="aboutUs.html#story"><button class="storyButton" ><h4>Unsere Story</h4></button></a>
-                <a href="aboutUs.html#businessOwner"><button class="businessOwnerButton" ><h4>Unser Team</h4></button></a>
+                <a href="aboutUs.php#story"><button class="storyButton" ><h4>Unsere Story</h4></button></a>
+                <a href="aboutUs.php#businessOwner"><button class="businessOwnerButton" ><h4>Unser Team</h4></button></a>
             </div>
         </div>
 
@@ -53,10 +53,10 @@
                 </p>
                 </br>
             </div> -->
-
+            <div id="story"> 
             <div class="row">
                 <div class="columnStory">
-                    <div id="story"> 
+                   <!--  <div id="story">  -->
                   <!-- <div class="card"> -->
                  </br>
                  </br>
