@@ -10,6 +10,7 @@
     $results = $_POST;   
     $results_knowledge = array();
     $results_likert = array();
+    $score = 0;
 
     //split the $results array into a knowlegde and likert part.
     foreach ($results as $question => $answer) {
@@ -20,6 +21,17 @@
         }
     }
 
+    //calculate the users score
+    foreach ($results_knowledge as $question => $answer) {
+        if($RESULTS_MAP[$question] == $answer) {
+            $score += 3;
+        }
+    }
+    foreach ($results_likert as $question => $answer) {
+        $score = $score + (int)$answer;
+    }
+
+    //function for validating input data
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -61,7 +73,7 @@
     <br>
     <?php 
     /*output results for knowledge questions*/
-    echo "<h3>Results knowledge:<h3><br>";
+    echo "<h3>Results knowledge:<h3>";
     echo "<table><tr><th>Question</th><th>Answer</th></tr>";
     foreach ($results_knowledge as $question => $answer) {
         echo "<tr><td>" . $question . "</td><td>" . $answer . "</td></tr>";
@@ -69,12 +81,16 @@
     echo "</table><br>";
 
     /*output results for likert questions*/
-    echo "<h3>Results Likert:<h3><br>";
+    echo "<h3>Results Likert:<h3>";
     echo "<table><tr><th>Question</th><th>Answer</th></tr>";
     foreach ($results_likert as $question => $answer) {
         echo "<tr><td>" . $question . "</td><td>" . $answer . "</td></tr>";
     }
-    echo "</table>";
+    echo "</table><br>";
+
+    /*output the users calculated score*/
+    echo "<h3>Your Score is: <h3>";
+    echo "<h3>" . $score . "<h3>";
     ?>
         
     <!--FOOTER-->
