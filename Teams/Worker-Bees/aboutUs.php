@@ -11,8 +11,7 @@
 </head>
 
 <body>
-<?php include "PHP/header.php";
-      include "PHP/footer.php"; ?>
+<?php include "PHP/header.php";?>
     <!-- <div class="header">
 
         <a href="firstPage.html"> <img src="images/logoKomplett.png" class="logo"> 
@@ -181,7 +180,7 @@
         </div>
 
     </div> -->
-
+    <?php include "PHP/footer.php";?>
 
 </body>
 
