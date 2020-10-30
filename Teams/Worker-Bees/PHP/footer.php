@@ -19,7 +19,7 @@
 
         </div>
             <div class="footer-right">
-                <p class="#contact">
+                <p id="contact">
                     WorkerBees e.V.<br>
                     Musterstraße 25<br>
                     86712 Musterstadt<br>

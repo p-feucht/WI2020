@@ -70,7 +70,7 @@
                     Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
                 </p>
 
-                <form name="formularFuerAngebot" action="PHP/formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular(this);">
+                <form name="formularFuerAngebot" action="PHP/formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular();">
 
                     <div class=formblock>
 
