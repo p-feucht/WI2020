@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: rgb(54,54,153);
+    background: radial-gradient(circle, rgba(54,54,153,1) 0%, rgba(34,33,109,1) 9%, rgba(2,0,36,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.container{
+    width: 360px;
+    height: 500px;
+    margin: 8% auto;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background: lightgrey;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 40px;
+    color: darkblue;
+}
+
+.container form section{
+    width: 280px;
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    transition: 0.5s;
+}
+
+.seperator{
+    display: grid;
+    grid-template-columns: 40px auto;
+    padding-bottom: 15px;
+}
+
+form section{
+    background-color: transparent;
+}
+
+form section input{
+    width: 100%;
+    padding: 10px 5px 0px 5px;
+    margin: 5px 0;
+    border: 0;
+    outline: none;
+}
+
+.btn-box{
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+    
+}
+
+form section button{
+    width: 110px;
+    height: 35px;
+    margin: 0 10px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);    transition: 0.5s;
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    color: #333;
+    font-size: 2vh;
+    cursor: pointer;
+}
+
+
+#Form2{
+    left: 450px;
+}
+#Form3{
+    left: 450px;
+}
+
+.step-row{
+    width: 360px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+    position: relative;
+}
+
+.step-col{
+    width: 120px;
+    text-align: center;
+    color: #333;
+    position: relative;
+    font-size: 3vh;
+}
+
+#progress{
+    position: absolute;
+    height: 100%;
+    width: 120px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);    transition: 0.5s;
+}
+
+#progress::after{
+    content: '';
+    height: 0;
+    width: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid #fcb045;
+}

@@ -20,13 +20,13 @@
 
 .aboutUs {
     background-color: white;
-    width: 320px;
+    width: 300px;
     padding: 35px;
     text-align: center;
 }
 .storyButton {
     height: 40px;
-    width: 110px;
+    width: 145px;
     background-color: #feca57;
     margin-top: 20px;
 }
@@ -37,7 +37,7 @@
 }
 .businessOwnerButton {
     height: 40px;
-    width: 200px;
+    width: 145px;
     background-color: #feca57;
     margin-top: 20px;
 }
@@ -52,26 +52,28 @@
     float: left;
     width: 100%;
     margin-bottom: 16px;
-    padding: 0 8px;
+    /* padding-right: 100px;
+    padding-left: 40px; */
+    padding: 0px;
     text-align: center;
   }
 
 /* Three columns side by side */
 .column {
     float: left;
-    width: 33.3%;
+    width: 32.0%;
     margin-bottom: 16px;
     padding: 0 8px;
   }
   
   /* Display the columns below each other instead of side by side on small screens */
-  @media screen and (max-width: 650px) {
+  /* @media screen and (max-width: 650px) {
     .column {
       width: 100%;
       display: block;
       text-align: center;
     }
-  }
+  } */
   
   /* Add some shadows to create a card effect */
   .card {
@@ -95,21 +97,23 @@
     color: grey;
   }
   
-  .button {
+  .buttonKontakt {
     border: none;
     outline: 0;
     display: inline-block;
     padding: 8px;
-    color: white;
-    background-color: #000;
+   /*  color: white; */
+    background-color: #feca57;
     text-align: center;
     cursor: pointer;
     width: 100%;
+    margin-bottom: 16px;
   }
   
-  .button:hover {
-    background-color: #555;
-  }
+  .buttonKontakt:hover {
+    background-color: #d4a337;
+    cursor: pointer;
+}
 
   .businessOwnerHeading{
     text-align: center;

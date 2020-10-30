@@ -1,0 +1,63 @@
+    #headline {
+        font-size: xx-large;
+        background-color: lightpink;
+        text-align: center;
+        margin-top: 15px;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+    .big_container {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        grid-template-columns: auto auto;
+        padding: 15px;
+    }
+    
+    #image_chocolate_cake img {
+        width: 200px;
+        height: 200px;
+        background-color: lightsalmon;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .description_food {
+        background-color: lightseagreen;
+    }
+    
+    .contact_details {
+        background-color: lightskyblue;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contact_details button {
+        width: fit-content;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    #contact_seller_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .order {
+        background-color: lightslategrey;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #container_two_two textarea {
+        vertical-align: top;
+    }
+    
+    #container_two_three button {
+        float: right;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }

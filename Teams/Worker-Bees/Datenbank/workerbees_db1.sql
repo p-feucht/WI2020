@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 24. Okt 2020 um 21:29
+-- Erstellungszeit: 29. Okt 2020 um 23:50
 -- Server-Version: 10.3.22-MariaDB-1:10.3.22+maria~stretch
 -- PHP-Version: 7.1.33
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `workerbees_db1`
 --
-CREATE DATABASE IF NOT EXISTS `workerbees_db1` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `workerbees_db1`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +28,6 @@ USE `workerbees_db1`;
 -- Tabellenstruktur für Tabelle `Angebot`
 --
 
-DROP TABLE IF EXISTS `Angebot`;
 CREATE TABLE `Angebot` (
   `ATitel` varchar(15) DEFAULT NULL,
   `ABeschreibung` text DEFAULT NULL,
@@ -51,9 +48,9 @@ CREATE TABLE `Angebot` (
 -- Tabellenstruktur für Tabelle `AngebotWerkstatt`
 --
 
-DROP TABLE IF EXISTS `AngebotWerkstatt`;
 CREATE TABLE `AngebotWerkstatt` (
   `ATitel` varchar(15) DEFAULT NULL,
+  `AZeitraum` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `ABeschreibung` text DEFAULT NULL,
   `Vorname` varchar(20) DEFAULT NULL,
   `Nachname` varchar(30) DEFAULT NULL,
@@ -64,9 +61,13 @@ CREATE TABLE `AngebotWerkstatt` (
   `Bild` mediumblob DEFAULT NULL,
   `username Ersteller` varchar(15) DEFAULT NULL,
   `Werkstatt_ID` int(11) NOT NULL,
-  `Preis/Tag` decimal(6,2) DEFAULT NULL,
+  `PreisProTag` decimal(6,2) DEFAULT NULL,
   `BezInBier` tinyint(1) DEFAULT NULL,
-  `Ausstattung` text DEFAULT NULL
+  ` A1_Bohr` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `A2_Drechsel` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `A3_Schleif` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `A4_Säge` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `A5_Kleinteil` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -75,9 +76,9 @@ CREATE TABLE `AngebotWerkstatt` (
 -- Tabellenstruktur für Tabelle `AngebotWerkzeug`
 --
 
-DROP TABLE IF EXISTS `AngebotWerkzeug`;
 CREATE TABLE `AngebotWerkzeug` (
   `ATitel` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `AZeitraum` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `ABeschreibung` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Vorname` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Nachname` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -88,7 +89,7 @@ CREATE TABLE `AngebotWerkzeug` (
   `Bild` mediumblob DEFAULT NULL,
   `username Ersteller` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Werkzeug_ID` int(11) NOT NULL,
-  `Preis/Tag` decimal(6,2) DEFAULT NULL,
+  `PreisProTag` decimal(6,2) DEFAULT NULL,
   `BezInBier` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -98,9 +99,9 @@ CREATE TABLE `AngebotWerkzeug` (
 -- Tabellenstruktur für Tabelle `Dienstleistung`
 --
 
-DROP TABLE IF EXISTS `Dienstleistung`;
 CREATE TABLE `Dienstleistung` (
   `ATitel` varchar(15) NOT NULL,
+  `AZeitraum` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `ABeschreibung` text NOT NULL,
   `Vorname` varchar(20) NOT NULL,
   `Nachname` varchar(30) NOT NULL,
@@ -111,7 +112,7 @@ CREATE TABLE `Dienstleistung` (
   `Bild` mediumblob NOT NULL,
   `username Ersteller` varchar(15) NOT NULL,
   `ID` int(11) NOT NULL,
-  `Preisart (pro Stunde oder DL)` tinyint(1) NOT NULL,
+  `Preisart` varchar(10) NOT NULL,
   `Preis` decimal(6,2) NOT NULL,
   `BezInBier` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -122,7 +123,6 @@ CREATE TABLE `Dienstleistung` (
 -- Tabellenstruktur für Tabelle `User`
 --
 
-DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `Username` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Username',
   `Passwort` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
