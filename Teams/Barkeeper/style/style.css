@@ -20,6 +20,8 @@
 }
 #logo{
     text-align:left;
+    height: auto;
+    width: auto;
 }
 nav{
     background-color: #ffbfbf;
@@ -34,4 +36,7 @@ body{
 a:hover {
     background-color: rgb(214, 107, 124);
     color: #000000;
+}
+h1{
+    font-size: 50pt;
 }
