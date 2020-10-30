@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 // good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
 $servername = "localhost";
 $username = "workerbees";
@@ -189,6 +190,7 @@ else {
     
     $conn->close();    
 }
+include 'footer.php';
 // MySQL Database settings
 //  id	        int(11)			Nein		auto_increment	
 //	vorname	    varchar(256)	utf8_bin	Nein			

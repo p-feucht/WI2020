@@ -29,8 +29,8 @@
 </head>
 
 <body>
-    <div class="header">
-        <a href="firstPage.html"> <img src="images/logoKomplett.png" class="logo">
+    <!--<div class="header">
+        <a href="index.html"> <img src="images/logoKomplett.png" class="logo">
         </a>
         <div class="header-content-middle">
             <a class="biete" href="FormularBiete.html">Ich biete</a>
@@ -43,7 +43,10 @@
             <a href="#Anmeldung" class="headerButton">Anmelden</a>
             <a href="categories.html#Werkstatt-Ang" class="headerButton" id="headerSearch"><i class="fa fa-search"></i></a>
         </div>
-    </div>
+    </div>-->
+    <?php 
+    $site_name = "HTML5-Seite mit Grundstruktur";
+    include ("./PHP/header.php"); ?>
 
     <div class="content">
         <!--Slider-->
@@ -67,7 +70,7 @@
                     Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
                 </p>
 
-                <form name="formularFuerAngebot" action="formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular(this);">
+                <form name="formularFuerAngebot" action="PHP/formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular(this);">
 
                     <div class=formblock>
 
@@ -339,8 +342,9 @@
         <!--Notiz: <progress value="40" max="100"></progress> für Fortschrittsanzeige (wenn Formular über mehrere Seiten geht)-->
 
 
+        <?php include ("./PHP/footer.php"); ?>
 
-        <div class="footer">
+        <!--<div class="footer">
             <div class="footer_info">
                 <img src="images/logoKomplett.png " class="logo " alt="Worker Bees Logo" width="207" height="60">
                 <br>
@@ -363,7 +367,7 @@
                 <p>Copyright 2020 | WorkerBees e.V.</p>
             </div>
 
-        </div>
+        </div>-->
 
     </div>
 </body>
