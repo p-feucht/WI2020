@@ -67,8 +67,10 @@
                 <!-- Text über Formular -->
                 <h2>Schreibe ein Angebot</h2>
                 <p>
+                <br>
                     Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
                 </p>
+                <br>
 
                 <form name="formularFuerAngebot" action="PHP/formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular(this);">
 
@@ -225,31 +227,31 @@
                                 <ul>
                                     <li>
                                         <label>
-                                  <input type="checkbox" name="a1_Bohr" value="Standbohrmaschine">
+                                  <input type="checkbox" name="a1_Bohr" value="1">
                                   Standbohrmaschine
                                 </label>
                                     </li>
                                     <li>
                                         <label>
-                                   <input type="checkbox" name="a2_Drechsel" value="Drechselbank">
+                                   <input type="checkbox" name="a2_Drechsel" value="1">
                                    Drechselbank/Drehbank
                                 </label>
                                     </li>
                                     <li>
                                         <label>
-                                  <input type="checkbox" name="a3_Schleif" value="Schleifmaschine">
+                                  <input type="checkbox" name="a3_Schleif" value="1">
                                   Schleifmaschine
                                 </label>
                                     </li>
                                     <li>
                                         <label>
-                                <input type="checkbox" name="a4_Säge" value="elektrische Standsägen">
+                                <input type="checkbox" name="a4_Säge" value="1">
                                 elektrische Standsägen
                               </label>
                                     </li>
                                     <li>
                                         <label>
-                              <input type="checkbox" name="a5_Kleinteil" value="Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.)">
+                              <input type="checkbox" name="a5_Kleinteil" value="1">
                               Grundausstattung Kleinteile (Schrauben, Dübel, Nägel etc.) vorhanden und verwendbar
                             </label>
                                     </li>
