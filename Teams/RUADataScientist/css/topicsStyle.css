@@ -7,10 +7,9 @@
 }
 
 .gallery img {
-    height: 150px;
-    width: 200px;
+    height: 90%;
+    width: 90%;
     text-align: center;
-    margin: 4px;
 }
 
 .topicTitel a {
@@ -25,25 +24,27 @@
 }
 
 .gallery {
-    border: 2px outset rgb(138, 178, 192);
+    border: 4px outset rgb(57, 71, 148);
     box-shadow: 5px 10px grey;
     margin: 50px;
-    margin-right: 100px;
+    margin-right: 4px;
     float: left;
     height: 250px;
-    width: 250x;
+    width: 25%;
     cursor: pointer;
     border-radius: 12px;
     background-color: whitesmoke;
+    text-align: center;
 }
 
 .responsive {
-    margin-left: 150px;
+    margin: auto;
+    margin-left: 5%;
 }
 
-.content {
+.content_Topics {
     position: relative;
     display: block;
     text-align: center;
-    margin: 0 auto;
+    margin: auto;
 }
