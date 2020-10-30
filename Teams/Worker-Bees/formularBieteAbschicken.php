@@ -1,8 +1,8 @@
 <?php
 // good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
 $servername = "localhost";
-$username = root; //"workerbees";
-//$password = "HKSZ52";
+$username = "workerbees";
+$password = "HKSZ52";
 $dbname = "workerbees_db1";
 
 // Create connection
