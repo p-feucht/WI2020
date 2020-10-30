@@ -32,7 +32,7 @@ else {
         //Bild Datei fehlt noch
         $vorname = $conn->real_escape_string($_POST["Vorname"]); //der Wert der in Vorname geschriben wurde wird aufbereitet und in Variable geschrieben
         $nachname = $conn->real_escape_string($_POST["Nachname"]);
-        $straße = $conn->real_escape_string($_POST["Straße"]);
+        $strasse = $conn->real_escape_string($_POST["Strasse"]);
         $hnr = $conn->real_escape_string($_POST["Hnr"]);
         $plz = $conn->real_escape_string($_POST["PLZ"]);
         $ort = $conn->real_escape_string($_POST["Ort"]);
@@ -47,8 +47,8 @@ else {
             $preis = $conn->real_escape_string($_POST["PreisProTag"]);
             $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
-            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Straße, Hausnummer, PLZ, Ort, PreisProTag, BezInBier)
-            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$straße', '$hnr', '$plz', '$ort', '$preis', '$bierBez1')";
+            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier)
+            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preis', '$bierBez1')";
         
             echo $sql;
             echo "<br>";
