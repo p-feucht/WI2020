@@ -11,7 +11,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <div id="contact">
+    
         <div class="footer-top">
         <div class="footer-left">
             <img src="images/logoSchriftzug.png" class="logo" alt="Worker Bees Logo">
@@ -32,6 +32,5 @@
 
         <div class="footer_end">
             <p>Copyright 2020 | WorkerBees e.V.</p>
-        </div>
         </div>
     </div>
