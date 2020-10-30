@@ -2,6 +2,7 @@
     text-align: center;
     margin:auto;
     padding:auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .horizontal{
@@ -21,12 +22,17 @@
 #logo{
     text-align:left;
 }
-footer{
-    background-color: #1a78a9;
-}
 nav{
-    background-color: #1a78a9;
+    background-color: #ffbfbf;
+}
+footer{
+    background-color:#ffbfbf;
 }
 body{
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+a:hover {
+    background-color: rgb(214, 107, 124);
+    color: #000000;
 }
