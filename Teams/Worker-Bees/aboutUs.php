@@ -11,11 +11,12 @@
 </head>
 
 <body>
-<?php include "PHP/header.php";?>
-    <div class="header">
+<?php include "PHP/header.php";
+      include "PHP/footer.php"; ?>
+    <!-- <div class="header">
 
         <a href="firstPage.html"> <img src="images/logoKomplett.png" class="logo"> 
-            <!-- click on logo results in jumping to fist page -->
+           
         </a>
         <div class="header-content-middle">
             <a class="biete" href="FormularBiete.html">Ich biete</a>
@@ -30,7 +31,7 @@
       </div>
 
     </div>
-
+ -->
     <div class="content">
 
         <div class="background">
@@ -153,7 +154,7 @@
         </div>
         
 
-        <div class="footer">
+       <!--  <div class="footer">
             <div class="footer_info">
                 <img src="images/logoKomplett.png" class="logo" alt="Worker Bees Logo"
                  width="207" height="60">
@@ -179,7 +180,7 @@
 
         </div>
 
-    </div>
+    </div> -->
 
 
 </body>
