@@ -18,6 +18,7 @@
         <div class="header-content-middle">
             <a class="biete" href="FormularBiete.php">Ich biete</a>
             <a href="#tips">Tipps & Tricks</a>
+
             <a class="aboutus" href="aboutUs.php">Über uns</a>
             <a href="#contact">Impressum</a>
         </div>

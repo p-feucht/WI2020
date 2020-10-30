@@ -47,6 +47,10 @@ function datePicker() {
     });
 }*/
 function pruefeFormular() {
+
+    var formValid = false;
+    var radios = document.getElementsByName("kategorie");
+
     if (document.formularFuerAngebot.title.value == "") {
         document.getElementById("Fehlermeldung").innerHTML = "Bitte Angebotstitel eingeben";
         //   alert("Bitte gib einen Angebotstitel ein.");
@@ -58,18 +62,17 @@ function pruefeFormular() {
         //alert("Bitte gib eine Angebotsbeschreibung ein.");
         // document.Formular.beschreibung.focus();
         return false;
-
     }
-
-    var radios = document.getElementsByName("kategorie");
-    var formValid = false;
-
+    
     var i = 0;
     while (!formValid && i < radios.length) {
         if (radios[i].checked) formValid = true;
         i++;
     }
 
-    if (!formValid) alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
+    if (!formValid) {
+        alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
+    }
+
     return formValid;
 }

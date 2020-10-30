@@ -72,7 +72,7 @@
                 </p>
                 <br>
 
-                <form name="formularFuerAngebot" action="PHP/formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular(this);">
+                <form name="formularFuerAngebot" action="PHP/formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular();">
 
                     <div class=formblock>
 
