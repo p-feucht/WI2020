@@ -15,9 +15,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
+    <link href="CSS/datepicker.css" rel="stylesheet">
 
     <!-- autocomplete from google maps -->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrJoGLdsBz5xPFlFs-RiG2TPTnELEfOk&libraries=places&callback=initAutocomplete"></script>
     <link rel="stylesheet" type="text/css" href="CSS/locationSearchDesign.css" />
     <script src="JavaScript/locationSearch.js"></script>
 
@@ -26,7 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- sheets for general page and other -->
+    <!-- sheets for general page and other --> 
     <link href="CSS/categoriesDesign.css" rel="stylesheet">
     <link href="JavaScript/categoriesFunctions.js">
     <link rel="stylesheet" href="CSS/bookingWindowDesign.css">
@@ -58,14 +58,13 @@
             <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrJoGLdsBz5xPFlFs-RiG2TPTnELEfOk&libraries=places&callback=initAutocomplete"></script>
             <div class="icon"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></div>
             <input type="text" name="datefilter" value="" placeholder="Wann passt es dir am besten?" />
-            <script type="text/javascript">
-                datePicker()
-            </script>
+            <script type="text/javascript" src="JavaScript/categoriesFunctions.js">
+                datePicker();
+                </script>
             <button type="submit"><i class="fa fa-search"></i></button>
 
         </form>
 
-        <script src="JavaScript/bookingWindow.js"></script>
         <?php include "PHP/getOffers.php"; ?>
 
     </div>
@@ -117,10 +116,7 @@
 
                     <form class="modal-booking-window">
                         <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
-                        <input type="text" name="datefilter" value="" placeholder="Wähle ein Datum" />
-                        <script type="text/javascript">
-                            datePicker()
-                        </script>
+                        
                         <p class="modal-booking-text">Gesamtbetrag: 1000 €<br>
                             <input type="checkbox" name="bierZahlung">
                             <label for="bierZahlung"> Ich möchte in Bier bezahlen (1000 Bier)</label><br>
