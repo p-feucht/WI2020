@@ -135,3 +135,7 @@ input[type="submit"] {
     color: red;
     ;
 }
+
+.error {
+    color: #FF0000;
+}
