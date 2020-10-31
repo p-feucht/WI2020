@@ -2,6 +2,11 @@
 //include 'header.php';
 // good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
 
+//error-variables for validation
+$titleErr = $zeitraumErr = $beschreibErr = $vornameErr = $nachnameErr = $strasseErr = $hnrErr = $plzErr = $ortErr = $preisProTagErr = $preisBetragErr = "";
+$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag = $preisBetrag = "";
+$valid=TRUE;
+
 /*Connection to bplaced server
 $servername = "localhost";
 $username = "root";
@@ -11,7 +16,8 @@ $dbname = "workerbees_db1";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);*/
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
+
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
     $servername = "localhost";
@@ -39,67 +45,114 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 else{
                     $sql="";
 
-                    //Variablen, die alle Angebotsarten enthalten behandeln
-                    $title = $conn->real_escape_string($_POST["title"]); //der Wert der in Titel geschriben wurde wird aufbereitet und in Variable geschrieben
+                //Variablen, die alle Angebotsarten enthalten behandeln
+
+                     //Validation  
+                    if (empty($_POST["title"])) {
+                        $titleErr = "Bitte Titel eingeben";
+                        $valid=FALSE;
+                    }
+                    else {
+                        $title = $conn->real_escape_string($_POST["title"]);
+                    }
+
+                    /*if (empty($_POST["zeitraum"])) {
+                        $zeitraumErr = "Bitte Zeitraum eingeben";
+                        $valid=FALSE;
+                    }
+                    else {*/
                     $zeitraum = $conn->real_escape_string($_POST["datefilter"]);
-                    $beschreibung = $conn->real_escape_string($_POST["beschreibung"]);
+                   /* }*/
+                    if (!checkIfEmpty("beschreibung")) {
+                        $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
+                    }
+
                     //Bild Datei fehlt noch
-                    $vorname = $conn->real_escape_string($_POST["Vorname"]); //der Wert der in Vorname geschriben wurde wird aufbereitet und in Variable geschrieben
-                    $nachname = $conn->real_escape_string($_POST["Nachname"]);
-                    $strasse = $conn->real_escape_string($_POST["Strasse"]);
-                    $hnr = $conn->real_escape_string($_POST["Hnr"]);
-                    $plz = $conn->real_escape_string($_POST["PLZ"]);
-                    $ort = $conn->real_escape_string($_POST["Ort"]);
+
+                    if (!checkIfEmpty("Vorname")) {
+                        $vorname = $conn->real_escape_string($_POST["Vorname"]);//der Wert der in Vorname geschriben wurde wird aufbereitet und in Variable geschrieben
+                    }
+
+                    if (!checkIfEmpty("Nachname")) {
+                        $nachname = $conn->real_escape_string($_POST["Nachname"]);//der Wert der in Nachname geschriben wurde wird aufbereitet und in Variable geschrieben
+                    }
+
+                    if (!checkIfEmpty("Strasse")) {
+                        $strasse = $conn->real_escape_string($_POST["Strasse"]);//der Wert der in Straße geschriben wurde wird aufbereitet und in Variable geschrieben
+                    }
+                    
+                    if(!checkIfEmpty("Hnr")){
+                        $hnr = $conn->real_escape_string($_POST["Hnr"]);
+                    }
+
+                    if (!checkIfEmpty("PLZ")) {
+                        $plz = $conn->real_escape_string($_POST["PLZ"]);//der Wert der in hnr geschriben wurde wird aufbereitet und in Variable geschrieben
+                    }
+                  
+                    if(!checkIfEmpty("Ort")){
+                        $ort = $conn->real_escape_string($_POST["Ort"]);
+                    }
+
+
+  
+
                     //Username des Erstellers
-                    // Erstelldatum?
+                    // Erstellzeitpunkt timestamp automatisch in db?
 
                     //je nachdem welcher radioButton gedrückt wurde zusätzliche Variablen behandeln
                     $radioAnswer = $_POST['kategorie'];  //oder: if (isset($kategorie) && $kategorie=="Werkzeug"){ echo WZ;}...
                     
                     if ($radioAnswer == "Werkzeug") {          
                         echo 'You chose Werkzeug';  
-                        $preis = $conn->real_escape_string($_POST["PreisProTag"]);
+                        
+                        if(!checkIfEmpty("PreisProTag")){
+                            $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
+                        }
+                        
+                    
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
-                        $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier)
-                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preis', '$bierBez1')";
-                    
-                        echo $sql;
-                        echo "<br>";
+                        //if($valid==TRUE){
+                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier)
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag', '$bierBez1')";
+                        
+                            echo $sql;
+                            echo "<br>";
 
-                        if ($conn->query($sql) === TRUE) {
-                        echo "New record created successfully";
-                        echo "<br>";
-                        echo "Entries written:";
-                        echo $title;
-                        echo "<br>";
-                        echo $zeitraum;
-                        echo "<br>";
-                        echo $beschreibung;
-                        echo "<br>";
-                        echo $vorname;
-                        echo "<br>";
-                        echo $nachname;
-                        echo "<br>";
-                        echo $strasse;
-                        echo "<br>";
-                        echo $hnr;
-                        echo "<br>";
-                        echo $plz;
-                        echo "<br>";
-                        echo $ort;
-                        echo "<br>";
-                        echo $preis;
-                        echo "<br>";
-                        echo $bierBez1;
-                        } else {
-                        echo "Error: " . $sql . "<br>" . $conn->error;
-                        }
+                            if ($conn->query($sql) === TRUE) {
+                            echo "New record created successfully";
+                            echo "<br>";
+                            echo "Entries written:";
+                            echo $title;
+                            echo "<br>";
+                            echo $zeitraum;
+                            echo "<br>";
+                            echo $beschreibung;
+                            echo "<br>";
+                            echo $vorname;
+                            echo "<br>";
+                            echo $nachname;
+                            echo "<br>";
+                            echo $strasse;
+                            echo "<br>";
+                            echo $hnr;
+                            echo "<br>";
+                            echo $plz;
+                            echo "<br>";
+                            echo $ort;
+                            echo "<br>";
+                            echo $preisProTag;
+                            echo "<br>";
+                            echo $bierBez1;
+                            } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                            }
+                       // }
                     }
 
                     elseif($radioAnswer == "Werkstatt"){
                         echo 'You chose Werkstatt';   
-                        $preis = $conn->real_escape_string($_POST["PreisProTag"]);
+                        $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
                         $bierBez2 = $conn->real_escape_string($_POST["bierBez2"]);
                         $a1_bohr = $conn->real_escape_string($_POST["a1_Bohr"]);
                         $a2_drechsel = $conn->real_escape_string($_POST["a2_Drechsel"]);
@@ -110,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, 
                         A1_Bohr, A2_Drechsel, A3_Schleif, A4_Säge, A5_Kleinteil)
-                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preis', '$bierBez2', 
+                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag', '$bierBez2', 
                         '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_säge', '$a5_kleinteil')";
                     
                         echo $sql;
@@ -138,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo "<br>";
                             echo $ort;
                             echo "<br>";
-                            echo $preis;
+                            echo $preisProTag;
                             echo "<br>";
                             echo $bierBez2;
                             echo "<br>";
@@ -213,5 +266,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //	nachname	varchar(256)	utf8_bin	Nein			
     //	email	    varchar(256)	utf8_bin	Nein	
     //	nachricht	varchar(256)	utf8_bin	Nein			
+
+    function checkIfEmpty($nameInputhtml){
+        global $valid;
+        if (empty(trim($_POST[$nameInputhtml]))) {
+            $valid=FALSE;
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        } 
+
+    }
+
 ?>
 
