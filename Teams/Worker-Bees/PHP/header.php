@@ -18,13 +18,12 @@
         <div class="header-content-middle">
             <a class="biete" href="FormularBiete.php">Ich biete</a>
             <a href="#tips">Tipps & Tricks</a>
-
             <a class="aboutus" href="aboutUs.php">Über uns</a>
             <a href="#contact">Impressum</a>
         </div>
 
         <div class="header-content-right">
             <a href="#Anmeldung" class="headerButton">Anmelden</a>
-            <a href="categories.html#Werkstatt-Ang" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
+            <a href="categories.php#Werkstatt-Ang" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
         </div>
     </div>
