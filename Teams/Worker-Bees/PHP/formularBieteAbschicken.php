@@ -7,23 +7,20 @@ $titleErr = $zeitraumErr = $beschreibErr = $vornameErr = $nachnameErr = $strasse
 $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag = $preisBetrag = "";
 $valid=TRUE;
 
-/*Connection to bplaced server
+//Connection to bplaced server
 $servername = "localhost";
-$username = "root";
+$username = "workerbees";
 $password = "HKSZ52";
 $dbname = "workerbees_db1";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "workerxampp";
+    $dbname = "workerxampp";*/
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -48,11 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                 //Variablen, die alle Angebotsarten enthalten behandeln
 
                      //Validation  
-                    if (empty($_POST["title"])) {
-                        $titleErr = "Bitte Titel eingeben";
-                        $valid=FALSE;
-                    }
-                    else {
+                    if (!checkIfEmpty("title")) {
                         $title = $conn->real_escape_string($_POST["title"]);
                     }
 
@@ -86,17 +79,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     if (!checkIfEmpty("PLZ")) {
-                        $plz = $conn->real_escape_string($_POST["PLZ"]);//der Wert der in hnr geschriben wurde wird aufbereitet und in Variable geschrieben
+                        $plz = $conn->real_escape_string($_POST["PLZ"]);
                     }
                   
                     if(!checkIfEmpty("Ort")){
                         $ort = $conn->real_escape_string($_POST["Ort"]);
                     }
 
-
-  
-
-                    //Username des Erstellers
+                    //Username des Erstellers fehlt noch
                     // Erstellzeitpunkt timestamp automatisch in db?
 
                     //je nachdem welcher radioButton gedrückt wurde zusätzliche Variablen behandeln
