@@ -56,14 +56,13 @@ function pruefeFormular() {
         //   alert("Bitte gib einen Angebotstitel ein.");
         // document.Formular.title.focus();
         return false;
-    }
-    if (document.formularFuerAngebot.beschreibung.value == "") {
+    } else if (document.formularFuerAngebot.beschreibung.value == "") {
         document.getElementById("Fehlermeldung").innerHTML = "Bitte Angebotsbeschreibung eingeben";
         //alert("Bitte gib eine Angebotsbeschreibung ein.");
         // document.Formular.beschreibung.focus();
         return false;
     }
-    
+
     var i = 0;
     while (!formValid && i < radios.length) {
         if (radios[i].checked) formValid = true;

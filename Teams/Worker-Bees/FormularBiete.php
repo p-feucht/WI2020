@@ -72,7 +72,7 @@
                 </p>
                 <br>
 
-                <form name="formularFuerAngebot" action="PHP/formularBieteAbschicken.php" method="post" onsubmit="return pruefeFormular();">
+                <form name="formularFuerAngebot" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" onsubmit="return pruefeFormular();">
 
                     <div class=formblock>
 
@@ -151,7 +151,7 @@
                             </label>
                         <br>
                         <label>Hausnummer
-                        <input type="number" name="Hausnummer" value="" size="4" maxlength="4"> 
+                        <input type="text" name="Hnr" value="" size="4" maxlength="4"> 
                     </label>
                         <br>
                         <label>Postleitzahl
@@ -177,7 +177,7 @@
                             ?>
                             <br>
                             <input type="checkbox" id="bierBez1" name="bierBez1" value="1" unchecked>
-                            <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
+                            <label for="bierBez1">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
 
                         <!--<div class="formblock">
@@ -218,7 +218,7 @@
                             ?>
                             <br>
                             <input type="checkbox" id="bierBez2" name="bierBez2" value="1" unchecked>
-                            <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
+                            <label for="bierBez2">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
 
                         <div class="formblock">
@@ -267,7 +267,7 @@
                             </label>
                             <br>
                             <label>Hausnummer
-                            <input type="number" name="Hausnummer" value=" " size="4" maxlength="4"> 
+                            <input type="number" name="Hnr" value=" " size="4" maxlength="4"> 
                         </label>
                             <br>
                             <label>Postleitzahl
@@ -301,7 +301,7 @@
                             <label>€</label>
                             <br>
                             <input type="checkbox" id="bierBez3" name="bierBez3" value="1" unchecked>
-                            <label for="bierBez">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
+                            <label for="bierBez3">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
                     </div>
 
@@ -343,7 +343,7 @@
 
         <!--Notiz: <progress value="40" max="100"></progress> für Fortschrittsanzeige (wenn Formular über mehrere Seiten geht)-->
 
-
+        <?php include ("./PHP/formularBieteAbschicken.php"); ?>
         <?php include ("./PHP/footer.php"); ?>
 
         <!--<div class="footer">
