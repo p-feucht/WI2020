@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 29. Okt 2020 um 23:50
+-- Erstellungszeit: 31. Okt 2020 um 15:58
 -- Server-Version: 10.3.22-MariaDB-1:10.3.22+maria~stretch
 -- PHP-Version: 7.1.33
 
@@ -39,7 +39,7 @@ CREATE TABLE `Angebot` (
   `Ort` varchar(25) DEFAULT NULL,
   `Bild` blob DEFAULT NULL,
   `username Ersteller` varchar(15) DEFAULT NULL,
-  `ID` int(11) NOT NULL
+  `AngebotID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tab. mit Spalten die alle Angebotskategorien besitzen';
 
 -- --------------------------------------------------------
@@ -54,20 +54,21 @@ CREATE TABLE `AngebotWerkstatt` (
   `ABeschreibung` text DEFAULT NULL,
   `Vorname` varchar(20) DEFAULT NULL,
   `Nachname` varchar(30) DEFAULT NULL,
-  `Straße` varchar(15) DEFAULT NULL,
+  `Strasse` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Hausnummer` int(4) DEFAULT NULL,
   `PLZ` char(5) DEFAULT NULL,
-  `Ort` varchar(25) DEFAULT NULL,
+  `Ort` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Bild` mediumblob DEFAULT NULL,
-  `username Ersteller` varchar(15) DEFAULT NULL,
+  `username Ersteller` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Werkstatt_ID` int(11) NOT NULL,
   `PreisProTag` decimal(6,2) DEFAULT NULL,
   `BezInBier` tinyint(1) DEFAULT NULL,
-  ` A1_Bohr` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `A2_Drechsel` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `A3_Schleif` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `A4_Säge` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `A5_Kleinteil` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
+  ` A1_Bohr` tinyint(1) DEFAULT NULL,
+  `A2_Drechsel` tinyint(1) DEFAULT NULL,
+  `A3_Schleif` tinyint(1) DEFAULT NULL,
+  `A4_Säge` tinyint(1) DEFAULT NULL,
+  `A5_Kleinteil` tinyint(1) DEFAULT NULL,
+  `Erstellzeitpunkt` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -82,7 +83,7 @@ CREATE TABLE `AngebotWerkzeug` (
   `ABeschreibung` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Vorname` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Nachname` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Straße` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Strasse` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Hausnummer` varchar(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `PLZ` char(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Ort` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -90,8 +91,18 @@ CREATE TABLE `AngebotWerkzeug` (
   `username Ersteller` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `Werkzeug_ID` int(11) NOT NULL,
   `PreisProTag` decimal(6,2) DEFAULT NULL,
-  `BezInBier` tinyint(1) NOT NULL
+  `BezInBier` tinyint(1) NOT NULL,
+  `Erstellzeitpunkt` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `AngebotWerkzeug`
+--
+
+INSERT INTO `AngebotWerkzeug` (`ATitel`, `AZeitraum`, `ABeschreibung`, `Vorname`, `Nachname`, `Strasse`, `Hausnummer`, `PLZ`, `Ort`, `Bild`, `username Ersteller`, `Werkzeug_ID`, `PreisProTag`, `BezInBier`, `Erstellzeitpunkt`) VALUES
+('Hello', '0.000155586987623762', 'This is me...', 'he', 'ggeGR', 'GAWGREG sTR:', '', '34234', 'Erding', NULL, NULL, 1, '0.00', 1, NULL),
+('hhhhhh', '0.000397807637623762', '                        ', '', '', '', '', '', '', NULL, NULL, 2, '0.00', 0, NULL),
+('hhhhhh', '0.000397807637623762', '                        ', '', '', '', '', '', '', NULL, NULL, 3, '0.00', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -105,7 +116,7 @@ CREATE TABLE `Dienstleistung` (
   `ABeschreibung` text NOT NULL,
   `Vorname` varchar(20) NOT NULL,
   `Nachname` varchar(30) NOT NULL,
-  `Straße` varchar(15) NOT NULL,
+  `Strasse` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Hausnummer` varchar(5) NOT NULL,
   `PLZ` char(5) NOT NULL,
   `Ort` varchar(25) NOT NULL,
@@ -114,7 +125,8 @@ CREATE TABLE `Dienstleistung` (
   `ID` int(11) NOT NULL,
   `Preisart` varchar(10) NOT NULL,
   `Preis` decimal(6,2) NOT NULL,
-  `BezInBier` tinyint(1) NOT NULL
+  `BezInBier` tinyint(1) NOT NULL,
+  `Erstellzeitpunkt` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -137,7 +149,7 @@ CREATE TABLE `User` (
 -- Indizes für die Tabelle `Angebot`
 --
 ALTER TABLE `Angebot`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`AngebotID`);
 
 --
 -- Indizes für die Tabelle `AngebotWerkstatt`
@@ -171,7 +183,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT für Tabelle `Angebot`
 --
 ALTER TABLE `Angebot`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `AngebotID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT für Tabelle `AngebotWerkstatt`
 --
@@ -181,7 +193,7 @@ ALTER TABLE `AngebotWerkstatt`
 -- AUTO_INCREMENT für Tabelle `AngebotWerkzeug`
 --
 ALTER TABLE `AngebotWerkzeug`
-  MODIFY `Werkzeug_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Werkzeug_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT für Tabelle `Dienstleistung`
 --
