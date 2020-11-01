@@ -221,7 +221,7 @@
                         <div class="formblock">
                             <label>Gib den <b>Preis</b> an, das Buchen deiner Werkstatt <b>pro Tag</b> kostet </label>
                             <br>
-                            <input type="number" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" size="4" maxlength="4">
+                            <input type="number" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" pattern="^(\d){1,4}([,.])?(\d){0,2}$" size="4" maxlength="4">
                             <label>€/Tag</label>
                             <span class="error"><?php echo $preisProTagErr;?></span>
                             <br>

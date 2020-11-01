@@ -8,19 +8,19 @@ $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $p
 $valid=TRUE;
 
 //Connection to bplaced server
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "workerbees";
 $password = "HKSZ52";
-$dbname = "workerbees_db1";
+$dbname = "workerbees_db1";*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-    /*$servername = "localhost";
+    $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "workerxampp";*/
+    $dbname = "workerxampp";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
-                        //if($valid==TRUE){
+                        if($valid==TRUE){
                             $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier)
                             VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag', '$bierBez1')";
                         
@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             } else {
                             echo "Error: " . $sql . "<br>" . $conn->error;
                             }
-                       // }
+                        }
                     }
 
                     elseif($radioAnswer == "Werkstatt"){
