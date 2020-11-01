@@ -3,15 +3,15 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+$username = $email = $password = $confirm_password = "";
+$username_err = $email_err = $password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate username
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter a username.";
+        $username_err = "Username eingeben.";
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
@@ -29,18 +29,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    $username_err = "This username is already taken.";
+                    $username_err = "Dieser Username ist bereits vergeben.";
                 } else{
                     $username = trim($_POST["username"]);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Oops! Bitte erneut versuchen.";
             }
+
+    
 
             // Close statement
             mysqli_stmt_close($stmt);
         }
     }
+    // Validate username
+    if(empty(trim($_POST["email"]))){
+        $email_err = "Email-Adresse eingeben.";
+    } else{
+        // Prepare a select statement
+        $sql = "SELECT id FROM users WHERE email = ?";
+        
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_email);
+            
+            // Set parameters
+            $param_email = trim($_POST["email"]);
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+                
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    $email_err = "Diese Email-Adresse ist bereits vergeben.";
+                } else{
+                    $email = trim($_POST["email"]);
+                }
+            } else{
+                echo "Oops! Bitte erneut versuchen.";
+            }
+
+    
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+
     
     // Validate password
     if(empty(trim($_POST["password"]))){
@@ -113,6 +150,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
+            </div>    
+            <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+                <label>Email</label>
+                <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
+                <span class="help-block"><?php echo $email_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
