@@ -116,7 +116,7 @@
                   <div class="card">
 
 
-                    <img src="images/TestbildTeam.jpg" alt="Kati" style="width:100%">
+                    <img src="images/Kati.jpg" alt="Kati" style="width:100%; height:270px; object-fit:cover;object-position:100% 0">
 
                     <div class="container">
                       <h2>Katerina Matysova</h2>
@@ -124,11 +124,11 @@
                       <p class="title">Gründer</p>
                       <p class="title">Verantwortlich für die Strategieplanung</p>
                         </br> 
-                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                      <p>Ich wollte schon immer badass sein.</p>
                         </br> 
-                        <p>matysova@workerbees.com</p>
-                         </br> 
-                         <div role="button" class="buttonKontakt" onclick="location.href='mailto:matysova@workerbees.com';">Kontakt</div>
+                         <p>matysova@workerbees.com</p>
+                         </br>
+                         <div role="button" class="buttonKontakt" onclick="location.href='mailto:engelmayer@workerbees.com';">Kontakt</div>
                     </div>
                   </div>
                 </div>

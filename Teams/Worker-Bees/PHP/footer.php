@@ -1,11 +1,9 @@
 
     <!-- Outsourced footer PHP-file.-->
 
-    <head>
         <!-- insert style sheet and media contents -->
         <link href="CSS/footer.css" rel="stylesheet">
         <link rel="icon" href="images/logoSchriftzug.png" />
-    <head>
 
     <!-- Footer -->
     <div class="footer">
