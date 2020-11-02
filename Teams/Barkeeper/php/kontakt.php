@@ -8,15 +8,9 @@
     <nav>
         <img src="../images/Logo.png" alt="Barkeeper Logo" id="logo"/>
         <h1>Kontakt</h1>
-        <div id="menu">
-            <ul class="horizontal">
-                <a href="../index.html" class="button">Startseite</a>
-                <a href="eingabe.html" class="button">Eingabe Lebensmittel</a>
-                <a href="rezepte.html" class="button">Rezepte</a>
-                <a href="rezeptidee.html" class="button">Rezeptidee</a>
-                <a href="tipps.html" class="button">Tipps und Tricks</a>
-            </ul>
-        </div>
+        <?php 
+            include("menu.php");
+        ?>
     </nav>
     <p>Wir sind die drei Gründer von Barkeeper, der Nachhaltigen Cocktail Webseite mit der jeder zum Barkeeper wird!</p>
     <p>Wir sind Milan, Niklas und Julia, drei begeisterte Wirtschaftsinformatik Studierende während in ihrer FReizeit gerne Cocktails mixen.</p>
@@ -27,9 +21,8 @@
     <p>Marienplatz 2</p>
     <p>88212 Ravensburg</p>
     <footer>
-        <ul class="horizontal">
-                <a href="html/impressum.html"class="button">Impressum</a>
-                <a href="html/kontakt.html" class="button">Kontakt</a>
-        </ul> 
+    <?php
+            include("aboutUs.php");
+        ?>
     </footer>
 </body>

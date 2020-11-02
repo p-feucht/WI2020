@@ -13,23 +13,21 @@
         </div>
         <h1>Unsere Cocktail Seite</h1>
         <div id="menu">
-            <ul class="horizontal">
-                     
-                <a href="html/eingabe.html" class="button">Eingabe Lebensmittel</a>
-                <a href="html/rezepte.html" class="button">Rezepte</a>
-                <a href="html/rezeptidee.html"class="button">Rezeptidee</a>
-                <a href="html/tipps.html"class="button">Tipps und Tricks</a>
+            <ul class="horizontal">      
+                <a href="php/eingabe.php" class="button">Eingabe Lebensmittel</a>
+                <a href="php/rezepte.php" class="button">Rezepte</a>
+                <a href="php/rezeptidee.php"class="button">Rezeptidee</a>
+                <a href="php/tipps.php"class="button">Tipps und Tricks</a>
             </ul>
-        </nav>
         </div>
-
+        </nav>
     </div>
 </nav>
     <div id="center">
         <p>Mithilfe von uns Barkeepern kannst du deinen Cocktail mixen ohne extra einkaufen gehen zu müssen. Somit musst du deine Reste nicht wegschütten und sparst dir Geld für deinen nächsten Einkauf.</p>
         <p>Du gibst einfach ein, was du noch zuhause hast, und schon kann die Party losgehen. Aber bei uns kannst du nicht nur deine "Reste verwerten"</p>
         <p>Wir liefern dir auch die leckersten Cocktailrezepte, sowie Tippss und Tricks wie die dein perfekter Cocktail gelingt.</p>
-        <p>Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst? Dann teile dein Rezept <a href="html/rezeptidee.html">hier</a> mit uns</p>
+        <p>Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst? Dann teile dein Rezept <a href="php/rezeptidee.php">hier</a> mit uns</p>
     </div>
     <div>
         <img src="images/Cocktail_des_Tages.jpg" alt="Unser Cocktail des Tages"
@@ -69,8 +67,8 @@
     <footer>
     <div id="buttom">
         <ul class="horizontal">
-            <a href="html/impressum.html"class="button">Impressum</a>
-            <a href="html/kontakt.html" class="button">Kontakt</a>
+            <a href="php/impressum.php"class="button">Impressum</a>
+            <a href="php/kontakt.php" class="button">Kontakt</a>
         </ul> 
     </div>
 </footer>
