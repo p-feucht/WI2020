@@ -95,23 +95,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     if ($radioAnswer == "Werkzeug") {          
                         echo 'You chose Werkzeug';  
                         
-                        if(!checkIfEmpty("PreisProTag")) {
+                        //if(!checkIfEmpty("PreisProTag")) {
 
                             $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
-                           
-                        }
+                       // }
                         
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){
                             $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier)
                             VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag', '$bierBez1')";
-                        
+
                             echo $sql;
                             echo "<br>";
 
                             if ($conn->query($sql) === TRUE) {
-                            echo "New record created successfully";
+                                echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
+                            /*echo "New record created successfully";
                             echo "<br>";
                             echo "Entries written:";
                             echo $title;
@@ -134,16 +134,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $preisProTag;
                             echo "<br>";
-                            echo $bierBez1;
+                            echo $bierBez1;*/
                             } else {
-                            echo "Error: " . $sql . "<br>" . $conn->error;
+                                echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
+                            //echo "Error: " . $sql . "<br>" . $conn->error;
+                         
                             }
                         }
+                        else{
+                            echo '<script type="text/javascript">alert("Die Felder sind nicht valide. Bitte ergänze deine Angaben");</script>';}
                     }
 
                     elseif($radioAnswer == "Werkstatt"){
                         echo 'You chose Werkstatt';   
-                        $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
+                        if(!checkIfEmpty("PreisProTag")){
+                            $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
+                        }
+                        
                         $bierBez2 = $conn->real_escape_string($_POST["bierBez2"]);
                         $a1_bohr = $conn->real_escape_string($_POST["a1_Bohr"]);
                         $a2_drechsel = $conn->real_escape_string($_POST["a2_Drechsel"]);
@@ -161,7 +168,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         echo "<br>";
 
                         if ($conn->query($sql) === TRUE) {
-                            echo "New record created successfully";
+                            echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
+                            /*echo "New record created successfully";
                             echo "<br>";
                             echo "Entries written:";
                             echo $title;
@@ -194,10 +202,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $a4_säge;
                             echo "<br>";
-                            echo $a5_kleinteil;
-
+                            echo $a5_kleinteil;*/
                         } else {
-                            echo "Error: " . $sql . "<br>" . $conn->error;
+                            echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
+                            //echo "Error: " . $sql . "<br>" . $conn->error;
                         }
                     }
 
@@ -214,7 +222,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         echo "<br>";
 
                         if ($conn->query($sql) === TRUE) {
-                            echo "New record created successfully";
+
+                            echo '<script type="text/javascript">alert("Vielen Dank, das Angebot wurde aufgenommen");</script>';
+                          /*  echo "New record created successfully";
                             echo "<br>";
                             echo "Entries written:";
                             echo $title;
@@ -239,9 +249,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $preisBetrag;
                             echo "<br>";
-                            echo $bierBez3;
+                            echo $bierBez3;*/
                         } else {
-                        echo "Error: " . $sql . "<br>" . $conn->error;
+                            echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
+                        //echo "Error: " . $sql . "<br>" . $conn->error;
                         }
                     }
                 }
@@ -269,6 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
         } 
 
     }
-
+    
+    
 ?>
 
