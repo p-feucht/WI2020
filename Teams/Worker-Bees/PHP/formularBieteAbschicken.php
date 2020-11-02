@@ -8,19 +8,19 @@ $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $p
 $valid=TRUE;
 
 //Connection to bplaced server
-/*$servername = "localhost";
+$servername = "localhost";
 $username = "workerbees";
 $password = "HKSZ52";
-$dbname = "workerbees_db1";*/
+$dbname = "workerbees_db1";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-    $servername = "localhost";
+   /* $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "workerxampp";
+    $dbname = "workerxampp";*/
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -159,8 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $a5_kleinteil = $conn->real_escape_string($_POST["a5_Kleinteil"]);
                         
 
-                        $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, 
-                        A1_Bohr, A2_Drechsel, A3_Schleif, A4_Säge, A5_Kleinteil)
+                        $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, A1Bohr, A2Drechsel, A3Schleif, A4Säge, A5Kleinteil)
                         VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', 
                         '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_säge', '$a5_kleinteil')";
                     
@@ -190,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $ort;
                             echo "<br>";
-                            echo $preisProTag;
+                            echo $preisProTag2;
                             echo "<br>";
                             echo $bierBez2;
                             echo "<br>";
@@ -204,8 +203,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $a5_kleinteil;*/
                         } else {
+                            echo "Ausgabe zur Fehlersuche. Folgende Werte stehen in den Variablen:";
+                            echo "<br>";
+                            echo $title;
+                            echo "<br>";
+                            echo $zeitraum;
+                            echo "<br>";
+                            echo $beschreibung;
+                            echo "<br>";
+                            echo $vorname;
+                            echo "<br>";
+                            echo $nachname;
+                            echo "<br>";
+                            echo $strasse;
+                            echo "<br>";
+                            echo $hnr;
+                            echo "<br>";
+                            echo $plz;
+                            echo "<br>";
+                            echo $ort;
+                            echo "<br>";
+                            echo $preisProTag2;
+                            echo "<br>";
+                            echo $bierBez2;
+                            echo "<br>";
+                            echo $a1_bohr;
+                            echo "<br>";
+                            echo $a2_drechsel;
+                            echo "<br>";
+                            echo $a3_schleif;
+                            echo "<br>";
+                            echo $a4_säge;
+                            echo "<br>";
+                            echo $a5_kleinteil;
+                            echo "Error: " . $sql . "<br>" . $conn->error;
                             echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                            //echo "Error: " . $sql . "<br>" . $conn->error;
+                            
                         }
                     }
 
