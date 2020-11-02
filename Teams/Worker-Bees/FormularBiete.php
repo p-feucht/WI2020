@@ -184,7 +184,7 @@
                         <div class="formblock">
                             <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet</label>
                             <br>
-                            <input type="number" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" size="4" maxlength="4">
+                            <input type="number" step="0.01" min="0" max="9999,99" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" size="4" maxlength="4">
                             <label>€/Tag</label> <span class="error"><?php echo $preisProTagErr;?></span>
                             <br>
                             <input type="checkbox" id="bierBez1" name="bierBez1" value="1" unchecked>
