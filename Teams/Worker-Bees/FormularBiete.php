@@ -190,7 +190,7 @@
                         <div class="formblock">
                             <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet</label>
                             <br>
-                            <input type="number" step="0.01" min="0" max="9999,99" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" size="4" maxlength="4">
+                            <input type="number" step="0.01" min="0" max="9999.99" name="PreisProTag1" value="<?php echo htmlspecialchars($preisProTag);?>" size="4" maxlength="4">
                             <label>€/Tag</label> <span class="error"><?php echo $preisProTagErr;?></span>
                             <br>
                             <input type="checkbox" id="bierBez1" name="bierBez1" value="1" unchecked>
@@ -227,7 +227,7 @@
                         <div class="formblock">
                             <label>Gib den <b>Preis</b> an, das Buchen deiner Werkstatt <b>pro Tag</b> kostet </label>
                             <br>
-                            <input type="number" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" pattern="^(\d){1,4}([,.])?(\d){0,2}$" size="4" maxlength="4">
+                            <input type="number" name="PreisProTag2" value="<?php echo htmlspecialchars($preisProTag2);?>" pattern="^(\d){1,4}([,.])?(\d){0,2}$" size="4" maxlength="4">
                             <label>€/Tag</label>
                             <span class="error"><?php echo $preisProTagErr;?></span>
                             <br>

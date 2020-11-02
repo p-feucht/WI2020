@@ -4,7 +4,7 @@
 
 //error-variables for validation
 $titleErr = $zeitraumErr = $beschreibErr = $vornameErr = $nachnameErr = $strasseErr = $hnrErr = $plzErr = $ortErr = $preisProTagErr = $preisBetragErr = "";
-$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag = $preisBetrag = "";
+$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = "";
 $valid=TRUE;
 
 //Connection to bplaced server
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $hnr = $conn->real_escape_string($_POST["Hnr"]);
                     }
 
-                    if (!checkIfEmpty("PLZ")) {
+                    if (!checkIfEmpty("PLZ")AND(is_numeric($_POST["PLZ"]))) {
                         $plz = $conn->real_escape_string($_POST["PLZ"]);
                     }
                   
@@ -95,19 +95,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     if ($radioAnswer == "Werkzeug") {          
                         echo 'You chose Werkzeug';  
                         
-                        //if(!checkIfEmpty("PreisProTag")) {
+                        //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])) {
 
-                            $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
+                            $preisProTag1 = $conn->real_escape_string($_POST["PreisProTag1"]);
                        // }
                         
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){
                             $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag', '$bierBez1')";
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag1', '$bierBez1')";
 
-                            echo $sql;
-                            echo "<br>";
+                            //echo $sql;
+                            //echo "<br>";
 
                             if ($conn->query($sql) === TRUE) {
                                 echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $bierBez1;*/
                             } else {
-                                echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
+                                echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden. Du hast den Preis '.$PreisProTag1.' angegeben");</script>';
                             //echo "Error: " . $sql . "<br>" . $conn->error;
                          
                             }
@@ -147,9 +147,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
                     elseif($radioAnswer == "Werkstatt"){
                         echo 'You chose Werkstatt';   
-                        if(!checkIfEmpty("PreisProTag")){
-                            $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
-                        }
+                        //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])){
+                            $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
+                        //}
                         
                         $bierBez2 = $conn->real_escape_string($_POST["bierBez2"]);
                         $a1_bohr = $conn->real_escape_string($_POST["a1_Bohr"]);
@@ -161,11 +161,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
                         $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, 
                         A1_Bohr, A2_Drechsel, A3_Schleif, A4_Säge, A5_Kleinteil)
-                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag', '$bierBez2', 
+                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', 
                         '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_säge', '$a5_kleinteil')";
                     
-                        echo $sql;
-                        echo "<br>";
+                        //echo $sql;
+                        //echo "<br>";
 
                         if ($conn->query($sql) === TRUE) {
                             echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
@@ -210,8 +210,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     elseif($radioAnswer == "Dienstleistung") {
-                        echo 'You chose Dienstleistung';   
+                        echo 'You chose Dienstleistung'; 
+                        if(!checkIfEmpty("Bezahlart")){  
                         $bezahlart = $conn->real_escape_string($_POST['Bezahlart']);
+                        }
                         $preisBetrag = $conn->real_escape_string($_POST['Preis']);
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
