@@ -96,6 +96,8 @@
                         <label>Gib deinem Angebot einen <b>Titel</b></label>
                         <br>
                         <input id="title" type="text" name="title" value="<?php echo htmlspecialchars($title);?>" size="30" maxlength="30">
+                        <label class="Fehlermeldung" id="FehlermeldungTitle">
+                            </label>
                         <label class="error"><?php echo $titleErr;?></span>
                         <div class=unterüberschrift>
                             <label>Tipp: Nutze Begriffe, die andere Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
@@ -124,10 +126,14 @@
                     -->
 
                     <div class="formblock">
-                        <label>Füge eine <b>Beschreibung</b> hinzu</label>
+                        <label>Füge eine <b>Beschreibung</b> hinzu</label><label class="Fehlermeldung" id="FehlermeldungBeschr">
+                            </label> 
+                        <!--<div id="FehlerBeiValidierung">-->
+                        <!-- </div>-->
                         <br>
                         <textarea id="beschreibung" name="beschreibung" value="<?php echo htmlspecialchars($beschreib);?>" rows="9" cols="1">
                         </textarea>
+                        
                         <br>
                         <span class="error"><?php echo $beschreibErr;?></span>
                     </div>
@@ -335,10 +341,7 @@
                         });
                     });
                 </script>
-                <div id="FehlerBeiValidierung">
-                    <p id="Fehlermeldung">
-                    </p>
-                </div>
+                
 
             </div>
 
