@@ -95,11 +95,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     if ($radioAnswer == "Werkzeug") {          
                         echo 'You chose Werkzeug';  
                         
-                        if(!checkIfEmpty("PreisProTag")){
+                        if(!checkIfEmpty("PreisProTag")) {
+
                             $preisProTag = $conn->real_escape_string($_POST["PreisProTag"]);
+                           
                         }
                         
-                    
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){

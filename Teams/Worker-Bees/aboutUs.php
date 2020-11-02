@@ -102,8 +102,12 @@
                       </br> 
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                       </br> 
-           <!--            <p>example@example.com</p>
-                      <p><button class="button">Contact</button></p> -->
+                      <p>engelmayer@workerbees.com</p>
+                         </br> 
+                     <!--  <p><button class="buttonKontakt">Kontakt</button></p> -->
+
+                      <div role="button" class="buttonKontakt" onclick="location.href='mailto:engelmayer@workerbees.com';">Kontakt</div>
+
                     </div>
                   </div>
                 </div>
@@ -112,7 +116,7 @@
                   <div class="card">
 
 
-                    <img src="images/TestbildTeam.jpg" alt="Kati" style="width:100%">
+                    <img src="images/Kati.jpg" alt="Kati" style="width:100%; object-fit:cover;object-position:100% 0">
 
                     <div class="container">
                       <h2>Katerina Matysova</h2>
@@ -120,10 +124,11 @@
                       <p class="title">Gründer</p>
                       <p class="title">Verantwortlich für die Strategieplanung</p>
                         </br> 
-                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                      <p>Ich wollte schon immer badass sein.</p>
                         </br> 
-            <!--           <p>example@example.com</p>
-                      <p><button class="button">Contact</button></p> -->
+                         <p>matysova@workerbees.com</p>
+                         </br>
+                         <div role="button" class="buttonKontakt" onclick="location.href='mailto:engelmayer@workerbees.com';">Kontakt</div>
                     </div>
                   </div>
                 </div>
@@ -143,7 +148,7 @@
                         </br> 
                       <p>birk@workerbees.com</p>
                          </br> 
-                      <p><button class="buttonKontakt">Kontakt</button></p>
+                         <div role="button" class="buttonKontakt" onclick="location.href='mailto:birk@workerbees.com';">Kontakt</div>
                     </div>
                   </div>
                 </div>

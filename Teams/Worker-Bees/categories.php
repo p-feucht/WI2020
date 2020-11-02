@@ -16,6 +16,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
     <link href="CSS/datepicker.css" rel="stylesheet">
+    <link href="JavaScript/datepicker.js">
 
     <!-- autocomplete from google maps -->
     <link rel="stylesheet" type="text/css" href="CSS/locationSearchDesign.css" />
@@ -50,18 +51,19 @@
 
 
         <!-- The search field -->
-        <form class="search" action="">
+        <form class="search" onsubmit="filterWerkzeug()">
 
             <input type="text" id="free-text" placeholder="Was suchst du?">
             <script src="JavaScript/locationSearch.js"></script>
             <input id="autocomplete" class="controls" type="text" placeholder="Wo brauchst du es?" />
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrJoGLdsBz5xPFlFs-RiG2TPTnELEfOk&libraries=places&callback=initAutocomplete"></script>
             <div class="icon"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></div>
-            <input type="text" name="datefilter" value="" placeholder="Wann passt es dir am besten?" />
-            <script type="text/javascript" src="JavaScript/categoriesFunctions.js">
-                datePicker();
+            <input type="text" id="date-werkzeug" name="datefilter-werkzeug" value="" placeholder="Wann passt es dir am besten?" />
+            <script type="text/javascript" src="JavaScript/datepicker.js">
+                datePickerWerkzeug();
                 </script>
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <script src="JavaScript/filter.js"></script>
+            <button type="submit" ><i class="fa fa-search"></i></button>
 
         </form>
 
