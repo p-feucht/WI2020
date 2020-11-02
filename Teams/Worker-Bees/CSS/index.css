@@ -9,14 +9,13 @@
 
 /* add yellow background */
 .body {
-    background-color: #feca57;
+    width: 100%;
 }
 
 .background-container {
     background-image: url("css-images/beehive-pattern.jpg");
     background-size: 100%;
     padding: 15%;
-    background-repeat: repeat;
 }
 
 .card-anbieten {

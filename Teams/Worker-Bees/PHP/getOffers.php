@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
             <img src="images/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
             <p class="card-lp"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
                 <span class="price"><?php echo $price ?>€ / Tag</span></p>
-            <h2 id="title"><?php echo $title ?></h2>
+            <h2><?php echo $title ?></h2>
         </div>
 
         <!-- create modal for each card -->

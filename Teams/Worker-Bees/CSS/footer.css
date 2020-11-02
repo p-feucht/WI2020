@@ -4,18 +4,19 @@
     margin: 0px;
     padding: 0px;
 }
-
-.footer-top {
-    float: left;
-    width: 96%;
-    padding: 25px;
+.footer {
     background-color: #f1f1f1;
+    width: 100%;
+    height: 150px;
 }
 
 .footer-left {
     display: block;
     float:left;
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
 }
 
 .footer-left img {
@@ -34,18 +35,19 @@
 
 .footer-right {
     display: block;
-    width: fit-content;
     float:right;
-    padding-right: 25px;
-    padding-top: 10px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
 .footer_end {
-    width: 96%;
+    width: 100%;
     float: left;
     text-align: center;
     background-color: white;
     color: grey;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

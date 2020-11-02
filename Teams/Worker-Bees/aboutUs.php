@@ -116,7 +116,7 @@
                   <div class="card">
 
 
-                    <img src="images/Kati.jpg" alt="Kati" style="width:100%; height:270px; object-fit:cover;object-position:100% 0">
+                    <img src="images/Kati.jpg" alt="Kati" style="width:100%; object-fit:cover;object-position:100% 0">
 
                     <div class="container">
                       <h2>Katerina Matysova</h2>
