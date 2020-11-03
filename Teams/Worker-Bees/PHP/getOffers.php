@@ -75,10 +75,18 @@ if ($result->num_rows > 0) {
                     <form class="modal-booking-window">
                         <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
                         
-                        <p class="modal-booking-text">Gesamtbetrag: 1000 €<br>
+                            <label for="bookingDate">Datum:</label>
+                            <input type="date" id="bookingDate"><br>
+
+                            <p class="modal-booking-text">Gesamtbetrag: 1000 €<br></p>
+
                             <input type="checkbox" name="bierZahlung">
                             <label for="bierZahlung"> Ich möchte in Bier bezahlen (1000 Bier)</label><br>
-                        </p>
+
+                            <label for="paymentType">Wähle die Bezahlart:</label>
+                            <select name="paymentType" id="paymentType">
+                                <option value="inPerson">vor Ort bezahlen</option>
+                            </select>
 
                         <button type="button" class="submitBooking">Jetzt buchen</button>
                     </form>

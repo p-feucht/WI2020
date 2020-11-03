@@ -6,9 +6,6 @@
   box-sizing: border-box;
 }
 
-.modal-header {
-
-}
 
 .headerLogo {
   float: left;
@@ -61,4 +58,25 @@
   padding: 5px;
   font-size: 14px;
   font-weight: 600;
+}
+
+.modal-booking-window button {
+  float: none;
+  width: 80px;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: 10px;
+  background-color: #feca57;
+  outline: none;
+  border: none;
+}
+
+.modal-booking-window button:hover {
+  background-color: #d4a337;
+}
+
+.modal-booking-window input[type=date] {
+  outline: solid 2px #feca57;
+  height: 15px;
+
 }
