@@ -10,7 +10,6 @@ GENERAL STYLES
 }
 
 p {
-    text-align: center;
     line-height: 2;
 }
 
@@ -27,7 +26,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 7vh;
-    background-color: royalblue;
+    background-color: rgb(27, 53, 102);
     width: 100%;
     position: fixed;
     top: 0;
@@ -73,11 +72,11 @@ nav a {
 }
 
 .nav-links a:hover, a:active{
-    background-color: dodgerblue;
+    background-color: rgb(49, 88, 128);
 }
 
 a.active {
-    background-color: dodgerblue;
+    background-color: rgb(49, 88, 128);
     border-left: 1px;
     border-right: 1px;
 }
@@ -98,7 +97,7 @@ CONTENT
 FOOTER
 */
 footer {
-    background-color: royalblue;
+    background-color: rgb(27, 53, 102);
     color: aliceblue;
     width: 100%;
     text-align: center;
@@ -142,21 +141,4 @@ RESPOSIVE
 
 @media screen and (min-width: 801px) {
 
-    .paralax{
-        height: 300px;
-    }
-
-    .aboutContainer{
-     grid-template-columns: 70% 30%;
-    }
-
-    .aboutContainer>div{
-        margin-left: 170px;
-    }
-    .aboutContainer>div>p{
-        text-align: left;
-    }
-    .aboutContainer>img{
-        max-width: 50%;
-    }
  }
