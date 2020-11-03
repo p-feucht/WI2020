@@ -8,19 +8,19 @@ $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $p
 $valid=TRUE;
 
 //Connection to bplaced server
-/*$servername = "localhost";
+$servername = "localhost";
 $username = "workerbees";
 $password = "HKSZ52";
-$dbname = "workerbees_db1";*/
+$dbname = "workerbees_db1";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-    $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "workerxampp";
+    $dbname = "workerxampp";*/
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -158,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $a1_bohr = $conn->real_escape_string($_POST["a1_Bohr"]);
                         $a2_drechsel = $conn->real_escape_string($_POST["a2_Drechsel"]);
                         $a3_schleif = $conn->real_escape_string($_POST["a3_Schleif"]);
-                        $a4_säge = $conn->real_escape_string($_POST["a4_Säge"]);
+                        $a4_saege = $conn->real_escape_string($_POST["a4_Saege"]);
                         $a5_kleinteil = $conn->real_escape_string($_POST["a5_Kleinteil"]);
                         
 
@@ -202,7 +202,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $a3_schleif;
                             echo "<br>";
-                            echo $a4_säge;
+                            echo $a4_saege;
                             echo "<br>";
                             echo $a5_kleinteil;*/
                         } else {

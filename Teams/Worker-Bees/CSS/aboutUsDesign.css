@@ -99,16 +99,20 @@
   }
   
   .buttonKontakt {
-    border: none;
+    height: 40px;
+    width: 145px;
+    background-color: #feca57;
+    margin-top: 20px;
+    /* border: none;
     outline: 0;
     display: inline-block;
-    /* padding: 8px 20px; */
-   /*  color: white; */
+    padding: 8px 20px;
+    color: white;
     background-color: #feca57;
     text-align: center;
     cursor: pointer;
-    /* width: 10%; macht kein unterschied */
-    margin-bottom: 16px;
+    width: 150px;
+    margin-bottom: 16px; */
    
   }
   

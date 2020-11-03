@@ -23,7 +23,7 @@
         </div>
 
         <div class="header-content-right">
-            <a href="Login/login.php" class="headerButton">Anmelden</a>
+            <a href="login.php" class="headerButton">Anmelden</a>
             <a href="categories.php#Werkstatt-Ang" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
         </div>
     </div>
