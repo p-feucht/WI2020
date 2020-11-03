@@ -249,6 +249,7 @@
                                         <label>
                                    <input type="checkbox" name="a2_Drechsel" value="1">
                                    Drechselbank/Drehbank
+
                                 </label>
                                     </li>
                                     <li>
@@ -307,7 +308,7 @@
                             <br>
                             <label>Betrag
                             </label>
-                            <input type="number" name="Preis" value="<?php echo htmlspecialchars($preisBetragErr);?>" size="4" maxlength="4">
+                            <input type="number" step="0.01" min="0" max="9999.99" name="Preis" value="<?php echo htmlspecialchars($preisBetragErr);?>" size="4" maxlength="4">
                             <label>€</label>
                             <span class="error"><?php echo $preisBetragErr;?></span>
                             <br>

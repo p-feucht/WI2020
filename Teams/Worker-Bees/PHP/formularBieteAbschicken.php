@@ -8,19 +8,19 @@ $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $p
 $valid=TRUE;
 
 //Connection to bplaced server
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "workerbees";
 $password = "HKSZ52";
-$dbname = "workerbees_db1";
+$dbname = "workerbees_db1";*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-   /* $servername = "localhost";
+    $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "workerxampp";*/
+    $dbname = "workerxampp";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                 die("Connection failed: " . mysqli_connect_error());
             }
             else {
-                echo "Connected successfully";
-                echo "<br>";
+                //echo "Connected successfully";
+                //echo "<br>";
                 
                 //wenn kein RadioButton gewählt, beenden und Fehlernachricht ausgeben
                 if(!isset($_POST["kategorie"])){
@@ -79,7 +79,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     if (!checkIfEmpty("PLZ")AND(is_numeric($_POST["PLZ"]))) {
-                        $plz = $conn->real_escape_string($_POST["PLZ"]);
+                        $hilfsvar = $conn->real_escape_string($_POST["PLZ"]);
+                        if($hilfsvar>0){
+                            $plz=$hilfsvar;
+                        }
                     }
                   
                     if(!checkIfEmpty("Ort")){
@@ -93,9 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     $radioAnswer = $_POST['kategorie'];  //oder: if (isset($kategorie) && $kategorie=="Werkzeug"){ echo WZ;}...
                     
                     if ($radioAnswer == "Werkzeug") {          
-                        echo 'You chose Werkzeug';  
+                        //echo 'You chose Werkzeug';  
                         
-                        //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])) {
+                        //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])AND($_POST["PreisProTag"]>0)) {
 
                             $preisProTag1 = $conn->real_escape_string($_POST["PreisProTag1"]);
                        // }
@@ -146,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     elseif($radioAnswer == "Werkstatt"){
-                        echo 'You chose Werkstatt';   
+                        //echo 'You chose Werkstatt';   
                         //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])){
                             $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
                         //}
@@ -159,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $a5_kleinteil = $conn->real_escape_string($_POST["a5_Kleinteil"]);
                         
 
-                        $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, A1Bohr, A2Drechsel, A3Schleif, A4Säge, A5Kleinteil)
+                        $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASäge, AKleinteil)
                         VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', 
                         '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_säge', '$a5_kleinteil')";
                     
@@ -203,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $a5_kleinteil;*/
                         } else {
-                            echo "Ausgabe zur Fehlersuche. Folgende Werte stehen in den Variablen:";
+                            echo "Ausgabe zur Fehlersuche. Folgende Werte stehen in den PHP-Variablen:";
                             echo "<br>";
                             echo $title;
                             echo "<br>";
