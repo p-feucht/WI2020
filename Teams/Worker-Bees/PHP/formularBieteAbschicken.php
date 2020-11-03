@@ -148,14 +148,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $a1_bohr = $conn->real_escape_string($_POST["a1_Bohr"]);
                         $a2_drechsel = $conn->real_escape_string($_POST["a2_Drechsel"]);
                         $a3_schleif = $conn->real_escape_string($_POST["a3_Schleif"]);
-                        $a4_säge = $conn->real_escape_string($_POST["a4_Säge"]);
+                        $a4_saege = $conn->real_escape_string($_POST["a4_Saege"]);
                         $a5_kleinteil = $conn->real_escape_string($_POST["a5_Kleinteil"]);
                         
 
                         $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, 
-                        A1_Bohr, A2_Drechsel, A3_Schleif, A4_Säge, A5_Kleinteil)
+                        A1_Bohr, A2_Drechsel, A3_Schleif, A4_Saege, A5_Kleinteil)
                         VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag', '$bierBez2', 
-                        '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_säge', '$a5_kleinteil')";
+                        '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
                     
                         echo $sql;
                         echo "<br>";
@@ -192,7 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $a3_schleif;
                             echo "<br>";
-                            echo $a4_säge;
+                            echo $a4_saege;
                             echo "<br>";
                             echo $a5_kleinteil;
 

@@ -30,23 +30,23 @@ function openPage(pageName, elmnt) {
 }
 
 function openTab() {
-// Get the element with id="defaultOpen" and click on it
-var hash = window.location.hash.substring(1);
-if (hash == 'Werkzeug-Ang') {
-var elmnt = document.getElementById(hash);
-openPage('Werkzeug',elmnt);
-}
-else if (hash == 'Werkstatt-Ang') {
-var elmnt = document.getElementById(hash);
-openPage('Werkstatt',elmnt);
-}
-else if (hash == 'Dienst-Ang') {
-var elmnt = document.getElementById(hash);
-openPage('Dienst',elmnt);
-}
-
-}
-
+  // Get the element with id="defaultOpen" and click on it
+  var hash = window.location.hash.substring(1);
+  if (hash == 'Werkzeug-Ang') {
+  var elmnt = document.getElementById(hash);
+  openPage('Werkzeug',elmnt);
+  }
+  else if (hash == 'Werkstatt-Ang') {
+  var elmnt = document.getElementById(hash);
+  openPage('Werkstatt',elmnt);
+  }
+  else if (hash == 'Dienst-Ang') {
+  var elmnt = document.getElementById(hash);
+  openPage('Dienst',elmnt);
+  }
+  
+  }
+/*
 function openSearch() {
 document.getElementById("myOverlay").style.display = "block";
 }
@@ -55,7 +55,7 @@ document.getElementById("myOverlay").style.display = "block";
 function closeSearch() {
 document.getElementById("myOverlay").style.display = "none";
 }
-
+*/
 
 function datePicker() {
 

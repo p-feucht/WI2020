@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $username = "workerbees";
 $password = "HKSZ52";
@@ -12,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
-PLZ, Ort, Bild, usernameErsteller, Werkzeug_ID, PreisProTag, BezInBier, Erstellzeitpunkt FROM AngebotWerkzeug";
+PLZ, Ort, Bild, usernameErsteller, Werkzeug_ID, PreisProTag, BezInBier, Erstellzeitpunkt FROM AangebotWerkzeug";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -27,11 +28,11 @@ if ($result->num_rows > 0) {
         $plz = $row["PLZ"];
         $description = $city = $row["ABeschreibung"];
 
-        $card_ID = "card_".(string)$orderID;
-        $modal_target = "#modal_".(string)$orderID;
-        $modal_ID = "modal_".(string)$orderID;
-?>
+        $card_ID = "WZcard_".(string)$orderID;
+        $modal_target = "#WZmodal_".(string)$orderID;
+        $modal_ID = "WZmodal_".(string)$orderID;
 
+    ?>
         <!-- create card for each offer -->
         <div class="card" id=<?php echo $card_ID ?> data-toggle="modal" data-target=<?php echo $modal_target ?>>
             <img src="images/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
@@ -101,6 +102,7 @@ if ($result->num_rows > 0) {
     </div>
 
 <?php
+
     }
 } else {
     echo "0 results";
