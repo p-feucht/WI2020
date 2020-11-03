@@ -1,0 +1,28 @@
+.result-page-content {
+    text-align: center;
+}
+
+.result-page-headline {
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.result-seperator {
+    width: 30%;
+    height: 2px;
+    color: black;
+}
+
+.result-page-headline-2 {
+    padding: 10px;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.result-page-recommendation {
+    margin-top: 15px;
+    margin-right: 14vw;
+    margin-left: 14vw;
+    font-size: 20px;
+    font-weight: normal;
+}

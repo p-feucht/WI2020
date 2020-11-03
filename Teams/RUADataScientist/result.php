@@ -1,6 +1,13 @@
 <?php
     //MAPPING TABLE FOR KNOWLEGDE QUESTIONS AND THEIR RESULTS
     $RESULTS_MAP = array("knowledge_1"=>"0");
+    $RECOMMENDATIONS = array("0"=>"Your low results indicate that a profession in datascience is probably not your best option. However - if you're still interested you might like checking out our collection of datscience-related topics.",
+                             "50"=>"You're allready quite well informed and your results indicate that datascience might be for you. We suggest you to gather some more information about the subject. You might consider starting in our topics tab.",
+                             "80"=>"Wow! What an amazing result! You should consider doing a deep-dive into the subject of datascience.");
+    $RECOMMENDATIONS_ORDER = array(80, 50, 0);
+
+    //A fixed amount for every knowledge question, and a fixed amount for every likert question
+    $MAX_SCORE = 9; //3 questions atm. 3 points max per question
 
     //REGEX PATTERNS
     $KNOWLEDGE = "/^knowledge/";
@@ -38,6 +45,21 @@
         $data = htmlspecialchars($data);
         return $data;
       }
+
+    //function for determining the correct recommendation
+    function recommendation($score_percent) {
+        global $RECOMMENDATIONS_ORDER, $RECOMMENDATIONS;
+        foreach($RECOMMENDATIONS_ORDER as $percentage) {
+            if($score_percent >= $percentage) {
+                return $RECOMMENDATIONS[(string)$percentage];
+            }
+        }
+        return "an error occured in the recommendation() function";
+    }
+
+    function scorePercentage($act, $max) {
+        return round(($act/$max)*100);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +67,7 @@
     <title>About</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/aboutStyles.css">
+    <link rel="stylesheet" href="css/result.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="pictures/TopBarIcon.png">
 <body>
@@ -69,28 +91,33 @@
     <div class="nav-blocker">''</div>
 
     <!--CONTENT-->
-    <h1>Results</h1>
-    <br>
     <?php 
     /*output results for knowledge questions*/
+    /*
     echo "<h3>Results knowledge:<h3>";
     echo "<table><tr><th>Question</th><th>Answer</th></tr>";
     foreach ($results_knowledge as $question => $answer) {
         echo "<tr><td>" . $question . "</td><td>" . $answer . "</td></tr>";
     }
     echo "</table><br>";
+    */
 
     /*output results for likert questions*/
-    echo "<h3>Results Likert:<h3>";
+    /*echo "<h3>Results Likert:<h3>";
     echo "<table><tr><th>Question</th><th>Answer</th></tr>";
     foreach ($results_likert as $question => $answer) {
         echo "<tr><td>" . $question . "</td><td>" . $answer . "</td></tr>";
     }
     echo "</table><br>";
+    */
 
     /*output the users calculated score*/
-    echo "<h3>Your Score is: <h3>";
-    echo "<h3>" . $score . "<h3>";
+    echo "<div class='result-page-content'><br><br><br>";
+    echo "<h1 class='result-page-headline'>You scored <b>" . $score . "</b> out of <b>" . $MAX_SCORE . "</b> possible Points!</h1>";
+    echo "<hr class='result-seperator'>";
+    echo "<h2 class='result-page-headline-2'>Thats <b>" . scorePercentage($score, $MAX_SCORE) . "</b> percent!</h2>";
+    echo "<br><h3 class='result-page-recommendation'>" . recommendation(scorePercentage($score, $MAX_SCORE)) . "</h3>";
+    echo "</div>";
     ?>
         
     <!--FOOTER-->
