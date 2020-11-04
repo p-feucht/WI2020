@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Too Good to Waste</title>
     <meta name="description" content="Webseite zur Vermeidung von Lebensmittelverschwendung">
-    <link href="design.css" rel="stylesheet">
+    <link href="Metadaten/design.css" rel="stylesheet">
 </head>
 
 <body>

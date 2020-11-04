@@ -96,6 +96,8 @@
                         <label>Gib deinem Angebot einen <b>Titel</b></label>
                         <br>
                         <input id="title" type="text" name="title" value="<?php echo htmlspecialchars($title);?>" size="30" maxlength="30">
+                        <label class="Fehlermeldung" id="FehlermeldungTitle">
+                            </label>
                         <label class="error"><?php echo $titleErr;?></span>
                         <div class=unterüberschrift>
                             <label>Tipp: Nutze Begriffe, die andere Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
@@ -124,10 +126,14 @@
                     -->
 
                     <div class="formblock">
-                        <label>Füge eine <b>Beschreibung</b> hinzu</label>
+                        <label>Füge eine <b>Beschreibung</b> hinzu</label><label class="Fehlermeldung" id="FehlermeldungBeschr">
+                            </label> 
+                        <!--<div id="FehlerBeiValidierung">-->
+                        <!-- </div>-->
                         <br>
                         <textarea id="beschreibung" name="beschreibung" value="<?php echo htmlspecialchars($beschreib);?>" rows="9" cols="1">
                         </textarea>
+                        
                         <br>
                         <span class="error"><?php echo $beschreibErr;?></span>
                     </div>
@@ -184,7 +190,7 @@
                         <div class="formblock">
                             <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet</label>
                             <br>
-                            <input type="number" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" size="4" maxlength="4">
+                            <input type="number" step="0.01" min="0" max="9999.99" name="PreisProTag1" value="<?php echo htmlspecialchars($preisProTag1);?>" size="4" maxlength="4">
                             <label>€/Tag</label> <span class="error"><?php echo $preisProTagErr;?></span>
                             <br>
                             <input type="checkbox" id="bierBez1" name="bierBez1" value="1" unchecked>
@@ -219,9 +225,9 @@
 
                     <div class="Werkstatt selectt">
                         <div class="formblock">
-                            <label>Gib den <b>Preis</b> an, das Buchen deiner Werkstatt <b>pro Tag</b> kostet </label>
+                            <label>Gib den <b>Preis</b> an, den das Buchen deiner Werkstatt <b>pro Tag</b> kostet </label>
                             <br>
-                            <input type="number" name="PreisProTag" value="<?php echo htmlspecialchars($preisProTag);?>" size="4" maxlength="4">
+                            <input type="number" step="0.01" min="0" max="9999.99" name="PreisProTag2" value="<?php echo htmlspecialchars($preisProTag2);?>" size="4" maxlength="4"> <!--pattern="^(\d){1,4}([,.])?(\d){0,2}$"-->
                             <label>€/Tag</label>
                             <span class="error"><?php echo $preisProTagErr;?></span>
                             <br>
@@ -243,6 +249,7 @@
                                         <label>
                                    <input type="checkbox" name="a2_Drechsel" value="1">
                                    Drechselbank/Drehbank
+
                                 </label>
                                     </li>
                                     <li>
@@ -301,7 +308,7 @@
                             <br>
                             <label>Betrag
                             </label>
-                            <input type="number" name="Preis" value="<?php echo htmlspecialchars($preisBetragErr);?>" size="4" maxlength="4">
+                            <input type="number" step="0.01" min="0" max="9999.99" name="Preis" value="<?php echo htmlspecialchars($preisBetragErr);?>" size="4" maxlength="4">
                             <label>€</label>
                             <span class="error"><?php echo $preisBetragErr;?></span>
                             <br>
@@ -335,10 +342,7 @@
                         });
                     });
                 </script>
-                <div id="FehlerBeiValidierung">
-                    <p id="Fehlermeldung">
-                    </p>
-                </div>
+                
 
             </div>
 

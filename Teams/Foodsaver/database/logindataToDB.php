@@ -45,9 +45,20 @@ if (isset($_POST['submit'])) {
               $_SESSION['session_plz'] = $row['PLZ'];
               $_SESSION['session_ort'] = $row['Ort'];
               $_SESSION['session_tel'] = $row['Telefonnummer'];
+              $_SESSION['session_country'] = 'de';
               $_SESSION['last_login_timestamp'] = time();
+
+              $ip = $_SERVER['REMOTE_ADDR'];
+              $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+              $_SESSION['ip'] = $details->ip;
+              $_SESSION['ip_loc'] = $details->loc;
+              $_SESSION['ip_city'] = $details->city;
+              $_SESSION['ip_country'] = $details->country;
+              $_SESSION['ip_plz'] = $details->postal;
+
               $update = "UPDATE tbl_contacts SET letzterLogin ='$date' WHERE Email = '$user'";
               mysqli_query($db_link, $update);
+              
 
               if(isset($_SESSION['last_page'])){
                   if(($_SESSION['last_page'] == 'http://foodsaver.bplaced.net/registrierung.php') or ($_SESSION['last_page'] == 'http://foodsaver.bplaced.net/login.php') ){
@@ -65,7 +76,6 @@ if (isset($_POST['submit'])) {
                 
               }
               
-              exit();
             }
         }
     }
@@ -74,5 +84,8 @@ if (isset($_POST['submit'])) {
     header("Location: ../login.php?login=error");
     exit();
 }
+
+
+
 
 ?>

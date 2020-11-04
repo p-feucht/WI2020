@@ -108,6 +108,16 @@ if(!empty($_POST['email']) and !empty($_POST['password']) and !empty($_POST['pas
      $_SESSION['session_ort'] = $row['Ort'];
      $_SESSION['session_tel'] = $row['Telefonnummer'];
 
+     $_SESSION['session_country'] = 'de';
+     $_SESSION['last_login_timestamp'] = time();
+
+     $ip = $_SERVER['REMOTE_ADDR'];
+     $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+     $_SESSION['ip'] = $details->ip;
+     $_SESSION['ip_loc'] = $details->loc;
+     $_SESSION['ip_city'] = $details->city;
+     $_SESSION['ip_country'] = $details->country;
+
      require('autoLoginAfterRegistragion.php');
 
     } else {    

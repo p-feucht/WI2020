@@ -10,8 +10,13 @@
     }else{
         $user = $_SESSION['session_username'];
     }
+    if(isset($_GET['userid'])){
+        $userid = $_GET['userid'];
+        $query = mysqli_query($db_link, "SELECT * FROM `Nachrichten` WHERE (Benutzername = '$currentUserName' AND Empfänger = '$userid') OR (Benutzername = '$userid' AND Empfänger = '$currentUserName')") or die('Fehler: ' . mysqli_error());
+    }
+    else{
     $query = mysqli_query($db_link, "SELECT * FROM `Nachrichten` WHERE RecordID = $record_id AND (Benutzername = '$user' OR Empfänger = '$user')") or die('Fehler: ' . mysqli_error());
-    
+    }
     $resultCheck = mysqli_num_rows($query);
     echo("<div id='annotation'>
                 <h1>Nachrichten</h1>

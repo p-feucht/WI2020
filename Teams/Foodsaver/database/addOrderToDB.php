@@ -48,11 +48,12 @@ if (isset($_POST['submit'])) {
     if($query['Menge'] <= 0){
         $sql2 = mysqli_query($db_link, "UPDATE tbl_records set Visable = 1 where ID=$record_id");
     }
+    $neu = 1;
 
-    $INSERT2 = "INSERT Into `Nachrichten` (Benutzername, Nachricht, RecordID, Menge, Zeitpunkt, Empfänger) values(?, ?, ?, ?, ?, ?)";
+    $INSERT2 = "INSERT Into `Nachrichten` (Benutzername, Nachricht, RecordID, Menge, Zeitpunkt, Empfänger, neu) values(?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $db_link->prepare($INSERT2);
-    $stmt->bind_param("ssiiss", $username, $annotation, $record_id, $amount, $date, $verkäuferUser);
+    $stmt->bind_param("ssiissi", $username, $annotation, $record_id, $amount, $date, $verkäuferUser, $neu);
     $stmt->execute();
     echo ($stmt->error);
     unset($_SESSION['annotation']);
