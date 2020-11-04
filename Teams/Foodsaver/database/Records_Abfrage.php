@@ -27,8 +27,8 @@
                 
 
                 echo("<div id='Record'>
-                <h1>Records</h1>
-                <p>Anzahl an Records: $resultCheck</p>");
+                <h1>Aktuelle Angebote</h1>
+                <p>Anzahl an Angeboten: $resultCheck</p>");
 
                 if($resultCheck > 0){
             
@@ -45,13 +45,13 @@
 
                 echo('<table>');
               
-                    echo('<tr id="td-head-' . $id . '" rowSpan="1"<a href="#td-head-' . $id . '" onclick="toggle(6, ' . $id . ')">');
-                    if($ImageLink !== Null){
+                    echo('<tr class="first_row" id="td-head-' . $id . '" rowSpan="1"<a href="#td-head-' . $id . '" onclick="toggle(6, ' . $id . '); changeText(' . $id . ');">');
+                    if($ImageLink != Null){
                         echo('<td><b><img src="'.$ImageLink.'" id="record_image"></td>');
-                        echo('<td><b>Artikel: </b>' . $row['Artikel'] . '</br><b>Beschreibung: </b>' . $row['Beschreibung'] . '</td>');
+                        echo('<td><b>Artikel: </b><a id="article" href="../order_food.php?id='.$artikel_id.'">' . $row['Artikel'] . '</a></br><b>Beschreibung: </b>' . $row['Beschreibung'] . '</td>');
                     }    
                     else{
-                        echo('<td><b>Artikel: </b>' . $row['Artikel'] . '</td>');
+                        echo('<td><b>Artikel: </b><a id="article" href="../order_food.php?id='.$artikel_id.'">' . $row['Artikel'] . '</a></td>');
                         echo('<td><b>Beschreibung: </b>' . $row['Beschreibung'] . '</td>');
                     }                
                     
@@ -66,7 +66,7 @@
                     echo('<td><b>Datum: </b>' . $row['Erstellungsdatum'] . '</td>');   
                     echo('</tr>');
                     echo('<tr id="td-data-' . $id . '3" style="display:none">');   
-                    echo('<td><b>Username: </b>' . $row['Username'] . ' </td>');
+                    echo('<td><b>Username: </b><a id="username" href="../profile.php?userid='. $row['Username'] .'" >' . $row['Username'] . '</a></td>');
                     echo('<td><b>Name: </b>' . $row['Nachname'] . " " . $row['Vorname'] . '</td>');
                     echo('</tr>');
                     echo('<tr id="td-data-' . $id . '4" style="display:none">');   
@@ -82,8 +82,7 @@
                     echo('<td><b>Telefonnummer: </b>' . $row['Telefonnummer'] . '</td>');               
                     echo('</tr>');
                     echo('</table>');
-                    echo("ID: $artikel_id");
-                    echo('</br><a href="#td-head-' . $id . '" onclick="toggle(6, ' . $id . ')">Mehr Details</a>');
+                    echo('<button class="mehr_details" id="details' . $id . '" onclick="toggle(6, ' . $id . '); changeText(' . $id . ');">Mehr Details</button>');
                     echo('<a class="zur_bestellung" href="../order_food.php?id='.$artikel_id.'">Zur Bestellung</a>');
                     $id++;
                     
@@ -92,7 +91,7 @@
         }
             else{
 
-                echo('<p>Keine Anzeigen gefunden!</p>');
+                echo('<tr><p>Keine Anzeigen gefunden!</p></tr>');
             }
             
                 
@@ -101,3 +100,14 @@
             </div>
 
             
+<script>
+function changeText(id) {
+    var element = document.getElementById('details' + id);
+    
+        if (element.innerHTML === 'Mehr Details'){ element.innerHTML = 'Weniger Details';}
+        else {
+            element.innerHTML = 'Mehr Details';
+        
+    }
+}
+</script> 

@@ -15,8 +15,6 @@ html, body { font-family: 'Open Sans', sans-serif; color: #000; }
 .header .navigationWrapper nav > ul > li > a { font-weight: 700; color: #000; text-decoration: none; transition: all .4s ease-out; border-bottom: 2px solid transparent;  }
 .header .navigationWrapper nav > ul > li > a:hover { color: #7f0000; text-decoration: none; border-bottom: 2px solid #7f0000; }
 
-header .banner { position: relative; }
-header .banner .bannertext { position: absolute; bottom: 25px; left: 25px; padding: 50px 25px; width: 300px; text-align: center; background-color: rgba(127, 0, 0, 0.5); }
 header .banner img { max-width: 100%; width: 100%; }
 
 .inner { max-width: 1000px; margin: 50px auto; }
@@ -43,19 +41,13 @@ footer .footerWrapper .footerNavWrapper nav > ul > li { flex-basis: auto; paddin
 footer .footerWrapper .footerNavWrapper nav > ul > li > a { color: #fff; text-decoration: none; transition: all .4s ease-out; }
 footer .footerWrapper .footerNavWrapper nav > ul > li > a:hover { color: #e5cccc; }
 
+.filterWrapper p, h1 { text-align: center; margin-bottom: 20px; }
+.filterWrapper .filterInnerWrapper { display: flex; align-items: center; justify-content: center; max-width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px; }
+.filterWrapper .filterInnerWrapper > div { flex: 1 0 auto; display: flex; justify-content: center; }
 
-.series_list_page{
-    margin: auto;
-    text-align: center;
-    vertical-align: middle;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+.selectWrapper { position: relative; max-width: 135px; width: 100%; }
+.selectWrapper::after { content: ''; display: block; width: 10px; height: 10px; border-style: solid; border-color: #7f0000; border-width: 0px 1px 1px 0px; transform: rotate(45deg); position: absolute; top: 13px; right: 15px; pointer-events: none; }
+.selectWrapper select { width: 135px; color: #7f0000; font-size: 1rem; padding: 12px 10px; -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 1px solid #7f0000; background-color: transparent; }
 
-.filter_pane{
-    display: flex;
-    flex-direction: row;
-}
-
+.filterResults ul { list-style-type: none; padding-left: 0; }
+.filterResults ul > li { text-align: center; }

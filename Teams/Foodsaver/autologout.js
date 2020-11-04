@@ -27,7 +27,7 @@ $(function()
         }else
         {
             //JUST ADDED AS A VISUAL CONFIRMATION
-            console.log(currentTime +" - "+ pastTime+" - "+minPast+" min past");
+            //console.log(currentTime +" - "+ pastTime+" - "+minPast+" min past");
         }
     }
 

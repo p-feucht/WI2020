@@ -1,0 +1,35 @@
+html {
+    background: url("../Pictures/change_contact_data.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/*body {
+    background-image: url("../Pictures/change_contact_data.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}*/
+
+.container {
+    width: 70%;
+}
+
+.change_profile {
+    display: flex;
+    flex-direction: row;
+}
+
+.change_profile .change_login_data {
+    width: 50%;
+}
+
+.change_profile .change_contact_data {
+    width: 50%;
+    margin-right: 20px;
+}

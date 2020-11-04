@@ -10,6 +10,7 @@ session_start();
     <title>Too Good to Waste</title>
     <meta name="description" content="Webseite zur Vermeidung von Lebensmittelverschwendung">
     <link href="Metadaten/design.css" rel="stylesheet">
+    <link href="Metadaten/meine_anzeigen.css" rel="stylesheet">
     <script src="RecordsDropdown.js" type="text/javascript"></script>
 
 </head>
