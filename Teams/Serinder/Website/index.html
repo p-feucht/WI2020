@@ -3,49 +3,117 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Filterseite - Serinder</title>
+    
     <link rel="stylesheet" href="css/style.css">
-    <title>Serinder</title>
 </head>
 
 <body>
-    <div class="series_list_page">
-        <div class="series_list_page">
+    <header>
+        <div class="header">
+            <div class="logoWrapper">
+                <img src="Bilder/Logo-Serinder.png" alt="Serinder">
+            </div>
+            <div class="navigationWrapper">
+                <nav id="naviMain" class="nav">
+                    <ul>
+                        <li>
+                            <a class="active" href="Startseite.html">
+                                Startseite
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                Liste der Serien
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/favoriten.html">
+                                Meine Favoriten
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/kommentare.html">
+                                Meine Kommentare
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/einstellungen.html">
+                                Einstellungen
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/login">
+                                Log In
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="Bilder/Banner.jpg" alt="Serinder">
+        </div>
+    </header>
+    <main>
+        <div class="inner">
             <h1>Liste der Serien</h1>
-        </div>
-        <div class="series_list_page">
-            <div class="series_list_page">
-                <label for="Genre">sortieren nach</label>
+            <div class="filterWrapper">
+                <p>sortieren nach:</p>
+                <div class="filterInnerWrapper">
+                    <div class="filterbuttonWrapper">
+                        <a class="button" href="#">Alphabetisch</a>
+                    </div>
+                    <div class="filterSelectWrapper">
+                        <div class="selectWrapper">
+                            <select name="Genre" id="Genre">
+                                <option value="all">Alle Genres</option>
+                                <option value="action">Action</option>
+                                <option value="thriller">Thriller</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filterbuttonWrapper">
+                        <a class="button" href="#">Bewertung</a>
+                    </div>
+                </div>
+                <div class="filterResults">
+                    <ul>
+                        <li>Serie 1</li>
+                        <li>Serie 2</li>
+                        <li>Serie 3</li>
+                    </ul>
+                </div>
             </div>
-            <br>
-            <div class="filter_pane">
-                <div class="filter_pane">
-                    <button type="button">Name der Serie</button>
-                </div>
-                <div class="filter_pane">
-                    <select name="Genre" id="Genre">
-                        <option value="all">--Alle Genres--</option>
-                        <option value="action">Action</option>
-                        <option value="thriller">Thriller</option>
-                    </select>
-                </div>
-                <div class="filter_pane">
-                    <button type="button">Bewertung</button>
-                </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerWrapper">
+            <div class="footerNavWrapper">
+                <nav id="naviFooter" class="nav">
+                    <ul>
+                        <li>
+                            <a href="/kontakt.html">
+                                Kontakt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/impressum.html">
+                                Impressum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/datenschutz.html">
+                                Datenschutz
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        
-        <div class="series_list_page">
-            <br>
-            <ul>
-                    <li>Serie 1</li>
-                    <li>Serie 2</li>
-                    <li>Serie 3</li>
-            </ul>
-        </div>
-    </div>
-
+    </footer>
 </body>
 
 </html>
