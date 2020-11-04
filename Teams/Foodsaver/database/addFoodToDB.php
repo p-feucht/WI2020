@@ -13,6 +13,14 @@ if (isset($_POST['submit'])) {
     $amount = $_POST['amount'];
     $price = $_POST['price'];
     $date = date("Y-m-d H:i:s");
+    $kategorie = $_POST['categorie'];
+    $laenderkueche = $_POST['kitchen'];
+    if(!isset($_POST['categorie'])){
+        $kategorie = 'Sonstige';
+    }
+    if(!isset($_POST['kitchen'])){
+        $laenderkueche = 'Sonstige';
+    }
 
     if(!empty($_POST['nachname'])){
         $nachname = $_POST['nachname'];
@@ -68,20 +76,17 @@ if (isset($_POST['submit'])) {
     else{
         $email = $_SESSION['session_user'];
     }
-    if(!empty($_POST['username'])){
-        $username = $_POST['username'];
-    }
-    else{
+
         $username = $_SESSION['session_username'];
-    }
+    
 
 
     
 
-    $INSERT = "INSERT Into `tbl_records` (Artikel, Beschreibung, Menge, Preis, Erstellungsdatum, Firma, Nachname, Vorname, Straße, Hausnummer, PLZ, Ort, Email, Telefonnummer, Username) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $INSERT = "INSERT Into `tbl_records` (Artikel, Beschreibung, Menge, Preis, Erstellungsdatum, Firma, Nachname, Vorname, Straße, Hausnummer, PLZ, Ort, Email, Telefonnummer, Username, Kategorie, LänderKüche) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $db_link->prepare($INSERT);
-    $stmt->bind_param("sssssssssssssss", $food, $description, $amount, $price, $date, $company, $nachname, $vorname, $street, $hausnummer, $plz, $ort, $email, $telefon, $username);
+    $stmt->bind_param("sssssssssssssssss", $food, $description, $amount, $price, $date, $company, $nachname, $vorname, $street, $hausnummer, $plz, $ort, $email, $telefon, $username, $kategorie, $laenderkueche);
     $stmt->execute();
     echo ($stmt->error);
 
@@ -107,6 +112,7 @@ if (isset($_POST['submit'])) {
                 $query->bind_param("sssi", $file_name, $imageType, $imageLink, $last_id);
                 $query->execute();
                 echo ($query->error);
+
             }
             else {
                 $filename=basename($file_name,$ext);
@@ -122,6 +128,7 @@ if (isset($_POST['submit'])) {
                 $query->execute();
                 echo ($query->error);
             }
+
         }
         else {
             array_push($error,"$file_name, ");

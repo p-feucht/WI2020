@@ -11,12 +11,11 @@ session_start();
         <title>Too Good to Waste</title>
         <meta name="description" content="Webseite zur Vermeidung von Lebensmittelverschwendung">
         <link href="Metadaten/design.css" rel="stylesheet">
-
+        <link href="Metadaten/sales.css" rel="stylesheet">
     </head>
 
     <body>
     <?php
-    
         $_SESSION['last_page'] = $_SERVER['HTTP_REFERER'];
     
         require("Metadaten/chooseHeader.php");
@@ -24,4 +23,4 @@ session_start();
         require("Metadaten/footer.php");
     ?>
     </body>
-    </html>
+</html>

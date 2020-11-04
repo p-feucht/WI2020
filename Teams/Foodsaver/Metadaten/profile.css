@@ -1,0 +1,44 @@
+html {
+    background: url("../Pictures/profile.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/*body {
+    background: linear-gradient(to right, white, green);
+}*/
+
+
+/*body {
+    background-image: url("../Pictures/profile.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}*/
+
+#Profile h1 {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+#Profile h2 {
+    margin-bottom: 20px;
+}
+
+#Profile table {
+    background-color: white;
+}
+
+#Profile #profil_bearbeiten {
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: white;
+    opacity: 0.8;
+}

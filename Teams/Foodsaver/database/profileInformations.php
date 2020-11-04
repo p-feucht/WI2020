@@ -2,14 +2,14 @@
             session_start();
             require('connectDB.php');
 
-            $userEmail = $_GET['user'];
+            $userEmail = $_GET['userid'];
+            $_SESSION['last_page'] = $_SERVER['HTTP_REFERER'];
 
             $query = mysqli_query($db_link, "SELECT * FROM `tbl_contacts` WHERE Benutzername = '$userEmail'") or die('Fehler: ' . mysqli_error());
 
             while($ImageData = mysqli_fetch_array($query)){
 
                 $ImageLink = $ImageData['pictureLink'];
-
             }
 
             $db_res = mysqli_query($db_link, "SELECT * FROM `tbl_contacts` WHERE Benutzername = '$userEmail'") or die('Fehler: ' . mysqli_error());
@@ -20,10 +20,14 @@
             while($row = mysqli_fetch_array($db_res))
             {   
                 
-                
+                if($userEmail == $_SESSION['session_username']){
                 echo("<div id='Profile'>
-                <h1>Ihr Profil</h1>");
-
+                <h1>Dein Profil</h1>");
+                }
+                else{
+                    echo("<div id='Profile'>
+                <h1>Benutzerprofil von $userEmail</h1>");
+                }
                 echo('<div id="Record"><h2>' . $row['Nachname'] . " " . $row['Vorname'] . '</h2>');
 
                 echo('<table>');
@@ -61,24 +65,27 @@
                 echo('</tr>');
                 echo('</table>');
                 if($userEmail == $_SESSION['session_username']){
-                echo('</br><a href="editProfile.php">Profil bearbeiten</a>');
+                echo('</br><a id="profil_bearbeiten" href="editProfile.php">Profil bearbeiten</a>');
                 }
                 $id++;
                 
             
         }
         
-         }     
-            
-        
-        else{
-
-            echo('<p>Keine Anzeigen gefunden!</p>');
+             
         }
         
-            
+        else{
+            echo('<p>Keine Anzeigen gefunden!</p>');
+        }
+
+        echo ('</div>');
+
+        if($userEmail != $_SESSION['session_username']){
+            require('listMessagesForRecord.php');
+        }   
         ?>
         
-        </div>
+        
 
         

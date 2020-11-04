@@ -5,6 +5,7 @@
     $userEmail = $_SESSION['session_user'];
     $hasorder = false;
     $headercreated = false;
+    $_SESSION['last_page'] = $_SERVER['HTTP_REFERER'];
 
     if(isset($_GET['user'])){
         $customer = $_GET['user'];
@@ -36,7 +37,11 @@
             echo('</tr>');
             echo('</table>');
             $user = $row['Username'];
+            if(isset($_GET['id']) and isset($_GET['user'])){
+                echo "";
+            }else{
             echo('<a class="zur_bestellung" href="../order_food.php?id='.$record_id.'&user='.$user.'">Zur Bestellung</a>');
+            }
             $hasorder= true;
             }
             elseif($row['Email'] == $userEmail){    #Du hast bestellt
@@ -67,10 +72,11 @@ echo('</div>');
 
 
 
-if((isset($_GET['user'])) or ($bestellEmail == $userEmail) or (($hasorder == false) and ($userEmail !== $verkäuferEmail))){
-    require('listMessagesForRecord.php');
+if((isset($_GET['user'])) or ($bestellEmail == $userEmail) or (($hasorder == false) and ($userEmail != $verkäuferEmail))){
     
+        require('listMessagesForRecord.php');
         }
+        
         
         
             ?>

@@ -6,7 +6,7 @@
     
     $resultCheck = mysqli_num_rows($query);
     echo('<div id="Record">');
-    echo('<h1>Meine Käufe:</h1>');
+    echo('<h1>Meine Käufe</h1>');
     if($resultCheck > 0){
         while($row = mysqli_fetch_array($query)){
             $record_id = $row['Record_ID'];

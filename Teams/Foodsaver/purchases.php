@@ -11,6 +11,7 @@ session_start();
         <title>Too Good to Waste</title>
         <meta name="description" content="Webseite zur Vermeidung von Lebensmittelverschwendung">
         <link href="Metadaten/design.css" rel="stylesheet">
+        <link href="Metadaten/purchases.css" rel="stylesheet">
 
     </head>
 
