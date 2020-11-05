@@ -4,6 +4,7 @@
     border: none;
     font-family: Arial, Helvetica, sans-serif;
     
+    
 }
 
 /* add yellow background */
@@ -50,13 +51,18 @@
 /* big column for the story */
 .columnStory {
     float: left;
-    width: 100%;
+    width: 98.5%;
     margin-bottom: 16px;
-    margin-top: 70px; 
-    /* padding-right: 100px;
-    padding-left: 40px; */
-    padding: 0px;
+    margin-top: 40px; 
+    padding: 8px;
     text-align: center;
+    
+  }
+  .p{
+    font-size: 18px;
+    margin-left: 160px;
+    margin-right: 160px;
+    line-height: 1.5;
   }
 
 /* Three columns side by side */
@@ -81,6 +87,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
   }
+  .card2 {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    /* font-size: 18px; */
+    
+  }
   
   /* Some left and right padding inside the container */
   .container {
@@ -99,20 +111,14 @@
   }
   
   .buttonKontakt {
-    height: 40px;
-    width: 145px;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
     background-color: #feca57;
-    margin-top: 20px;
-    /* border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px 20px;
-    color: white;
-    background-color: #feca57;
-    text-align: center;
-    cursor: pointer;
-    width: 150px;
-    margin-bottom: 16px; */
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
    
   }
   
