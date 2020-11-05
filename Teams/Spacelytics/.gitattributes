@@ -1,0 +1,2 @@
+# Defines the file extensions for git large file stroe (git lfs), so that those arn´t pushed to github directly but to a special server designed to handle large files. 
+*.mp4 filter=lfs diff=lfs merge=lfs -text
