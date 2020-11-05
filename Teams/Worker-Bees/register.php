@@ -177,6 +177,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Registrieren">
+                </br> 
+                </br> 
                 <input type="reset" class="btn btn-default" value="Daten zurücksetzen">
             </div>
             <p>Du hast schon einen Account? 
