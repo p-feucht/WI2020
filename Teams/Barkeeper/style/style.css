@@ -1,9 +1,3 @@
-#main{
-    text-align: center;
-    margin:auto;
-    padding:auto;
-    font-family: Georgia, 'Times New Roman', Times, serif}
-
 .horizontal{
     margin:0;
     padding:0;
@@ -48,3 +42,18 @@ a:hover {
     margin: 2px 1px;
     cursor: pointer;
 }
+
+#Input_Ingredients {
+    margin-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+input[type='text']{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    background-color: #fff2f2;
+}
+
+  

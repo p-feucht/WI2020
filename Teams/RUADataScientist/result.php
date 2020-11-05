@@ -14,29 +14,61 @@
     $LIKERT = "/^likert/";
 
     //results
-    $results = $_POST;   
-    $results_knowledge = array();
-    $results_likert = array();
+    $results_no_escape = $_POST;   
+    $results_final = array();
     $score = 0;
-
+    
     //split the $results array into a knowlegde and likert part.
-    foreach ($results as $question => $answer) {
-        if (preg_match($KNOWLEDGE, $question)) {
-            $results_knowledge[$question] = test_input($answer);
-        } elseif (preg_match($LIKERT, $question)) {
-            $results_likert[$question] = test_input($answer);
-        }
+    foreach ($results_no_escape as $question => $answer) {
+        if (preg_match($KNOWLEDGE, $question) || preg_match($LIKERT, $question)) {
+            $results_final[$question] = test_input($answer);
+        } 
     }
 
     //calculate the users score
-    foreach ($results_knowledge as $question => $answer) {
-        if($RESULTS_MAP[$question] == $answer) {
-            $score += 3;
+    foreach ($results_final as $question => $answer) {
+        if(preg_match($KNOWLEDGE, $question)){
+            if($RESULTS_MAP[$question] == $answer) {
+                $score += 3;
+            }
+        } else {
+            $score = $score + (int)$answer;
         }
     }
-    foreach ($results_likert as $question => $answer) {
-        $score = $score + (int)$answer;
+
+    
+    //DATABASE
+    $servername = "localhost";
+    $username = "ruadatascientist_admin";
+    $password = "JgFuXukjLwUScgAf";
+    $dbname = "ruadatascientist";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
+    
+    //define query
+    $sql = "INSERT INTO results (username, question_1, question_2, question_3)
+    VALUES ('test', knowledge_1, likert_1, likert_2)";
+    
+    //instert values into string
+    foreach ($results_final as $question => $answer) {
+        $sql = str_replace($question, $answer, $sql);
+    }
+
+    //try to insert the values
+    if ($conn->query($sql) === TRUE) {
+        //echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    //disconnect
+    $conn->close();
 
     //function for validating input data
     function test_input($data) {
@@ -78,7 +110,7 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="test.html">Test</a>
+                <a class="active" href="test.html">Test</a>
             </li>
             <li>
                 <a href="topics.html">Topics</a>
