@@ -14,7 +14,7 @@
     <!-- header html -->
     <div class="header" id="topHeader">
 
-        <a href="index.php"> <img src="images/logoKomplett.png" class="logo"></a>
+        <a href="index.php"> <img src="images/logoKomplett.png" class="logo" alt="Worker Bees Logo"></a>
         <div class="header-content-middle">
             <a class="biete" href="FormularBiete.php">Ich biete</a>
             <a href="#tips">Tipps & Tricks</a>
