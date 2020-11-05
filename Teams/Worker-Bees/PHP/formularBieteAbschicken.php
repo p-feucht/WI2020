@@ -8,19 +8,19 @@ $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $p
 $valid=TRUE;
 
 //Connection to bplaced server
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "workerbees";
 $password = "HKSZ52";
-$dbname = "workerbees_db1";
+$dbname = "workerbees_db1";*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-    /*$servername = "localhost";
+    $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "workerxampp";*/
+    $dbname = "workerxampp";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -162,9 +162,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $a5_kleinteil = $conn->real_escape_string($_POST["a5_Kleinteil"]);
                         
 
-                        $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASäge, AKleinteil)
-                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', 
-                        '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_säge', '$a5_kleinteil')";
+                        $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
+                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
                     
                         //echo $sql;
                         //echo "<br>";
@@ -236,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $a3_schleif;
                             echo "<br>";
-                            echo $a4_säge;
+                            echo $a4_saege;
                             echo "<br>";
                             echo $a5_kleinteil;
                             echo "Error: " . $sql . "<br>" . $conn->error;
