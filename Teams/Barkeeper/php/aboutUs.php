@@ -1,4 +1,4 @@
 <ul class="horizontal">
-            <a href="impressum.php"class="button">Impressum</a>
-            <a href="kontakt.php" class="button">Kontakt</a>
-        </ul> 
+    <li><a href="impressum.php"class="button">Impressum</a></li>
+    <li><a href="kontakt.php" class="button">Kontakt</a></li>
+</ul> 
