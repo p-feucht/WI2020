@@ -21,29 +21,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- date picker links (https://www.daterangepicker.com/)-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script  src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script  src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script  src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
 
 </head>
 
 <body>
-    <!--<div class="header">
-        <a href="index.html"> <img src="images/logoKomplett.png" class="logo">
-        </a>
-        <div class="header-content-middle">
-            <a class="biete" href="FormularBiete.html">Ich biete</a>
-            <a href="#tips">Tipps & Tricks</a>
-            <a class="aboutus" href="aboutUs.html">Über uns</a>
-            <a href="FormularBiete.html#contact">Impressum</a>
-        </div>
-
-        <div class="header-content-right">
-            <a href="#Anmeldung" class="headerButton">Anmelden</a>
-            <a href="categories.html#Werkstatt-Ang" class="headerButton" id="headerSearch"><i class="fa fa-search"></i></a>
-        </div>
-    </div>-->
+    
     <?php 
     $site_name = "HTML5-Seite mit Grundstruktur";
     include ("./PHP/header.php"); ?>
@@ -197,28 +183,6 @@
                             <label for="bierBez1">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
                         </div>
 
-                        <!--<div class="formblock">
-                            <label>Damit Interessenten wissen, wo deinen Angebotsgegenstand abholen können, gib deine <b>Anschrift</b> an</label>
-                            <br>
-                            <label>Straße
-                            <input type="text" name="Straße" value=" " size="30" maxlength="30">
-                            </label>
-                            <br>
-
-                            <label>Hausnummer
-                            <input type="number" name="Hnr" value=" " size="4" maxlength="4"> 
-                        </label>
-                            <br>
-
-                            <label>Postleitzahl
-                            <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
-                        </label>
-                            <br>
-                            <label>Ort
-                            <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
-                        </label>
-                    </div>-->
-
                     </div>
 
 
@@ -260,7 +224,7 @@
                                     </li>
                                     <li>
                                         <label>
-                                <input type="checkbox" name="a4_Säge" value="1">
+                                <input type="checkbox" name="a4_Saege" value="1">
                                 elektrische Standsägen
                               </label>
                                     </li>
@@ -273,26 +237,7 @@
                                 </ul>
                             </fieldset>
                         </div>
-                        <!--
-                        <div class="formblock">
-                            <label>Gib die <b>Anschrift</b> der angebotenen Werkstatt an</label>
-                            <br>
-                            <label>Straße
-                            <input type="text" name="Straße" value=" " size="30" maxlength="30">
-                            </label>
-                            <br>
-                            <label>Hausnummer
-                            <input type="number" name="Hnr" value=" " size="4" maxlength="4"> 
-                        </label>
-                            <br>
-                            <label>Postleitzahl
-                            <input type="number" name="PLZ" value=" " size="5" maxlength="5"> 
-                        </label>
-                            <br>
-                            <label>Ort
-                            <input type="text" name="Ort" value=" " size="30" maxlength="30"> 
-                        </label>
-                        </div>-->
+                        
                     </div>
 
 
@@ -332,7 +277,7 @@
                 </form>
 
 
-                <script type="text/javascript">
+                <script>
                     $(document).ready(function() {
                         $('input[type="radio"]').click(function() {
                             var inputValue = $(this).attr("value");
@@ -354,31 +299,6 @@
 
         
         <?php include ("./PHP/footer.php"); ?>
-
-        <!--<div class="footer">
-            <div class="footer_info">
-                <img src="images/logoKomplett.png " class="logo " alt="Worker Bees Logo" width="207" height="60">
-                <br>
-                <br>
-                <br>
-
-                <div class="footer_slogan">
-                    <p>Come to craft.</p>
-                </div>
-                <div id="contact">
-                    <p>WorkerBees e.V.
-                        <br> Musterstraße 25
-                        <br> 86712 Musterstadt
-                    </p>
-                    <a href="mailto:support@workerbees.com ">support@workerbees.com</a>
-                    <br> +49 172 906 212
-                </div>
-            </div>
-            <div class="footer_end">
-                <p>Copyright 2020 | WorkerBees e.V.</p>
-            </div>
-
-        </div>-->
 
     </div>
 </body>
