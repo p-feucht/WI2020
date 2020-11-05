@@ -3067,6 +3067,7 @@ html {
     pointer-events: none;
   }
   .btn-default {
+    width: 100%;
     color: #333;
     background-color: #fff;
     border-color: #ccc;
@@ -3125,6 +3126,7 @@ html {
   }
   /* Login Button and hover below */
   .btn-primary {
+    width: 100%;
     color: #000000;
     /* background-color: #337ab7;
     border-color: #2e6da4; */
