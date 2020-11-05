@@ -16,6 +16,7 @@ if ($conn->connect_error) {
 $sql = "SELECT ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
 PLZ, Ort, Bild, usernameErsteller, Werkstatt_ID, PreisProTag, BezInBier, ABohr, ADrechsel, 
 ASchleif, ASaege, AKleinteil, Erstellzeitpunkt FROM AngebotWerkstatt";
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -29,6 +30,7 @@ if ($result->num_rows > 0) {
         $offeruser = $row["usernameErsteller"];
         $plz = $row["PLZ"];
         $description = $row["ABeschreibung"];
+        $bezBier = $row["BezInBier"];
 
         $abohr = $row["ABohr"];
         $adrechsel = $row["ADrechsel"];
@@ -39,6 +41,8 @@ if ($result->num_rows > 0) {
         $card_ID = "WScard_".(string)$orderID;
         $modal_target = "#WSmodal_".(string)$orderID;
         $modal_ID = "WSmodal_".(string)$orderID;
+
+        $bier = round($price,0);
 
     ?>
         <!-- create card for each offer -->
@@ -87,10 +91,17 @@ if ($result->num_rows > 0) {
                             <label for="bookingDate">Datum:</label>
                             <input type="date" id="bookingDate"><br>
 
-                            <p class="modal-booking-text">Gesamtbetrag: 1000 €<br></p>
+                            <p class="modal-booking-text">Gesamtbetrag: <?php echo $price ?> €<br></p>
 
-                            <input type="checkbox" name="bierZahlung">
-                            <label for="bierZahlung"> Ich möchte in Bier bezahlen (1000 Bier)</label><br>
+                            <input id="bierInput" type="checkbox" name="bierZahlung">
+                            <label id="bierLabel" for="bierZahlung"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
+                                <script>
+                                    var bezBier = <?php echo $bezBier ?>;
+                                    if(bezBier!=1) {
+                                        document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
+                                        document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";
+                                    }
+                                </script>
 
                             <label for="paymentType">Wähle die Bezahlart:</label>
                             <select name="paymentType" id="paymentType">
