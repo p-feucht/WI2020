@@ -12,18 +12,40 @@
             include("menu.php");
         ?>
     </nav>
-    <p>Eingabe der Zutaten</p>
-    <form>
-        <label for="Alkohol"> Alkohol: </label> <br>
-        <input type="text" id= "Alkohol1" name="Zutat1">
-        <input type="text" id= "Alkohol2" name="Zutat2"> <br>
-        <label for= "Säfte"> Säfte: </label> <br>
-        <input type="text" id= "Saft1" name="Saft1"> 
-        <input type="text" id= "Saft2" name="Saft2"> <br>
-        <label for= "Grünzeug"> Grünzeug</label> <br>
-        <input type="text" id= "Grünzeug1" name="Grünzeug1">
-        <input type="text" id= "Grünzeug1" name="Grünzeug1">  <br>
-        <input type="submit" value="Submit">
+    <form id ='Input_Ingredients'>
+        <input 
+            type="text" id= "Alkohol1" name="Zutat1" placeholder = "Alkohol" 
+            onfocus="this.placeholder=''" 
+            onblur="this.placeholder='Alkohol'" 
+        />
+        <input 
+            type="text" id= "Alkohol2" name="Zutat2" placeholder="Alkohol"
+            onfocus="this.placeholder=''" 
+            onblur="this.placeholder='Alkohol'" 
+        > <br>
+        <input 
+            type="text" id= "Saft1" name="Saft1" placeholder="Saft"
+            onfocus="this.placeholder=''" 
+            onblur="this.placeholder='Saft'" 
+        > 
+        <input 
+            type="text" id= "Saft2" name="Saft2" placeholder="Saft"
+            onfocus="this.placeholder=''" 
+            onblur="this.placeholder='Saft'" 
+        > <br>
+        <input 
+            type="text" id= "Grünzeug1" name="Grünzeug1" placeholder="Grünzeug"
+            onfocus="this.placeholder=''" 
+            onblur="this.placeholder='Grünzeug'" 
+        >
+        <input 
+            type="text" id= "Grünzeug1" name="Grünzeug1" placeholder="Grünzeug"
+            onfocus="this.placeholder=''" 
+            onblur="this.placeholder='Grünzeug'" 
+        >  <br>
+        <input 
+            type="submit" value="Submit"
+        >
     </form>
     <footer>
     <?php
