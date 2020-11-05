@@ -139,6 +139,19 @@ RESPOSIVE
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (max-width: 480px) {
+    .footer-elements {
+        flex-direction: column;
+        justify-content: center;
+    }
 
- }
+    .footer-element, .footer-link {
+        width: 100%;
+        padding-top: 0.25vh;
+        padding-bottom: 0.25vh;
+    }
+
+    .nav-logo {
+        padding: 1vh;
+    }
+}
