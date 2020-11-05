@@ -34,7 +34,7 @@
 
 .contentBox{
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .contentBox>h1{
@@ -76,12 +76,11 @@
 }
 
 .source{
-    background-color: rgb(105, 100, 100, 0.7);
     padding: 30px;
 }
 .source>h3{
     font-style: italic;
-    color: black;
+    color: rgb(39, 39, 39);
     font-size: small;
 }
 
