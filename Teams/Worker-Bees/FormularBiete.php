@@ -37,9 +37,9 @@
     <div class="content">
         <!--Slider-->
         <section>
-            <img class="mySlides" src="images/smith.jpg" style="width:100%">
-            <img class="mySlides" src="images/werkstatt.jpg" style="width:100%">
-            <img class="mySlides" src="images/tools.jpg" style="width:100%">
+            <img class="mySlides" src="images/smith.jpg" alt="Schmied an der Arbeit" style="width:100%">
+            <img class="mySlides" src="images/werkstatt.jpg" alt="Mann mit Staubmaske arbeitet in Werkstatt" style="width:100%">
+            <img class="mySlides" src="images/tools.jpg"  alt="verschiedene Werkzeuge" style="width:100%">
         </section>
         <script src="JavaScript/formular.js"></script>
         <!--End of Slider-->
