@@ -15,7 +15,7 @@ if ( $_FILES['uploaddatei']['name']  <> "" )
 
     if ( ! in_array( $_FILES['uploaddatei']['type'] , $zugelassenedateitypen ))
     {
-        echo "<p>Dateitype ist NICHT zugelassen</p>";
+        echo '<script type="text/javascript">alert("Dateitype ist NICHT zugelassen");</script>';
     }
     else
     {
@@ -35,7 +35,7 @@ if ( $_FILES['uploaddatei']['name']  <> "" )
         }
         else
         {
-            echo "<p>Dateiname ist nicht zulässig</p>";
+            echo'<script type="text/javascript">alert("Dateiname ist nicht zulässig");</script>';
         }
     }
 }

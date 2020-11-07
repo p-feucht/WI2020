@@ -140,19 +140,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo $bierBez1;*/
                             } else {
-                                echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden. Du hast den Preis '.$PreisProTag1.' angegeben");</script>';
+                                echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
                             //echo "Error: " . $sql . "<br>" . $conn->error;
                          
                             }
                         }
                         else{
-                            echo '<script type="text/javascript">alert("Die Felder sind nicht valide. Bitte ergänze deine Angaben");</script>';}
+                            echo '<script type="text/javascript">alert("Deine Angaben sind nicht vollständig oder nicht valide. Bitte ergänze deine Angaben");</script>';}
                     }
 
                     elseif($radioAnswer == "Werkstatt"){
                         //echo 'You chose Werkstatt';   
-                        //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])){
+                        //if(!checkIfEmpty("PreisProTag")){
                             $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
+                        //}
+                        //else{
+                        //    $valid=FALSE;
                         //}
                         
                         //checkboxes
@@ -163,91 +166,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $a4_saege = $conn->real_escape_string($_POST["a4_Saege"]);
                         $a5_kleinteil = $conn->real_escape_string($_POST["a5_Kleinteil"]);
                         
-                        $test="INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
-                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
-                        echo $test;
-
-                        $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
-                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
-                    
-                    
-                        //echo $sql;
-                        //echo "<br>";
-
-                        if ($conn->query($sql) === TRUE) {
-                            echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
-                            /*echo "New record created successfully";
-                            echo "<br>";
-                            echo "Entries written:";
-                            echo $title;
-                            echo "<br>";
-                            echo $zeitraum;
-                            echo "<br>";
-                            echo $beschreibung;
-                            echo "<br>";
-                            echo $vorname;
-                            echo "<br>";
-                            echo $nachname;
-                            echo "<br>";
-                            echo $strasse;
-                            echo "<br>";
-                            echo $hnr;
-                            echo "<br>";
-                            echo $plz;
-                            echo "<br>";
-                            echo $ort;
-                            echo "<br>";
-                            echo $preisProTag2;
-                            echo "<br>";
-                            echo $bierBez2;
-                            echo "<br>";
-                            echo $a1_bohr;
-                            echo "<br>";
-                            echo $a2_drechsel;
-                            echo "<br>";
-                            echo $a3_schleif;
-                            echo "<br>";
-                            echo $a4_saege;
-                            echo "<br>";
-                            echo $a5_kleinteil;*/
-                        } else {
-                            echo "Ausgabe zur Fehlersuche. Folgende Werte stehen in den PHP-Variablen:";
-                            echo "<br>";
-                            echo $title;
-                            echo "<br>";
-                            echo $zeitraum;
-                            echo "<br>";
-                            echo $beschreibung;
-                            echo "<br>";
-                            echo $vorname;
-                            echo "<br>";
-                            echo $nachname;
-                            echo "<br>";
-                            echo $strasse;
-                            echo "<br>";
-                            echo $hnr;
-                            echo "<br>";
-                            echo $plz;
-                            echo "<br>";
-                            echo $ort;
-                            echo "<br>";
-                            echo $preisProTag2;
-                            echo "<br>";
-                            echo $bierBez2;
-                            echo "<br>";
-                            echo $a1_bohr;
-                            echo "<br>";
-                            echo $a2_drechsel;
-                            echo "<br>";
-                            echo $a3_schleif;
-                            echo "<br>";
-                            echo $a4_saege;
-                            echo "<br>";
-                            echo $a5_kleinteil;
-                            echo "Error: " . $sql . "<br>" . $conn->error;
-                            echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                            
-                        }
+                        if($valid==true){
+                        
+                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                            //echo $sql;
+                        
+                            if ($conn->query($sql) === TRUE) {
+                                echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
+                                
+                            } else {
+                                /*echo "Ausgabe zur Fehlersuche. Folgende Werte stehen in den PHP-Variablen:";
+                                echo "<br>";
+                                echo $title;
+                                echo "<br>";
+                                echo $zeitraum;
+                                echo "<br>";
+                                echo $beschreibung;
+                                echo "<br>";
+                                echo $vorname;
+                                echo "<br>";
+                                echo $nachname;
+                                echo "<br>";
+                                echo $strasse;
+                                echo "<br>";
+                                echo $hnr;
+                                echo "<br>";
+                                echo $plz;
+                                echo "<br>";
+                                echo $ort;
+                                echo "<br>";
+                                echo $preisProTag2;
+                                echo "<br>";
+                                echo $bierBez2;
+                                echo "<br>";
+                                echo $a1_bohr;
+                                echo "<br>";
+                                echo $a2_drechsel;
+                                echo "<br>";
+                                echo $a3_schleif;
+                                echo "<br>";
+                                echo $a4_saege;
+                                echo "<br>";
+                                echo $a5_kleinteil;
+                                echo "Error: " . $sql . "<br>" . $conn->error;*/
+                                echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
+                            } 
+                        } else{echo '<script type="text/javascript">alert("Deine Angaben sind nicht vollständig oder nicht valide.");</script>';}   
                     }
 
                     elseif($radioAnswer == "Dienstleistung") {
@@ -257,45 +222,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $preisBetrag = $conn->real_escape_string($_POST['Preis']);
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
-                        $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Preisart, Preis, BezInBier)
-                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$bezahlart', '$preisBetrag', '$bierBez3')";
-                    
-                        echo $sql;
-                        echo "<br>";
+                            $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Preisart, Preis, BezInBier)
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$bezahlart', '$preisBetrag', '$bierBez3')";
+                        
+                            //echo $sql;
+                            //echo "<br>";
 
-                        if ($conn->query($sql) === TRUE) {
+                            if($valid==true){
+                                if ($conn->query($sql) === TRUE) {
 
-                            echo '<script type="text/javascript">alert("Vielen Dank, das Angebot wurde aufgenommen");</script>';
-                          /*  echo "New record created successfully";
-                            echo "<br>";
-                            echo "Entries written:";
-                            echo $title;
-                            echo "<br>";
-                            echo $zeitraum;
-                            echo "<br>";
-                            echo $beschreibung;
-                            echo "<br>";
-                            echo $vorname;
-                            echo "<br>";
-                            echo $nachname;
-                            echo "<br>";
-                            echo $strasse;
-                            echo "<br>";
-                            echo $hnr;
-                            echo "<br>";
-                            echo $plz;
-                            echo "<br>";
-                            echo $ort;
-                            echo "<br>";
-                            echo $bezahlart;
-                            echo "<br>";
-                            echo $preisBetrag;
-                            echo "<br>";
-                            echo $bierBez3;*/
-                        } else {
-                            echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                        //echo "Error: " . $sql . "<br>" . $conn->error;
-                        }
+                                echo '<script type="text/javascript">alert("Vielen Dank, das Angebot wurde aufgenommen");</script>';
+                            /*  echo "New record created successfully";
+                                echo "<br>";
+                                echo "Entries written:";
+                                echo $title;
+                                echo "<br>";
+                                echo $zeitraum;
+                                echo "<br>";
+                                echo $beschreibung;
+                                echo "<br>";
+                                echo $vorname;
+                                echo "<br>";
+                                echo $nachname;
+                                echo "<br>";
+                                echo $strasse;
+                                echo "<br>";
+                                echo $hnr;
+                                echo "<br>";
+                                echo $plz;
+                                echo "<br>";
+                                echo $ort;
+                                echo "<br>";
+                                echo $bezahlart;
+                                echo "<br>";
+                                echo $preisBetrag;
+                                echo "<br>";
+                                echo $bierBez3;*/
+                                } else {
+                                echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
+                                //echo "Error: " . $sql . "<br>" . $conn->error;
+                                }
+                            }
+                            else{
+                                echo '<script type="text/javascript">alert("Deine Angaben sind nicht vollständig oder nicht valide.");</script>';
+                            }
                     }
                 }
                 
