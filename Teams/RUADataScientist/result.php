@@ -96,28 +96,6 @@
     <div class="nav-blocker">''</div>
 
     <!--CONTENT-->
-    <?php 
-    /*output results for knowledge questions*/
-    /*
-    echo "<h3>Results knowledge:<h3>";
-    echo "<table><tr><th>Question</th><th>Answer</th></tr>";
-    foreach ($results_knowledge as $question => $answer) {
-        echo "<tr><td>" . $question . "</td><td>" . $answer . "</td></tr>";
-    }
-    echo "</table><br>";
-    */
-
-    /*output results for likert questions*/
-    /*echo "<h3>Results Likert:<h3>";
-    echo "<table><tr><th>Question</th><th>Answer</th></tr>";
-    foreach ($results_likert as $question => $answer) {
-        echo "<tr><td>" . $question . "</td><td>" . $answer . "</td></tr>";
-    }
-    echo "</table><br>";
-    */
-
-    /*output the users calculated score*/
-    ?>
     <?php
     echo "<div class='result-page-content'><br><br>";
     if(!$logged_out) {
@@ -153,16 +131,16 @@
                 echo "<label for='password'>Password: </label>";
                 echo "<input type='password' name='password' id='input-password'>";
                 echo "<br>";
-                echo "<input class='submit-button' type='submit' name='submit' value='log me in'>";
+                echo "<input class='submit-button' type='submit' name='submit' value='Log Me In'>";
             echo "</form>";
             
         } else {
             echo "<br><br><br><br>";
             echo "<form class='button-form' method='POST'>";
-            echo "<input class='submit-button' type ='submit' name='submit' value='log me out'>";
+            echo "<input class='submit-button' type ='submit' name='submit' value='Log Me Out'>";
             echo "</form>";
-            echo "<form class='button-from' action='personalForm.html'>";
-            echo "<input class='submit-button' type ='submit' value='retake test'>";
+            echo "<form class='button-from' action='test.html'>";
+            echo "<input class='submit-button' type ='submit' value='Retake Test'>";
             echo "</form>";
         }
     } else {
