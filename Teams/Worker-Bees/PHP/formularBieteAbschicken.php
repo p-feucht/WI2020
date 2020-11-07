@@ -61,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     //Bild Datei fehlt noch
+                    include ("dateiupload.php");
 
                     if (!checkIfEmpty("Vorname")) {
                         $vorname = $conn->real_escape_string($_POST["Vorname"]);//der Wert der in Vorname geschriben wurde wird aufbereitet und in Variable geschrieben
