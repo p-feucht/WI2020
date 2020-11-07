@@ -117,7 +117,10 @@
                     <p class="title">Gründer</p>
                     <p class="title">Verantwortlich für die Webseite</p>
                       </br> 
-                    <p>"Kein Handwerk ohne Lehrzeit" (Jean de La Bruyère (1645 - 1696)). Das wissen wir alle gut genug. Dass aber auch jeder die Möglichkeit hat, anzupacken, seine eigenen Fähigkeiten auszubauen, neue Techniken auszuprobieren und eigene Projekte umzusetzen, auf die man hinterher stolz sein kann; dafür wollen wir Workerbees sorgen."
+                    <p>"Kein Handwerk ohne Lehrzeit" (Jean de La Bruyère). Obwohl ich das immer wieder 
+                      feststellen muss, spüre ich doch meist einen Funken Stolz, wenn ich an meiner selbst gebauten 
+                      Kommode vorbeilaufe. Damit jeder die Möglichkeit hat, seine eigenen Unikate zu schaffen
+                      und dabei seine Fähigkeiten auszubauen, gibt es die Workerbees.
 
                     </p>
                       </br> 
