@@ -13,25 +13,25 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
-PLZ, Ort, Bild, usernameErsteller, Werkzeug_ID, PreisProTag, BezInBier, Erstellzeitpunkt FROM AngebotWerkzeug";
+PLZ, Ort, Bild, usernameErsteller, Dienst_ID, Preis, BezInBier, Erstellzeitpunkt FROM AngebotDienst";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
 
-        $orderID = $row["Werkzeug_ID"];
+        $orderID = $row["Dienst_ID"];
         $location = $row["Ort"];
         $title = $row["ATitel"];
         $price = $row["PreisProTag"];
         $offeruser = $row["usernameErsteller"];
         $plz = $row["PLZ"];
-        $description = $city = $row["ABeschreibung"];
+        $description = $row["ABeschreibung"];
         $bezBier = $row["BezInBier"];
 
-        $card_ID = "WZcard_".(string)$orderID;
-        $modal_target = "#WZmodal_".(string)$orderID;
-        $modal_ID = "WZmodal_".(string)$orderID;
+        $card_ID = "Dcard_".(string)$orderID;
+        $modal_target = "#Dmodal_".(string)$orderID;
+        $modal_ID = "Dmodal_".(string)$orderID;
 
         $bier = round($price,0);
 
@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
         <div class="card" id=<?php echo $card_ID ?> data-toggle="modal" data-target=<?php echo $modal_target ?>>
             <img src="images/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
             <p class="card-lp"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
-                <span class="price"><?php echo $price ?>€ / Tag</span></p>
+                <span class="price"><?php echo $price ?> €</span></p>
             <h2><?php echo $title ?></h2>
         </div>
 
@@ -65,12 +65,6 @@ if ($result->num_rows > 0) {
                         <p class="offer-description">
                             <?php echo $description ?>
                         </p>
-                        <!--only for Werkstat!!
-                        <ul class="modal-amenities">
-                            <li>Standbohrmaschine</li>
-                            <li>elektrische Standsägen</li>
-                        </ul>
-                        -->
                     </div>
                     <div class="modal-content-split">
                         <img src="images/Werkzeug.jpg" class="modal-image" alt="Angebot">

@@ -61,6 +61,7 @@
     <div id="Dienst" class="tabcontent">
         
         <?php include "PHP/searchField.php"; ?>
+        <?php include "PHP/dienstOffers.php"; ?>
 
     </div>
 
