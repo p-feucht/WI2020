@@ -66,28 +66,28 @@
     <div class='register-content'>
         <?php
         if ($_SESSION["logged_in"]) {
-            echo "<h2>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2>";
-            echo "<h2><a href='result.php'>back to result page</a><h2>";
+            echo "<br><h2 class='form-title'>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2><br>";
+            echo "<h2 class='form-title'><a href='result.php'>back to result page</a><h2>";
         } else {
-            echo "<h2>Fill out the form below to register for saving your score in our database:<h2>";
-            echo "<br>";
+            echo "<h2 class='form-title'>Fill out the form below to register for saving your score in our database:<h2>";
+            echo "<br><br>";
             echo "<form class='register-form' method='POST'>";
             echo "<label for='username'>Username:     </label>";
             echo "<input type='text' name='username'>";
             if ($usernameerror) {
-                echo "  <div style='color: red'>username allready in use!</div>";
+                echo "  <div class='input-error'>Username allready in use!</div>";
             }
             echo "<br><br>";
             echo "<label for='password'>Password:     </label>";
             echo "<input type='password' name='password'>"; 
             if ($pwderror) {
-                echo "  <div style='color: red'>passwords don't match!</div>";
+                echo "  <div class='input-error'>Passwords don't match!</div>";
             }
             echo "<br>";
             echo "<label for='password-repeat'>Repeat Password:</label>";
             echo "<input type='password' name='password-repeat'>";
             if ($pwderror) {
-                echo "  <div style='color: red'>passwords don't match!</div>";
+                echo "  <div class='input-error'>Passwords don't match!</div>";
             }
             echo "<br>";
             echo "<input type='submit' name='submit' value='Register'>";
