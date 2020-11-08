@@ -1,1 +1,13 @@
 URL: https://drive.google.com/file/d/1Wn8PrBPpwXWDB40VYLACo3FN7wJs7i6x/view?usp=sharing
+
+
+INSERT Beispiel:
+
+    INSERT INTO cocktails_t (name, beschreibung)
+    VALUES ('Cocktail' 'Ein Cocktail');
+
+    INSERT INTO rezept_t (name, beschreibung)
+    VALUES ('Zutat', 'Eine Zutat');
+
+    INSERT INTO Rezept_RT(COCKTAILS_ID, Zutat, Menge)
+    VALUES (1, 'Zutat', '1 cl')
