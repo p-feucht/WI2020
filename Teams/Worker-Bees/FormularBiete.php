@@ -63,7 +63,7 @@
                 </p>
                 <br>
 
-                <form name="formularFuerAngebot" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" onsubmit="return pruefeFormular();">
+                <form name="formularFuerAngebot" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" onsubmit="return pruefeFormular();">
 
                     <div class=formblock>
 
@@ -125,12 +125,12 @@
                     </div>
 
                     <div class="formblock">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                         <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
-                        <br>
-                        <button type="button">Bild Upload</button>
-                        <div class=unterüberschrift>
-                            <label>noch ist kein Bild ausgewählt</label>
+                        <div class="unterüberschrift">
+                            <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
+                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/png">
                     </div>
 
                     <div class="formblock">
