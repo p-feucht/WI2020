@@ -1,10 +1,12 @@
 <?php
-/*
+$imgData="";
+$content="";
+
 echo "<pre>";
 echo "FILES:<br>";
 print_r ($_FILES );
 echo "</pre>";
-*/
+
 if ( $_FILES['uploaddatei']['name']  <> "" )
 {
     // Datei wurde durch HTML-Formular hochgeladen
@@ -15,7 +17,8 @@ if ( $_FILES['uploaddatei']['name']  <> "" )
 
     if ( ! in_array( $_FILES['uploaddatei']['type'] , $zugelassenedateitypen ))
     {
-        echo '<script type="text/javascript">alert("Dateitype ist NICHT zugelassen");</script>';
+        echo '<script type="text/javascript">alert("Der Dateityp deines Bilds ist nicht zugelassen");</script>';
+        $valid = false; //obwohl Bild nicht unbedingt erforderlich ist um ein Angebot zu stellen, hier verhindern, dass Rest in DB gespeichert wird, da User vllt ein anderes Bild hochladen möchte.  
     }
     else
     {
@@ -24,18 +27,25 @@ if ( $_FILES['uploaddatei']['name']  <> "" )
 
         if ( $_FILES['uploaddatei']['name'] <> '' )
         {
-            move_uploaded_file (
-                 $_FILES['uploaddatei']['tmp_name'] ,
-                 'hochgeladeneBilder/'. $_FILES['uploaddatei']['name'] );
+            $localFileName='hochgeladeneBilder/'. $_FILES['uploaddatei']['name'];
+            //Bild in Unterordner "hochgeladeneBilder" speichern 
+            if (move_uploaded_file (
+                 $_FILES['uploaddatei']['tmp_name'] , $localFileName )){
 
-            echo "<p>Hochladen war erfolgreich: ";
-            echo '<a href="hochgeladenes/'. $_FILES['uploaddatei']['name'] .'">';
-            echo 'hochgeladeneBilder/'. $_FILES['uploaddatei']['name'];
-            echo '</a>';
+                echo "<p>Verschieben in Ordner war erfolgreich: ";
+                echo '<a href="hochgeladenes/'. $_FILES['uploaddatei']['name'] .'">';
+                echo 'hochgeladeneBilder/'. $_FILES['uploaddatei']['name'];
+                echo '</a>';    
+
+                // $imgData für DB-insert 
+                $imgData = addslashes(file_get_contents('hochgeladeneBilder/'. $_FILES['uploaddatei']['name']));
+        
+            
+            }
         }
         else
         {
-            echo'<script type="text/javascript">alert("Dateiname ist nicht zulässig");</script>';
+            echo'<script type="text/javascript">alert("Der Name deiner Datei ist leer und nicht zulässig");</script>';
         }
     }
 }
@@ -43,8 +53,7 @@ if ( $_FILES['uploaddatei']['name']  <> "" )
 function dateiname_bereinigen($dateiname)
 {
     // erwünschte Zeichen erhalten bzw. umschreiben
-    // aus allen ä wird ae, ü -> ue, ß -> ss (je nach Sprache mehr Aufwand)
-    // und sonst noch ein paar Dinge (ist schätzungsweise mein persönlicher Geschmach ;)
+    //  ä -> ae, ü -> ue, ß -> ss
     $dateiname = strtolower ( $dateiname );
     $dateiname = str_replace ('"', "-", $dateiname );
     $dateiname = str_replace ("'", "-", $dateiname );
@@ -79,4 +88,5 @@ function dateiname_bereinigen($dateiname)
     $dateiname = filter_var($dateiname, FILTER_SANITIZE_URL);
     return ($dateiname);
 }
+
 ?>
