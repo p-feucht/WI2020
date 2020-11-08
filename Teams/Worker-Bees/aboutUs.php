@@ -109,7 +109,7 @@
                      
 
 
-                    <img src="images/TestbildTeam.jpg" alt="Sarah" style="width:100%">
+                    <img src="images/Sarah.jpg" alt="Sarah" style="width:100%">
 
                     <div class="container">
                       <h2>Sarah Engelmayer</h2>
@@ -117,7 +117,12 @@
                     <p class="title">Gründer</p>
                     <p class="title">Verantwortlich für die Webseite</p>
                       </br> 
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>"Kein Handwerk ohne Lehrzeit" (Jean de La Bruyère). Obwohl ich das immer wieder 
+                      feststellen muss, spüre ich doch meist einen Funken Stolz, wenn ich an meiner selbst gebauten 
+                      Kommode vorbeilaufe. Damit jeder die Möglichkeit hat, seine eigenen Unikate zu schaffen
+                      und dabei seine Fähigkeiten auszubauen, gibt es die Workerbees.
+
+                    </p>
                       </br> 
                       <p>engelmayer@workerbees.com</p>
                          </br> 
