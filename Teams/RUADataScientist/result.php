@@ -3,7 +3,7 @@
      * STATIC VARIABLES
      */
     //MAPPING TABLE FOR KNOWLEGDE QUESTIONS AND THEIR RESULTS
-    $RESULTS_MAP = array("knowledge_1"=>"0");
+    $RESULTS_MAP = array("knowledge_1"=>"1", "knowledge_2"=>"1", "knowledge_3"=>"1", "knowledge_4"=>"1", "knowledge_5"=>"1");
     $RECOMMENDATIONS = array("0"=>"Your low results indicate that a profession in datascience is probably not your best option. However - if you're still interested you might like checking out our collection of datscience-related topics.",
                              "50"=>"You're allready quite well informed and your results indicate that datascience might be for you. We suggest you to gather some more information about the subject. You might consider starting in our topics tab.",
                              "80"=>"Wow! What an amazing result! You should consider doing a deep-dive into the subject of datascience.");
@@ -14,7 +14,7 @@
     $LIKERT = "/^likert/";
 
     //A fixed amount for every knowledge question, and a fixed amount for every likert question
-    $MAX_SCORE = 9; //3 questions atm. 3 points max per question
+    $MAX_SCORE = (5*3) + (9*5); //5 knowledge questions with a max of 3 points each, 9 likert questions with a max of 5 points each.
 
     //DATABASE
     $servername = "localhost";
@@ -193,7 +193,9 @@ function getResultsFromForm($posted_data) {
 function getLastResultFromDatabase($user) {
     global $conn;
 
-    $sql = "SELECT question_1 'knowledge_1', question_2 'likert_1', question_3 'likert_2' FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM username WHERE username = '" . $user . "')";
+    $sql = "SELECT question_1 'knowledge_1', question_2 'knowledge_2', question_3 'knowledge_3', question_4 'knowledge_4', question_5 'knowledge_5',
+            question_6 'likert_1', question_7 'likert_2', question_8 'likert_3', question_9 'likert_4', question_10 'likert_5', question_11 'likert_6', question_12 'likert_7', question_13 'likert_8', question_14 'likert_9',
+            FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM username WHERE username = '" . $user . "')";
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -253,7 +255,8 @@ function try_login($posted_data) {
 //WRITE A SCORE TO THE DATABASE
 function writeScoreToDatabase($data, $user) {
     global $conn;
-    $sql = "INSERT INTO results (username, question_1, question_2, question_3) VALUES ('unknown_user', knowledge_1, likert_1, likert_2)";
+    $sql = "INSERT INTO results (username, question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8, question_9, question_10, question_11, question_12, question_13, question_14) 
+            VALUES ('unknown_user', knowledge_1, knowledge_2, knowledge_3, knowledge_4, knowledge_5, likert_1, likert_2, likert_3, likert_4, likert_5, likert_6, likert_7, likert_8, likert_9)";
 
     //check connection
     if ($conn->connect_error) {
