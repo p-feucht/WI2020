@@ -4,7 +4,7 @@
 
 //error-variables for validation
 $titleErr = $zeitraumErr = $beschreibErr = $vornameErr = $nachnameErr = $strasseErr = $hnrErr = $plzErr = $ortErr = $preisProTagErr = $preisBetragErr = "";
-$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = "";
+$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = $a1_bohr = $a2_drechsel = $a3_schleif = $a4_saege = $a5_kleinteil = "";
 $valid=TRUE;
 
 //Connection to bplaced server
@@ -154,6 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
                         //}
                         
+                        //checkboxes
                         $bierBez2 = $conn->real_escape_string($_POST["bierBez2"]);
                         $a1_bohr = $conn->real_escape_string($_POST["a1_Bohr"]);
                         $a2_drechsel = $conn->real_escape_string($_POST["a2_Drechsel"]);
@@ -161,9 +162,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $a4_saege = $conn->real_escape_string($_POST["a4_Saege"]);
                         $a5_kleinteil = $conn->real_escape_string($_POST["a5_Kleinteil"]);
                         
+                        $test="INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
+                        VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                        echo $test;
 
                         $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
                         VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                    
                     
                         //echo $sql;
                         //echo "<br>";
@@ -245,10 +250,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     elseif($radioAnswer == "Dienstleistung") {
-                        echo 'You chose Dienstleistung'; 
-                        if(!checkIfEmpty("Bezahlart")){  
+                        
                         $bezahlart = $conn->real_escape_string($_POST['Bezahlart']);
-                        }
+                        
                         $preisBetrag = $conn->real_escape_string($_POST['Preis']);
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
