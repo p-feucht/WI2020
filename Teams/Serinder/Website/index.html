@@ -5,47 +5,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Filterseite - Serinder</title>
-    
-    <link rel="stylesheet" href="css/style.css">
+    <title>Startseite - Serinder</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/plugins.js"></script>
 </head>
 
 <body>
     <header>
         <div class="header">
             <div class="logoWrapper">
-                <img src="Bilder/Logo-Serinder.png" alt="Serinder">
+                <img src="./Bilder/Logo-Serinder.png" alt="Serinder">
             </div>
             <div class="navigationWrapper">
                 <nav id="naviMain" class="nav">
                     <ul>
                         <li>
-                            <a class="active" href="Startseite.html">
+                            <a class="active" href="#">
                                 Startseite
                             </a>
                         </li>
                         <li>
-                            <a href="index.html">
+                            <a href="#">
                                 Liste der Serien
                             </a>
                         </li>
                         <li>
-                            <a href="/favoriten.html">
+                            <a href="#">
                                 Meine Favoriten
                             </a>
                         </li>
                         <li>
-                            <a href="/kommentare.html">
+                            <a href="#">
                                 Meine Kommentare
                             </a>
                         </li>
                         <li>
-                            <a href="/einstellungen.html">
+                            <a href="#">
                                 Einstellungen
                             </a>
                         </li>
                         <li>
-                            <a href="/login">
+                            <a href="#" onclick="document.getElementById('modalLogin').style.display='block'">
                                 Log In
                             </a>
                         </li>
@@ -54,39 +55,101 @@
             </div>
         </div>
         <div class="banner">
-            <img src="Bilder/Banner.jpg" alt="Serinder">
+            <img src="./Bilder/Banner.jpg" alt="Serinder">
         </div>
     </header>
     <main>
         <div class="inner">
-            <h1>Liste der Serien</h1>
-            <div class="filterWrapper">
-                <p>sortieren nach:</p>
-                <div class="filterInnerWrapper">
-                    <div class="filterbuttonWrapper">
-                        <a class="button" href="#">Alphabetisch</a>
-                    </div>
-                    <div class="filterSelectWrapper">
-                        <div class="selectWrapper">
-                            <select name="Genre" id="Genre">
-                                <option value="all">Alle Genres</option>
-                                <option value="action">Action</option>
-                                <option value="thriller">Thriller</option>
-                            </select>
+            <h1>Um die Funktionalitäten freizuschalten bitte anmelden!<br></h1>
+            <h1>Welche Serie findest du besser?</h1>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="seriesWrapper">
+                        <h3>Stranger Things</h3>
+                        <div class="imgWrapper">
+                            <img src="./Bilder/strangerthings.jpg" alt="Stranger Things">
+                        </div>
+                        <div class="interactionWrapper">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" title="als Favorit markieren">
+                                        <img class="nohover" src="./Bilder/star.png">
+                                        <img class="hover" src="./Bilder/star-hover.png">
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" title="Infos zur Serie">
+                                        <img class="nohover" src="./Bilder/info.png">
+                                        <img class="hover" src="./Bilder/info-hover.png">
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" title="Kommentare">
+                                        <img class="nohover" src="./Bilder/comment.png">
+                                        <img class="hover" src="./Bilder/comment-hover.png">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="filterbuttonWrapper">
-                        <a class="button" href="#">Bewertung</a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="seriesWrapper">
+                        <h3>Haus des Geldes</h3>
+                        <div class="imgWrapper">
+                            <img src="./Bilder/hausdesgeldes.jpg" alt="Haus des Geldes">
+                        </div>
+                        <div class="interactionWrapper">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" title="als Favorit markieren">
+                                        <img class="nohover" src="./Bilder/star.png">
+                                        <img class="hover" src="./Bilder/star-hover.png">
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" title="Infos zur Serie">
+                                        <img class="nohover" src="./Bilder/info.png">
+                                        <img class="hover" src="./Bilder/info-hover.png">
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" title="Kommentare">
+                                        <img class="nohover" src="./Bilder/comment.png">
+                                        <img class="hover" src="./Bilder/comment-hover.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="filterResults">
-                    <ul>
-                        <li>Serie 1</li>
-                        <li>Serie 2</li>
-                        <li>Serie 3</li>
-                    </ul>
-                </div>
             </div>
+            <div class="buttonWrapper">
+                <a class="button" href="#">Überspringen</a>
+            </div>
+        </div>
+        <!--Login Form-->
+        <div id="modalLogin" class="modal">
+
+            <span onclick="document.getElementById('modalLogin').style.display='none'" class="close"
+                title="Close Modal">×</span>
+
+            <form class="modal-content animate" action="./php/login.php" method="POST">
+                <div class="container">
+                    <label><b>Benutzername</b></label>
+                    <input type="text" placeholder="Benutzername eingeben" name="username" required>
+
+                    <label><b>Passwort</b></label>
+                    <input type="password" placeholder="Passwort eingeben" name="password" required>
+
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('modalLogin').style.display='none'"
+                            class="cancelbtn">Abbrechen</button>
+                        <button type="submit" name="submit" class="signupbtn">Login</button>
+                    </div>
+                    <p>Noch kein Mitglied? <a href="./pages/Registrierung.php">Registriere dich hier</a>.</p>
+                </div>
+            </form>
         </div>
     </main>
     <footer>
@@ -95,17 +158,17 @@
                 <nav id="naviFooter" class="nav">
                     <ul>
                         <li>
-                            <a href="/kontakt.html">
+                            <a href="#">
                                 Kontakt
                             </a>
                         </li>
                         <li>
-                            <a href="/impressum.html">
+                            <a href="#">
                                 Impressum
                             </a>
                         </li>
                         <li>
-                            <a href="/datenschutz.html">
+                            <a href="#">
                                 Datenschutz
                             </a>
                         </li>
@@ -115,5 +178,3 @@
         </div>
     </footer>
 </body>
-
-</html>
