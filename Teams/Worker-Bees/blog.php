@@ -16,10 +16,11 @@
 
     
     <div class="blog-content">
-    <h1>Coming Soon...</h1>
-        This will be a place to share ideas and tipps with others.
-        We want to create a community that you can turn to and where you can support others.
-        Stay tuned for amazing updates to this young website! 
+    <h1>Diese Seite kommt bald...</h1>
+        Hier entsteht ein Ort, an dem man Ideen und Tipps teilen kann.
+        Wir wollen eine Community schaffen, an die du dich wenden kannst 
+        wenn du etwas brauchst und wenn du anderen helfen möchtest.
+        Komme wieder, um ein richtiger Worker Bee zu werden!
 </div>
 
     <?php include "PHP/footer.php"; ?>

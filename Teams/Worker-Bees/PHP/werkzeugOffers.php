@@ -76,7 +76,7 @@ if ($result->num_rows > 0) {
                         <img src="images/Werkzeug.jpg" class="modal-image" alt="Angebot">
                     </div>
 
-                    <form class="modal-booking-window">
+                    <form class="modal-booking-window" action="PHP/submitBooking.php" method="post">
                         <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
                         
                             <label for="bookingDate">Datum:</label>
