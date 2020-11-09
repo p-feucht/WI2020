@@ -1,21 +1,152 @@
-.grid_container img {
-    height: 300px;
-    width: 100%;
-    text-align: center;
-}
-
-.grid_container a {
+.titel_link {
     font-size: 24px;
-    text-align: center;
+    font-weight: bold;
     color: blue;
     text-decoration: none;
+    opacity: 0;
+}
+
+.grid_container div:hover {
+    opacity: 0.5;
+}
+
+.grid_container div:hover .titel_link {
+    opacity: 1;
+}
+
+.item1 {
+    background-image: url(../pictures/topic_ML.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.item2 {
+    background-image: "#";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.item3 {
+    background-image: url(../pictures/topic_AI.jpeg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.item4 {
+    background-image: url(../pictures/topic_AI.jpeg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.item5 {
+    background-image: url(../pictures/topic_AI.jpeg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.item6 {
+    background-image: url(../pictures/topic_AI.jpeg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.item7 {
+    background-image: url(../pictures/JobsTopic.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.item8 {
+    background-image: url(../pictures/fundamentalsTopic.PNG);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-row: span 1;
+    grid-column: span 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .grid_container {
     display: grid;
-    max-width: 99em;
+    height: 100vh;
     grid-template-columns: 33% 33% 33%;
-    justify-content: center;
+    grid-template-rows: 33% 33% 33%;
     gap: 2%;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -23,39 +154,29 @@
     padding-left: 4%;
 }
 
-@media screen and (max-width: 800px) {
-    .grid_container a {
-        font-size: 16px;
+@media screen and (max-width: 850px) {
+    .titel_link {
+        font-size: 20px;
     }
+}
+
+@media screen and (max-width: 600px) {
     .grid_container {
-        grid-template-columns: 100%;
+        grid-template-columns: 200px;
+        grid-template-rows: repeat(8, 200px);
+        margin: 30px;
+        justify-content: center;
+        height: 100em;
     }
-    .grid_container img {
-        width: 200px;
+    .grid_container div {
         height: 200px;
+        width: 200px;
     }
-    .item1 {
-        grid-area: 1 / 1 / 4;
-    }
-    .item2 {
-        grid-area: 2/ 1 / 4;
-    }
-    .item3 {
-        grid-area: 3/ 1 / 4;
-    }
-    .item4 {
-        grid-area: 4/ 1 / 4;
-    }
-    .item5 {
-        grid-area: 5/ 1 / 4;
-    }
-    .item6 {
-        grid-area: 6/ 1 / 4;
-    }
-    .item7 {
-        grid-area: 7/ 1 / 4;
-    }
-    .item8 {
-        grid-area: 8/ 1 / 4;
+    .titel_link {
+        font-size: 16px;
+        max-width: 200px;
+        text-overflow: ellipsis;
+        top: 50%;
+        text-align: center;
     }
 }

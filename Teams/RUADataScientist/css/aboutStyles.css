@@ -5,61 +5,61 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.paralax{
+.paralax {
     background: url(../pictures/about_paralax.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     height: 200px;
     display: grid;
-}  
+}
 
-.quoteText{
-    font-style: italic; 
+.quoteText {
+    font-style: italic;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
-    color:white; 
+    color: white;
     border-radius: 20px;
 }
 
-.quoteText>h1{
+.quoteText>h1 {
     padding: 20px 15px 0px 15px;
 }
 
-.quoteText>h2{
+.quoteText>h2 {
     padding: 5px 15px 20px 25px;
 }
 
-.content{
+.content {
     padding-top: 10px;
     padding-bottom: 30px;
-    
 }
 
-.content>h1{
+.content>h1 {
     padding-bottom: 10px;
     padding-left: 0px;
     margin: 0px;
 }
 
-.aboutSpace{
+.aboutSpace {
     color: transparent;
     margin: 10px;
 }
-.aboutContainer{
+
+.aboutContainer {
     display: grid;
     text-align: left;
 }
 
-.aboutContainer>div{
+.aboutContainer>div {
     margin-left: 40px;
     margin-right: 40px;
 }
 
-.aboutContainer>div>p{
+.aboutContainer>div>p {
     text-align: justify;
 }
 
-.aboutContainer>img{
+.aboutContainer>img {
     margin: auto;
     max-width: 40%;
     min-width: 30%;
@@ -68,18 +68,16 @@
 }
 
 @media screen and (min-width: 801px) {
-
-    .paralax{
+    .paralax {
         height: 300px;
     }
-
-    .aboutContainer>div{
+    .aboutContainer>div {
         margin-left: 170px;
     }
-    .aboutContainer>div>p{
+    .aboutContainer>div>p {
         text-align: left;
     }
-    .aboutContainer>img{
+    .aboutContainer>img {
         max-width: 50%;
     }
- }
+}

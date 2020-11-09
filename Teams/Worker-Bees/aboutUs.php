@@ -56,19 +56,36 @@
             <div id="story"> 
             <div class="row">
                 <div class="columnStory">
+                <div class="card2"> <!-- new test -->
+                  
                    <!--  <div id="story">  -->
                   <!-- <div class="card"> -->
+                 </br>
                  </br>
                  </br>
                     <h2>Du interessierst dich für unsere Erfolgsgeschichte? Dann bist Du hier genau richtig!
                     </h2>
                     </br>
+                    </br>
+                    <div class = "p">
                  <p>Worker Bees wurde im Jahr 2020 von drei dualen Studenten ins Leben gerufen. 
-                   Ihr Ziel war es, dass jeder sein handwerkliches Hobby ausleben kann. 
-                   Dies ist nämlich oft nicht der Fall, wenn man kein Geld für teure Werkzeuge oder Fläche zum Heimwerken hat...
+                   Das Ziel ist, dass jeder sein handwerkliches Hobby ausleben kann. 
+                   Dies ist nämlich oft nicht der Fall, wenn man kein Geld für teure Werkzeuge oder keine Räumlichkeit zum Heimwerken hat...
+                   Durch das Verleihen von Werkzeug und Vermieten von Werkstätten werden so neue Möglichkeiten geschaffen. 
+                   Es soll eine ganz spezielle Community entstehen, die sich gegenseitig unterstützt und Wissen miteinander teilt.
+                   Ebenfalls soll es belohnt werden, wenn man anderen unter die Arme greift. Deshalb vermitteln wir auf unserer Seite auch Dienstleistungen.
+                   Außerdem wollen wir auch Nachhaltigkeit fördern. Durch Worker Bees kann nämlich Vieles wiederverwertet, repariert oder selbst erschaffen werden.
+                   Dies macht einen Neukauf oftmals überflüssig. 
                  </p>
                  </br>
-                    <img src="images/logoKomplett.png" alt="Jane" style="width:100%">
+                 <p>Wir freuen uns, wenn auch Du mit dabei bist! :) 
+                 </p>
+                 </br>
+                 </div>
+                 <div id = "businessOwner">
+                    <img src="images/logoSchriftzug.png"  style="width: 650px">
+                    </div>
+                    </div>
                     <div class="container"></div>
                   <!-- </div> -->
               </div>
@@ -76,7 +93,7 @@
 
 
                 <div class="businessOwnerHeading">
-                    <div id="businessOwner"> 
+                    <div id="businessOwner2"> 
                     </br>
                         <h2>Hier kannst Du unser Team näher kennenlernen
                         </h2>
@@ -92,7 +109,7 @@
                      
 
 
-                    <img src="images/TestbildTeam.jpg" alt="Sarah" style="width:100%">
+                    <img src="images/Sarah.jpg" alt="Sarah" style="width:100%">
 
                     <div class="container">
                       <h2>Sarah Engelmayer</h2>
@@ -100,7 +117,12 @@
                     <p class="title">Gründer</p>
                     <p class="title">Verantwortlich für die Webseite</p>
                       </br> 
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>"Kein Handwerk ohne Lehrzeit" (Jean de La Bruyère). Obwohl ich das immer wieder 
+                      feststellen muss, spüre ich doch meist einen Funken Stolz, wenn ich an meiner selbst gebauten 
+                      Kommode vorbeilaufe. Damit jeder die Möglichkeit hat, seine eigenen Unikate zu schaffen
+                      und dabei seine Fähigkeiten auszubauen, gibt es die Workerbees.
+
+                    </p>
                       </br> 
                       <p>engelmayer@workerbees.com</p>
                          </br> 
@@ -144,7 +166,11 @@
                       <p class="title">Gründer</p>
                       <p class="title">Verantwortlich für das Marketing</p>
                         </br> 
-                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                      <p>Als Student hat man einfach kein Geld, um sich neue Werkzeuge zu kaufen.
+                        Trotzdem wollte ich am Wochenende mein Hobby ausleben und für meine WG neue Möbel bauen. 
+                        Das ist jetzt durch Worker Bees möglich und das finde ich sehr cool. 
+
+                      </p>
                         </br> 
                       <p>birk@workerbees.com</p>
                          </br> 
