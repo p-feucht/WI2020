@@ -59,15 +59,17 @@
                 <h2>Schreibe ein Angebot</h2>
                 <p>
                 <br>
-                    Du möchtest eine Werkstatt zur Verfügung stellen, eine Bohrmaschine verkaufen oder überflüssige Schrauben verschenken? Fülle hierzu das folgende Formular aus. Wir danken dir!
+                    Du möchtest deinen meist nicht benötigten Hochdruckreiniger verleihen, deine Werkstatt zwischendurch zur Verfügung stellen oder anderen bei etwas Handwerklichem unter die Arme greifen? Fülle das folgende Formular aus. Wir danken dir!
                 </p>
                 <br>
+                <p class="Fehlermeldung" id="erforderlichErklärung">* erforderlich</p>
+                <br>
 
-                <form name="formularFuerAngebot" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" onsubmit="return pruefeFormular();">
+                <form name="formularFuerAngebot" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" onsubmit="return pruefeFormular();">
 
                     <div class=formblock>
 
-                        <label>Wähle eine <b>Angebotskategorie</b></label>
+                        <label>Wähle eine <b>Angebotskategorie</b></label><label class="Fehlermeldung" id="FehlermeldungAngebKat">*</label>
                         <br>
                         <input type="radio" name="kategorie" value="Werkzeug"> Werkzeug verleihen
 
@@ -79,12 +81,10 @@
 
 
                     <div class=formblock>
-                        <label>Gib deinem Angebot einen <b>Titel</b></label>
+                        <label>Gib deinem Angebot einen <b>Titel</b></label><label class="Fehlermeldung" id="FehlermeldungTitle">*</label>
                         <br>
                         <input id="title" type="text" name="title" value="<?php echo htmlspecialchars($title);?>" size="30" maxlength="30">
-                        <label class="Fehlermeldung" id="FehlermeldungTitle">
-                            </label>
-                        <label class="error"><?php echo $titleErr;?></span>
+                        <label class="Fehlermeldung" id="FehlermeldungTitle"></label>
                         <div class=unterüberschrift>
                             <label>Tipp: Nutze Begriffe, die andere Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
                         </div>
@@ -92,10 +92,9 @@
                     </div>
 
                     <div class="formblock">
-                        <label>Wähle einen <b>Angebotszeitraum </b>
+                        <label>Wähle einen <b>Angebotszeitraum </b><label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>
                         <br>
                         <input type="text" name="datefilter" value="<?php echo htmlspecialchars($zeitraum);?>" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
-                        <span class="error"><?php echo $zeitraumErr;?></span>
                         <script type="text/javascript">
                             datePicker();
                         </script>
@@ -112,72 +111,64 @@
                     -->
 
                     <div class="formblock">
-                        <label>Füge eine <b>Beschreibung</b> hinzu</label><label class="Fehlermeldung" id="FehlermeldungBeschr">
-                            </label> 
+                        <label>Füge eine <b>Beschreibung</b> hinzu</label><label class="Fehlermeldung" id="FehlermeldungBeschr"></label> 
                         <!--<div id="FehlerBeiValidierung">-->
                         <!-- </div>-->
                         <br>
                         <textarea id="beschreibung" name="beschreibung" value="<?php echo htmlspecialchars($beschreib);?>" rows="9" cols="1">
                         </textarea>
-                        
                         <br>
-                        <span class="error"><?php echo $beschreibErr;?></span>
                     </div>
 
                     <div class="formblock">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                         <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
-                        <br>
-                        <button type="button">Bild Upload</button>
-                        <div class=unterüberschrift>
-                            <label>noch ist kein Bild ausgewählt</label>
+                        <div class="unterüberschrift">
+                            <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
+                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/png">
                     </div>
 
                     <div class="formblock">
-                        <label>Gib bitte deine <b>Anschrift</b> an</label>
+                        <label>Gib bitte deine <b>Anschrift</b> an</label> <label class="Fehlermeldung" id="FehlermeldungAnschrift"> *</label>
                         <div class="unterüberschrift">
                             <!--wenn Dienstleistung gewählt, in Javascript noch ergänzen:<textarea readonly disabled="disabled">Falls deine angebotene Dienstleistung an einem bestimmten Ort stattfindet, gib bitte dessen gesamte Adresse an. Fall du die Dienstleistung bei den Interessenten ausführen möchtest, gib bitte mindestens deinen Ort an, damit
                             klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
                         </div>
-                        <label>Vorname
+                        <label>Vorname 
                             <input type="text" name="Vorname" value="<?php echo htmlspecialchars($vorname);?>" size="20" maxlength="20">
-                            <span class="error"><?php echo $vornameErr;?></span>
                             </label>
                         <br>
                         <label>Nachname
-                            <input type="text" name="Nachname" value="<?php echo htmlspecialchars($nachname);?>" size="30" maxlength="30">
-                            <span class="error"><?php echo $nachnameErr;?></span>    
+                            <input type="text" name="Nachname" value="<?php echo htmlspecialchars($nachname);?>" size="30" maxlength="30"> 
                         </label>
                         <br>
                         <label>Straße
                             <input type="text" name="Strasse" value="<?php echo htmlspecialchars($strasse);?>" size="30" maxlength="30">
-                            <span class="error"><?php echo $strasseErr;?></span>
                         </label>
                         <br>
                         <label>Hausnummer
                             <input type="text" name="Hnr" value="<?php echo htmlspecialchars($hnr);?>" size="4" maxlength="4"> 
-                            <span class="error"><?php echo $hnrErr;?></span>
                         </label>
                         <br>
                         <label>Postleitzahl
-                            <input type="number" name="PLZ" value="<?php echo htmlspecialchars($plz);?>" size="5" maxlength="5"> 
-                            <span class="error"><?php echo $plzErr;?></span>
+                            <input type="number" id="plzinput" name="PLZ" value="<?php echo htmlspecialchars($plz);?>" size="5" maxlength="5"> 
                          </label>
+                         <label class="Fehlermeldung" id="FehlermeldungPLZ"></label>
                         <br>
                         <label>Ort
                             <input type="text" name="Ort" value="<?php echo htmlspecialchars($ort);?>" size="30" maxlength="30">
-                            <span class="error"><?php echo $ortErr;?></span> 
                         </label>
                     </div>
 
 
                     <div class="Werkzeug selectt">
 
-                        <div class="formblock">
+                        <div class="formblock"> 
                             <label>Gib den <b>Preis</b> an, den das Ausleihen deines Gegenstands <b>pro Tag</b> kostet</label>
                             <br>
                             <input type="number" step="0.01" min="0" max="9999.99" name="PreisProTag1" value="<?php echo htmlspecialchars($preisProTag1);?>" size="4" maxlength="4">
-                            <label>€/Tag</label> <span class="error"><?php echo $preisProTagErr;?></span>
+                            <label>€/Tag</label>
                             <br>
                             <input type="checkbox" id="bierBez1" name="bierBez1" value="1" unchecked>
                             <label for="bierBez1">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
@@ -193,7 +184,6 @@
                             <br>
                             <input type="number" step="0.01" min="0" max="9999.99" name="PreisProTag2" value="<?php echo htmlspecialchars($preisProTag2);?>" size="4" maxlength="4"> <!--pattern="^(\d){1,4}([,.])?(\d){0,2}$"-->
                             <label>€/Tag</label>
-                            <span class="error"><?php echo $preisProTagErr;?></span>
                             <br>
                             <input type="checkbox" id="bierBez2" name="bierBez2" value="1" unchecked>
                             <label for="bierBez2">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>
@@ -255,7 +245,6 @@
                             </label>
                             <input type="number" step="0.01" min="0" max="9999.99" name="Preis" value="<?php echo htmlspecialchars($preisBetragErr);?>" size="4" maxlength="4">
                             <label>€</label>
-                            <span class="error"><?php echo $preisBetragErr;?></span>
                             <br>
                             <input type="checkbox" id="bierBez3" name="bierBez3" value="1" unchecked>
                             <label for="bierBez3">auch in Flaschen Bier bezahlbar (eine Flasche 0,5l entspricht in etwa 1€)</label>

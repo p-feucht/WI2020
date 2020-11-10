@@ -1,145 +1,142 @@
-.yellow-container {
-    background-color: white;
-    width: 100%;
-}
-
-.explanation_and_form {
-    width: auto;
-    margin-left: 7%;
-    margin-right: 7%;
-    padding-top: 20px;
-}
-
-.mySlides {
-    height: 10%;
-}
-
-.header a.biete {
-    background-color: #feca57;
-}
-
-.formblock {
-    border-color: #bdc3c7;
-    border-width: 1px;
-    border-style: solid;
-    padding: 15px;
-}
-
-.unterüberschrift {
-    font-size: smaller;
-    color: #bdc3c7;
-    padding-left: 0;
-}
-
-.unterüberschrift textarea {
-    border: none;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #bdc3c7;
-    min-height: 30px;
-    background-color: white;
-}
-
-b {
-    color: #feca57;
-}
-
-input,
-label,
-fieldset,
-textarea,
-button,
-select {
-    margin: 15px;
-}
-
-textarea {
-    width: 90%;
-    margin-right: 30px;
-}
-
-.selectt {
-    display: none;
-}
-
-button {
-    padding: 5px 12px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-weight: 300;
-    color: black;
-    border: 1px solid silver;
-    background-image: linear-gradient(to top, gainsboro 0%, white 90%);
-    border-radius: 20px;
-}
-
-fieldset {
-    border: none;
-}
-
-fieldset li {
-    list-style-type: none;
-}
-
-ul {
-    padding-left: 0px;
-    margin-left: 0px;
-}
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    border-radius: 0;
-    width: 10%;
-    height: 25px;
-    border: 1px solid #bbb;
-    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-    background-color: white;
-    background-image: url(select-arrow.png);
-    background-position: right;
-    background-repeat: no-repeat;
-}
-
-select:hover {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-}
-
-select::-ms-expand {
-    display: none;
-}
-
-.lt-ie10 select {
-    background-image: none;
-}
-
-input[type="submit"] {
-    font-size: 1.3em;
-    padding: 5px 12px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-weight: 300;
-    color: black;
-    border: 1px solid silver;
-    background-image: linear-gradient(to top, gainsboro 0%, white 90%);
-    border-radius: 20px;
-}
-
-.form input[type="text"],
-.form textarea {
-    width: 100%;
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 4px;
-}
-
-#FehlerBeiValidierung {
-    color: red;
-    ;
-}
-
-.Fehlermeldung {
-    color: red;
-}
-
-.error {
-    color: #FF0000;
-}
+    .yellow-container {
+        background-color: white;
+        width: 100%;
+    }
+    
+    .explanation_and_form {
+        width: auto;
+        margin-left: 7%;
+        margin-right: 7%;
+        padding-top: 20px;
+    }
+    
+    .mySlides {
+        height: 10%;
+    }
+    
+    .header a.biete {
+        background-color: #feca57;
+    }
+    
+    .formblock {
+        border-color: #bdc3c7;
+        border-width: 1px;
+        border-style: solid;
+        padding: 15px;
+    }
+    
+    .unterüberschrift {
+        font-size: smaller;
+        color: #bdc3c7;
+        padding-left: 0;
+    }
+    
+    .unterüberschrift textarea {
+        border: none;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #bdc3c7;
+        min-height: 30px;
+        background-color: white;
+    }
+    
+    b {
+        color: #feca57;
+    }
+    
+    input,
+    label,
+    fieldset,
+    textarea,
+    button,
+    select {
+        margin: 15px;
+    }
+    
+    textarea {
+        width: 90%;
+        margin-right: 30px;
+    }
+    
+    .selectt {
+        display: none;
+    }
+    
+    button {
+        padding: 5px 12px;
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: 300;
+        color: black;
+        border: 1px solid silver;
+        background-image: linear-gradient(to top, gainsboro 0%, white 90%);
+        border-radius: 20px;
+    }
+    
+    fieldset {
+        border: none;
+    }
+    
+    fieldset li {
+        list-style-type: none;
+    }
+    
+    ul {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+    
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        width: 10%;
+        height: 25px;
+        border: 1px solid #bbb;
+        box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+        background-color: white;
+        background-image: url(select-arrow.png);
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+    
+    select:hover {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    select::-ms-expand {
+        display: none;
+    }
+    
+    .lt-ie10 select {
+        background-image: none;
+    }
+    
+    input[type="submit"] {
+        font-size: 1.3em;
+        padding: 5px 12px;
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: 300;
+        color: black;
+        border: 1px solid silver;
+        background-image: linear-gradient(to top, gainsboro 0%, white 90%);
+        border-radius: 20px;
+    }
+    
+    .form input[type="text"],
+    .form textarea {
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 4px;
+    }
+    
+    #FehlerBeiValidierung {
+        color: red;
+        ;
+    }
+    
+    .Fehlermeldung {
+        color: red;
+        font-weight: bold;
+    }
