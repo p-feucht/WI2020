@@ -15,54 +15,51 @@ $dbname = "workerbees_db1";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn2 = new mysqli($servername, $username, $password, $dbname);
 
      // Check connection
      // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($conn2->connect_error) {
+        die("Connection failed: " . $conn2->connect_error);
         
     } else {
 
-        $card_id = $conn->real_escape_string($_POST["cardID"]);
+        $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); //create random booking number
+        $orderID = $conn2->real_escape_string($_POST["cardID"]); // take card id for beginning of booking nr
+        $id = "WZcard_" . (string)$orderID;
+        $buchung_id = $id.$number; //combine
 
-        $pricename = "WZprice_".(string)$card_id;
-        $datename = "WZdate_".(string)$card_id;
-        $titlename = "WZtitel_".(string)$card_id;
-        $bezinbier = "WZbib_".(string)$card_id;
-        
-        $buchung_id = "";
+        //create recognizable names
+        $pricename = "WZprice_" . (string)$orderID;
+        $datename = "WZdate_" . (string)$orderID;
+        $titlename = "WZtitel_" . (string)$orderID;
+        $bezinbier = "WZbib_" . (string)$orderID;
+
         $angebot_id = "";
         $angebot_typ = "";
         $userErstell = "";
         $emailErstell = "";
         $userBuch = "";
         $emailBuch ="";
-        $date = $conn->real_escape_string($_POST[$datename]);
-        $preis = $conn->real_escape_string($_POST[$pricename]);
-        $title = $conn->real_escape_string($_POST[$titlename]);
-        $bezinbier = $conn->real_escape_string($_POST[$bezinbier]);
+        $date = $conn2->real_escape_string($_POST["$datename"]);
+        $preis = $conn2->real_escape_string($_POST["$pricename"]);
+        $title = $conn2->real_escape_string($_POST["$titlename"]);
+        $bezinbier =  $conn2->real_escape_string($_POST["$bezinbier"]);
 
+        $sql2 = "INSERT INTO Buchung (Buchung_ID, Angebot_ID, Angebot_Typ, userErstell, emailErstell, userBuch, emailBuch ,Datum, Preis, angebotTitel, bezInBier)
+                            VALUES ('$buchung_id', '$angebot_id', '$angebot_typ', '$userErstell', '$emailErstell', '$userBuch', '$emailBuch', '$date', '$preis', '$title', '$bezinbier')";
+    
 
-        $sql = "INSERT INTO Buchung (Buchung_ID, Angebot_ID, Angebot_Typ, userErstell, emailErstell, userBuch, emailBuch, Preis, angebotTitel, bezInBier)
-                            VALUES ($buchung_id, $angebot_id, $angebot_typ, $userErstell, $emailErstell, $userBuch, $emailBuch, $preis, $bezinbier)";
-    
-        echo $sql;
-        echo "<br>";
-    
-        if ($conn->query($sql) === TRUE) {
+        if ($conn2->query($sql2) === TRUE) {
 
             echo "New record created successfully";
            
 
             } else {
             echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql2 . "<br>" . $conn2->error;
             
             }
 }
-    $conn->close();
+    $conn2->close();
 }
-    
-?>
-
