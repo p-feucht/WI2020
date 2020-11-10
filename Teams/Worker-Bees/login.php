@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: Login/welcome.php");
     exit;
 }
  
@@ -54,9 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    /* $hashed_password = "SELECT password FROM user WHERE username = $username";
-                    echo $hashed_password; */
-                    
+
                     
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
                     /* echo $username;
@@ -67,6 +65,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                    
 
                     if(mysqli_stmt_fetch($stmt)){
+                        
+                        
+                        /* echo "fehler";
+                        echo $hashed_password;
+                        echo " ,"; */
+                        $sql_2 = "SELECT password FROM user where username = '$username'";
+                        $password_query = mysqli_query($link, $sql_2);
+                        $password_result = mysqli_fetch_assoc($password_query);
+                        $hashed_password = $password_result['password'];
+                        echo $hashed_password;
+
+
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
