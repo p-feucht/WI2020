@@ -92,21 +92,26 @@ function radioIsValid() {
 
 function pruefeFormular() {
 
-    var formValid = false;
-    var radios = document.getElementsByName("kategorie");
-
     if (document.formularFuerAngebot.title.value == "") {
         document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
         //   alert("Bitte gib einen Angebotstitel ein.");
         // document.Formular.title.focus();
         return false;
-    } else if (document.formularFuerAngebot.beschreibung.value == "") {
-        document.getElementById("FehlermeldungBeschr").innerHTML = "Bitte Angebotsbeschreibung eingeben";
-        //alert("Bitte gib eine Angebotsbeschreibung ein.");
-        // document.Formular.beschreibung.focus();
+    }
+    if (!CheckPLZ()) {
         return false;
     }
 
+    //Beschreibung soll kein Muss-Feld sein
+    /* else if (document.formularFuerAngebot.beschreibung.value == "") {
+            document.getElementById("FehlermeldungBeschr").innerHTML = "Bitte Angebotsbeschreibung eingeben";
+            //alert("Bitte gib eine Angebotsbeschreibung ein.");
+            // document.Formular.beschreibung.focus();
+            return false;
+        }*/
+
+    var formValid = false;
+    var radios = document.getElementsByName("kategorie");
     var i = 0;
     while (!formValid && i < radios.length) {
         if (radios[i].checked) formValid = true;
@@ -118,4 +123,25 @@ function pruefeFormular() {
     }
 
     return formValid;
+}
+
+
+
+
+function CheckPLZ() {
+    var plz = document.formularFuerAngebot.PLZ.value;
+    var laenge = plz.length;
+    var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
+    if (laenge != anzahl) {
+        //window.alert("Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!");
+        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!";
+        document.formularFuerAngebot.PLZ.focus();
+        return false();
+    }
+    if (laenge == anzahl) {
+        if (isNaN(plz)) {
+            document.getElementById("FehlermeldungPLZ").innerHTML += ", bitte nur Zahlen eingeben";
+        }
+        return true();
+    }
 }
