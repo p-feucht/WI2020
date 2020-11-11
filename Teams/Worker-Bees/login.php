@@ -1,12 +1,12 @@
 <?php
 // Initialize the session
-session_start();
+/* session_start(); */
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: Login/welcome.php");
+/* if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: indexTest.php");
     exit;
-}
+} */
  
 // Include config file
 require_once "Login/config.php";
@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $password_query = mysqli_query($link, $sql_2);
                         $password_result = mysqli_fetch_assoc($password_query);
                         $hashed_password = $password_result['password'];
-                        echo $hashed_password;
+                        /* echo $hashed_password; */
 
 
                         if(password_verify($password, $hashed_password)){
@@ -87,7 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: indexTest.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "Das eingegebene Passwort ist falsch.";
