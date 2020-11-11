@@ -12,7 +12,17 @@
 
 <body>
 
-    <?php include "PHP/header.php"; ?>
+    <?php include "PHP/headerLoggedIn.php"; 
+    // Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+
+    header("location: index.php");
+    exit;
+}
+    ?>
 
     <!-- Beehive banner -->
     <div class="background-container">

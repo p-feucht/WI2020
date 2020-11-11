@@ -28,17 +28,24 @@ if ($result->num_rows > 0) {
         $plz = $row["PLZ"];
         $description = $city = $row["ABeschreibung"];
         $bezBier = $row["BezInBier"];
+        $image = $row["Bild"];
 
-        $card_ID = "WZcard_".(string)$orderID;
-        $modal_target = "#WZmodal_".(string)$orderID;
-        $modal_ID = "WZmodal_".(string)$orderID;
+        $card_ID = "WZcard_" . (string)$orderID;
+        $modal_target = "#WZmodal_" . (string)$orderID;
+        $modal_ID = "WZmodal_" . (string)$orderID;
 
-        $bier = round($price,0);
+        $bier = round($price, 0);
 
-    ?>
+        //create recognizable names
+        $pricename = "WZprice_" . (string)$orderID;
+        $datename = "WZdate_" . (string)$orderID;
+        $titlename = "WZtitel_" . (string)$orderID;
+        $bezinbier = "WZbib_" . (string)$orderID;
+
+?>
         <!-- create card for each offer -->
-        <div class="card" id=<?php echo $card_ID ?> data-toggle="modal" data-target=<?php echo $modal_target ?>>
-            <img src="images/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
+        <div class="card" id="<?php echo $card_ID ?>" data-toggle="modal" data-target=<?php echo $modal_target ?>>
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
             <p class="card-lp"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
                 <span class="price"><?php echo $price ?>€ / Tag</span></p>
             <h2><?php echo $title ?></h2>
@@ -46,70 +53,71 @@ if ($result->num_rows > 0) {
 
         <!-- create modal for each card -->
         <div id=<?php echo $modal_ID ?> class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-lg">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <img class="headerLogo" src="images/logoKomplett.png">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <h3 class="modal-offerName"><?php echo $title ?></h3>
-                    <p class="modal-namelocation"><?php echo $offeruser ?>
-                        <img src="images/place-icon.svg" class="place-icon" alt="location"><?php echo $plz ?> <?php echo $location ?>
-                        <!--has to be the exact location here!-->
-                    </p>
-
-                    <div class="modal-content-split">
-                        <p class="offer-description">
-                            <?php echo $description ?>
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img class="headerLogo" src="images/logoKomplett.png" alt="Logo">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="modal-offerName" name="<?php echo $titlename ?>"><?php echo $title ?></h3>
+                        <p class="modal-namelocation"><?php echo $offeruser ?>
+                            <img src="images/place-icon.svg" class="place-icon" alt="location"><?php echo $plz ?> <?php echo $location ?>
+                            <!--has to be the exact location here!-->
                         </p>
-                        <!--only for Werkstat!!
-                        <ul class="modal-amenities">
-                            <li>Standbohrmaschine</li>
-                            <li>elektrische Standsägen</li>
-                        </ul>
-                        -->
-                    </div>
-                    <div class="modal-content-split">
-                        <img src="images/Werkzeug.jpg" class="modal-image" alt="Angebot">
-                    </div>
 
-                    <form class="modal-booking-window">
-                        <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
+                        <div class="modal-content-split">
+                            <p class="offer-description">
+                                <?php echo $description ?>
+                            </p>
+
+                        </div>
+                        <div class="modal-content-split">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" alt="Offer Photo" class="modal-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
+                        </div>
+
                         
+                         <!--Create booking window -->
+                        <form class="modal-booking-window" enctype="multipart/form-data" onsubmit="<?php include("./PHP/submitBooking.php"); ?>"
+                            action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
+
+                            <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
+
                             <label for="bookingDate">Datum:</label>
-                            <input type="date" id="bookingDate"><br>
+                            <input type="date" id="bookingDate" name="<?php echo $datename ?>" value="<?php echo htmlspecialchars($date); ?>" required><br>
 
-                            <p class="modal-booking-text">Gesamtbetrag: <?php echo $price ?> €<br></p>
+                            <p class="modal-booking-text">Gesamtbetrag: <em name="<?php echo $pricename ?>"  type="number" value="<?php echo $price ?>"
+                                    ><?php echo $price ?></em> €<br></p>
 
-                            <input id="bierInput" type="checkbox" name="bierZahlung">
-                            <label id="bierLabel" for="bierZahlung"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
-                                <script>
-                                    var bezBier = <?php echo $bezBier ?>;
-                                    if(bezBier!=1) {
-                                        document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
-                                        document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";
-                                    }
-                                </script>
+                            <input id="bierInput" type="checkbox" name="<?php echo $bezinbier ?>" value="1" unchecked>
+                            <label id="bierLabel" for="bezInBier"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
+                            <script>
+                                if (<?php echo $bezBier ?> != 1) {
+                                    document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
+                                    document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";
+                                }
+                            </script>
 
                             <label for="paymentType">Wähle die Bezahlart:</label>
                             <select name="paymentType" id="paymentType">
                                 <option value="inPerson">vor Ort bezahlen</option>
                             </select>
 
-                        <button type="button" class="submitBooking">Jetzt buchen</button>
-                    </form>
+                            <script></script>
+                            <button type="submit" class="submitBooking"
+                            onclick="this.name='cardID'" value="<?php echo $orderID ?>">Jetzt buchen</button>
+                        </form>
 
 
 
+                    </div>
+                    <div class="modal-footer"></div>
                 </div>
-                <div class="modal-footer"></div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
 <?php
 

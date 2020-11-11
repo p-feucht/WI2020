@@ -20,7 +20,7 @@ header .banner img { max-width: 100%; width: 100%; }
 .inner { max-width: 1000px; margin: 50px auto; }
 .row { margin-left: -10px; margin-right: -10px; display: flex; margin-bottom: 20px; }
 .row .col-md-6 { flex-basis: 50%; max-width: 50%; padding-left: 10px; padding-right: 10px; }
-.row .col-md-6 .imgWrapper img { width: 100%; height: 490px;; object-fit: cover; }
+.row .col-md-6 .imgWrapper img { width: 100%; height: 490px; object-fit: cover; }
 .row .col-4 { flex-basis: calc(100% / 3); max-width: calc(100% / 3); padding-left: 10px; padding-right: 10px; display: flex; justify-content: center; }
 .row .col-4 a { position: relative; }
 
@@ -51,3 +51,91 @@ footer .footerWrapper .footerNavWrapper nav > ul > li > a:hover { color: #e5cccc
 
 .filterResults ul { list-style-type: none; padding-left: 0; }
 .filterResults ul > li { text-align: center; }
+
+  /*add full-width input fields*/
+  input[type=text],
+  input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 2px solid #ccc;
+      box-sizing: border-box;
+  }
+  /* set a style for all buttons*/
+  button {
+      background-color: green;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      cursor: pointer;
+      width: 100%;
+  }
+  /*set styles for the cancel button*/
+  .cancelbtn {
+      padding: 14px 20px;
+      background-color: #FF2E00;
+  }
+  /*float cancel and signup buttons and add an equal width*/
+  .cancelbtn,
+  .signupbtn {
+      float: left;
+      width: 50%
+  }
+  /*add padding to container elements*/
+  .container {
+      padding: 16px;
+  }
+  /*define the modal’s background*/
+   
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+  }
+  /*define the modal-content background*/
+   
+  .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      border: 1px solid #888;
+      width: 80%;
+  }
+  /*define the close button*/
+   
+  .close {
+      position: absolute;
+      right: 35px;
+      top: 15px;
+      color: #000;
+      font-size: 40px;
+      font-weight: bold;
+  }
+  /*define the close hover and focus effects*/
+   
+  .close:hover,
+  .close:focus {
+      color: red;
+      cursor: pointer;
+  }
+   
+  .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+   
+  @media screen and (max-width: 300px) {
+      .cancelbtn,
+      .signupbtn {
+          width: 100%;
+      }
+  }

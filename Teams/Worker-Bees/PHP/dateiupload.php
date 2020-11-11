@@ -2,10 +2,10 @@
 $imgData="";
 $content="";
 
-echo "<pre>";
+/*echo "<pre>";
 echo "FILES:<br>";
 print_r ($_FILES );
-echo "</pre>";
+echo "</pre>";*/
 
 if ( $_FILES['uploaddatei']['name']  <> "" )
 {
@@ -32,10 +32,10 @@ if ( $_FILES['uploaddatei']['name']  <> "" )
             if (move_uploaded_file (
                  $_FILES['uploaddatei']['tmp_name'] , $localFileName )){
 
-                echo "<p>Verschieben in Ordner war erfolgreich: ";
+                /*echo "<p>Verschieben in Ordner war erfolgreich: ";
                 echo '<a href="hochgeladenes/'. $_FILES['uploaddatei']['name'] .'">';
                 echo 'hochgeladeneBilder/'. $_FILES['uploaddatei']['name'];
-                echo '</a>';    
+                echo '</a>';    */
 
                 // $imgData für DB-insert 
                 $imgData = addslashes(file_get_contents('hochgeladeneBilder/'. $_FILES['uploaddatei']['name']));

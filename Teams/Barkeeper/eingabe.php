@@ -11,7 +11,7 @@
         ?>
     </nav>
     <div class="content">
-        <form id ='Input_Ingredients'>
+        <form action = "/php/actionPage.php" method = "Post" id ="Input_Ingredients">
             <input 
                 type="text" id= "Alkohol1" name="Zutat1" placeholder = "Alkohol" 
                 onfocus="this.placeholder=''" 
@@ -43,7 +43,7 @@
                 onblur="this.placeholder='Grünzeug'" 
             >  <br>
             <input 
-                type="submit" value="Submit"
+                type="submit" value="Absenden"
             >
         </form>
     </div>
