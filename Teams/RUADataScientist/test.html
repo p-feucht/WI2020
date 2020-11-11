@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/testAddOn.css">
     <link rel="icon" type="image/ico" href="pictures/icon.svg" />
 <body>
 
-<!--CONTENT-->
+<!--First Page (Start The Test...)-->
 <div class="container">
     <form action="result.php" method="POST">
 
@@ -20,6 +21,7 @@
             </div>     
         </section>
 
+<!--Knowledge-Questions-->
         <section id ="Form2">
             <h2>Why is this a short Question? </h2>
             <div class="seperator"> 
@@ -120,29 +122,61 @@
             </div>     
         </section>
 
-    <!--Likert Fragen -->
+    <!--Likert Questions -->
+
         <section id ="Form7">
-            <h2> How do you fell about...</h2>
+
+            <h2>Choose a Response:</h2>
+            
             <div class="seperator2">
                 <h4>I enjoy mathematics and statistics.</h4>
-            <div class="range">
-                <input type="range" min="1" max="5" step="1.0" name="likert_1">
-            </div>
-                <ul class="range-labels">
-                    <li>-2</li>
-                    <li>-1</li>
-                    <li class="active selected">0</li>
-                    <li>1</li>
-                    <li>2</li>
-                  </ul>
-            </div>
-            <div class="seperator2"> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>
+            
+             <div class="seperator2"> 
                 <h4>I enjoy working in a Team.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_2">
-            </div> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>      
+
             <div class="seperator2"> 
                 <h4>I feel interested in recent Big Data trends.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_3">
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
             </div>
             <div class="btn-box">
                 <button type="button" id="Back6">Back</button>
@@ -151,43 +185,121 @@
         </section>
 
         <section id ="Form8">
-            <h2> How do you fell about...</h2>
+            <h2>Choose a Response:</h2>
+
             <div class="seperator2">
                 <h4>I enjoy mathematics and statistics.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_4">
-            </div>
-            <div class="seperator2"> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>
+            
+             <div class="seperator2"> 
                 <h4>I enjoy working in a Team.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_5">
-            </div> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>      
+
             <div class="seperator2"> 
-                <h4>I feel interested in recent Big Data trends.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_6">
+                <h4>I feel interested in recent Big Data trends.</h4> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
             </div>
             <div class="btn-box">
                 <button type="button" id="Back7">Back</button>
                 <button type="button" id="Next8">Next</button>
-            </div>     
+            </div> 
         </section>
 
         <section id ="Form9">
-            <h2> How do you fell about...</h2>
+            <h2>Choose a Response:</h2>
             <div class="seperator2">
                 <h4>I enjoy mathematics and statistics.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_7">
-            </div>
-            <div class="seperator2"> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>
+            
+             <div class="seperator2"> 
                 <h4>I enjoy working in a Team.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_8">
-            </div> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>      
+
             <div class="seperator2"> 
                 <h4>I feel interested in recent Big Data trends.</h4>
-                <input type="range" min="1" max="5" step="1.0" name="likert_9">
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
             </div>
+
             <div class="btn-box">
                 <button type="button" id="Back8">Back</button>
                 <button type="submit" >Submit</button>
-            </div>     
+            </div>  
         </section>
     </form>
     
@@ -202,6 +314,7 @@
         <div class="step-col"><small>7</small></div>   
         <div class="step-col"><small>8</small></div>   
     </dvi>
+
 </div>
 
 <script>
@@ -312,6 +425,8 @@
         Form9.style.left = "450px";
         progress.style.width = "315px";
     }
+
 </script>
+
 </body>
 </html>
