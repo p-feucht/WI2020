@@ -5,10 +5,15 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'workerbees_db1'); */
 
-$servername = "localhost";
-$username = "root";
-$password = "";
+$dbservername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
 $dbname = "workerbees_db1";
+
+/* $dbservername = "localhost";
+$dbusername = "workerbees";
+$dbpassword = "HKSZ52";
+$dbname = "workerbees_db1"; */
  
 /* Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,7 +23,7 @@ if ($conn->connect_error) {
 } */
 
 /* Attempt to connect to MySQL database */
-$link = mysqli_connect($servername, $username, $password, $dbname);
+$link = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
  
 /* Check connection */
 if($link === false){
