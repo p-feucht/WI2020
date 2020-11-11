@@ -105,12 +105,14 @@
 
             if ($_SESSION["logged_in"]) {
                 echo "<h2 class='result-page-headline-2'>Hello, ". $_SESSION["currentuser"].".</h1><br><br>";
-            }
+                echo "<h1 class='result-page-headline'>Your most recent score is <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
+            } else {
                 echo "<h1 class='result-page-headline'>You scored <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
-                echo "<hr class='result-seperator'>";
-                echo "<h2 class='result-page-headline-2'>Thats <b>". $percentage . "</b> percent!</h2>";
-                echo "<br>";
-                echo "<h3 class='result-page-recommendation'>" . recommendation($percentage) . "</h3>";
+            }
+            echo "<hr class='result-seperator'>";
+            echo "<h2 class='result-page-headline-2'>Thats <b>". $percentage . "</b> percent!</h2>";
+            echo "<br>";
+            echo "<h3 class='result-page-recommendation'>" . recommendation($percentage) . "</h3>";
         } else {
                 echo "<h1 class='result-page-headline'>An error occured while retrieving your score.</h1>";
         }
