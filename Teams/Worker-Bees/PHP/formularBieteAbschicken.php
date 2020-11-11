@@ -7,19 +7,19 @@ $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $p
 $valid=TRUE;
 
 //Connection to bplaced server
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "workerbees";
 $password = "HKSZ52";
-$dbname = "workerbees_db1";
+$dbname = "workerbees_db1";*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-   /* $servername = "localhost";
+    $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "workerxampp";*/
+    $dbname = "workerxampp";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -260,6 +260,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
     }
     
-    
+   //Dies war nach dem Preis input feld bei value ="<?php echo htmlspecialchars($preisBetragErr);? >"  
 ?>
 

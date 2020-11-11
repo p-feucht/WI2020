@@ -93,14 +93,23 @@ function radioIsValid() {
 function pruefeFormular() {
 
     if (document.formularFuerAngebot.title.value == "") {
+        $("input[name='title']").focus();
+        // document.getElementById("title").focus();
         document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
         //   alert("Bitte gib einen Angebotstitel ein.");
         // document.Formular.title.focus();
+        //document.formularFuerAngebot.title.focus();
+        return false;
+
+    }
+    let vorname = document.getElementByName("Vorname");
+    let vornameErrMess = document.getElementById("FehlermeldungVorname");
+
+    if (CheckPLZ() == false) {
+        CheckPLZ();
         return false;
     }
-    if (!CheckPLZ()) {
-        return false;
-    }
+
 
     //Beschreibung soll kein Muss-Feld sein
     /* else if (document.formularFuerAngebot.beschreibung.value == "") {
@@ -135,13 +144,23 @@ function CheckPLZ() {
     if (laenge != anzahl) {
         //window.alert("Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!");
         document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!";
-        document.formularFuerAngebot.PLZ.focus();
-        return false();
+        document.getElementById("plzinput").focus();
+        //document.formularFuerAngebot.PLZ.focus();
+        return false;
     }
     if (laenge == anzahl) {
         if (isNaN(plz)) {
             document.getElementById("FehlermeldungPLZ").innerHTML += ", bitte nur Zahlen eingeben";
+            return false;
         }
         return true();
     }
+}
+
+function inputEmpty(nameInput, nameErrorMessage) {
+
+    document.formularFuerAngebot.nameInput.value == "") {
+    document.formularFuerAngebot.nameInput.focus();
+    document.getElementById(n).innerHTML = "Bitte Angebotstitel eingeben";
+}
 }
