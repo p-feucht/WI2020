@@ -1,5 +1,7 @@
 <div id="menu">
-    <a href="index.php"> <img src="images/Logo.png" class="logo" alt="Barkeeper Logo"/></a>
+    <div id="logo">
+        <a href="index.php"> <img src="images/Logo.png" alt="Barkeeper Logo"/></a>
+    </div>
     <div id="menu-middle">
         <a href="eingabe.php" class="button">Eingabe Lebensmittel</a>
         <a href="rezepte.php" class="button">Rezepte</a>
