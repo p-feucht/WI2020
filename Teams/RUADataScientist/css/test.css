@@ -26,6 +26,12 @@ h2{
     color: rgb(26, 31, 109)
 }
 
+h3{
+    text-align: center;
+    margin-top: 3em;
+    color: rgb(26, 31, 109)  
+}
+
 .container form section{
     width: 280px;
     position: absolute;

@@ -15,10 +15,16 @@
 
         <section id ="Form1">
             <h2>Welcome to the Test</h2>
-            
             <div class="btn-box">
                 <button type="button" id="Next1">Start the Test</button>
-            </div>     
+            </div> 
+
+            <h3>Already took the test?<h3>
+            <div class="btn-box">
+                <a href='http://ruadatascientist.bplaced.net/test.html'> 
+                <button type="button" id="Login">Login</button>
+                </a>
+            </div>      
         </section>
 
 <!--Knowledge-Questions-->
@@ -345,6 +351,7 @@
     }
 
     Next2.onclick = function(){
+        i=0;
         const rbs = document.querySelectorAll('input[name="knowledge_1"]');
         for(const rb of rbs) { 
             if (rb.checked){
