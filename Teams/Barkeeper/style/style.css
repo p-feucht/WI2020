@@ -76,4 +76,17 @@ input[type='submit']{
     background-color: #fff2f2;
 }
 
+
+#recipe_main_container {
+
+}
+
+
+.Ingredientlist {
+    list-style-type: disc;
+}
+
+.recipe_list {
+    list-style-type: decimal;
+}
   
