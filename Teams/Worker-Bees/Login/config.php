@@ -5,16 +5,16 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'workerbees_db1'); */
 
-$dbservername = "localhost";
+/* $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "workerbees_db1";
+$dbname = "workerbees_db1"; */
 
 // port number für localhost phpmyadmin? 3306
-/* $dbservername = "localhost";
+$dbservername = "localhost";
 $dbusername = "workerbees_ftpuser";
 $dbpassword = "HKS101";
-$dbname = "workerbees_db1"; */
+$dbname = "workerbees_db1";
  
 /* Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
