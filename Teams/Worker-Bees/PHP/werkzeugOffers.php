@@ -34,13 +34,7 @@ if ($result->num_rows > 0) {
         $modal_target = "#WZmodal_" . (string)$orderID;
         $modal_ID = "WZmodal_" . (string)$orderID;
 
-        $bier = round($price, 0);
-
-        //create recognizable names
-        $pricename = "WZprice_" . (string)$orderID;
-        $datename = "WZdate_" . (string)$orderID;
-        $titlename = "WZtitel_" . (string)$orderID;
-        $bezinbier = "WZbib_" . (string)$orderID;
+        $bier = round($price, 0); // so that beer is counted in whole beers
 
 ?>
         <!-- create card for each offer -->
@@ -80,18 +74,18 @@ if ($result->num_rows > 0) {
 
                         
                          <!--Create booking window -->
-                        <form class="modal-booking-window" enctype="multipart/form-data" onsubmit="<?php include("./PHP/submitBooking.php"); ?>"
-                            action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
-
+                        <form class="modal-booking-window" enctype="multipart/form-data" 
+                            action="./PHP/submitBooking.php" method = "post">
+                            
                             <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
 
                             <label for="bookingDate">Datum:</label>
-                            <input type="date" id="bookingDate" name="<?php echo $datename ?>" value="<?php echo htmlspecialchars($date); ?>" required><br>
+                            <input type="date" id="bookingDate" name="Date" value="<?php echo htmlspecialchars($date); ?>" required><br>
 
-                            <p class="modal-booking-text">Gesamtbetrag: <em name="<?php echo $pricename ?>"  type="number" value="<?php echo $price ?>"
+                            <p class="modal-booking-text">Gesamtbetrag: <em name="Preis" value="<?php echo $price ?>"
                                     ><?php echo $price ?></em> €<br></p>
 
-                            <input id="bierInput" type="checkbox" name="<?php echo $bezinbier ?>" value="1" unchecked>
+                            <input id="bierInput" type="checkbox" name="bezInBier" value="1" unchecked>
                             <label id="bierLabel" for="bezInBier"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
                             <script>
                                 if (<?php echo $bezBier ?> != 1) {
