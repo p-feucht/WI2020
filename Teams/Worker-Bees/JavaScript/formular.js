@@ -71,7 +71,7 @@ function pruefeFormular() {
         formValid = false;
     }
     return formValid;
-}
+}*/
 
 
 function radioIsValid() {
@@ -83,43 +83,18 @@ function radioIsValid() {
     }
 
     if (!formValid) {
-        alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
+        document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
+        document.getElementByID("wz").focus();
+        //alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
     }
     return formValid;
-}*/
+}
 
 
 
 function pruefeFormular() {
 
-    if (document.formularFuerAngebot.title.value == "") {
-        $("input[name='title']").focus();
-        // document.getElementById("title").focus();
-        document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
-        //   alert("Bitte gib einen Angebotstitel ein.");
-        // document.Formular.title.focus();
-        //document.formularFuerAngebot.title.focus();
-        return false;
-
-    }
-    let vorname = document.getElementByName("Vorname");
-    let vornameErrMess = document.getElementById("FehlermeldungVorname");
-
-    if (CheckPLZ() == false) {
-        CheckPLZ();
-        return false;
-    }
-
-
-    //Beschreibung soll kein Muss-Feld sein
-    /* else if (document.formularFuerAngebot.beschreibung.value == "") {
-            document.getElementById("FehlermeldungBeschr").innerHTML = "Bitte Angebotsbeschreibung eingeben";
-            //alert("Bitte gib eine Angebotsbeschreibung ein.");
-            // document.Formular.beschreibung.focus();
-            return false;
-        }*/
-
-    var formValid = false;
+    /*var formValid = false;
     var radios = document.getElementsByName("kategorie");
     var i = 0;
     while (!formValid && i < radios.length) {
@@ -129,9 +104,47 @@ function pruefeFormular() {
 
     if (!formValid) {
         alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
+        return formValid;
+*/
+
+
+    if (document.formularFuerAngebot.title.value == "") {
+        // $("input[name='title']").focus();
+        document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
+        document.getElementById("title").focus();
+        //   alert("Bitte gib einen Angebotstitel ein.");
+        // document.Formular.title.focus();
+        //document.formularFuerAngebot.title.focus();
+        return false;
+    } else if (!radioIsValid()) {
+        return false;
+    } else if (document.formularFuerAngebot.Nachname.value == "") {
+        document.getElementById("FehlermeldungNachname").innerHTML = "Bitte Nachname eingeben";
+        document.getElementById("Nachname").focus();
+        return false;
+    } else if (document.formularFuerAngebot.Strasse.value == "") {
+        document.getElementById("FehlermeldungStrasseID").innerHTML = "Bitte Straße eingeben";
+        document.getElementById("StrasseID").focus();
+        return false;
+    } else if (document.formularFuerAngebot.Hnr.value == "") {
+        document.getElementById("HnrID").innerHTML = "Bitte Straße eingeben";
+        document.getElementById("HnrID").focus();
+        return false;
+    }
+    /*let vorname = document.getElementByName("Vorname");
+    if (inputIsEmpty(vorname) == true) {
+        let vornameErrMess = document.getElementById("FehlermeldungVorname");
+        setErrorMessage(vornameErrMess, "Bitte Vornamen eingeben");
+        return false;
+    }*/
+    /*else if (CheckPLZ() == false) {
+        CheckPLZ();
+        return false;
+    } */
+    else {
+        return true;
     }
 
-    return formValid;
 }
 
 
@@ -157,10 +170,17 @@ function CheckPLZ() {
     }
 }
 
-function inputEmpty(nameInput, nameErrorMessage) {
+function inputIsEmpty(InputElement) {
 
-    document.formularFuerAngebot.nameInput.value == "") {
-    document.formularFuerAngebot.nameInput.focus();
-    document.getElementById(n).innerHTML = "Bitte Angebotstitel eingeben";
+    if (InputElement.value == "") {
+        return true;
+    } else {
+        return false;
+    }
 }
+
+function setErrorMessage(elementErrorMessage, errorMessage) {
+
+    elementErrorMessage.innerHTML = errorMessage;
+    elementErrorMessage.focus();
 }

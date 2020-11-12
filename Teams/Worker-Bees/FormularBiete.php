@@ -71,7 +71,7 @@
 
                         <label>Wähle eine <b>Angebotskategorie</b></label><label class="Fehlermeldung" id="FehlermeldungAngebKat">*</label>
                         <br>
-                        <input type="radio" name="kategorie" value="Werkzeug"> Werkzeug verleihen
+                        <input type="radio" id="wz" name="kategorie" value="Werkzeug"> Werkzeug verleihen
 
                         <input type="radio" name="kategorie" value="Werkstatt"> Werkstatt vermieten
 
@@ -128,7 +128,7 @@
                     </div>
 
                     <div class="formblock">
-                        <label>Gib bitte deine <b>Anschrift</b> an</label> <label class="Fehlermeldung" id="FehlermeldungAnschrift"> *</label>
+                        <label>Gib bitte deine <b>Anschrift</b> an</label> <label class="Fehlermeldung" id="FehlermeldungAnschrift"></label>
                         <div class="unterüberschrift">
                             <!--wenn Dienstleistung gewählt, in Javascript noch ergänzen:<textarea readonly disabled="disabled">Falls deine angebotene Dienstleistung an einem bestimmten Ort stattfindet, gib bitte dessen gesamte Adresse an. Fall du die Dienstleistung bei den Interessenten ausführen möchtest, gib bitte mindestens deinen Ort an, damit
                             klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
@@ -136,19 +136,19 @@
                         <label>Vorname 
                             <input type="text" name="Vorname" value="" size="20" maxlength="20">
                            
-                        </label> <label class="Fehlermeldung" id="FehlermeldungVorname"></label>
+                        </label> <label class="Fehlermeldung" id="FehlermeldungVorname">*</label>
                         <br>
                         <label>Nachname
                             <input type="text" id="Nachname" name="Nachname" value="" size="30" maxlength="30"> 
-                        </label><label class="Fehlermeldung" id="FehlermeldungNachname"></label>
+                        </label><label class="Fehlermeldung" id="FehlermeldungNachname">*</label>
                         <br>
                         <label>Straße
-                            <input type="text" name="Strasse" value="" size="30" maxlength="30">
-                        </label>
+                            <input type="text" id="StrasseID" name="Strasse" value="" size="30" maxlength="30">
+                        </label><label class="Fehlermeldung" id="FehlermeldungStrasse">*</label>
                         <br>
                         <label>Hausnummer
-                            <input type="text" name="Hnr" value="" size="4" maxlength="4"> 
-                        </label>
+                            <input type="text" id="HnrID" name="Hnr" value="" size="4" maxlength="4"> 
+                        </label><label class="Fehlermeldung" id="FehlermeldungHnr">*</label>
                         <br>
                         <label>Postleitzahl
                             <input type="number" id="plzinput" name="PLZ" value="" size="5" maxlength="5"> 
