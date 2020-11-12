@@ -1,3 +1,5 @@
+<?php @session_start(); ?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -31,8 +33,7 @@
 
 </head>
 
-<body onload="openTab()">
-    <!-- activate Tab opening -->
+<body onload="openTab()"> <!-- activate Tab opening -->
 
     <?php include "PHP/header.php"; ?>
 

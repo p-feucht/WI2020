@@ -13,7 +13,7 @@ $username = "workerbees";
 $password = "HKSZ52";
 $dbname = "workerbees_db1";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
+if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird führe Folgendes aus
 
     $conn2 = new mysqli($servername, $username, $password, $dbname);
 
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
     } else {
 
         $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); //create random booking number
-        $orderID = $conn2->real_escape_string($_POST["cardID"]); // take card id for beginning of booking nr
+        $orderID = $conn2->$_POST["cardID"]; // take card id for beginning of booking nr
         $id = "WZcard_" . (string)$orderID;
         $buchung_id = $id.$number; //combine
 
@@ -41,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
         $emailErstell = "";
         $userBuch = "";
         $emailBuch ="";
-        $date = $conn2->real_escape_string($_POST["$datename"]);
-        $preis = $conn2->real_escape_string($_POST["$pricename"]);
+        $date = $conn2->real_escape_string($_POST["Date"]);
+        $preis = $conn2->real_escape_string($_POST["Preis"]);
         $title = $conn2->real_escape_string($_POST["$titlename"]);
-        $bezinbier =  $conn2->real_escape_string($_POST["$bezinbier"]);
+        $bezinbier =  $conn2->real_escape_string($_POST["bezInBier"]);
 
         $sql2 = "INSERT INTO Buchung (Buchung_ID, Angebot_ID, Angebot_Typ, userErstell, emailErstell, userBuch, emailBuch ,Datum, Preis, angebotTitel, bezInBier)
                             VALUES ('$buchung_id', '$angebot_id', '$angebot_typ', '$userErstell', '$emailErstell', '$userBuch', '$emailBuch', '$date', '$preis', '$title', '$bezinbier')";
@@ -52,7 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
         if ($conn2->query($sql2) === TRUE) {
 
-            echo "New record created successfully";
+            ?>
+                <h1>Du hast erfolgreich gebucht. Viel Spaß!</h1>
+                <a href="../categories.php#Werkzeug-Ang">Zurück</a>
+                <br>
+                <a href="../index.php">Startseite</a>
+
+                <a>Hier ist deine Buchung:</a>
+                <br>
+                <?php echo $sql2 ?>
+            <?php
            
 
             } else {
@@ -60,6 +69,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
             echo "Error: " . $sql2 . "<br>" . $conn2->error;
             
             }
+
+            
 }
     $conn2->close();
 }
+
+?>

@@ -49,9 +49,6 @@
     </div>
 
 
-
-    <div class="yellow-container">Hier kommen noch Beispielangebote hin</div>
-
     <?php include "PHP/footer.php"; ?>
 
 </body>
