@@ -130,15 +130,18 @@ function pruefeFormular() {
         document.getElementById("HnrID").focus();
         return false;
     } else { document.getElementById("FehlermeldungHnr").innerHTML = "*"; }
-    if (CheckPLZ() == false) {
-        CheckPLZ();
-        return false;
-    } else { document.getElementById("FehlermeldungPLZ").innerHTML = "*"; }
     if (document.formularFuerAngebot.Ort.value == "") {
         document.getElementById("FehlermeldungOrt").innerHTML = "Bitte Ort eingeben";
         document.getElementById("OrtID").focus();
         return false;
-    } else { document.getElementById("FehlermeldungOrt").innerHTML = "*"; }
+    } else {
+        document.getElementById("FehlermeldungOrt").innerHTML = "*";
+    }
+    if (CheckPLZ() == false) {
+        // CheckPLZ();
+        return false;
+    } else { document.getElementById("FehlermeldungPLZ").innerHTML = "*"; }
+
 
 
     return true;
@@ -156,7 +159,7 @@ function CheckPLZ() {
     var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
     if (laenge != anzahl) {
         //window.alert("Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!");
-        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!";
+        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben";
         document.getElementById("plzinput").focus();
         //document.formularFuerAngebot.PLZ.focus();
         return false;
@@ -168,6 +171,7 @@ function CheckPLZ() {
         }
         return true();
     }
+    //Prüfen ob negative Zahl (an erster stelle ein Minus)
 }
 
 function inputIsEmpty(InputElement) {

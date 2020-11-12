@@ -2,7 +2,6 @@
 //include 'header.php';
 // good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
 
-//error-variables for validation
 $title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = $a1_bohr = $a2_drechsel = $a3_schleif = $a4_saege = $a5_kleinteil = "";
 $valid=TRUE;
 
@@ -13,20 +12,11 @@ $password = "HKSZ52";
 $dbname = "workerbees_db1";
 
 
-// Username Ersteller aus 
-
-//$sql_2 = "SELECT password FROM user where username = '$username'";
-
-
-
-
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
-//if(isset($_POST['formularFuerAngebot'])){
+
     //Connection to xampp 
-   /* $servername = "localhost";
+    /*$servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "workerxampp";*/
@@ -101,8 +91,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     //Session abfragen um name des Erstellers zu speichern
-                   $username = $_SESSION["username"];
-    
+                    if($_SESSION["loggedin"] == true){
+                    $username = $_SESSION["username"];
+                    echo "username-Session is " . $_SESSION["username"] . ".<br>";
+                        echo "loggedin-Session is " . $_SESSION["loggedin"] . ".<br>";
+                    }else{  
+                        $valid=FALSE;
+                        echo '<script type="text/javascript">alert("Du bist nicht angemeldet? Bitte logg dich ein bevor du ein Angebot erstellst.");</script>';
+                    }
 
                     //je nachdem welcher radioButton gedrückt wurde zusätzliche Variablen behandeln
                     $radioAnswer = $_POST['kategorie'];  //oder: if (isset($kategorie) && $kategorie=="Werkzeug"){ echo WZ;}...
