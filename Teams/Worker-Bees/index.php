@@ -29,7 +29,7 @@
     <!-- Category cards -->
     <div class="category-section">
         <div class="category">
-            <a href="categories.php#Werkzeug-Ang" target="_top">
+            <a href="categories.php#Werkzeug-Ang">
                 <img class="categoryPics" src="images/Werkzeug.jpg" alt="Werkzeug">
                 <p class="categoryText">Brauchst du ein bestimmtes Werkzeug?</p>
             </a>
