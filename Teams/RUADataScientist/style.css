@@ -101,6 +101,10 @@ footer {
     color: aliceblue;
     width: 100%;
     text-align: center;
+}
+
+footer.fixed-footer {
+    
     position: fixed;
     bottom: 0;
 }

@@ -3,18 +3,20 @@
      * STATIC VARIABLES
      */
     //MAPPING TABLE FOR KNOWLEGDE QUESTIONS AND THEIR RESULTS
-    $RESULTS_MAP = array("knowledge_1"=>"1", "knowledge_2"=>"1", "knowledge_3"=>"1", "knowledge_4"=>"1", "knowledge_5"=>"1");
+    $RESULTS_MAP = array("knowledge_1"=>"3", "knowledge_2"=>"3", "knowledge_3"=>"1", "knowledge_4"=>"2", "knowledge_5"=>"3");
     $RECOMMENDATIONS = array("0"=>"Your low results indicate that a profession in datascience is probably not your best option. However - if you're still interested you might like checking out our collection of datscience-related topics.",
                              "50"=>"You're allready quite well informed and your results indicate that datascience might be for you. We suggest you to gather some more information about the subject. You might consider starting in our topics tab.",
                              "80"=>"Wow! What an amazing result! You should consider doing a deep-dive into the subject of datascience.");
     $RECOMMENDATIONS_ORDER = array(80, 50, 0);
+    $LOGINBUTTON = "Log Me In";
+    $LOGOUTBUTTON = "Log Me Out";
 
     //REGEX PATTERNS
     $KNOWLEDGE = "/^knowledge/";
     $LIKERT = "/^likert/";
 
     //A fixed amount for every knowledge question, and a fixed amount for every likert question
-    $MAX_SCORE = (5*3) + (9*5); //5 knowledge questions with a max of 3 points each, 9 likert questions with a max of 5 points each.
+    $MAX_SCORE = (5*5) + (9*5); //5 knowledge questions with a max of 5 points each, 9 likert questions with a max of 5 points each.
 
     //DATABASE
     $servername = "localhost";
@@ -26,7 +28,7 @@
      * SESSION START
      */
     session_start();
-    if($_SESSION["results"] === null || $_POST["knowledge_1"] != null) {
+    if($_SESSION["results"] === null || $_POST["submit"] === "test") {
         $_SESSION["results"] = getResultsFromForm($_POST);
     }
 
@@ -40,26 +42,31 @@
      */
     $login_success = false;
     $logged_out = false;
-    if ($_POST["submit"] === "log me in") {
+    if ($_POST["submit"] === $LOGINBUTTON && $_POST["username"] != "") {
         $login_success = try_login($_POST);
         if ($login_success) {
             $_SESSION["logged_in"] = true;
             $_SESSION["currentuser"] = test_input($_POST["username"]);
-        } 
-    }   elseif ($_POST["submit"] === "log me out") {
-        $_SESSION["logged_in"] = false;
-        $_SESSION["currentuser"] = null;
+        } else {
+            $_SESSION["currentuser"] = null;
+        }
+    }   elseif ($_POST["submit"] === $LOGOUTBUTTON) {
+        session_unset();
+        session_destroy();
         $logged_out = true;
     }   
 
     /*
      * LOGIC
      */
-    if ($_SESSION["logged_in"] && $_SESSION["results"] === null) {
-        $_SESSION["results"] = getLastResultFromDatabase($conn, $_SESSION["currentuser"]);
-    } elseif ($_SESSION["logged_in"]) {
-        writeScoreToDatabase($_SESSION["results"], $_SESSION["currentuser"]);
-    } 
+    if(!$logged_out) {
+        if ($_SESSION["logged_in"] && $_SESSION["results"] === null) {
+            $_SESSION["results"] = getLastResultFromDatabase($conn, $_SESSION["currentuser"]);
+        } elseif ($_SESSION["logged_in"]) {
+            writeScoreToDatabase($_SESSION["results"], $_SESSION["currentuser"]);
+        } 
+    }
+    
 
     /*
      * CLOSE CONNECTION TO DATABASE
@@ -120,7 +127,7 @@
         if(!$_SESSION["logged_in"]) {
             echo "<br><br><br><br>";
 
-            if($_POST["username"] != null) {
+            if(!$login_success) {
                 echo "<h3 class='form-title'>An error occured while logging you in. Please try again.</h3>";
             } else {
                 echo "<h3 class='form-title'>Would like to save your score to review it in the future? Log in below or create a new account <a href='register.php'>here</a>.</h3>";
@@ -133,13 +140,13 @@
                 echo "<label for='password'>Password: </label>";
                 echo "<input type='password' name='password' id='input-password'>";
                 echo "<br>";
-                echo "<input class='submit-button' type='submit' name='submit' value='Log Me In'>";
+                echo "<input class='submit-button' type='submit' name='submit' value='". $LOGINBUTTON ."'>";
             echo "</form>";
             
         } else {
             echo "<br><br><br><br>";
             echo "<form class='button-form' method='POST'>";
-            echo "<input class='submit-button' type ='submit' name='submit' value='Log Me Out'>";
+            echo "<input class='submit-button' type ='submit' name='submit' value='". $LOGOUTBUTTON ."'>";
             echo "</form>";
             echo "<form class='button-from' action='test.html'>";
             echo "<input class='submit-button' type ='submit' value='Retake Test'>";
@@ -153,16 +160,16 @@
     ?>
 
     <!--FOOTER-->
-    <footer>
+    <footer class="fixed-footer">
         <ul class="footer-elements">
             <li>
                 <div class="footer-element">© Copyright 2020</div>
             </li>
             <li>
-                <a class="footer-link" href="#">Impressum</a>
+                <a class="footer-link" href="#">Imprint</a>
             </li>
             <li>
-                <a class="footer-link" href="#">Datenschutz</a>
+                <a class="footer-link" href="#">Data Protection</a>
             </li>
         </ul>
     </footer>
@@ -182,6 +189,7 @@ function getResultsFromForm($posted_data) {
     foreach ($posted_data as $question => $answer) {
         if (preg_match($KNOWLEDGE, $question) || preg_match($LIKERT, $question)) {
             $results[$question] = test_input($answer);
+            echo $question . ": " . $answer;
         } 
     } 
     if(count($results) < 1){
@@ -295,7 +303,7 @@ function calculateScore($results) {
     foreach ($results as $question => $answer) {
         if(preg_match($KNOWLEDGE, $question)){
             if($RESULTS_MAP[$question] == $answer) {
-                $score += 3;
+                $score += 5;
             }
         } else {
             $score = $score + (int)$answer;
