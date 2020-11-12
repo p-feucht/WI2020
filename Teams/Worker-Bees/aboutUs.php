@@ -150,7 +150,7 @@
                         </br> 
                          <!-- <p>matysova@workerbees.com</p>
                          </br> -->
-                         <div role="button" class="buttonKontakt" onclick="location.href='mailto:engelmayer@workerbees.com';">Kontakt</div>
+                         <div role="button" class="buttonKontakt" onclick="location.href='mailto:matysova@workerbees.com';">Kontakt</div>
                     </div>
                   </div>
                 </div>
