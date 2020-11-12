@@ -13,12 +13,12 @@
     $usernameerror = false;
     
     if ($_POST["submit"] === "Register") {
-        if ($_POST["username"] != null) {
+        if ($_POST["username"] != null && $_POST["username"] != "") {
             $usernameerror = checkIfUserExists(test_input($_POST["username"]));
         } else {
             $usernameerror = true;
         }
-        if ($_POST["password"] === null || $_POST["password"] != $_POST["password-repeat"]) {
+        if ($_POST["password"] === null || $_POST["password"] == "" || $_POST["password"] != $_POST["password-repeat"]) {
             $pwderror = true;
         }   
 
@@ -66,7 +66,6 @@
 
     <div class='register-content'>
         <?php
-        echo "<div class='result-page-content'>";
         if ($_SESSION["logged_in"]) {
             echo "<br><br><h2 class='form-title'>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2><br>";
             echo "<h2 class='form-title'><a href='result.php'>back to result page</a><h2>";
@@ -95,20 +94,19 @@
             echo "<input type='submit' name='submit' value='Register'>";
             echo "</form>";
         }  
-        echo "</div>";
         ?>
     </div>
 
-    <footer>
+    <footer class="fixed-footer">
         <ul class="footer-elements">
             <li>
                 <div class="footer-element">© Copyright 2020</div>
             </li>
             <li>
-                <a class="footer-link" href="#">Impressum</a>
+                <a class="footer-link" href="#">Imprint</a>
             </li>
             <li>
-                <a class="footer-link" href="#">Datenschutz</a>
+                <a class="footer-link" href="#">Data Protection</a>
             </li>
         </ul>
     </footer>
