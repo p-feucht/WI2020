@@ -71,7 +71,7 @@
 
                         <label>Wähle eine <b>Angebotskategorie</b></label><label class="Fehlermeldung" id="FehlermeldungAngebKat">*</label>
                         <br>
-                        <input type="radio" name="kategorie" value="Werkzeug"> Werkzeug verleihen
+                        <input type="radio" id="wz" name="kategorie" value="Werkzeug"> Werkzeug verleihen
 
                         <input type="radio" name="kategorie" value="Werkstatt"> Werkstatt vermieten
 
@@ -83,7 +83,7 @@
                     <div class=formblock>
                         <label>Gib deinem Angebot einen <b>Titel</b></label><label class="Fehlermeldung" id="FehlermeldungTitle">*</label>
                         <br>
-                        <input id="title" type="text" name="title" value="<?php echo htmlspecialchars($title);?>" size="30" maxlength="30">
+                        <input id="title" type="text" name="title" value="" size="30" maxlength="30">
                         <label class="Fehlermeldung" id="FehlermeldungTitle"></label>
                         <div class=unterüberschrift>
                             <label>Tipp: Nutze Begriffe, die andere Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
@@ -94,7 +94,7 @@
                     <div class="formblock">
                         <label>Wähle einen <b>Angebotszeitraum </b><label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>
                         <br>
-                        <input type="text" name="datefilter" value="<?php echo htmlspecialchars($zeitraum);?>" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
+                        <input type="text" name="datefilter" value="" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
                         <script type="text/javascript">
                             datePicker();
                         </script>
@@ -111,11 +111,9 @@
                     -->
 
                     <div class="formblock">
-                        <label>Füge eine <b>Beschreibung</b> hinzu</label><label class="Fehlermeldung" id="FehlermeldungBeschr"></label> 
-                        <!--<div id="FehlerBeiValidierung">-->
-                        <!-- </div>-->
+                        <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" value="<?php echo htmlspecialchars($beschreib);?>" rows="9" cols="1">
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
                         </textarea>
                         <br>
                     </div>
@@ -130,29 +128,30 @@
                     </div>
 
                     <div class="formblock">
-                        <label>Gib bitte deine <b>Anschrift</b> an</label> <label class="Fehlermeldung" id="FehlermeldungAnschrift"> *</label>
+                        <label>Gib bitte deine <b>Anschrift</b> an</label> <label class="Fehlermeldung" id="FehlermeldungAnschrift"></label>
                         <div class="unterüberschrift">
                             <!--wenn Dienstleistung gewählt, in Javascript noch ergänzen:<textarea readonly disabled="disabled">Falls deine angebotene Dienstleistung an einem bestimmten Ort stattfindet, gib bitte dessen gesamte Adresse an. Fall du die Dienstleistung bei den Interessenten ausführen möchtest, gib bitte mindestens deinen Ort an, damit
                             klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
                         </div>
                         <label>Vorname 
-                            <input type="text" name="Vorname" value="<?php echo htmlspecialchars($vorname);?>" size="20" maxlength="20">
-                            </label>
+                            <input type="text" name="Vorname" value="" size="20" maxlength="20">
+                           
+                        </label> <label class="Fehlermeldung" id="FehlermeldungVorname">*</label>
                         <br>
                         <label>Nachname
-                            <input type="text" name="Nachname" value="<?php echo htmlspecialchars($nachname);?>" size="30" maxlength="30"> 
-                        </label>
+                            <input type="text" id="Nachname" name="Nachname" value="" size="30" maxlength="30"> 
+                        </label><label class="Fehlermeldung" id="FehlermeldungNachname">*</label>
                         <br>
                         <label>Straße
-                            <input type="text" name="Strasse" value="<?php echo htmlspecialchars($strasse);?>" size="30" maxlength="30">
-                        </label>
+                            <input type="text" id="StrasseID" name="Strasse" value="" size="30" maxlength="30">
+                        </label><label class="Fehlermeldung" id="FehlermeldungStrasse">*</label>
                         <br>
                         <label>Hausnummer
-                            <input type="text" name="Hnr" value="<?php echo htmlspecialchars($hnr);?>" size="4" maxlength="4"> 
-                        </label>
+                            <input type="text" id="HnrID" name="Hnr" value="" size="4" maxlength="4"> 
+                        </label><label class="Fehlermeldung" id="FehlermeldungHnr">*</label>
                         <br>
                         <label>Postleitzahl
-                            <input type="number" id="plzinput" name="PLZ" value="<?php echo htmlspecialchars($plz);?>" size="5" maxlength="5"> 
+                            <input type="number" id="plzinput" name="PLZ" value="" size="5" maxlength="5"> 
                          </label>
                          <label class="Fehlermeldung" id="FehlermeldungPLZ"></label>
                         <br>
@@ -243,7 +242,7 @@
                             <br>
                             <label>Betrag
                             </label>
-                            <input type="number" step="0.01" min="0" max="9999.99" name="Preis" value="<?php echo htmlspecialchars($preisBetragErr);?>" size="4" maxlength="4">
+                            <input type="number" step="0.01" min="0" max="9999.99" name="Preis" value="" size="4" maxlength="4"> 
                             <label>€</label>
                             <br>
                             <input type="checkbox" id="bierBez3" name="bierBez3" value="1" unchecked>
