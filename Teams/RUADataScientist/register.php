@@ -42,6 +42,7 @@
     <title>Are you a data scientist?</title>
     <link rel="icon" type="image/ico" href="pictures/icon.svg" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 
 <body>
@@ -65,11 +66,12 @@
 
     <div class='register-content'>
         <?php
+        echo "<div class='result-page-content'>";
         if ($_SESSION["logged_in"]) {
-            echo "<br><h2 class='form-title'>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2><br>";
+            echo "<br><br><h2 class='form-title'>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2><br>";
             echo "<h2 class='form-title'><a href='result.php'>back to result page</a><h2>";
         } else {
-            echo "<h2 class='form-title'>Fill out the form below to register for saving your score in our database:<h2>";
+            echo "<br><br><h2 class='form-title'>Fill out the form below to register for saving your score in our database:<h2>";
             echo "<br><br>";
             echo "<form class='register-form' method='POST'>";
             echo "<label for='username'>Username:     </label>";
@@ -93,6 +95,7 @@
             echo "<input type='submit' name='submit' value='Register'>";
             echo "</form>";
         }  
+        echo "</div>";
         ?>
     </div>
 
