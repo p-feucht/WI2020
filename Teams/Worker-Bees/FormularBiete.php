@@ -134,7 +134,7 @@
                             klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
                         </div>
                         <label>Vorname 
-                            <input type="text" name="Vorname" value="" size="20" maxlength="20">
+                            <input type="text" id="Vorname" name="Vorname" value="" size="20" maxlength="20">
                            
                         </label> <label class="Fehlermeldung" id="FehlermeldungVorname">*</label>
                         <br>
