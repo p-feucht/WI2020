@@ -12,6 +12,16 @@ $username = "workerbees";
 $password = "HKSZ52";
 $dbname = "workerbees_db1";
 
+
+// Username Ersteller aus 
+
+//$sql_2 = "SELECT password FROM user where username = '$username'";
+
+
+
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
@@ -90,8 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $ort = $conn->real_escape_string($_POST["Ort"]);
                     }
 
-                    //Username des Erstellers fehlt noch
-                    // Erstellzeitpunkt timestamp automatisch in db?
+                    //Session abfragen um name des Erstellers zu speichern
+                   $username = $_SESSION["username"];
+    
 
                     //je nachdem welcher radioButton gedrückt wurde zusätzliche Variablen behandeln
                     $radioAnswer = $_POST['kategorie'];  //oder: if (isset($kategorie) && $kategorie=="Werkzeug"){ echo WZ;}...
@@ -107,8 +118,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){
-                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, PreisProTag, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$preisProTag1', '$bierBez1')";
+                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$preisProTag1', '$bierBez1')";
 
                             //echo $sql;
                             //echo "<br>";
@@ -141,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo $bierBez1;*/
                             } else {
                                 echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                            echo "Error: " . $sql . "<br>" . $conn->error;
+                                echo "Error: " . $sql . "<br>" . $conn->error;
                          
                             }
                         }
@@ -168,8 +179,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         
                         if($valid==true){
                         
-                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}','$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
                             //echo $sql;
                         
                             if ($conn->query($sql) === TRUE) {
@@ -209,10 +220,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                                 echo $a4_saege;
                                 echo "<br>";
                                 echo $a5_kleinteil;*/
-                                //echo "Error: " . $sql . "<br>" . $conn->error;
+                                echo "Error: " . $sql . "<br>" . $conn->error;
                                 echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
                             } 
-                        } else{echo '<script type="text/javascript">alert("Deine Angaben sind nicht vollständig oder nicht valide.");</script>';}   
+                        } else{
+                            echo '<script type="text/javascript">alert("Deine Angaben sind nicht vollständig oder nicht valide.");</script>';}   
                     }
 
                     elseif($radioAnswer == "Dienstleistung") {
@@ -222,7 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $preisBetrag = $conn->real_escape_string($_POST['Preis']);
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
-                            $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, Preisart, Preis, BezInBier)
+                            $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
                             VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' ,'$bezahlart', '$preisBetrag', '$bierBez3')";
                         
                             //echo $sql;
@@ -234,7 +246,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                                 } 
                                 else {
                                     echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                                    //echo "Error: " . $sql . "<br>" . $conn->error;
+                                    echo "Error: " . $sql . "<br>" . $conn->error;
                                 }
                             }
                             else{

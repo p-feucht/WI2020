@@ -90,7 +90,13 @@ function radioIsValid() {
     return formValid;
 }
 
-
+function radioOk() {
+    if (document.getElementById("ws").checked == true || document.getElementById("wz").checked == true || document.getElementById("dl").checked == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function pruefeFormular() {
 
@@ -109,19 +115,21 @@ function pruefeFormular() {
 
 
     if (document.formularFuerAngebot.title.value == "") {
-        // $("input[name='title']").focus();
+
         document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
         document.getElementById("title").focus();
-        //   alert("Bitte gib einen Angebotstitel ein.");
-        // document.Formular.title.focus();
-        //document.formularFuerAngebot.title.focus();
         return false;
-    } else if (!radioIsValid()) {
+
+    } else if (!radioOK) {
+        document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
+        document.getElementByID("wz").focus();
         return false;
+
     } else if (document.formularFuerAngebot.Nachname.value == "") {
         document.getElementById("FehlermeldungNachname").innerHTML = "Bitte Nachname eingeben";
         document.getElementById("Nachname").focus();
         return false;
+
     } else if (document.formularFuerAngebot.Strasse.value == "") {
         document.getElementById("FehlermeldungStrasseID").innerHTML = "Bitte Straße eingeben";
         document.getElementById("StrasseID").focus();

@@ -73,9 +73,9 @@
                         <br>
                         <input type="radio" id="wz" name="kategorie" value="Werkzeug"> Werkzeug verleihen
 
-                        <input type="radio" name="kategorie" value="Werkstatt"> Werkstatt vermieten
+                        <input type="radio" id="ws" name="kategorie" value="Werkstatt"> Werkstatt vermieten
 
-                        <input type="radio" name="kategorie" value="Dienstleistung"> Dienstleistung anbieten
+                        <input type="radio" id="dl" name="kategorie" value="Dienstleistung"> Dienstleistung anbieten
 
                     </div>
 
