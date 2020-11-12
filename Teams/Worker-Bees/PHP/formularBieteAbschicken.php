@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
 //if(isset($_POST['formularFuerAngebot'])){
     //Connection to xampp 
-    /*$servername = "localhost";
+   /* $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "workerxampp";*/

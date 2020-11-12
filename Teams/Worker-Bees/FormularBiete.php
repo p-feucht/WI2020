@@ -153,11 +153,12 @@
                         <label>Postleitzahl
                             <input type="number" id="plzinput" name="PLZ" value="" size="5" maxlength="5"> 
                          </label>
-                         <label class="Fehlermeldung" id="FehlermeldungPLZ"></label>
+                         <label class="Fehlermeldung" id="FehlermeldungPLZ">*</label>
                         <br>
                         <label>Ort
-                            <input type="text" name="Ort" value="<?php echo htmlspecialchars($ort);?>" size="30" maxlength="30">
+                            <input type="text" id="OrtID" name="Ort" value="" size="30" maxlength="30">
                         </label>
+                        <label class="Fehlermeldung" id="FehlermeldungOrt">*</label>
                     </div>
 
 
