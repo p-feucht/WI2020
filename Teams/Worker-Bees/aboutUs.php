@@ -124,8 +124,8 @@
 
                     </p>
                       </br> 
-                      <p>engelmayer@workerbees.com</p>
-                         </br> 
+                      <!-- <p>engelmayer@workerbees.com</p>
+                         </br>  -->
                      <!--  <p><button class="buttonKontakt">Kontakt</button></p> -->
 
                       <div role="button" class="buttonKontakt" onclick="location.href='mailto:engelmayer@workerbees.com';">Kontakt</div>
@@ -148,8 +148,8 @@
                         </br> 
                       <p>Ich wollte schon immer badass sein.</p>
                         </br> 
-                         <p>matysova@workerbees.com</p>
-                         </br>
+                         <!-- <p>matysova@workerbees.com</p>
+                         </br> -->
                          <div role="button" class="buttonKontakt" onclick="location.href='mailto:engelmayer@workerbees.com';">Kontakt</div>
                     </div>
                   </div>
@@ -158,7 +158,7 @@
                 <div class="column">
                   <div class="card">
 
-                    <img src="images/TestbildTeam.jpg" alt="Dani" style="width:100%">
+                    <img src="images/Dani_crop_resize.jpg" alt="Dani" style="width:100%">
 
                     <div class="container">
                       <h2>Daniel Birk</h2>
@@ -172,8 +172,8 @@
 
                       </p>
                         </br> 
-                      <p>birk@workerbees.com</p>
-                         </br> 
+                      <!-- <p>birk@workerbees.com</p>
+                         </br>  -->
                          <div role="button" class="buttonKontakt" onclick="location.href='mailto:birk@workerbees.com';">Kontakt</div>
                     </div>
                   </div>

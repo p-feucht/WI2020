@@ -135,11 +135,12 @@ CREATE TABLE `Dienstleistung` (
 -- Tabellenstruktur für Tabelle `User`
 --
 
-CREATE TABLE `User` (
-  `Username` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Username',
-  `Passwort` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Email` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT 'eindeutige Email Adresse'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `user` (
+  'id' int(11) primary AUTO_INCREMENT,
+  `username` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `password` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci
+  )
 
 --
 -- Indizes der exportierten Tabellen

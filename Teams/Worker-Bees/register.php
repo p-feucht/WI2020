@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Benutzername eingeben.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM User WHERE username = ?";
+        $sql = "SELECT id FROM user WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $email_err = "Emailadresse eingeben.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM User WHERE email = ?";
+        $sql = "SELECT id FROM user WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -176,10 +176,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Registrieren">
+                <input type="submit" name="submit" class="btn btn-primary" value="Registrieren">
                 </br> 
                 </br> 
-                <input type="reset" class="btn btn-default" value="Daten zurücksetzen">
+                <input type="reset" name="reset" class="btn btn-default" value="Daten zurücksetzen">
             </div>
             <p>Du hast schon einen Account? 
             </br> 
