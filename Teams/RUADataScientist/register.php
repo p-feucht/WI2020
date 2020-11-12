@@ -66,7 +66,6 @@
 
     <div class='register-content'>
         <?php
-        echo "<div class='result-page-content'>";
         if ($_SESSION["logged_in"]) {
             echo "<br><br><h2 class='form-title'>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2><br>";
             echo "<h2 class='form-title'><a href='result.php'>back to result page</a><h2>";
@@ -95,7 +94,6 @@
             echo "<input type='submit' name='submit' value='Register'>";
             echo "</form>";
         }  
-        echo "</div>";
         ?>
     </div>
 
