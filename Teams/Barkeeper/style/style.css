@@ -20,7 +20,9 @@
 }
 
 .content{
+    background-image: url("../images/fruitsBackground.jpg");
     text-align: center;
+    color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
