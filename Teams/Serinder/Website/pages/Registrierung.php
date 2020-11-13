@@ -44,7 +44,7 @@
         </div>
         <?php include('./structure/LoginForm.html'); ?>
     </main>
-    <?php include("./structure/Footer.php"); ?>
+    <?php include("./structure/Footer.html"); ?>
 
 
 
