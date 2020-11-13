@@ -12,7 +12,7 @@
 
 <body>
 
-    <?php include "PHP/headerLoggedIn.php"; 
+    <?php include "PHP/header.php"; 
     // Initialize the session
 session_start();
  

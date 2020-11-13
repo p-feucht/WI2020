@@ -40,7 +40,7 @@
     /*
      * TRY TO LOG IN THE USER
      */
-    $login_success = false;
+    $login_success = null;
     $logged_out = false;
     if ($_POST["submit"] === $LOGINBUTTON && $_POST["username"] != "") {
         $login_success = try_login($_POST);
@@ -50,6 +50,8 @@
         } else {
             $_SESSION["currentuser"] = null;
         }
+    } elseif ($_POST["username"] === "") {
+        $login_success = false;
     }   elseif ($_POST["submit"] === $LOGOUTBUTTON) {
         session_unset();
         session_destroy();
@@ -61,7 +63,7 @@
      */
     if(!$logged_out) {
         if ($_SESSION["logged_in"] && $_SESSION["results"] === null) {
-            $_SESSION["results"] = getLastResultFromDatabase($conn, $_SESSION["currentuser"]);
+            $_SESSION["results"] = getLastResultFromDatabase($_SESSION["currentuser"]);
         } elseif ($_SESSION["logged_in"]) {
             writeScoreToDatabase($_SESSION["results"], $_SESSION["currentuser"]);
         } 
@@ -127,7 +129,7 @@
         if(!$_SESSION["logged_in"]) {
             echo "<br><br><br><br>";
 
-            if(!$login_success) {
+            if($login_success === false) {
                 echo "<h3 class='form-title'>An error occured while logging you in. Please try again.</h3>";
             } else {
                 echo "<h3 class='form-title'>Would like to save your score to review it in the future? Log in below or create a new account <a href='register.php'>here</a>.</h3>";
@@ -204,8 +206,8 @@ function getLastResultFromDatabase($user) {
     global $conn;
 
     $sql = "SELECT question_1 'knowledge_1', question_2 'knowledge_2', question_3 'knowledge_3', question_4 'knowledge_4', question_5 'knowledge_5',
-            question_6 'likert_1', question_7 'likert_2', question_8 'likert_3', question_9 'likert_4', question_10 'likert_5', question_11 'likert_6', question_12 'likert_7', question_13 'likert_8', question_14 'likert_9',
-            FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM username WHERE username = '" . $user . "')";
+            question_6 'likert_1', question_7 'likert_2', question_8 'likert_3', question_9 'likert_4', question_10 'likert_5', question_11 'likert_6', question_12 'likert_7', question_13 'likert_8', question_14 'likert_9'
+            FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM results WHERE username = '" . $user . "')";
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

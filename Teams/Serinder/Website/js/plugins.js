@@ -24,3 +24,12 @@ function showSelectedGenre() {
 
 }
 
+  function addClass(){
+    elem = document.getElementsByClassName('changePasswordWrapper');
+    elem[0].classList.add("show");
+  }
+
+  function removeClass(){
+    elem = document.getElementsByClassName('changePasswordWrapper');
+    elem[0].classList.remove("show");
+  }

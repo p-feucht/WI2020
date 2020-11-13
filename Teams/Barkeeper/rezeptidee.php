@@ -11,7 +11,8 @@
         ?>
     </nav>
     <div class="content">
-    <form action = "/php/actionPage.php" method = "Post" id ="Input_Ingredients">
+        <p> Du findest deinen Lieblingscocktail bei uns nicht? Dann teile uns das Rezept über folgendes Formular mit. </p>
+        <form action = "/php/yourOwnReceiptIdea.php" method = "Post" id ="Input_Ingredients">
             <input 
                 type="text" name="CocktailName" placeholder = "Cocktail Name" 
                 onfocus="this.placeholder=''" 

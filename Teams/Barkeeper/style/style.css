@@ -20,6 +20,7 @@
 }
 
 .content{
+    background-image: url("../images/cocktailHell.jpg");
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -76,4 +77,17 @@ input[type='submit']{
     background-color: #fff2f2;
 }
 
+
+#recipe_main_container {
+
+}
+
+
+.Ingredientlist {
+    list-style-type: disc;
+}
+
+.recipe_list {
+    list-style-type: decimal;
+}
   
