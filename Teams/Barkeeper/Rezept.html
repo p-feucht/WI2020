@@ -2,7 +2,6 @@
 <head>
     <meta charset = "utf-8">
     <title>Barkeeper | Rezept </title>
-    <link  href="style/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -34,11 +33,12 @@
 
         <div class = test>
             <script src="Script/script.js"></script>
-            <input type="text">
-            <button onclick="add()"> + </button>
-            <button onclick="remove()"> - </button>
-            <div id="new_chq"></div>
-            <input type="hidden" value="1" id="total_chq">    
+            <div id="dynamicCheck">
+                <input type="button" value="Create Element" onclick="createNewElement();"/>
+            </div>
+            <div id="newElementId">
+
+            </div>
         </div>
     </div>
    

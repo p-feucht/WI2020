@@ -21,7 +21,7 @@
                 <p>sortieren nach:</p>
                 <div class="filterInnerWrapper">
                     <div class="filterbuttonWrapper">
-                        <a class="button" href="#">Alphabetisch</a>
+                        <a class="button" href="./Serienliste.php">Alphabetisch</a>
                     </div>
                     <div class="filterSelectWrapper">
                         <div class="selectWrapper">
