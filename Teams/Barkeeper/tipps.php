@@ -29,8 +29,7 @@
         Man sagt nicht umsonst das Auge trinkt mit, deshalb solltest du auch auf das Äußere deines Cocktails achten.
         Das geht ganz leicht, in dem du entweder eine Frucht schön aufschneidest und an den Glasrand steckst, oder in 
         dem du etwas "Grünzeug" wie Minze auf den Cocktail legst</p>
-        <p>Rezept 4</p>
-        <p>Rezept 5</p>       
+          
     </div>
     <footer>
         <?php
