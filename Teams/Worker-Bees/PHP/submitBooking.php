@@ -24,8 +24,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
         
     } else {
 
-        $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); //create random booking number
         $orderID = $conn2->$_POST["cardID"]; // take card id for beginning of booking nr
+
+        // get information about specific order from database
+        $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID" ;
+        $result = $conn->query($getOrderSql);
+
+        if ($result->num_rows == 1) {
+
+            $orderRow = $result->fetch_assoc();
+            $title = $orderRow["ATitel"];
+            $userErstell = $orderRow["usernameErsteller"];
+            $preis = $orderRow["PreisProTag"];
+
+        } else {
+            echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
+            echo "Error: " . $sql2 . "<br>" . $conn2->error;
+        }
+
+        $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); //create random booking number
         $id = "WZcard_" . (string)$orderID;
         $buchung_id = $id.$number; //combine
 
@@ -37,13 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
 
         $angebot_id = "";
         $angebot_typ = "";
-        $userErstell = "";
+        //$userErstell = "";
         $emailErstell = "";
         $userBuch = "";
         $emailBuch ="";
         $date = $conn2->real_escape_string($_POST["Date"]);
-        $preis = $conn2->real_escape_string($_POST["Preis"]);
-        $title = $conn2->real_escape_string($_POST["$titlename"]);
+        //$preis = $conn2->real_escape_string($_POST["Preis"]);
+        //$title = $conn2->real_escape_string($_POST["$titlename"]);
         $bezinbier =  $conn2->real_escape_string($_POST["bezInBier"]);
 
         $sql2 = "INSERT INTO Buchung (Buchung_ID, Angebot_ID, Angebot_Typ, userErstell, emailErstell, userBuch, emailBuch ,Datum, Preis, angebotTitel, bezInBier)
