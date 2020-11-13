@@ -21,7 +21,7 @@
             Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
                 
             Weitergabe
-            Sämtliche angebotenen Informationen dürfen – auch auszugsweise – nur mit schriftlicher Genehmigung von impressum-generator.de weiterverbreitet oder anderweitig veröffentlicht werden. Dies gilt nicht für die Erstellung eines Impressums durch Nutzung des Generators.</p>
+            Sämtliche angebotenen Informationen dürfen – auch auszugsweise – nur mit schriftlicher Genehmigung von barkeeper.bplaced.net weiterverbreitet oder anderweitig veröffentlicht werden.</p>
     </div>
     <footer>
     <?php

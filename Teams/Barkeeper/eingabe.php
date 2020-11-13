@@ -11,6 +11,7 @@
         ?>
     </nav>
     <div class="content">
+        <p> Gib hier deine Lebensmittel ein und wir suchen die passenden Cocktails für dich heraus. </p>
         <form action = "/php/actionPage.php" method = "Post" id ="Input_Ingredients">
             <input 
                 type="text" id= "Alkohol1" name="Zutat1" placeholder = "Alkohol" 

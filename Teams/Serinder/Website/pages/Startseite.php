@@ -90,6 +90,6 @@
     </main>
     
 
-    <?php include('./structure/Footer.php'); ?>
+    <?php include('./structure/Footer.html'); ?>
 
 </body>
