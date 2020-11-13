@@ -3,18 +3,20 @@
      * STATIC VARIABLES
      */
     //MAPPING TABLE FOR KNOWLEGDE QUESTIONS AND THEIR RESULTS
-    $RESULTS_MAP = array("knowledge_1"=>"0");
+    $RESULTS_MAP = array("knowledge_1"=>"3", "knowledge_2"=>"3", "knowledge_3"=>"1", "knowledge_4"=>"2", "knowledge_5"=>"3");
     $RECOMMENDATIONS = array("0"=>"Your low results indicate that a profession in datascience is probably not your best option. However - if you're still interested you might like checking out our collection of datscience-related topics.",
                              "50"=>"You're allready quite well informed and your results indicate that datascience might be for you. We suggest you to gather some more information about the subject. You might consider starting in our topics tab.",
                              "80"=>"Wow! What an amazing result! You should consider doing a deep-dive into the subject of datascience.");
     $RECOMMENDATIONS_ORDER = array(80, 50, 0);
+    $LOGINBUTTON = "Log Me In";
+    $LOGOUTBUTTON = "Log Me Out";
 
     //REGEX PATTERNS
     $KNOWLEDGE = "/^knowledge/";
     $LIKERT = "/^likert/";
 
     //A fixed amount for every knowledge question, and a fixed amount for every likert question
-    $MAX_SCORE = 9; //3 questions atm. 3 points max per question
+    $MAX_SCORE = (5*5) + (9*5); //5 knowledge questions with a max of 5 points each, 9 likert questions with a max of 5 points each.
 
     //DATABASE
     $servername = "localhost";
@@ -26,7 +28,7 @@
      * SESSION START
      */
     session_start();
-    if($_SESSION["results"] === null || $_POST["knowledge_1"] != null) {
+    if($_SESSION["results"] === null || $_POST["submit"] === "test") {
         $_SESSION["results"] = getResultsFromForm($_POST);
     }
 
@@ -38,28 +40,35 @@
     /*
      * TRY TO LOG IN THE USER
      */
-    $login_success = false;
+    $login_success = null;
     $logged_out = false;
-    if ($_POST["submit"] === "log me in") {
+    if ($_POST["submit"] === $LOGINBUTTON && $_POST["username"] != "") {
         $login_success = try_login($_POST);
         if ($login_success) {
             $_SESSION["logged_in"] = true;
             $_SESSION["currentuser"] = test_input($_POST["username"]);
-        } 
-    }   elseif ($_POST["submit"] === "log me out") {
-        $_SESSION["logged_in"] = false;
-        $_SESSION["currentuser"] = null;
+        } else {
+            $_SESSION["currentuser"] = null;
+        }
+    } elseif ($_POST["username"] === "") {
+        $login_success = false;
+    }   elseif ($_POST["submit"] === $LOGOUTBUTTON) {
+        session_unset();
+        session_destroy();
         $logged_out = true;
     }   
 
     /*
      * LOGIC
      */
-    if ($_SESSION["logged_in"] && $_SESSION["results"] === null) {
-        $_SESSION["results"] = getLastResultFromDatabase($conn, $_SESSION["currentuser"]);
-    } elseif ($_SESSION["logged_in"]) {
-        writeScoreToDatabase($_SESSION["results"], $_SESSION["currentuser"]);
-    } 
+    if(!$logged_out) {
+        if ($_SESSION["logged_in"] && $_SESSION["results"] === null) {
+            $_SESSION["results"] = getLastResultFromDatabase($_SESSION["currentuser"]);
+        } elseif ($_SESSION["logged_in"]) {
+            writeScoreToDatabase($_SESSION["results"], $_SESSION["currentuser"]);
+        } 
+    }
+    
 
     /*
      * CLOSE CONNECTION TO DATABASE
@@ -105,12 +114,14 @@
 
             if ($_SESSION["logged_in"]) {
                 echo "<h2 class='result-page-headline-2'>Hello, ". $_SESSION["currentuser"].".</h1><br><br>";
-            }
+                echo "<h1 class='result-page-headline'>Your most recent score is <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
+            } else {
                 echo "<h1 class='result-page-headline'>You scored <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
-                echo "<hr class='result-seperator'>";
-                echo "<h2 class='result-page-headline-2'>Thats <b>". $percentage . "</b> percent!</h2>";
-                echo "<br>";
-                echo "<h3 class='result-page-recommendation'>" . recommendation($percentage) . "</h3>";
+            }
+            echo "<hr class='result-seperator'>";
+            echo "<h2 class='result-page-headline-2'>Thats <b>". $percentage . "</b> percent!</h2>";
+            echo "<br>";
+            echo "<h3 class='result-page-recommendation'>" . recommendation($percentage) . "</h3>";
         } else {
                 echo "<h1 class='result-page-headline'>An error occured while retrieving your score.</h1>";
         }
@@ -118,7 +129,7 @@
         if(!$_SESSION["logged_in"]) {
             echo "<br><br><br><br>";
 
-            if($_POST["username"] != null) {
+            if($login_success === false) {
                 echo "<h3 class='form-title'>An error occured while logging you in. Please try again.</h3>";
             } else {
                 echo "<h3 class='form-title'>Would like to save your score to review it in the future? Log in below or create a new account <a href='register.php'>here</a>.</h3>";
@@ -131,13 +142,13 @@
                 echo "<label for='password'>Password: </label>";
                 echo "<input type='password' name='password' id='input-password'>";
                 echo "<br>";
-                echo "<input class='submit-button' type='submit' name='submit' value='Log Me In'>";
+                echo "<input class='submit-button' type='submit' name='submit' value='". $LOGINBUTTON ."'>";
             echo "</form>";
             
         } else {
             echo "<br><br><br><br>";
             echo "<form class='button-form' method='POST'>";
-            echo "<input class='submit-button' type ='submit' name='submit' value='Log Me Out'>";
+            echo "<input class='submit-button' type ='submit' name='submit' value='". $LOGOUTBUTTON ."'>";
             echo "</form>";
             echo "<form class='button-from' action='test.html'>";
             echo "<input class='submit-button' type ='submit' value='Retake Test'>";
@@ -151,16 +162,16 @@
     ?>
 
     <!--FOOTER-->
-    <footer>
+    <footer class="fixed-footer">
         <ul class="footer-elements">
             <li>
                 <div class="footer-element">© Copyright 2020</div>
             </li>
             <li>
-                <a class="footer-link" href="#">Impressum</a>
+                <a class="footer-link" href="#">Imprint</a>
             </li>
             <li>
-                <a class="footer-link" href="#">Datenschutz</a>
+                <a class="footer-link" href="#">Data Protection</a>
             </li>
         </ul>
     </footer>
@@ -180,6 +191,7 @@ function getResultsFromForm($posted_data) {
     foreach ($posted_data as $question => $answer) {
         if (preg_match($KNOWLEDGE, $question) || preg_match($LIKERT, $question)) {
             $results[$question] = test_input($answer);
+            echo $question . ": " . $answer;
         } 
     } 
     if(count($results) < 1){
@@ -193,7 +205,9 @@ function getResultsFromForm($posted_data) {
 function getLastResultFromDatabase($user) {
     global $conn;
 
-    $sql = "SELECT question_1 'knowledge_1', question_2 'likert_1', question_3 'likert_2' FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM username WHERE username = '" . $user . "')";
+    $sql = "SELECT question_1 'knowledge_1', question_2 'knowledge_2', question_3 'knowledge_3', question_4 'knowledge_4', question_5 'knowledge_5',
+            question_6 'likert_1', question_7 'likert_2', question_8 'likert_3', question_9 'likert_4', question_10 'likert_5', question_11 'likert_6', question_12 'likert_7', question_13 'likert_8', question_14 'likert_9'
+            FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM results WHERE username = '" . $user . "')";
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -253,7 +267,8 @@ function try_login($posted_data) {
 //WRITE A SCORE TO THE DATABASE
 function writeScoreToDatabase($data, $user) {
     global $conn;
-    $sql = "INSERT INTO results (username, question_1, question_2, question_3) VALUES ('unknown_user', knowledge_1, likert_1, likert_2)";
+    $sql = "INSERT INTO results (username, question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8, question_9, question_10, question_11, question_12, question_13, question_14) 
+            VALUES ('unknown_user', knowledge_1, knowledge_2, knowledge_3, knowledge_4, knowledge_5, likert_1, likert_2, likert_3, likert_4, likert_5, likert_6, likert_7, likert_8, likert_9)";
 
     //check connection
     if ($conn->connect_error) {
@@ -290,7 +305,7 @@ function calculateScore($results) {
     foreach ($results as $question => $answer) {
         if(preg_match($KNOWLEDGE, $question)){
             if($RESULTS_MAP[$question] == $answer) {
-                $score += 3;
+                $score += 5;
             }
         } else {
             $score = $score + (int)$answer;

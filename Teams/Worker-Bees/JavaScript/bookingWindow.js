@@ -23,3 +23,8 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+function changeName(elmnt, name) {
+
+  elmnt.name = name;
+}

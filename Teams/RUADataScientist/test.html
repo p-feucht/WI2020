@@ -5,34 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/testAddOn.css">
     <link rel="icon" type="image/ico" href="pictures/icon.svg" />
 <body>
 
-<!--CONTENT-->
+<!--First Page (Start The Test...)-->
 <div class="container">
     <form action="result.php" method="POST">
 
         <section id ="Form1">
             <h2>Welcome to the Test</h2>
-            
             <div class="btn-box">
                 <button type="button" id="Next1">Start the Test</button>
-            </div>     
+            </div> 
+
+            <h3>Already took the test?</h3>
+
+            <div class="btn-box">
+                <a href='login.html'> 
+                <button type="button" id="Login">Login</button>
+                </a>
+            </div>      
         </section>
 
+<!--Knowledge-Questions-->
         <section id ="Form2">
-            <h2>Why is this a short Question? </h2>
+            <h2>Which of the following is the most important language for Data Science?</h2>
             <div class="seperator"> 
-                <input type="radio" id="1" name="likert_1" value="1">
-                <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
+                <input type="radio" id="1" name="knowledge_1" value="1">
+                <label for="f-option">Java</label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="2" name="likert_1" value="2">
-                <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
+                <input type="radio" id="2" name="knowledge_1" value="2">
+                <label for="s-option">C</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="3" name="likert_1" value="3">
-                <label for="t-option">Cats, solo sen saksn si us plau</label>
+                <input type="radio" id="3" name="knowledge_1" value="3">
+                <label for="t-option">Python</label>
             </div> 
             <div class="btn-box">
                 <button type="button" id="Back1">Back</button>
@@ -41,18 +50,18 @@
         </section>
 
         <section id ="Form3">
-            <h2> Why has this question so many words, that I have to redo my positioning?</h2>
+            <h2>Which of the following is not an assumption of linear regression?</h2>
             <div class="seperator"> 
-                <input type="radio" id="1" name="likert_2" value="1">
-                <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
+                <input type="radio" id="1" name="knowledge_2" value="1">
+                <label for="f-option">Linear Relationship</label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="2" name="likert_2" value="2">
-                <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
+                <input type="radio" id="2" name="knowledge_2" value="2">
+                <label for="s-option">Auto-Correlation</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="3" name="likert_2" value="3">
-                <label for="t-option">Cats, solo sen saksn si us plau</label>
+                <input type="radio" id="3" name="knowledge_2" value="3">
+                <label for="t-option">Homoscedasticity</label>
             </div>
             <div class="btn-box">
                 <button type="button" id="Back2">Back</button>
@@ -63,15 +72,15 @@
         <section id ="Form4">
             <h2>What is Deep Learning? </h2>
             <div class="seperator"> 
-                <input type="radio" id="0" name="knowledge_1" value="0">
+                <input type="radio" id="1" name="knowledge_3" value="1">
                 <label for="f-option">A subfield of machine learning concerned with algorithms inspired by the structure and function of the brain.  </label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="1" name="knowledge_1" value="1">
+                <input type="radio" id="2" name="knowledge_3" value="2">
                 <label for="s-option">A process of discovering patterns in large data sets involving methods at the intersection of machine learning, statistics and database systems.</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="2" name="knowledge_1" value="2">
+                <input type="radio" id="3" name="knowledge_3" value="3">
                 <label for="t-option">A dicipline that concerns the collection, organization, analysis, interpretation and presentation of data. </label>
             </div> 
             <div class="btn-box">
@@ -81,18 +90,18 @@
         </section>
 
         <section id ="Form5">
-            <h2> Why has this question so many words, that I have to redo my positioning?</h2>
+            <h2>Which one is not a data measurement scale?</h2>
             <div class="seperator"> 
-                <input type="radio" id="1" name="likert_2" value="1">
-                <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
+                <input type="radio" id="1" name="knowledge_4" value="1">
+                <label for="f-option">Nominal Scale</label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="2" name="likert_2" value="2">
-                <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
+                <input type="radio" id="2" name="knowledge_4" value="2">
+                <label for="s-option">Inverse Scale</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="3" name="likert_2" value="3">
-                <label for="t-option">Cats, solo sen saksn si us plau</label>
+                <input type="radio" id="3" name="knowledge_4" value="3">
+                <label for="t-option">Ordinal Scale</label>
             </div>
             <div class="btn-box">
                 <button type="button" id="Back4">Back</button>
@@ -101,18 +110,18 @@
         </section>
 
         <section id ="Form6">
-            <h2> Why has this question so many words, that I have to redo my positioning?</h2>
+            <h2>Which statement is true about supervised learning?</h2>
             <div class="seperator"> 
-                <input type="radio" id="1" name="likert_2" value="1">
-                <label for="f-option">Pizza, becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobales en la traitin pasin  </label>
+                <input type="radio" id="1" name="knowledge_5" value="1">
+                <label for="f-option">Supervised Learning uses known and labeled data as input.</label>
             </div>
             <div class="seperator"> 
-                <input type="radio" id="2" name="likert_2" value="2">
-                <label for="s-option">Bacon, eau becuas ajkfne we knaw are stea ine vontrado desla. Y tu esta un cancion de mis aragobal</label>
+                <input type="radio" id="2" name="knowledge_5" value="2">
+                <label for="s-option">Supervised learning has no feedback mechanism.</label>
             </div> 
             <div class="seperator"> 
-                <input type="radio" id="3" name="likert_2" value="3">
-                <label for="t-option">Cats, solo sen saksn si us plau</label>
+                <input type="radio" id="3" name="knowledge_5" value="3">
+                <label for="t-option">The most commonly used supervised learning algorithms are k-means clustering, hierarchical clustering, and apriori algorithm.</label>
             </div>
             <div class="btn-box">
                 <button type="button" id="Back5">Back</button>
@@ -120,29 +129,61 @@
             </div>     
         </section>
 
-    <!--Likert Fragen -->
+    <!--Likert Questions -->
+
         <section id ="Form7">
-            <h2> How to you fell about...</h2>
+
+            <h2>Choose a Response:</h2>
+            
             <div class="seperator2">
                 <h4>I enjoy mathematics and statistics.</h4>
-            <div class="range">
-                <input type="range" min="1" max="5" step="1.0">
-            </div>
-                <ul class="range-labels">
-                    <li>-2</li>
-                    <li>-1</li>
-                    <li class="active selected">0</li>
-                    <li>1</li>
-                    <li>2</li>
-                  </ul>
-            </div>
-            <div class="seperator2"> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_1" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>
+            
+             <div class="seperator2"> 
                 <h4>I enjoy working in a Team.</h4>
-                <input type="range" min="1" max="5" step="1.0">
-            </div> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_2" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>      
+
             <div class="seperator2"> 
-                <h4>I feel interested in recent Big Data trends.</h4>
-                <input type="range" min="1" max="5" step="1.0">
+                <h4>I am interested in recent Big Data trends.</h4>
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_3" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
             </div>
             <div class="btn-box">
                 <button type="button" id="Back6">Back</button>
@@ -151,43 +192,121 @@
         </section>
 
         <section id ="Form8">
-            <h2> How to you fell about...</h2>
+            <h2>Choose a Response:</h2>
+
             <div class="seperator2">
-                <h4>I enjoy mathematics and statistics.</h4>
-                <input type="range" min="1" max="5" step="1.0">
-            </div>
+                <h4>I find the idea of self-learning computers fascinating.</h4>
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_4" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>
+            
+             <div class="seperator2"> 
+                <h4>I am curious about what large amounts of data have to offer.</h4>
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_5" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>      
+
             <div class="seperator2"> 
-                <h4>I enjoy working in a Team.</h4>
-                <input type="range" min="1" max="5" step="1.0">
-            </div> 
-            <div class="seperator2"> 
-                <h4>I feel interested in recent Big Data trends.</h4>
-                <input type="range" min="1" max="5" step="1.0">
+                <h4>I like complex correlations.</h4> 
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_6" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
             </div>
             <div class="btn-box">
                 <button type="button" id="Back7">Back</button>
                 <button type="button" id="Next8">Next</button>
-            </div>     
+            </div> 
         </section>
 
         <section id ="Form9">
-            <h2> How to you fell about...</h2>
+            <h2>Choose a Response:</h2>
             <div class="seperator2">
-                <h4>I enjoy mathematics and statistics.</h4>
-                <input type="range" min="1" max="5" step="1.0">
-            </div>
+                <h4>Decisions should be based only on intuition.</h4>
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_7" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>
+            
+             <div class="seperator2"> 
+                <h4>I am aware of the influence of digital information on mankind.</h4>
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_8" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
+             </div>      
+
             <div class="seperator2"> 
-                <h4>I enjoy working in a Team.</h4>
-                <input type="range" min="1" max="5" step="1.0">
-            </div> 
-            <div class="seperator2"> 
-                <h4>I feel interested in recent Big Data trends.</h4>
-                <input type="range" min="1" max="5" step="1.0">
+                <h4>I like to solve problems.</h4>
+                <div class="range-container">
+                    <div class="slider-container">
+                        <div class="range-fill"></div>	
+                        <input class="slider" type="range" name="likert_9" min="1" max="5" step="1" list="testlist">
+                    </div>
+                    <div class="label-container">
+                        <div class="label">Strongly Disagree</div>
+                        <div class="label">Disagree</div>
+                        <div class="label">Neutral</div>
+                        <div class="label">Agree</div>
+                        <div class="label">Strongly Agree</div>
+                    </div>
+                </div>
             </div>
+
             <div class="btn-box">
                 <button type="button" id="Back8">Back</button>
-                <button type="submit" >Submit</button>
-            </div>     
+                <button type="submit" name="test">Submit</button>
+            </div>  
         </section>
     </form>
     
@@ -202,10 +321,12 @@
         <div class="step-col"><small>7</small></div>   
         <div class="step-col"><small>8</small></div>   
     </dvi>
+
 </div>
 
 <script>
 
+    var i = 0;  
     var Form1 = document.getElementById("Form1");  
     var Form2 = document.getElementById("Form2");  
     var Form3 = document.getElementById("Form3");  
@@ -217,7 +338,8 @@
 
     var progress = document.getElementById("progress");
 
-    Next1.onclick = function(){
+
+    Next1.onclick = function(){        
         Form1.style.left = "-450px";
         Form2.style.left = "40px";
         progress.style.width = "45px";
@@ -230,9 +352,24 @@
     }
 
     Next2.onclick = function(){
-        Form2.style.left = "-450px";
-        Form3.style.left = "40px";
-        progress.style.width = "90px";
+        i=0;
+        const rbs = document.querySelectorAll('input[name="knowledge_1"]');
+        for(const rb of rbs) { 
+            if (rb.checked){
+                Form2.style.left = "-450px";
+                Form3.style.left = "40px";
+                progress.style.width = "90px";
+                break;
+            }
+            else if (i===2){
+                i=0;
+                alert('Please select an answer before you go on.');
+                break;
+            }
+            else{
+                i++;
+            }
+        }  
     }
 
     Back2.onclick = function(){
@@ -242,9 +379,23 @@
     }
 
     Next3.onclick = function(){
-        Form3.style.left = "-450px";
-        Form4.style.left = "40px";
-        progress.style.width = "135px";
+        i=0;
+        const rbs = document.querySelectorAll('input[name="knowledge_2"]');
+        for(const rb of rbs) { 
+            if (rb.checked){
+                Form3.style.left = "-450px";
+                Form4.style.left = "40px";
+                progress.style.width = "135px";
+            }
+            else if (i===2){
+                i=0;
+                alert('Please select an answer before you go on.');
+                break;
+            }
+            else{
+                i++;
+            }
+        }
     }
 
     Back3.onclick = function(){
@@ -254,9 +405,24 @@
     }
 
     Next4.onclick = function(){
-        Form4.style.left = "-450px";
-        Form5.style.left = "40px";
-        progress.style.width = "180px";
+        i=0;
+        const rbs = document.querySelectorAll('input[name="knowledge_3"]');
+        for(const rb of rbs) { 
+            if (rb.checked){
+                Form4.style.left = "-450px";
+                Form5.style.left = "40px";
+                progress.style.width = "180px";
+                break;
+            }
+            else if (i===2){
+                i=0;
+                alert('Please select an answer before you go on.');
+                break;
+            }
+            else{
+                i++;
+            }
+        }
     }
 
     Back4.onclick = function(){
@@ -266,9 +432,23 @@
     }
 
     Next5.onclick = function(){
-        Form5.style.left = "-450px";
-        Form6.style.left = "40px";
-        progress.style.width = "225px";
+        i=0;
+        const rbs = document.querySelectorAll('input[name="knowledge_4"]');
+        for(const rb of rbs) { 
+            if (rb.checked){
+                Form5.style.left = "-450px";
+                Form6.style.left = "40px";
+                progress.style.width = "225px";
+            }
+            else if (i===2){
+                i=0;
+                alert('Please select an answer before you go on.');
+                break;
+            }
+            else{
+                i++;
+            }
+        }
     }
 
     Back5.onclick = function(){
@@ -278,9 +458,23 @@
     }
 
     Next6.onclick = function(){
-        Form6.style.left = "-450px";
-        Form7.style.left = "40px";
-        progress.style.width = "270px";
+        i=0;
+        const rbs = document.querySelectorAll('input[name="knowledge_5"]');
+        for(const rb of rbs) { 
+            if (rb.checked){
+                Form6.style.left = "-450px";
+                Form7.style.left = "40px";
+                progress.style.width = "270px";
+            }
+            else if (i===2){
+                i=0;
+                alert('Please select an answer before you go on.');
+                break;
+            }
+            else{
+                i++;
+            }
+        }
     }
 
     Back6.onclick = function(){
@@ -312,6 +506,8 @@
         Form9.style.left = "450px";
         progress.style.width = "315px";
     }
+
 </script>
+
 </body>
 </html>

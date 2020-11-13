@@ -13,12 +13,12 @@
     $usernameerror = false;
     
     if ($_POST["submit"] === "Register") {
-        if ($_POST["username"] != null) {
+        if ($_POST["username"] != null && $_POST["username"] != "") {
             $usernameerror = checkIfUserExists(test_input($_POST["username"]));
         } else {
             $usernameerror = true;
         }
-        if ($_POST["password"] === null || $_POST["password"] != $_POST["password-repeat"]) {
+        if ($_POST["password"] === null || $_POST["password"] == "" || $_POST["password"] != $_POST["password-repeat"]) {
             $pwderror = true;
         }   
 
@@ -42,6 +42,7 @@
     <title>Are you a data scientist?</title>
     <link rel="icon" type="image/ico" href="pictures/icon.svg" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 
 <body>
@@ -66,10 +67,10 @@
     <div class='register-content'>
         <?php
         if ($_SESSION["logged_in"]) {
-            echo "<br><h2 class='form-title'>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2><br>";
+            echo "<br><br><h2 class='form-title'>You were registered succefully, " . $_SESSION["currentuser"] . ".<h2><br>";
             echo "<h2 class='form-title'><a href='result.php'>back to result page</a><h2>";
         } else {
-            echo "<h2 class='form-title'>Fill out the form below to register for saving your score in our database:<h2>";
+            echo "<br><br><h2 class='form-title'>Fill out the form below to register for saving your score in our database:<h2>";
             echo "<br><br>";
             echo "<form class='register-form' method='POST'>";
             echo "<label for='username'>Username:     </label>";
@@ -96,16 +97,16 @@
         ?>
     </div>
 
-    <footer>
+    <footer class="fixed-footer">
         <ul class="footer-elements">
             <li>
                 <div class="footer-element">© Copyright 2020</div>
             </li>
             <li>
-                <a class="footer-link" href="#">Impressum</a>
+                <a class="footer-link" href="#">Imprint</a>
             </li>
             <li>
-                <a class="footer-link" href="#">Datenschutz</a>
+                <a class="footer-link" href="#">Data Protection</a>
             </li>
         </ul>
     </footer>
