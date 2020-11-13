@@ -20,6 +20,7 @@
 }
 
 .content{
+    background-image: url("../images/cocktailHell.jpg");
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
