@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../einstellungen.html">
+                            <a href="../Einstellungen.php">
                                 Einstellungen
                             </a>
                         </li>
