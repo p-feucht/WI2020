@@ -1,6 +1,9 @@
 <?php
+/* if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
-// good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
+    header("location: ../login.php");
+    exit;
+} */
 
 //error-variables for validation
 //$titleErr = $zeitraumErr = $beschreibErr = $vornameErr = $nachnameErr = $strasseErr = $hnrErr = $plzErr = $ortErr = $preisProTagErr = $preisBetragErr = "";
@@ -24,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
         
     } else {
 
-        $orderID = $conn2->$_POST["cardID"]; // take card id for beginning of booking nr
+        $orderID = $conn2->real_escape_string($_POST["orderID"]); // take card id for beginning of booking nr
 
         // get information about specific order from database
         $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID" ;
-        $result = $conn->query($getOrderSql);
+        $result = $conn2->query($getOrderSql);
 
         if ($result->num_rows == 1) {
 
@@ -39,24 +42,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
 
         } else {
             echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-            echo "Error: " . $sql2 . "<br>" . $conn2->error;
+            echo "Error: " . $getOrderSql . "<br>" . $conn2->error;
         }
 
         $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); //create random booking number
         $id = "WZcard_" . (string)$orderID;
         $buchung_id = $id.$number; //combine
 
-        //create recognizable names
-        $pricename = "WZprice_" . (string)$orderID;
-        $datename = "WZdate_" . (string)$orderID;
-        $titlename = "WZtitel_" . (string)$orderID;
-        $bezinbier = "WZbib_" . (string)$orderID;
 
         $angebot_id = "";
-        $angebot_typ = "";
+        $angebot_typ = "Werkzeug";
         //$userErstell = "";
         $emailErstell = "";
-        $userBuch = "";
+        $userBuch = $_SESSION["username"];
         $emailBuch ="";
         $date = $conn2->real_escape_string($_POST["Date"]);
         //$preis = $conn2->real_escape_string($_POST["Preis"]);

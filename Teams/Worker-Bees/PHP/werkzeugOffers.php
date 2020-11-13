@@ -76,6 +76,7 @@ if ($result->num_rows > 0) {
                          <!--Create booking window -->
                         <form class="modal-booking-window" enctype="multipart/form-data" 
                             action="./PHP/submitBooking.php" method = "post">
+                            <input type='hidden' name='orderID' value='<?php echo $orderID;?>'/> <!--Pass order ID in hidden element to php -->
                             
                             <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
 
@@ -100,8 +101,7 @@ if ($result->num_rows > 0) {
                             </select>
 
                             <script></script>
-                            <button type="submit" class="submitBooking"
-                            onclick="this.name='cardID'" value="<?php echo $orderID ?>">Jetzt buchen</button>
+                            <button type="submit" class="submitBooking" >Jetzt buchen</button>
                         </form>
 
 
