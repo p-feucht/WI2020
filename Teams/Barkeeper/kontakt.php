@@ -12,7 +12,7 @@
     </nav>
     <div class="content">
         <p>Wir sind die drei Gründer von Barkeeper, der Nachhaltigen Cocktail Webseite mit der jeder zum Barkeeper wird!</p>
-        <p>Wir sind Milan, Niklas und Julia, drei begeisterte Wirtschaftsinformatik Studierende während in ihrer FReizeit gerne Cocktails mixen.</p>
+        <p>Wir sind Milan, Niklas und Julia, drei begeisterte Wirtschaftsinformatik Studierende, die in ihrer Freizeit gerne Cocktails mixen.</p>
         <p>Du hast Anmerkungen oder Fragen? Lass es uns gerne wissen und melde dich bei uns:</p>
         <p>Mail: email@beispiel.de</p>
         <p>Telefon: 12345767</p>
