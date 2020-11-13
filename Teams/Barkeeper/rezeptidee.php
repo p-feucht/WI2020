@@ -11,7 +11,7 @@
         ?>
     </nav>
     <div class="content">
-    <form action = "/php/actionPage.php" method = "Post" id ="Input_Ingredients">
+    <form action = "/php/yourOwnReceiptIdea.php" method = "Post" id ="Input_Ingredients">
             <input 
                 type="text" name="CocktailName" placeholder = "Cocktail Name" 
                 onfocus="this.placeholder=''" 
