@@ -31,7 +31,7 @@
 }
 
 .item2 {
-    background-image: "#";
+    background-image: url(../pictures/topic_howToStart.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@
 }
 
 .item3 {
-    background-image: url(../pictures/topic_AI.jpeg);
+    background-image: url(../pictures/topic_ArtificialIntelligence.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@
 }
 
 .item4 {
-    background-image: url(../pictures/topic_AI.jpeg);
+    background-image: url(../pictures/data-mining.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,7 @@
 }
 
 .item5 {
-    background-image: url(../pictures/topic_AI.jpeg);
+    background-image: url(../pictures/topic_DeepLearning.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
