@@ -1,4 +1,4 @@
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -6,15 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Startseite - Serinder</title>
+    <title>Einstellungen - Serinder</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/plugins.js"></script>
 </head>
 
 <body>
-    
-    <script src="../js/plugins.js"></script>
     <?php include("./structure/Header.php"); ?>
 
     <main>
