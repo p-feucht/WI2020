@@ -12,7 +12,7 @@
     </nav>
     <div class="content">
         <p> Du findest deinen Lieblingscocktail bei uns nicht? Dann teile uns das Rezept über folgendes Formular mit. </p>
-        <form action = "/php/yourOwnReceiptIdea.php" method = "Post" id ="Input_Ingredients">
+        <form action = "/php/eigeneRezeptidee.php" method = "Post" id ="Input_Ingredients">
             <input 
                 type="text" name="CocktailName" placeholder = "Cocktail Name" 
                 onfocus="this.placeholder=''" 

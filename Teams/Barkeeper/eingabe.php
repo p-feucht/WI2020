@@ -12,7 +12,7 @@
     </nav>
     <div class="content">
         <p> Gib hier deine Lebensmittel ein und wir suchen die passenden Cocktails für dich heraus. </p>
-        <form action = "/php/actionPage.php" method = "Post" id ="Input_Ingredients">
+        <form action = "/php/eingabeLebensmittel.php" method = "Post" id ="Input_Ingredients">
             <input 
                 type="text" id= "Alkohol1" name="Zutat1" placeholder = "Alkohol" 
                 onfocus="this.placeholder=''" 
@@ -22,7 +22,8 @@
                 type="text" id= "Alkohol2" name="Zutat2" placeholder="Alkohol"
                 onfocus="this.placeholder=''" 
                 onblur="this.placeholder='Alkohol'" 
-            > <br>
+            > 
+            <br>
             <input 
                 type="text" id= "Saft1" name="Saft1" placeholder="Saft"
                 onfocus="this.placeholder=''" 
@@ -32,7 +33,8 @@
                 type="text" id= "Saft2" name="Saft2" placeholder="Saft"
                 onfocus="this.placeholder=''" 
                 onblur="this.placeholder='Saft'" 
-            > <br>
+            > 
+            <br>
             <input 
                 type="text" id= "Grünzeug1" name="Grünzeug1" placeholder="Grünzeug"
                 onfocus="this.placeholder=''" 
@@ -42,7 +44,8 @@
                 type="text" id= "Grünzeug1" name="Grünzeug1" placeholder="Grünzeug"
                 onfocus="this.placeholder=''" 
                 onblur="this.placeholder='Grünzeug'" 
-            >  <br>
+            >  
+            <br>
             <input 
                 type="submit" value="Absenden"
             >
@@ -50,7 +53,7 @@
     </div>
     <footer>
     <?php
-            include("php/aboutUs.php");
-        ?>
+        include("php/aboutUs.php");
+    ?>
     </footer>
 </body>
