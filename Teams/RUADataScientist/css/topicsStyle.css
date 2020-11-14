@@ -1,17 +1,29 @@
 .titel_link {
     font-size: 24px;
     font-weight: bold;
-    color: blue;
+    color: white;
     text-decoration: none;
-    opacity: 0;
 }
 
 .grid_container div:hover {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .grid_container div:hover .titel_link {
     opacity: 1;
+    color: blue;
+}
+
+.item2 .titel_link {
+    color: black
+}
+
+.item8 .titel_link {
+    color: black
+}
+
+.item7 .titel_link {
+    color: black
 }
 
 .item1 {
@@ -95,7 +107,7 @@
 }
 
 .item6 {
-    background-image: url(../pictures/topic_AI.jpeg);
+    background-image: url(../pictures/topic_Application.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,6 +152,7 @@
     bottom: 0;
     right: 0;
     left: 0;
+    opacity: 0.8;
 }
 
 .grid_container {
@@ -152,6 +165,10 @@
     padding-bottom: 5%;
     padding-right: 4%;
     padding-left: 4%;
+}
+
+.grid_container>div {
+    border-radius: 3px;
 }
 
 @media screen and (max-width: 850px) {
