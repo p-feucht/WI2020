@@ -77,11 +77,12 @@ input[type='submit']{
     background-color: #fff2f2;
 }
 
-a{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;  
-    background-color: #fff2f2;
+p{
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    background-color: #ffbfbf;
+    text-align: center;
 }
 
 
