@@ -90,4 +90,8 @@ input[type='submit']{
 .recipe_list {
     list-style-type: decimal;
 }
+
+h1{
+    font-weight: bold;
+}
   
