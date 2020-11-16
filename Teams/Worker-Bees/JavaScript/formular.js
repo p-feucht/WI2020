@@ -99,32 +99,52 @@ function pruefeFormular() {
         document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
         document.getElementById("wz").focus();
         return false;
-    } else if (document.formularFuerAngebot.title.value == "") {
+    } else { document.getElementById("FehlermeldungAngebKat").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.title.value == "") {
         document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
         document.getElementById("title").focus();
         return false;
-    } else if (document.formularFuerAngebot.Vorname.value == "") {
+    } else { document.getElementById("FehlermeldungTitle").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.Vorname.value == "") {
         document.getElementById("FehlermeldungVorname").innerHTML = "Bitte Vorname eingeben";
         document.getElementById("Vorname").focus();
         return false;
-    } else if (document.formularFuerAngebot.Nachname.value == "") {
+    } else { document.getElementById("FehlermeldungVorname").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.Nachname.value == "") {
         document.getElementById("FehlermeldungNachname").innerHTML = "Bitte Nachname eingeben";
         document.getElementById("Nachname").focus();
         return false;
-    } else if (document.formularFuerAngebot.Strasse.value == "") {
-        document.getElementById("FehlermeldungStrasseID").innerHTML = "Bitte Straße eingeben";
+    } else { document.getElementById("FehlermeldungNachname").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.Strasse.value == "") {
+        document.getElementById("FehlermeldungStrasse").innerHTML = "Bitte Straße eingeben";
         document.getElementById("StrasseID").focus();
         return false;
-    } else if (document.formularFuerAngebot.Hnr.value == "") {
-        document.getElementById("HnrID").innerHTML = "Bitte Hausnummer eingeben";
+    } else { document.getElementById("FehlermeldungStrasse").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.Hnr.value == "") {
+        document.getElementById("FehlermeldungHnr").innerHTML = "Bitte Hausnummer eingeben";
         document.getElementById("HnrID").focus();
         return false;
-    } else if (CheckPLZ() == false) {
-        CheckPLZ();
+    } else { document.getElementById("FehlermeldungHnr").innerHTML = "*"; }
+    if (document.formularFuerAngebot.Ort.value == "") {
+        document.getElementById("FehlermeldungOrt").innerHTML = "Bitte Ort eingeben";
+        document.getElementById("OrtID").focus();
         return false;
     } else {
-        return true;
+        document.getElementById("FehlermeldungOrt").innerHTML = "*";
     }
+    if (CheckPLZ() == false) {
+        // CheckPLZ();
+        return false;
+    } else { document.getElementById("FehlermeldungPLZ").innerHTML = "*"; }
+
+
+
+    return true;
     /*let vorname = document.getElementByName("Vorname");
     if (inputIsEmpty(vorname) == true) {
         let vornameErrMess = document.getElementById("FehlermeldungVorname");
@@ -139,7 +159,7 @@ function CheckPLZ() {
     var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
     if (laenge != anzahl) {
         //window.alert("Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!");
-        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!";
+        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben " + laenge + " Stelle(n) eingegeben";
         document.getElementById("plzinput").focus();
         //document.formularFuerAngebot.PLZ.focus();
         return false;
@@ -151,6 +171,7 @@ function CheckPLZ() {
         }
         return true();
     }
+    //Prüfen ob negative Zahl (an erster stelle ein Minus)
 }
 
 function inputIsEmpty(InputElement) {
