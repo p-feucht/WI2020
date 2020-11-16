@@ -3,7 +3,7 @@
 //include 'header.php';
 // good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
 
-$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = $a1_bohr = $a2_drechsel = $a3_schleif = $a4_saege = $a5_kleinteil = "";
+$title = $beschreibung = $beginndatum = $endedatum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = $a1_bohr = $a2_drechsel = $a3_schleif = $a4_saege = $a5_kleinteil = "";
 $valid=TRUE;
 
 //Connection to bplaced server
@@ -54,9 +54,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
                     else {*/
                     $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
-                    $beginndatum =  substr($gesamtzeitraum,0,10);
-                    $endedatum =  substr($gesamtzeitraum,13);
-                    $zeitraum = 
+                    //findOutDate(); 
+                    $beginndatumUrsprung =  substr($gesamtzeitraum,0,10);
+                    $jahr =  substr($beginndatumUrsprung,6);
+                    $monat =  substr($beginndatumUrsprung,3,2);
+                    $tag =  substr($beginndatumUrsprung,0,2);
+                    $beginndatum = $jahr .$monat . $tag;
+                   
+                    $endedatumUrsprung =  substr($gesamtzeitraum,13);
+                    $jahr =  substr($beginndatumUrsprung,6);
+                    $monat =  substr($beginndatumUrsprung,3,2);
+                    $tag =  substr($beginndatumUrsprung,0,2);
+                    $endedatum =  $jahr .$monat . $tag;
+
                     /*}*/
 
                    //Beschreibung darf leer sein
@@ -94,7 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
 
                     //Session abfragen um Name des Erstellers zu speichern
-                   
                     if (isset($_SESSION ["username"])) {
                     $username = $_SESSION["username"];
                     echo "username-Session is " . $_SESSION["username"] . ".<br>";
@@ -120,8 +129,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){
-                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' ,'$username' , '$preisProTag1', '$bierBez1')";
+                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' ,'$username' , '$preisProTag1', '$bierBez1')";
 // usernameErsteller  '$username'
 
                             //echo $sql;
@@ -134,7 +143,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "Entries written:";
                             echo $title;
                             echo "<br>";*/
-                            echo "Zeitraum:". $zeitraum;
+                            echo "Beginn:". $beginndatum;
+                            echo "Ende:". $endedatum;
                             echo "<br>";/*
                             echo $beschreibung;
                             echo "<br>";
@@ -188,8 +198,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         
                         if($valid==true){
                         
-                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}', '$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
+                            VALUES ('$title',$beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}', '$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
                             //echo $sql;      '$username'
                         
                             if ($conn->query($sql) === TRUE) {
@@ -200,7 +210,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                                 echo "<br>";
                                 echo $title;
                                 echo "<br>";
-                                echo $zeitraum;
+                                echo $beginndatum;
+                            
                                 echo "<br>";
                                 echo $beschreibung;
                                 echo "<br>";
@@ -243,8 +254,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $preisBetrag = $conn->real_escape_string($_POST['Preis']);
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
-                            $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$bezahlart', '$preisBetrag', '$bierBez3')";
+                            $sql = "INSERT INTO Dienstleistung (ATitel,  ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$bezahlart', '$preisBetrag', '$bierBez3')";
                         //  usernameErsteller, '$username'
                             //echo $sql;
                             //echo "<br>";

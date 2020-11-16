@@ -1,6 +1,5 @@
 <?php session_start();
-// User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist. 
-//session_start();
+// User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist, ansonsten auf Anmelden-Seite
 if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
     header("location: login.php");
 }
@@ -22,10 +21,6 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
     <link href="CSS/datepicker.css" rel="stylesheet">
 
     <link href="JavaScript/formular.js">
-    <!--
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
-    </script>
-    -->
 
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
