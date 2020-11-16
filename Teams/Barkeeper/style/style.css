@@ -73,7 +73,7 @@ a:hover {
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
 }
 
 input[type='text']{
@@ -121,6 +121,7 @@ h1{
 }
 
 .cocktail_list {
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -129,6 +130,7 @@ h1{
 }
 
 .cocktail_card {
+    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
     max-height: 400px;
     flex-basis: 200px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
