@@ -16,11 +16,11 @@
         <p>Und mach dir keine Sorge - Übung macht den Meister!</p>
     <div id="receipeContainer">
         <h1>Tipp 1: </h1>
-        <p>Zum Cocktails mixen eignet sich natürlich am Besten ein sogenannter Cocktail shaker.</p>
-        <p>Den findest du in jedem Haushaltswarengeschäft oder auf Amazon etc. Aber diesen richtig zu benutzen ist gar nicht sooo einfach,</p>
-        <p>deswegen hier ein kleines Tutorial für dich:</p>
+        <p>Zum Cocktails mixen eignet sich natürlich am Besten ein sogenannter Cocktail Shaker.</p>
+        <p>Den findest du in jedem Haushaltswarengeschäft oder auf Amazon, Ebay etc. Aber diesen richtig zu benutzen ist gar nicht so einfach,</p>
+        <p>deswegen haben wir hier ein kleines Tutorial für dich herausgesucht:</p>
         <a href="https://www.youtube.com/watch?v=AUAJE4UrZbE">Cocktail Shaken für Anfänger</a>
-        <p>Und solltest du noch einen Shaker gebrauchen, haben wir auch schon einen für dich gefunden:</p>
+        <p>Und solltest du noch einen Shaker gebrauchen, haben wir auch schon einen passenden für dich gefunden:</p>
         <a href="https://www.barstuff.de/barzubehoer-cocktail-sets/bar-aid-set-classic-home.html">Dein Cocktail Shaker</a>
     </div>
     <div id="receipeContainer">
