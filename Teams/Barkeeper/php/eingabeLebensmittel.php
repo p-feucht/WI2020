@@ -22,10 +22,10 @@ else {
 }
 $sql = "SELECT *
         FROM Rezept_RT rt
-        WHERE rt.zutat LIKE '%Tequila%' OR rt.zutat LIKE '%Orangenlikör%' 
-		    OR rt.zutat LIKE '%Limettensaft%' 
-			OR rt.zutat LIKE '%Crushed ICE%' 
-			OR rt.zutat LIKE '%Limette%';;";
+        WHERE rt.zutat LIKE '%$alkohol1%' OR rt.zutat LIKE '%$alkohol2%' 
+		    OR rt.zutat LIKE '%$saft1%' 
+			OR rt.zutat LIKE '%$saft2%' 
+			OR rt.zutat LIKE '%$grünzeug1%';";
 echo $sql;
 echo "<br>";                                                                
 
