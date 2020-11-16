@@ -15,7 +15,7 @@
         <p>Du gibst einfach ein, was du noch zuhause hast, und schon kann die Party losgehen. Aber bei uns kannst du nicht nur deine "Reste verwerten"</p>
         <p>Wir liefern dir auch die leckersten Cocktailrezepte, sowie Tipps und Tricks wie die dein perfekter Cocktail gelingt.</p>
         <p>Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst? Dann teile dein Rezept <a href="rezeptidee.php">hier</a> mit uns</p>
-        <img src="images/Cocktail_des_Tages.jpg" alt="Unser Cocktail des Tages"
+        <img src="images/Tages_Cocktail.jpg" alt="Unser Cocktail des Tages"
             width="300"
             height="300"/>
         <p>Für den CAIPIRINHA brauchst du Folgendes</p>
