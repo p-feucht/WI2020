@@ -22,9 +22,9 @@
 .content{
     background-image: url("../images/cocktailHell.jpg");
     text-align: center;
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
-    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 
 .ingredients{
     margin-left:auto;
@@ -38,6 +38,7 @@ footer{
     background-color: #ffbfbf;
     text-align: center;
 }
+
 
 
 a:hover {
@@ -55,14 +56,13 @@ a:hover {
     font-size: 17px;
     margin: 2px 1px;
     cursor: pointer;
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
 }
 
 #Input_Ingredients {
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px;
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 input[type='text']{
@@ -79,12 +79,17 @@ input[type='submit']{
     background-color: #fff2f2;
 }
 
-#receipeContainer{
+a{
     padding-top: 5px;
     padding-left: 5px;
     padding-bottom: 5px;
-    background-color: rgba( 254, 191, 192, 0.5);;
+    background-color: #ffbfbf;
     text-align: center;
+}
+
+
+#recipe_main_container {
+
 }
 
 
