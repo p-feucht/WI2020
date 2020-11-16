@@ -159,7 +159,7 @@ function CheckPLZ() {
     var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
     if (laenge != anzahl) {
         //window.alert("Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!");
-        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben";
+        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben " + laenge + " Stelle(n) eingegeben";
         document.getElementById("plzinput").focus();
         //document.formularFuerAngebot.PLZ.focus();
         return false;

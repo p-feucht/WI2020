@@ -1,4 +1,5 @@
 <?php
+
 //include 'header.php';
 // good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
 
@@ -16,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
 
     //Connection to xampp 
-    /*$servername = "localhost";
+ /*$servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "workerxampp";*/
@@ -49,16 +50,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     /*if (empty($_POST["zeitraum"])) {
-                        $zeitraumErr = "Bitte Zeitraum eingeben";
                         $valid=FALSE;
                     }
                     else {*/
-                    $zeitraum = $conn->real_escape_string($_POST["datefilter"]);
-                   /* }*/
-                   //Beschreibung darf leer sein
-                    /*if (!checkIfEmpty("beschreibung")) {*/
-                        $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
+                    $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
+                    $beginndatum =  substr($gesamtzeitraum,0,10);
+                    $endedatum =  substr($gesamtzeitraum,13);
+                    $zeitraum = 
                     /*}*/
+
+                   //Beschreibung darf leer sein
+                        $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
 
                     //Bild Dateiupload
                     include ("dateiupload.php");
@@ -90,14 +92,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $ort = $conn->real_escape_string($_POST["Ort"]);
                     }
 
-                    //Session abfragen um name des Erstellers zu speichern
-                    if($_SESSION["loggedin"] == true){
+
+                    //Session abfragen um Name des Erstellers zu speichern
+                   
+                    if (isset($_SESSION ["username"])) {
                     $username = $_SESSION["username"];
                     echo "username-Session is " . $_SESSION["username"] . ".<br>";
-                        echo "loggedin-Session is " . $_SESSION["loggedin"] . ".<br>";
-                    }else{  
+                    echo "loggedin-Session is " . $_SESSION["loggedin"] . ".<br>";
+                    }
+                    else{  
                         $valid=FALSE;
-                        echo '<script type="text/javascript">alert("Du bist nicht angemeldet? Bitte logg dich ein bevor du ein Angebot erstellst.");</script>';
+                        $session=false;
+                        echo "Username nicht gesetzt";
                     }
 
                     //je nachdem welcher radioButton gedrückt wurde zusätzliche Variablen behandeln
@@ -115,7 +121,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
                         if($valid==TRUE){
                             $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$preisProTag1', '$bierBez1')";
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' ,'$username' , '$preisProTag1', '$bierBez1')";
+// usernameErsteller  '$username'
 
                             //echo $sql;
                             //echo "<br>";
@@ -126,9 +133,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo "Entries written:";
                             echo $title;
-                            echo "<br>";
-                            echo $zeitraum;
-                            echo "<br>";
+                            echo "<br>";*/
+                            echo "Zeitraum:". $zeitraum;
+                            echo "<br>";/*
                             echo $beschreibung;
                             echo "<br>";
                             echo $vorname;
@@ -153,8 +160,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             }
                         }
                         else{
-                            echo '<script type="text/javascript">alert("Deine Angaben sind nicht vollständig oder nicht valide. Bitte ergänze deine Angaben");</script>';}
-                    }
+                            if($session == false){
+                                echo '<script type="text/javascript">alert("Du bist nicht angemeldet? Bitte logg dich ein bevor du ein Angebot erstellst.");</script>';
+                            }else
+                            echo '<script type="text/javascript">alert("Deine Angaben sind nicht vollständig oder nicht valide. Bitte ergänze deine Angaben");</script>';
+                        }
+                            
+                        }
+
 
                     elseif($radioAnswer == "Werkstatt"){
                         //echo 'You chose Werkstatt';   
@@ -176,8 +189,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         if($valid==true){
                         
                             $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}','$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
-                            //echo $sql;
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}', '$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                            //echo $sql;      '$username'
                         
                             if ($conn->query($sql) === TRUE) {
                                 echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
@@ -231,8 +244,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
                             $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' ,'$bezahlart', '$preisBetrag', '$bierBez3')";
-                        
+                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$bezahlart', '$preisBetrag', '$bierBez3')";
+                        //  usernameErsteller, '$username'
                             //echo $sql;
                             //echo "<br>";
 
