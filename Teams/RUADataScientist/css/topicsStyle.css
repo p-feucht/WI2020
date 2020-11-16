@@ -180,14 +180,39 @@
 @media screen and (max-width: 600px) {
     .grid_container {
         grid-template-columns: 200px;
-        grid-template-rows: repeat(8, 200px);
+        grid-template-rows: repeat(9, 200px);
         margin: 30px;
         justify-content: center;
-        height: 100em;
+        height: 100%;
+        margin-bottom: 10%;
     }
     .grid_container div {
-        height: 200px;
+        height: auto;
         width: 200px;
+    }
+    .titel_link {
+        font-size: 16px;
+        max-width: 200px;
+        text-overflow: ellipsis;
+        top: 50%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .grid_container {
+        grid-template-columns: 175px;
+        grid-template-rows: repeat(8, 175px);
+        margin: 30px;
+        justify-content: center;
+        /* height: 100em;*/
+        height: 100%;
+        margin-bottom: 10%;
+        row-gap: 10px;
+    }
+    .grid_container div {
+        height: 175px;
+        width: 175px;
     }
     .titel_link {
         font-size: 16px;
