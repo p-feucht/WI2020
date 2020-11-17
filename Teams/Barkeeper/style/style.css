@@ -73,7 +73,7 @@ a:hover {
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
 }
 
 input[type='text']{
@@ -108,6 +108,47 @@ input[type='submit']{
 }
 
 h1{
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 30px;
+    background: rgba(254,192,192,0.5);
 }
+
+
+
+
+#rezepte {
+ 
+}
+
+.cocktail_list {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 50px 50px;
+}
+
+.cocktail_card {
+    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
+    max-height: 400px;
+    flex-basis: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    
+  }
+  
+  .cocktail_card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .cocktail_container {
+    padding: 2px 16px;
+  }
   
