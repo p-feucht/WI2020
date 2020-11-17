@@ -45,20 +45,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
             echo "Error: " . $getOrderSql . "<br>" . $conn2->error;
         }
 
-        $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); //create random booking number
+        //create random booking number
+        $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); 
         $id = "WZcard_" . (string)$orderID;
         $buchung_id = $id.$number; //combine
 
+        // get session information
+        $userBuch = $_SESSION["username"];
+        $emailBuch = $_SESSION["email"];
 
+        // get information from booking submission
         $angebot_id = "";
         $angebot_typ = "Werkzeug";
-        //$userErstell = "";
         $emailErstell = "";
-        $userBuch = $_SESSION["username"];
-        $emailBuch ="";
         $date = $conn2->real_escape_string($_POST["Date"]);
-        //$preis = $conn2->real_escape_string($_POST["Preis"]);
-        //$title = $conn2->real_escape_string($_POST["$titlename"]);
         $bezinbier =  $conn2->real_escape_string($_POST["bezInBier"]);
 
         $sql2 = "INSERT INTO Buchung (Buchung_ID, Angebot_ID, Angebot_Typ, userErstell, emailErstell, userBuch, emailBuch ,Datum, Preis, angebotTitel, bezInBier)
@@ -67,15 +67,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
 
         if ($conn2->query($sql2) === TRUE) {
 
-            ?>
-                <h1>Du hast erfolgreich gebucht. Viel Spaß!</h1>
-                <a href="../categories.php#Werkzeug-Ang">Zurück</a>
-                <br>
-                <a href="../index.php">Startseite</a>
+            ?> 
+               <!-- create "booked" page --> 
+                <!doctype html>
+                <html class="no-js" lang="">
 
-                <a>Hier ist deine Buchung:</a>
-                <br>
-                <?php echo $sql2 ?>
+                <head>
+                    <meta charset="utf-8">
+                    <title>Worker Bees</title>
+                    <meta name="description" content="">
+                    <link rel="icon" href="../images/logoBiene.png" />
+                    <link href="../CSS/blog.css" rel="stylesheet">
+
+                </head>
+
+                <body>
+
+                    <?php include "header.php"; ?>
+                    
+                    <div class="blog-content">
+                        <h1>Du hast erfolgreich gebucht. Viel Spaß!</h1>
+                        <button href="../categories.php#Werkzeug-Ang">Zurück</button>
+                        <button href="../index.php">Startseite</button>
+
+                        <a>Hier ist deine Buchung:</a>
+                        <br>
+                        <?php echo $sql2 ?>
+                    </div>
+
+                    <?php include "footer.php"; ?>
+
+                </body>
+
+                </html>
             <?php
            
 

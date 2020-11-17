@@ -1,4 +1,4 @@
- <?php session_start(); ?>
+<?php session_start(); ?>
 
  <!-- Outsourced header PHP-file.-->
     <head>

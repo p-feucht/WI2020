@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
+$sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
 PLZ, Ort, Bild, usernameErsteller, Werkzeug_ID, PreisProTag, BezInBier, Erstellzeitpunkt FROM AngebotWerkzeug";
 $result = $conn->query($sql);
 
@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
         $bier = round($price, 0); // so that beer is counted in whole beers
 
 ?>
-        <!-- create card for each offer -->
+        <!-- create card for each offer data-target = modal-id-->
         <div class="card" id="<?php echo $card_ID ?>" data-toggle="modal" data-target=<?php echo $modal_target ?>>
             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
             <p class="card-lp"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
@@ -56,10 +56,9 @@ if ($result->num_rows > 0) {
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <h3 class="modal-offerName" name="<?php echo $titlename ?>"><?php echo $title ?></h3>
+                        <h3 class="modal-offerName"><?php echo $title ?></h3>
                         <p class="modal-namelocation"><?php echo $offeruser ?>
                             <img src="images/place-icon.svg" class="place-icon" alt="location"><?php echo $plz ?> <?php echo $location ?>
-                            <!--has to be the exact location here!-->
                         </p>
 
                         <div class="modal-content-split">
@@ -83,13 +82,12 @@ if ($result->num_rows > 0) {
                             <label for="bookingDate">Datum:</label>
                             <input type="date" id="bookingDate" name="Date" value="<?php echo htmlspecialchars($date); ?>" required><br>
 
-                            <p class="modal-booking-text">Gesamtbetrag: <em name="Preis" value="<?php echo $price ?>"
-                                    ><?php echo $price ?></em> €<br></p>
+                            <p class="modal-booking-text">Gesamtbetrag: <?php echo $price ?> €<br></p>
 
                             <input id="bierInput" type="checkbox" name="bezInBier" value="1" unchecked>
                             <label id="bierLabel" for="bezInBier"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
                             <script>
-                                if (<?php echo $bezBier ?> != 1) {
+                                if (<?php echo $bezBier ?> != 1) { // only show "pay in beer" if option was selected at offer creation
                                     document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
                                     document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";
                                 }
