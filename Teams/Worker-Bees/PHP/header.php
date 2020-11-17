@@ -1,5 +1,6 @@
 
     <!-- Outsourced header PHP-file.-->
+    <?php session_start(); ?>
 
     <head>
          
@@ -11,7 +12,7 @@
     
     <head>
 
-    <?php session_start(); ?>
+    
 
 
     <!-- header html -->
