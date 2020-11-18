@@ -1,29 +1,17 @@
 .titel_link {
     font-size: 24px;
     font-weight: bold;
-    color: white;
+    color: blue;
     text-decoration: none;
+    opacity: 0;
 }
 
 .grid_container div:hover {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .grid_container div:hover .titel_link {
     opacity: 1;
-    color: blue;
-}
-
-.item2 .titel_link {
-    color: black
-}
-
-.item8 .titel_link {
-    color: black
-}
-
-.item7 .titel_link {
-    color: black
 }
 
 .item1 {
@@ -107,7 +95,7 @@
 }
 
 .item6 {
-    background-image: url(../pictures/topic_Application.jpg);
+    background-image: url(../pictures/topic_AI.jpeg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,7 +140,6 @@
     bottom: 0;
     right: 0;
     left: 0;
-    opacity: 0.8;
 }
 
 .grid_container {
@@ -167,10 +154,6 @@
     padding-left: 4%;
 }
 
-.grid_container>div {
-    border-radius: 3px;
-}
-
 @media screen and (max-width: 850px) {
     .titel_link {
         font-size: 20px;
@@ -180,39 +163,14 @@
 @media screen and (max-width: 600px) {
     .grid_container {
         grid-template-columns: 200px;
-        grid-template-rows: repeat(9, 200px);
+        grid-template-rows: repeat(8, 200px);
         margin: 30px;
         justify-content: center;
-        height: 100%;
-        margin-bottom: 10%;
+        height: 100em;
     }
     .grid_container div {
-        height: auto;
+        height: 200px;
         width: 200px;
-    }
-    .titel_link {
-        font-size: 16px;
-        max-width: 200px;
-        text-overflow: ellipsis;
-        top: 50%;
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .grid_container {
-        grid-template-columns: 175px;
-        grid-template-rows: repeat(8, 175px);
-        margin: 30px;
-        justify-content: center;
-        /* height: 100em;*/
-        height: 100%;
-        margin-bottom: 10%;
-        row-gap: 10px;
-    }
-    .grid_container div {
-        height: 175px;
-        width: 175px;
     }
     .titel_link {
         font-size: 16px;

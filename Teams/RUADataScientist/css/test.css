@@ -12,7 +12,7 @@ body{
 .container{
     width: 360px;
     height: 500px;
-    margin: 20vh auto;
+    margin: 8% auto;
     background: white;
     border-radius: 5px;
     position: relative;
@@ -153,3 +153,19 @@ form section button{
     border-left: 20px solid #fcb045;
 }
 
+@mixin rangeThumb {
+    width: 18px;
+    height: 18px;
+    margin: -8px 0  0;
+    border-radius: 50%;
+    background: #37adbf;
+    cursor: pointer;
+    border: 0 !important;
+  }
+  
+  @mixin rangeTrack {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #b2b2b2;
+  }

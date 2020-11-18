@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php
 // Include config file
 require_once "Login/config.php";

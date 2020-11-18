@@ -12,16 +12,16 @@
     </nav>
     <div class="content">
         <p>Mithilfe von uns Barkeepern kannst du deinen Cocktail mixen ohne extra einkaufen gehen zu müssen. Somit musst du deine Reste nicht wegschütten und sparst dir Geld für deinen nächsten Einkauf.</p>
-        <p>Du gibst einfach ein, was du noch zuhause hast, und schon kann die Party losgehen. Aber bei uns kannst du nicht nur deine "Reste verwerten".</p>
-        <p>Wir liefern dir auch die leckersten Cocktailrezepte, sowie Tipps und Tricks wie dir dein perfekter Cocktail super schnell gelingt.</p>
-        <p>Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst? Dann teile dein Rezept <a href="rezeptidee.php">hier</a> mit uns</p>
-        <img src="images/Tages_Cocktail.jpg" alt="Unser Cocktail des Tages"
+        <p>Du gibst einfach ein, was du noch zuhause hast, und schon kann die Party losgehen. Aber bei uns kannst du nicht nur deine "Reste verwerten"</p>
+        <p>Wir liefern dir auch die leckersten Cocktailrezepte, sowie Tippss und Tricks wie die dein perfekter Cocktail gelingt.</p>
+        <p>Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst? Dann teile dein Rezept <a href="php/rezeptidee.php">hier</a> mit uns</p>
+        <img src="images/Cocktail_des_Tages.jpg" alt="Unser Cocktail des Tages"
             width="300"
             height="300"/>
         <p>Für den CAIPIRINHA brauchst du Folgendes</p>
         <table class="ingredients">
             <tr>
-                <th>Zutaten</th>
+                <th>Ztaten</th>
                 <th>Menge</th>
             </tr>
             <tr>
@@ -47,7 +47,7 @@
             Zum Schluss Cachaca dazugeben. Das Glas mit Crushed Ice auffüllen und alles gut durchrühren. 
             Eventuell noch einen Schuss Soadwasser hinzufügen und den Cocktail mit einem Trinkhalm servieren.
         </p>
-        <p>Und schon ist dein CAIPIRINHA fertig! </p>
+        <p>Und fertig ist dein CAIPIRINHA</p>
     </div>
     <footer>
     <?php

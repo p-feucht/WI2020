@@ -1,7 +1,7 @@
 #menu{
     padding-top: 5px;
     padding-left: 5px;
-    padding-bottom: 65px;
+    padding-bottom: 60px;
     background-color: #ffbfbf;
     width: 100%;
 }
@@ -9,30 +9,20 @@
 #logo{
     float: left;
     height: 100px;
-    width: 29%;
+    width: 33%;
     padding-right: auto;
     background-color: #ffbfbf;
 }
 
 #menu-middle{
-    width: 71%;
+    width: 66%;
     margin: 0 auto;
 }
 
 .content{
-    background-image: url("../images/cocktailHell.jpg");
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
-    font-size: 20px;
-    hyphens: auto; 
     text-align: center;
-    background-repeat: no-repeat;
-    display: block;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-
 
 .ingredients{
     margin-left:auto;
@@ -46,7 +36,6 @@ footer{
     background-color: #ffbfbf;
     text-align: center;
 }
-
 
 
 a:hover {
@@ -64,16 +53,13 @@ a:hover {
     font-size: 17px;
     margin: 2px 1px;
     cursor: pointer;
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
-    box-sizing: border-box;
-    border-radius: 10px 10px 10px 10px;
 }
 
 #Input_Ingredients {
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px;
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 input[type='text']{
@@ -84,20 +70,17 @@ input[type='text']{
     background-color: #fff2f2;
 }
 input[type='submit']{
-    background-color: rgb(214, 107, 124);
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 17px;
-    margin: 2px 1px;
-    cursor: pointer;
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
+    padding: 12px 6px;
+    margin: 2px 0;
     box-sizing: border-box;
-    border-radius: 10px 10px 10px 10px;
+    background-color: #fff2f2;
 }
+
+
+#recipe_main_container {
+
+}
+
 
 .Ingredientlist {
     list-style-type: disc;
@@ -106,49 +89,4 @@ input[type='submit']{
 .recipe_list {
     list-style-type: decimal;
 }
-
-h1{
-    font-weight: 400;
-    font-size: 30px;
-    background: rgba(254,192,192,0.5);
-}
-
-
-
-
-#rezepte {
- 
-}
-
-.cocktail_list {
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 25px 50px 50px;
-}
-
-.cocktail_card {
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
-    max-height: 400px;
-    flex-basis: 200px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 40%;
-    border-radius: 5px;
-    
-  }
-  
-  .cocktail_card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  img {
-    border-radius: 5px 5px 0 0;
-  }
-  
-  .cocktail_container {
-    padding: 2px 16px;
-  }
   

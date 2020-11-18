@@ -148,20 +148,6 @@ else {
        echo "Error: " . $sql . "<br>" . $conn->error;
    }
 
-   //---------------------------Commit Changes----------------------------------------------------
-
-   $sql = "COMMIT;";
-   
-   echo $sql;
-   echo "<br>";
-
-   if ($conn->query($sql) === TRUE) {
-       echo "Sucessfully committed";
-       echo "<br>";
-       echo "Entries written:";
-   } else {
-       echo "Error: " . $sql . "<br>" . $conn->error;
-   }
 
     $conn->close();    
 }
