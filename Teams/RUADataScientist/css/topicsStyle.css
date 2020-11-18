@@ -214,8 +214,6 @@
     .grid_container {
         grid-template-columns: 200px 200px;
         grid-template-rows: repeat(4, 200px);
-        gap: 5%;
-        height: 100vh;
     }
     .grid_container div {
         height: 200px;
