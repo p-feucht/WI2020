@@ -1,9 +1,39 @@
 .titel_link {
     font-size: 24px;
     font-weight: bold;
-    color: blue;
     text-decoration: none;
-    opacity: 0;
+}
+
+.item1 .titel_link {
+    color: white;
+}
+
+.item2 .titel_link {
+    color: black;
+}
+
+.item3 .titel_link {
+    color: white;
+}
+
+.item4 .titel_link {
+    color: white;
+}
+
+.item5 .titel_link {
+    color: white;
+}
+
+.item6 .titel_link {
+    color: white;
+}
+
+.item7 .titel_link {
+    color: black;
+}
+
+.item8 .titel_link {
+    color: black;
 }
 
 .grid_container div:hover {
@@ -11,7 +41,7 @@
 }
 
 .grid_container div:hover .titel_link {
-    opacity: 1;
+    font-size: 30px;
 }
 
 .item1 {
@@ -95,7 +125,7 @@
 }
 
 .item6 {
-    background-image: url(../pictures/topic_AI.jpeg);
+    background-image: url(../pictures/topic_Application.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,27 +186,55 @@
 
 @media screen and (max-width: 850px) {
     .titel_link {
-        font-size: 20px;
+        font-size: 28px;
+        max-width: 200px;
+        text-overflow: ellipsis;
+        top: 50%;
+        text-align: center;
+    }
+    .grid_container div:hover .titel_link {
+        font-size: 25px;
+    }
+    .grid_container {
+        grid-template-columns: 350px 350px;
+        grid-template-rows: repeat(4, 350px);
+        margin: 35px;
+        margin-top: 5px;
+        justify-content: center;
+        gap: 1%;
+        height: 100%;
+    }
+    .grid_container div {
+        height: 350px;
+        width: 350px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .grid_container {
-        grid-template-columns: 200px;
-        grid-template-rows: repeat(8, 200px);
-        margin: 30px;
-        justify-content: center;
-        height: 100em;
+        grid-template-columns: 200px 200px;
+        grid-template-rows: repeat(4, 200px);
+        gap: 5%;
+        height: 100vh;
     }
     .grid_container div {
         height: 200px;
         width: 200px;
     }
     .titel_link {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .grid_container {
+        grid-template-columns: 200px;
+        grid-template-rows: repeat(8, 200px);
+        margin-top: 10px;
+        gap: 5px;
+        height: 99em;
+    }
+    .titel_link {
         font-size: 16px;
-        max-width: 200px;
-        text-overflow: ellipsis;
-        top: 50%;
-        text-align: center;
     }
 }
