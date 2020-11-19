@@ -8,12 +8,12 @@
     .button {
         /*position: relative;
     top: 3vh;*/
-        background-color: #008CBA;
+        background-color: #468FAF;
         color: white;
-        padding: 15px 32px;
-        border-radius: 12px;
+        padding: 60px 120px;
+        border-radius: 10px;
         transition-duration: 0.4s;
-        border: 2px solid #008CBA;
+        border: 2px solid #468FAF;
         text-align: center;
         display: inline-block;
         margin: 4px 2px;
@@ -31,6 +31,8 @@
         display: inline-block;
         /*position: relative;*/
         transition: 0.5s;
+        font-size: 2.5vw;
+
     }
     
     .button span:after {
@@ -53,7 +55,7 @@
     
     .button:hover {
         background-color: white;
-        color: #008CBA;
+        color: #468FAF;
     }
     
     h1 {
@@ -115,7 +117,7 @@
     }
     
     .details p {
-        font-size: 12px;
+        font-size: 40px;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         color: #dedee9;

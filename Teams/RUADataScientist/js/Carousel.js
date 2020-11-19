@@ -1,17 +1,18 @@
 $(function () {
   $('.carousel').slick({
     infinite: true,
+    accessibility:true,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
-    dots: false,
+    dots: true,
     centerMode: true,
     centerPadding: '0',
     pauseOnHover: true,
-    prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-    nextArrow: "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+    //prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+    //nextArrow: "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
     mobileFirst: true,
     reponsive: [
       {
