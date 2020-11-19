@@ -1,3 +1,21 @@
+
+.paralax{
+    background: url(../pictures/about_paralax.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height:70vh;
+    display: grid;
+    margin-bottom: 10vh;
+}  
+
+.quoteText{
+    font-style: italic; 
+    margin: auto;
+    color:white; 
+    border-radius: 20px;
+}
+
+
 .for_slick_slider {
     display: flex;
 }
