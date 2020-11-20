@@ -45,3 +45,8 @@ label, .input-error {
     color: red;
     width: 180px;
 }
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+}

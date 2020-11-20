@@ -90,7 +90,7 @@
             if ($pwderror) {
                 echo "  <div class='input-error'>Passwords don't match!</div>";
             }
-            echo "<br>";
+            echo "<br><br>";
             echo "<input type='submit' name='submit' value='Register'>";
             echo "</form>";
         }  
