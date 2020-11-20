@@ -1,4 +1,4 @@
-$(function () {
+
   $('.carousel').slick({
     infinite: true,
     accessibility:true,
@@ -33,5 +33,5 @@ $(function () {
         settings: "unslick"
       }]
   });
-});
+
 

@@ -146,6 +146,7 @@ RESPOSIVE
 }
 
 @media screen and (max-width: 480px) {
+
     .footer-elements {
         flex-direction: column;
         justify-content: center;
