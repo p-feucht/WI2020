@@ -1,3 +1,9 @@
+/* In diesem Stylesheet werden die einzelnen Topics formatiert
+und responsive gestaltet.*/
+
+
+/* Hier wird der Titel der Topics formatiert. */
+
 .titel_link {
     font-size: 24px;
     font-weight: bold;
@@ -36,13 +42,21 @@
     color: black;
 }
 
+
+/* Hier wird festgelegt, was passiert wenn man über die Topics hovert*/
+
 .grid_container div:hover {
+    /*Der Inhalt der einzelnen Felder wird um 50% transparenter*/
     opacity: 0.5;
 }
 
 .grid_container div:hover .titel_link {
+    /*Beim Titel die Schriftgröße erhöht*/
     font-size: 30px;
 }
+
+
+/*In diesem Abschnitt werden die einzelnen Felder der Topics mit Inhalt gefüllt */
 
 .item1 {
     background-image: url(../pictures/topic_ML.jpg);
@@ -172,6 +186,10 @@
     left: 0;
 }
 
+
+/*Hier wird angeben, wie viele Spalten und Reihen der Grid haben soll
+und wir der Grid in der Seite angeordnet sein sill*/
+
 .grid_container {
     display: grid;
     height: 100vh;
@@ -183,6 +201,10 @@
     padding-right: 4%;
     padding-left: 4%;
 }
+
+
+/* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von 850 Pixel unterschreitet.
+Der Grid hat nur noch 2 Spalten undbekommt 4 Reihen. Auch die Schriftgröße und die Bilder werden angepasst*/
 
 @media screen and (max-width: 850px) {
     .titel_link {
@@ -210,6 +232,10 @@
     }
 }
 
+
+/* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von  600 Pixel unterschreitet.
+Hier wird nochmal die Größe des Grids und der Bilder angepasst*/
+
 @media screen and (max-width: 600px) {
     .grid_container {
         grid-template-columns: 200px 200px;
@@ -223,6 +249,11 @@
         font-size: 20px;
     }
 }
+
+
+/* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von 400 Pixel unterschreitet.
+Hier gibt es nur noch ein Spalte und dafür für jedes Topic eine eigene Reihe.
+Auch die Schrift und Bildergröße wurde angepasst.*/
 
 @media screen and (max-width: 400px) {
     .grid_container {
