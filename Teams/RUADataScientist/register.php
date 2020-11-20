@@ -100,13 +100,16 @@
     <footer class="fixed-footer">
         <ul class="footer-elements">
             <li>
-                <div class="footer-element">© Copyright 2020</div>
-            </li>
-            <li>
                 <a class="footer-link" href="#">Imprint</a>
             </li>
             <li>
                 <a class="footer-link" href="#">Data Protection</a>
+            </li>
+            <li>
+                <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
+            </li>
+            <li>
+                <div class="footer-element">© Copyright 2020</div>
             </li>
         </ul>
     </footer>
