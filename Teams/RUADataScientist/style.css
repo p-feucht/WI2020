@@ -7,8 +7,13 @@ GENERAL STYLES
     padding: 0px;
     border: none;
     font-family: Helvetica, Arial, sans-serif;
-    
 }
+
+
+body {
+    background-color: rgb(237, 237, 237);
+}
+
 
 p {
     line-height: 2;
@@ -37,6 +42,7 @@ nav {
 nav h4 {
     font-weight: inherit;
     font-size: 3vh;
+    text-align: left;
 }
 
 nav a {
@@ -99,10 +105,11 @@ CONTENT
 FOOTER
 */
 footer {
-    background-color: rgb(27, 53, 102);
+    background-color: rgb(1, 42, 74);
     color: aliceblue;
     width: 100%;
     text-align: center;
+    margin-top: 6vh;
 }
 
 footer.fixed-footer {
@@ -124,11 +131,11 @@ footer.fixed-footer {
     color: #bdcbf5;
     text-decoration: none;
     font-weight: lighter;
-    font-size: 1.5vh;
+    font-size: 2vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
     display: block;
-    width: 20vh;   
+    width: 16vh;   
     text-align: center;
 }
 
@@ -145,10 +152,16 @@ RESPOSIVE
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+    footer.fixed-footer{
+        position: static;
+    }
+
     .footer-elements {
         flex-direction: column;
         justify-content: center;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
     }
 
     .footer-element, .footer-link {
