@@ -6,8 +6,11 @@ und responsive gestaltet.*/
 
 .titel_link {
     font-size: 24px;
+    max-width: 300px;
+    text-overflow: ellipsis;
     font-weight: bold;
     text-decoration: none;
+    text-align: center;
 }
 
 .item1 .titel_link {
@@ -47,7 +50,7 @@ und responsive gestaltet.*/
 
 .grid_container div:hover {
     /*Der Inhalt der einzelnen Felder wird um 50% transparenter*/
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .grid_container div:hover .titel_link {
