@@ -90,7 +90,7 @@
             if ($pwderror) {
                 echo "  <div class='input-error'>Passwords don't match!</div>";
             }
-            echo "<br>";
+            echo "<br><br>";
             echo "<input type='submit' name='submit' value='Register'>";
             echo "</form>";
         }  
@@ -100,13 +100,16 @@
     <footer class="fixed-footer">
         <ul class="footer-elements">
             <li>
-                <div class="footer-element">© Copyright 2020</div>
-            </li>
-            <li>
                 <a class="footer-link" href="#">Imprint</a>
             </li>
             <li>
                 <a class="footer-link" href="#">Data Protection</a>
+            </li>
+            <li>
+                <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
+            </li>
+            <li>
+                <div class="footer-element">© Copyright 2020</div>
             </li>
         </ul>
     </footer>
