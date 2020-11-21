@@ -5,18 +5,22 @@
         list-style: none;
     }
     
+    h1{
+        font-size: 5vw;
+        padding-bottom: 30px;
+    }
     .button {
         /*position: relative;
     top: 3vh;*/
         background-color: #468FAF;
         color: white;
-        padding: 60px 120px;
+        padding: 15px;
         border-radius: 10px;
         transition-duration: 0.4s;
         border: 2px solid #468FAF;
         text-align: center;
         display: inline-block;
-        margin: 4px 2px;
+        margin: 2px 2px;
         cursor: pointer;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -31,7 +35,7 @@
         display: inline-block;
         /*position: relative;*/
         transition: 0.5s;
-        font-size: 2.5vw;
+        font-size: 4vw;
 
     }
     
@@ -142,5 +146,8 @@
         }
         .container {
             height: 275px;
+        }
+        .button span {
+            font-size: 6vw;
         }
     }
