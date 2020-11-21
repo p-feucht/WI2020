@@ -30,7 +30,7 @@
         }
       }, {
         breakpoint: 300,
-        settings: "unslick"
+        slidesToShow: 2,
       }]
   });
 
