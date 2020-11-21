@@ -1,6 +1,6 @@
- <?php session_start(); ?>
+   <!-- Outsourced header PHP-file.-->
+    <?php session_start(); ?>
 
- <!-- Outsourced header PHP-file.-->
     <head>
          
         <!-- insert style sheet and media contents -->
@@ -11,6 +11,8 @@
     
     <head>
 
+    
+
 
     <!-- header html -->
     <div class="header" id="topHeader">
@@ -18,8 +20,8 @@
         <a href="index.php"> <img src="images/logoKomplett.png" class="logo" alt="Worker Bees Logo"></a>
         <div class="header-content-middle">
             <a class="biete" href="FormularBiete.php">Ich biete</a>
-            <a href="categories.php">Angebote</a>
-            <a href="blog.php">Tipps & Tricks</a>
+            <a class="ichSuche" href="categories.php">Ich suche</a>
+            <a class="tippsandtricks" href="blog.php">Tipps & Tricks</a>
             <a class="aboutus" href="aboutUs.php">Über uns</a>
             <a href="#contact">Impressum</a>
         </div>

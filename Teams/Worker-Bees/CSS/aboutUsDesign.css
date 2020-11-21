@@ -12,6 +12,10 @@
     background-color: #feca57;
 }
 
+.header a.aboutus {
+  background-color: #feca57;
+}
+
 .background {
     background-image: url("../CSS/css-images/werkstatt.jpg");
     background-size: 100%;

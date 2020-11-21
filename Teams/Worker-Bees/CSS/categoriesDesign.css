@@ -13,6 +13,10 @@ body, html {
     height: 100%;
 }
 
+.header a.ichSuche {
+    background-color: #feca57;
+}
+
 .yellow-banner {
     background-image: url(css-images/beehive-pattern.jpg);
     height: 100px;

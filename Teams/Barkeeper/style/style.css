@@ -20,19 +20,9 @@
 }
 
 .content{
-    background-image: url("../images/cocktailHell.jpg");
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
-    font-size: 20px;
-    hyphens: auto; 
     text-align: center;
-    background-repeat: no-repeat;
-    display: block;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-
 
 .ingredients{
     margin-left:auto;
@@ -46,7 +36,6 @@ footer{
     background-color: #ffbfbf;
     text-align: center;
 }
-
 
 
 a:hover {
@@ -64,9 +53,6 @@ a:hover {
     font-size: 17px;
     margin: 2px 1px;
     cursor: pointer;
-    font-family: Verdana, "Lucida Sans Unicode", sans-serif;
-    box-sizing: border-box;
-    border-radius: 10px 10px 10px 10px;
 }
 
 #Input_Ingredients {
@@ -90,14 +76,6 @@ input[type='submit']{
     background-color: #fff2f2;
 }
 
-a{
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-bottom: 5px;
-    background-color: #ffbfbf;
-    text-align: center;
-}
-
 
 #recipe_main_container {
 
@@ -110,9 +88,5 @@ a{
 
 .recipe_list {
     list-style-type: decimal;
-}
-
-h1{
-    font-weight: bold;
 }
   

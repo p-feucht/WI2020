@@ -1,11 +1,13 @@
+<?php session_start(); ?>
 <!doctype html>
 <html class="no-js" lang="">
+
 
 <head>
     <meta charset="utf-8">
     <title>Worker Bees</title>
-    <meta name="description" content="">
     <link rel="icon" href="images/logoBiene.png" />
+    <meta name="description" content="">
     <link href="CSS/index.css" rel="stylesheet">
 
 </head>

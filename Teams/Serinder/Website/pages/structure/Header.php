@@ -18,17 +18,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./favoriten.html">
+                            <a href="../favoriten.html">
                                 Meine Favoriten
                             </a>
                         </li>
                         <li>
-                            <a href="./kommentare.html">
+                            <a href="../kommentare.html">
                                 Meine Kommentare
                             </a>
                         </li>
                         <li>
-                            <a href="./Einstellungen.php">
+                            <a href="../einstellungen.html">
                                 Einstellungen
                             </a>
                         </li>

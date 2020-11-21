@@ -25,5 +25,5 @@
         </div>
         <?php include('./structure/LoginForm.html'); ?>
     </main>
-    <?php include('./structure/Footer.html'); ?>
+    <?php include('./structure/Footer.php'); ?>
 </body>
