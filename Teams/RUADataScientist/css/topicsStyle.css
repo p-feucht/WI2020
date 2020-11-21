@@ -30,7 +30,7 @@ und responsive gestaltet.*/
 }
 
 .item5 .titel_link {
-    color: white;
+    color: black;
 }
 
 .item6 .titel_link {
@@ -62,7 +62,7 @@ und responsive gestaltet.*/
 /*In diesem Abschnitt werden die einzelnen Felder der Topics mit Inhalt gefüllt */
 
 .item1 {
-    background-image: url(../pictures/topic_ML.jpg);
+    background-image: url(../pictures/topic_MLSized.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +78,7 @@ und responsive gestaltet.*/
 }
 
 .item2 {
-    background-image: url(../pictures/topic_howToStart.png);
+    background-image: url(../pictures/topic_HTSSized.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@ und responsive gestaltet.*/
 }
 
 .item3 {
-    background-image: url(../pictures/topic_ArtificialIntelligence.jpg);
+    background-image: url(../pictures/topic_AISized.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ und responsive gestaltet.*/
 }
 
 .item4 {
-    background-image: url(../pictures/data-mining.jpg);
+    background-image: url(../pictures/topic_DataMiningSized.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,7 +126,7 @@ und responsive gestaltet.*/
 }
 
 .item5 {
-    background-image: url(../pictures/topic_DeepLearning.jpg);
+    background-image: url(../pictures/topic_DeepLearningSized.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,7 +142,7 @@ und responsive gestaltet.*/
 }
 
 .item6 {
-    background-image: url(../pictures/topic_Application.jpg);
+    background-image: url(../pictures/topic_ApplicationPageSized.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +158,7 @@ und responsive gestaltet.*/
 }
 
 .item7 {
-    background-image: url(../pictures/JobsTopic.png);
+    background-image: url(../pictures/topic_CareerSized.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +174,7 @@ und responsive gestaltet.*/
 }
 
 .item8 {
-    background-image: url(../pictures/fundamentalsTopic.PNG);
+    background-image: url(../pictures/topic_FundaSized.png);
     display: flex;
     justify-content: center;
     align-items: center;
