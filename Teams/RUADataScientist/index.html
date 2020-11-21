@@ -2,196 +2,93 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Are you a data scientist?</title>
-    <link rel="icon" type="image/ico" href="pictures/icon.svg" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/content.css" />
-    <link rel="stylesheet" type="text/css" href="css/lightslider.css" />
-    <!--Jquery-->
-    <script type="text/javascript" src="js/JQuery3.3.1.js"></script>
-    <script type="text/javascript" src="js/lightslider.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are you a data scientist?</title>
+  <link rel="icon" type="image/ico" href="pictures/icon.svg" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/content.css" /> <!--XY-->
+  <link rel="stylesheet" type="text/css" href="./css/stylesForSlider.css" />
+  <link rel="stylesheet" type="text/css" href="./css/slick.css" />
+
 </head>
 
 <body>
-    <nav>
-        <div class="nav-logo">
-            <h4><a href="index.html">Are you a data scientist?</a></h4>
-        </div>
-        <ul class="nav-links">
-            <li>
-                <a href="test.html">Test</a>
-            </li>
-            <li>
-                <a href="topics.html">Topics</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="nav-blocker">''</div>
+  <nav>
+    <div class="nav-logo">
+      <h4><a href="index.html">Are you a data scientist?</a></h4>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="test.html">Test</a>
+      </li>
+      <li>
+        <a href="topics.html">Topics</a>
+      </li>
+      <li>
+        <a href="about.html">About</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="nav-blocker">''</div>
 
 
-    <div class="testButton">
-        <a href="test.html" class="button">
-            <span>Click here to test yourself</span>
-        </a>
+  <body>
+    <div class="paralax">
+      <div class="quoteText">
+        <div class="testButton">
+          <a href="test.html" class="button">
+              <span>Click here to test yourself</span>
+          </a>
+      </div>
+      </div>
     </div>
 
+    <h1>RECENTS</h1>
 
-    <div class="header">
-        <h1>Recents</h1>
-    </div>
+    <div class="for_slick_slider carousel">
+      <div class="items">
+        <a href="index.html"><img src="./pictures/topic_ML.jpg" alt=""></a>
+      </div>
+      <div class="items">
+        <a href="index.html"><img src="./pictures/topic_ML.jpg" alt=""></a>
+      </div>
+      <div class="items">
+        <a href="index.html"><img src="./pictures/topic_ML.jpg" alt=""></a>
+      </div>
+      <div class="items">
+        <a href="index.html"><img src="./pictures/topic_ML.jpg" alt=""></a>
+      </div>
+      <div class="items">
+        <a href="index.html"><img src="./pictures/topic_ML.jpg" alt=""></a>
+      </div>
+          </div>
 
-    <div class="container">
-        <!--slider------------------->
-        <ul id="autoWidth" class="cs-hidden">
-            <!--1------------------------------>
-            <li class="item-a">
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic_Machine_Learning.html">
-                        <!--model-->
-                        <img src="pictures\topic_ML.jpg" class="model">
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>Machine Learning</p>
-                    </div>
+    <div class="blankSpace">''</div>
 
-                </div>
-            </li>
-            <!--2------------------------------>
-            <li class="item-a">
-                <!--slider-box-->
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic_ArtificialIntelligence.html">
-                        <!--model-->
-                        <img src="pictures/topic_ArtificialIntelligence.jpg" class="model">
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>Artificial Intelligence</p>
-                    </div>
-
-                </div>
-            </li>
-
-
-            <li class="item-a">
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic__HowToStartADataScienceProject.html">
-                        <!--model-->
-                        <img src="pictures/topic_howToStart.png" class="model">
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>How to start a Data Science Project</p>
-                    </div>
-
-                </div>
-            </li>
-            <li class="item-a">
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic_DataMining.html">
-                        <!--model-->
-                        <img src="pictures/data-mining.jpg" class="model">
-
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>Data Mining</p>
-                    </div>
-
-                </div>
-            </li>
-            <li class="item-a">
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic_DeepLearning.html">
-                        <!--model-->
-                        <img src="pictures/topic_DeepLearning.jpg" class="model">
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>Deep Learning</p>
-                    </div>
-
-                </div>
-            </li>
-            <li class="item-a">
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic_.html"></a>
-                    <!--model-->
-                    <img src="pictures/topic_AI.jpeg" class="model">
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>Application</p>
-                    </div>
-
-                </div>
-            </li>
-            <li class="item-a">
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic_Job.html">
-                        <!--model-->
-                        <img src="pictures/JobsTopic.png" class="model">
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>Career: Jobs</p>
-                    </div>
-
-                </div>
-            </li>
-            <li class="item-a">
-                <!--slider-box-->
-                <div class="box">
-                    <a href="topic_Fundamentals.html">
-                        <!--model-->
-                        <img src="pictures/fundamentalsTopic.PNG" class="model">
-                    </a>
-                    <!--details-->
-                    <div class="details">
-                        <p>Fundamental Skills to become a Data Scientist</p>
-                    </div>
-
-                </div>
-            </li>
-            <!--6------------------------------>
-
-        </ul>
-
-
-
-
-    </div>
-
-
+    <footer>
+      <ul class="footer-elements">
+          <li>
+              <a class="footer-link" href="#">Imprint</a>
+          </li>
+          <li>
+              <a class="footer-link" href="#">Data Protection</a>
+          </li>
+          <li>
+              <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
+          </li>
+          <li>
+              <div class="footer-element">© Copyright 2020</div>
+          </li>
+      </ul>
+  </footer>
+  
     <script src="js/script.js" type="text/javascript"></script>
-
-    <footer class="fixed-footer">
-        <ul class="footer-elements">
-            <li>
-                <div class="footer-element">© Copyright 2020</div>
-            </li>
-            <li>
-                <a class="footer-link" href="#">Imprint</a>
-            </li>
-            <li>
-                <a class="footer-link" href="#">Data Protection</a>
-            </li>
-        </ul>
-    </footer>
-</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/Carousel.js"></script>
+    <script type="text/javascript" src="./js/slick.js"></script>
+  
+  </body>
 
 </html>
