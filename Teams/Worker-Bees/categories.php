@@ -28,6 +28,7 @@
     <!-- sheets for general page and other --> 
     <link href="CSS/categoriesDesign.css" rel="stylesheet">
     <link href="JavaScript/categoriesFunctions.js">
+    <link href="JavaScript/offerFunctions.js"> <!-- used in the offer files only --> 
     <link href="JavaScript/filter.js">
     <link rel="stylesheet" href="CSS/bookingWindowDesign.css">
 

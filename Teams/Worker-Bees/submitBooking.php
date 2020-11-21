@@ -49,20 +49,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
         $emailBuch = $_SESSION["email"];
         $angebot_typ = $_SESSION["category"];
 
-        
+        if($angebot_typ == "Werkzeug") { // get information about specific order from database based on category
+            $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID" ;
+            $result = $conn2->query($getOrderSql);
+            $preislabel = "PreisProTag";
+        }
+        else if($angebot_typ == "Werkstatt") { // get information about specific order from database based on category
+            $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkstatt WHERE Werkstatt_ID = $orderID" ;
+            $result = $conn2->query($getOrderSql);
+            $preislabel = "PreisProTag";
+        }
+        else if($angebot_typ == "Dienstleistung") { // get information about specific order from database based on category
+            $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, Preis FROM AngebotDienstleistung WHERE Dienstleistung_ID = $orderID" ;
+            $result = $conn2->query($getOrderSql);
+            $preislabel = "Preis";
+        }
 
-        // get information about specific order from database
-        $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID" ;
-        $result = $conn2->query($getOrderSql);
-
-        if ($result->num_rows == 1) {
+        if ($result->num_rows == 1) { 
 
             $orderRow = $result->fetch_assoc();
             $title = $orderRow["ATitel"];
             $userErstell = $orderRow["usernameErsteller"];
-            $preis = $orderRow["PreisProTag"];
+            $preis = $orderRow["$preislabel"];
 
-        } else {
+        } else { //create mistake page if order was not correctly found
             ?>     
             <div class="blog-content">
                 <h1>Etwas ist schiefgelaufen.</h1><br>
@@ -84,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
         $bezinbier =  $conn2->real_escape_string($_POST["bezInBier"]);
 
         $sql2 = "INSERT INTO Buchung (Buchung_ID, Angebot_ID, Angebot_Typ, userErstell, emailErstell, userBuch, emailBuch ,Datum, Preis, angebotTitel, bezInBier)
-                            VALUES ('$buchung_id', '$angebot_id', '$angebot_typ', '$userErstell', '$emailErstell', '$userBuch', '$emailBuch', '$date', '$preis', '$title', '$bezinbier')";
+                            VALUES ('$buchung_id', '$order_id', '$angebot_typ', '$userErstell', '$emailErstell', '$userBuch', '$emailBuch', '$date', '$preis', '$title', '$bezinbier')";
     
 
         if ($conn2->query($sql2) === TRUE) {
@@ -93,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
                     <div class="blog-content">
                         <h1>Vielen Dank für deine Buchung, <?php echo $userBuch ?>. Viel Spaß!</h1><br>
 
-                        <h3>Deine Buchingsnummer ist <?php echo $buchung_id ?>.</h3>
+                        <h3>Deine Buchungsnummer ist <?php echo $buchung_id ?>.</h3>
            
             <?php
 
