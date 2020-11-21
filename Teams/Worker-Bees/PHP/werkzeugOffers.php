@@ -99,7 +99,7 @@ if ($result->num_rows > 0) {
                             </select>
 
                             <script></script>
-                            <button type="submit" class="submitBooking" >Jetzt buchen</button>
+                            <button type="submit" class="submitBooking" onclick="<?php $_SESSION['category'] = 'Werkzeug';?>">Jetzt buchen</button>
                         </form>
 
 
