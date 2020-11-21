@@ -71,15 +71,14 @@ if ($result->num_rows > 0) {
                         <div class="modal-content-split">
                             <p class="offer-description">
                                 <?php echo $description ?>
-                                <br>
+                                <br><br>
                                 Die Werkstatt hat folgende Ausstattungsmerkmale:
                             </p>
 
-                        <ul class="modal-amenities" name="amenities">
-                        <script>
-                                createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
-                                <?php echo $aschleif ?>, <?php echo $asaege?>, <?php echo $akleinteil?>);
-                        </script>
+                        <script src="JavaScript/offerFunctions.js"></script>
+                        <ul class="modal-amenities" id="amenities" >
+                                <script>window.onload=createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
+                                <?php echo $aschleif ?>, <?php echo $asaege?>, <?php echo $akleinteil?>); </script>
                         </ul>
 
                         </div>
@@ -114,7 +113,6 @@ if ($result->num_rows > 0) {
                                 <option value="inPerson">vor Ort bezahlen</option>
                             </select>
 
-                            <script></script>
                             <button type="submit" class="submitBooking" onclick="<?php $_SESSION['category'] = 'Werkstatt';?>">Jetzt buchen</button>
                         </form>
 
