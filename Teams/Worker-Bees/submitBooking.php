@@ -1,16 +1,30 @@
 <?php
 session_start();
+
 /* if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     header("location: ../login.php");
     exit;
 } */
+?>
 
-//error-variables for validation
-//$titleErr = $zeitraumErr = $beschreibErr = $vornameErr = $nachnameErr = $strasseErr = $hnrErr = $plzErr = $ortErr = $preisProTagErr = $preisBetragErr = "";
-//$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = $a1_bohr = $a2_drechsel = $a3_schleif = $a4_saege = $a5_kleinteil = "";
-//$valid=TRUE;
+<!-- create "booked" page --> 
+<!doctype html>
+<html class="no-js" lang="">
 
+<head>
+    <meta charset="utf-8">
+    <title>Worker Bees</title>
+    <meta name="description" content="">
+    <link rel="icon" href="../images/logoBiene.png" />
+    <link href="./CSS/submitBooking.css" rel="stylesheet">
+
+</head>
+<body>
+
+<?php include "PHP/header.php"; ?>
+
+<?php
 //Connection to bplaced server
 $servername = "localhost";
 $username = "workerbees";
@@ -28,7 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
         
     } else {
 
-        $orderID = $conn2->real_escape_string($_POST["orderID"]); // take card id for beginning of booking nr
+        $orderID = $conn2->real_escape_string($_POST["orderID"]); // take card id to identify offer
+
+        // get session information
+        $userBuch = $_SESSION["username"];
+        $emailBuch = $_SESSION["email"];
+        $angebot_typ = $_SESSION["category"];
+
+        
 
         // get information about specific order from database
         $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID" ;
@@ -42,22 +63,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
             $preis = $orderRow["PreisProTag"];
 
         } else {
-            echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-            echo "Error: " . $getOrderSql . "<br>" . $conn2->error;
+            ?>     
+            <div class="blog-content">
+                <h1>Etwas ist schiefgelaufen.</h1><br>
+
+                <h3>Falls das Problem bestehen sollte, schreib uns doch bitte eine mail.</h3>
+                <input type='hidden' name='Fehlertyp' value='<?php echo "Error: " . $getOrderSql . "<br>" . $conn2->error;?>'/>
+            <?php
+            
         }
 
         //create random booking number
         $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); 
-        $id = "WZcard_" . (string)$orderID;
-        $buchung_id = $id.$number; //combine
-
-        // get session information
-        $userBuch = $_SESSION["username"];
-        $emailBuch = $_SESSION["email"];
+        $buchung_id = (string)$orderID . (string)$number;
 
         // get information from booking submission
         $angebot_id = "";
-        $angebot_typ = "Werkzeug";
         $emailErstell = "";
         $date = $conn2->real_escape_string($_POST["Date"]);
         $bezinbier =  $conn2->real_escape_string($_POST["bezInBier"]);
@@ -68,51 +89,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
 
         if ($conn2->query($sql2) === TRUE) {
 
-            ?> 
-               <!-- create "booked" page --> 
-                <!doctype html>
-                <html class="no-js" lang="">
-
-                <head>
-                    <meta charset="utf-8">
-                    <title>Worker Bees</title>
-                    <meta name="description" content="">
-                    <link rel="icon" href="../images/logoBiene.png" />
-                    <link href="./CSS/submitBooking.css" rel="stylesheet">
-
-                </head>
-
-                <body>
-
-                    <?php include "PHP/header.php"; ?>
-                    
+            ?>     
                     <div class="blog-content">
-                        <h1>Du hast erfolgreich gebucht. Viel Spaß!</h1>
-                        <button href="categories.php#Werkzeug-Ang">Zurück</button>
-                        <button href="index.php">Startseite</button>
+                        <h1>Vielen Dank für deine Buchung, <?php echo $userBuch ?>. Viel Spaß!</h1><br>
 
-                        <a>Hier ist deine Buchung:</a>
-                        <br>
-                        <?php echo $sql2 ?>
-                    </div>
-
-                    <?php include "PHP/footer.php"; ?>
-
-                </body>
-
-                </html>
-            <?php
+                        <h3>Deine Buchingsnummer ist <?php echo $buchung_id ?>.</h3>
            
+            <?php
 
             } else {
-            echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-            echo "Error: " . $sql2 . "<br>" . $conn2->error;
+            ?>     
+                <div class="blog-content">
+                    <h1>Etwas ist schiefgelaufen.</h1><br>
+
+                    <h3>Falls das Problem bestehen sollte, schreib uns doch bitte eine mail.</h3>
+                    <input type='hidden' name='Fehlertyp' value='<?php echo "Error: " . $sql2 . "<br>" . $conn2->error;?>'/>
+       
+            <?php
             
             }
-
-            
+        
 }
     $conn2->close();
 }
 
 ?>
+
+            <a class="button" href="categories.php#Werkzeug-Ang">Zurück</a>
+            <a class="button" href="index.php">Startseite</a>
+
+        </div>
+
+<?php include "PHP/footer.php"; ?>
+
+</body>
+
+</html>
+<?php
