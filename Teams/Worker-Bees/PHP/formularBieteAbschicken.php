@@ -234,9 +234,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $preisBetrag = $conn->real_escape_string($_POST['Preis']);
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
-                            $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' ,'$bezahlart', '$preisBetrag', '$bierBez3')";
-                        
+
+                            $sql = "INSERT INTO AngebotDienstleistung (ATitel,  ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$bezahlart', '$preisBetrag', '$bierBez3')";
+                        //  usernameErsteller, '$username'
+
                             //echo $sql;
                             //echo "<br>";
 

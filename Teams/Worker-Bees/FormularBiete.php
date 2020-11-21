@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+
+<?php session_start();
+// User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist, ansonsten auf Anmelden-Seite
+if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
+    header("location: login.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="de">
