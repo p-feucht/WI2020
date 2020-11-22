@@ -1,5 +1,4 @@
 <?php @session_start(); ?>
-
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -32,13 +31,8 @@
 
 <div class="yellow-banner"></div>
 
-    <div id="Werkzeug" class="tabcontent">
-
         <?php include "PHP/searchField.php"; ?>
         <?php include "PHP/werkzeugOffers.php"; ?>
-
-    </div>
-
 
 <?php include "PHP/footer.php"; ?>
 

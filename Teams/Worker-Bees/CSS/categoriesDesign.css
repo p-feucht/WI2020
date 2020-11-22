@@ -58,6 +58,10 @@ body, html {
 
 /* Style the search field */
 
+.search {
+    padding-top: 30px;
+}
+
 form.search input[type=text],
 #autocomplete {
     padding: 11px;

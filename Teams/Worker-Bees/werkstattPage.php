@@ -1,3 +1,4 @@
+<?php @session_start(); ?>
 <meta charset="utf-8">
     <link rel="icon" href="images/logoBiene.png" />
     <title>Worker Bees</title>
@@ -25,14 +26,9 @@
 <?php include "PHP/header.php"; ?>
 
 <div class="yellow-banner"></div>
-
-    <div id="Werkstatt" class="tabcontent">
-        
+   
         <?php include "PHP/searchField.php"; ?>
         <?php include "PHP/werkstattOffers.php"; ?>
-
-    </div>
-
 
 <?php include "PHP/footer.php"; ?>
 
