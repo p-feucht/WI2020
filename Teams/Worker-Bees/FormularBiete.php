@@ -1,4 +1,3 @@
-
 <?php session_start();
 // User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist, ansonsten auf Anmelden-Seite
 if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
@@ -121,8 +120,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
-                        </textarea>
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1"></textarea>
                         <br>
                     </div>
 

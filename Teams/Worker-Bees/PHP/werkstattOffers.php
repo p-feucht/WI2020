@@ -72,7 +72,7 @@ if ($result->num_rows > 0) {
                             <p class="offer-description">
                                 <?php echo $description ?>
                                 <br><br>
-                                Die Werkstatt hat folgende Ausstattungsmerkmale:
+                                Das ist alles vorhanden:
                             </p>
 
                         <script src="JavaScript/offerFunctions.js"></script>
@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
 
     }
 } else {
-    echo "0 results";
+    echo "Keine Einträge gefunden.";
 }
 $connWS->close();
 ?>
