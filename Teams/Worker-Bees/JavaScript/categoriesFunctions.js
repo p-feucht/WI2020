@@ -47,16 +47,6 @@ function openTab() {
   
   }
 /*
-function openSearch() {
-document.getElementById("myOverlay").style.display = "block";
-}
-
-// Close the full screen search box
-function closeSearch() {
-document.getElementById("myOverlay").style.display = "none";
-}
-*/
-
 function datePicker() {
 
   $('input[name="datefilter"]').daterangepicker({
@@ -74,4 +64,13 @@ function datePicker() {
   $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
       $(this).val('');
   })
+}
+*/
+
+function setFirstChild(childId) {
+
+  var element = document.getElementById(childId);
+
+  const parent = element.parentNode;
+  parent.insertBefore(element, parent.firstChild);
 }
