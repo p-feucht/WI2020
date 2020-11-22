@@ -30,7 +30,7 @@ und responsive gestaltet.*/
 }
 
 .item5 .titel_link {
-    color: white;
+    color: black;
 }
 
 .item6 .titel_link {
@@ -62,7 +62,7 @@ und responsive gestaltet.*/
 /*In diesem Abschnitt werden die einzelnen Felder der Topics mit Inhalt gefüllt */
 
 .item1 {
-    background-image: url(../pictures/topic_ML.jpg);
+    background-image: url(../pictures/topic_MachineLearningSizedsmall.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +78,7 @@ und responsive gestaltet.*/
 }
 
 .item2 {
-    background-image: url(../pictures/topic_howToStart.png);
+    background-image: url(../pictures/topic_HTSSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@ und responsive gestaltet.*/
 }
 
 .item3 {
-    background-image: url(../pictures/topic_ArtificialIntelligence.jpg);
+    background-image: url(../pictures/topic_AISizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ und responsive gestaltet.*/
 }
 
 .item4 {
-    background-image: url(../pictures/data-mining.jpg);
+    background-image: url(../pictures/topic_DataMiningSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,7 +126,7 @@ und responsive gestaltet.*/
 }
 
 .item5 {
-    background-image: url(../pictures/topic_DeepLearning.jpg);
+    background-image: url(../pictures/topic_DeepLearningSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,7 +142,7 @@ und responsive gestaltet.*/
 }
 
 .item6 {
-    background-image: url(../pictures/topic_Application.jpg);
+    background-image: url(../pictures/topic_ApplicationPageSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +158,7 @@ und responsive gestaltet.*/
 }
 
 .item7 {
-    background-image: url(../pictures/JobsTopic.png);
+    background-image: url(../pictures/topic_CareerSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +174,7 @@ und responsive gestaltet.*/
 }
 
 .item8 {
-    background-image: url(../pictures/fundamentalsTopic.PNG);
+    background-image: url(../pictures/topic_FundaSizedsmall.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,52 +206,77 @@ und wir der Grid in der Seite angeordnet sein sill*/
 }
 
 
+/* Hier werden die Topics abgerundet*/
+
+.grid_container div {
+    border-radius: 8px;
+}
+
+
 /* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von 850 Pixel unterschreitet.
 Der Grid hat nur noch 2 Spalten undbekommt 4 Reihen. Auch die Schriftgröße und die Bilder werden angepasst*/
 
 @media screen and (max-width: 850px) {
     .titel_link {
-        font-size: 28px;
+        font-size: 20px;
         max-width: 200px;
         text-overflow: ellipsis;
         top: 50%;
         text-align: center;
     }
     .grid_container div:hover .titel_link {
-        font-size: 25px;
+        font-size: 24px;
     }
     .grid_container {
-        grid-template-columns: 350px 350px;
-        grid-template-rows: repeat(4, 350px);
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(4, 25%);
         margin: 35px;
         margin-top: 5px;
         justify-content: center;
-        gap: 1%;
-        height: 100%;
+        row-gap: 1%;
+        column-gap: 4%;
+        padding-right: 10%;
+        padding-left: 10%;
+        /*  height: 100%; */
     }
-    .grid_container div {
-        height: 350px;
-        width: 350px;
+    /*  .grid_container div {
+        height: 250px;
+        width: 250px;
+    }*/
+}
+
+
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  525 Pixel unterschreitet.
+*/
+
+@media screen and (max-width: 525px) {
+    .grid_container {
+        padding-right: 5%;
+        padding-left: 5%;
     }
 }
 
 
-/* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von  600 Pixel unterschreitet.
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  600 Pixel unterschreitet.
 Hier wird nochmal die Größe des Grids und der Bilder angepasst*/
 
+
+/*
 @media screen and (max-width: 600px) {
     .grid_container {
         grid-template-columns: 200px 200px;
         grid-template-rows: repeat(4, 200px);
     }
     .grid_container div {
-        height: 200px;
-        width: 200px;
+        max-height: 33vh;
+        max-width: 33vh;
     }
     .titel_link {
         font-size: 20px;
     }
-}
+}*/
 
 
 /* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von 400 Pixel unterschreitet.
@@ -260,13 +285,19 @@ Auch die Schrift und Bildergröße wurde angepasst.*/
 
 @media screen and (max-width: 400px) {
     .grid_container {
-        grid-template-columns: 200px;
-        grid-template-rows: repeat(8, 200px);
+        grid-template-columns: 175px;
+        grid-template-rows: repeat(8, 175px);
         margin-top: 10px;
-        gap: 5px;
+        row-gap: 5px;
+        column-gap: 1%;
         height: 99em;
+        align-self: center;
     }
-    .titel_link {
+    /* .titel_link {
         font-size: 16px;
+    }*/
+    .grid_container div {
+        height: 175px;
+        width: 175px;
     }
 }

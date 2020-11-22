@@ -12,13 +12,13 @@
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- date picker links (https://www.daterangepicker.com/)-->
+    <!-- date picker links (https://www.daterangepicker.com/)
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
     <link href="CSS/datepicker.css" rel="stylesheet">
-    <link href="JavaScript/datepicker.js">
+    <link href="JavaScript/datepicker.js"> 
 
     <!-- pop up window for booking -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -28,6 +28,7 @@
     <!-- sheets for general page and other --> 
     <link href="CSS/categoriesDesign.css" rel="stylesheet">
     <link href="JavaScript/categoriesFunctions.js">
+    <script type="text/javascript" src="JavaScript/offerFunctions.js"></script> <!-- used in the offer files only --> 
     <link href="JavaScript/filter.js">
     <link rel="stylesheet" href="CSS/bookingWindowDesign.css">
 

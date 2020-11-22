@@ -39,7 +39,8 @@ if ($result->num_rows > 0) {
 ?>
         <!-- create card for each offer data-target = modal-id-->
         <div class="card" id="<?php echo $card_ID ?>" data-toggle="modal" data-target=<?php echo $modal_target ?>>
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" loading="lazy"
+            alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
             <p class="card-lp"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
                 <span class="price"><?php echo $price ?>€ / Tag</span></p>
             <h2><?php echo $title ?></h2>
@@ -74,7 +75,7 @@ if ($result->num_rows > 0) {
                         
                          <!--Create booking window -->
                         <form class="modal-booking-window" enctype="multipart/form-data" 
-                            action="./PHP/submitBooking.php" method = "post">
+                            action="../submitBooking.php" method = "post">
                             <input type='hidden' name='orderID' value='<?php echo $orderID;?>'/> <!--Pass order ID in hidden element to php -->
                             
                             <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
@@ -99,7 +100,7 @@ if ($result->num_rows > 0) {
                             </select>
 
                             <script></script>
-                            <button type="submit" class="submitBooking" >Jetzt buchen</button>
+                            <button type="submit" class="submitBooking" onclick="<?php $_SESSION['category'] = 'Werkzeug';?>">Jetzt buchen</button>
                         </form>
 
 
@@ -115,7 +116,7 @@ if ($result->num_rows > 0) {
 
     }
 } else {
-    echo "0 results";
+    echo "Keine Einträge gefunden.";
 }
 $conn->close();
 ?>
