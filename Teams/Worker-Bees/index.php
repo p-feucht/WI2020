@@ -31,19 +31,19 @@
     <!-- Category cards -->
     <div class="category-section">
         <div class="category">
-            <a href="categories.php#Werkzeug-Ang" onclick="<?php $_SESSION['category'] = 'Werkzeug';?>">
+            <a href="werkzeugPage" target="_blank">
                 <img class="categoryPics" src="images/Werkzeug.jpg" alt="Werkzeug">
                 <p class="categoryText">Brauchst du ein bestimmtes Werkzeug?</p>
             </a>
         </div>
         <div class="category">
-            <a href="categories.php#Werkstatt-Ang" onclick="<?php $_SESSION['category'] = 'Werkstatt';?>">
+            <a href="werkstattPage" target="_blank">
                 <img class="categoryPics" src="images/Flaeche.jpg" alt="Fläche">
                 <p class="categoryText">Brauchst du einen Ort, um dein Hobby auszuleben?</p>
             </a>
         </div>
-        <div class="category">
-            <a href="categories.php#Dienst-Ang" onclick="<?php $_SESSION['category'] = 'Dienstleistung';?>">
+        <div class="category" target="_blank">
+            <a href="dienstleitungPage">
                 <img class="categoryPics" src="images/Dienst.jpg" alt="Dienst">
                 <p class="categoryText">Brauchst du jemanden, der dir unter die Arme greift?</p>
             </a>
