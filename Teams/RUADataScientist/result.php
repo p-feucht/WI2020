@@ -101,7 +101,13 @@
                 <a href="about.html">About</a>
             </li>
         </ul>
+        <div class="burger">
+            <div class="bLine-1"></div>
+            <div class="bLine-2"></div>
+            <div class="bLine-3"></div>
+        </div>
     </nav>
+    <script src="js/nav.js"></script>
     <div class="nav-blocker">''</div>
 
     <!--CONTENT-->
@@ -113,18 +119,23 @@
             $percentage = scorePercentage($score, $MAX_SCORE);
 
             if ($_SESSION["logged_in"]) {
+                //Greet the user and show him his most recent score.
                 echo "<h2 class='result-page-headline-2'>Hello, ". $_SESSION["currentuser"].".</h1>";
                 echo "<h1 class='result-page-headline'>Your most recent score is <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
             } else {
+                //Show the user his score.
                 echo "<h1 class='result-page-headline'>You scored <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
             }
             echo "<hr class='result-seperator'>";
+
+            //Show the scores percentage value and the appropriate recommendation.
             echo "<h2 class='result-page-headline-2'>Thats <b>". $percentage . "</b> percent!</h2>";
             echo "<h3 class='result-page-recommendation'>" . recommendation($percentage) . "</h3>";
         } else {
                 echo "<h1 class='result-page-headline'>An error occured while retrieving your score.</h1>";
         }
         
+        /* LOGIN FORM */
         if(!$_SESSION["logged_in"]) {
             if($login_success === false) {
                 echo "<h3 class='form-title'>An error occured while logging you in. Please try again.</h3>";
@@ -205,6 +216,7 @@ function getLastResultFromDatabase($user) {
             question_6 'likert_1', question_7 'likert_2', question_8 'likert_3', question_9 'likert_4', question_10 'likert_5', question_11 'likert_6', question_12 'likert_7', question_13 'likert_8', question_14 'likert_9'
             FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM results WHERE username = '" . $user . "')";
 
+    //check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         return null;
@@ -227,7 +239,7 @@ function recommendation($score_percent) {
             return $RECOMMENDATIONS[(string)$percentage];
         }
     }
-    return "an error occured in the recommendation() function";
+    return "An error occured while fetching your recommendation :(.";
 }
 
 //CALCULATE THE USERS SCORE PERCENTAGE FROM HIS POINTS

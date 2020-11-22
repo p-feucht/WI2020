@@ -12,6 +12,11 @@
     $pwderror = false;
     $usernameerror = false;
     
+    /**
+     * 1. Check whether someone is allready registered as the given user.
+     * 2. Check if the passwords are correct.
+     * 3. If there are no errors, create a new account and login the user.
+     */
     if ($_POST["submit"] === "Register") {
         if ($_POST["username"] != null && $_POST["username"] != "") {
             $usernameerror = checkIfUserExists(test_input($_POST["username"]));
@@ -46,6 +51,7 @@
 </head>
 
 <body>
+    <!-- navbar -->
     <nav>
         <div class="nav-logo">
             <h4><a href="index.html">Are you a data scientist?</a></h4>
@@ -61,9 +67,16 @@
                 <a href="about.html">About</a>
             </li>
         </ul>
+        <div class="burger">
+            <div class="bLine-1"></div>
+            <div class="bLine-2"></div>
+            <div class="bLine-3"></div>
+        </div>
     </nav>
+    <script src="js/nav.js"></script>
     <div class="nav-blocker">''</div>
 
+    <!-- dynamic serverside form -->
     <div class='register-content'>
         <?php
         if ($_SESSION["logged_in"]) {
@@ -97,6 +110,7 @@
         ?>
     </div>
 
+    <!-- footer -->
     <footer class="fixed-footer">
         <ul class="footer-elements">
             <li>
