@@ -25,7 +25,8 @@
 
 .quoteText>h1 {
     padding: 20px 15px 20px 15px;
-    font-size: 200%
+    font-size: 200%;
+    text-align: left;
 }
 
 .quoteText>h2 {
