@@ -2,7 +2,6 @@
 session_start();
 
 /* if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-
     header("location: ../login.php");
     exit;
 } */
@@ -50,29 +49,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
         $angebot_typ = $_SESSION["category"];
 
         if($angebot_typ == "Werkzeug") { // get information about specific order from database based on category
-            $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID" ;
-            $result = $conn2->query($getOrderSql);
+            $getOrderSql = "SELECT ATitel, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID" ;
             $preislabel = "PreisProTag";
         }
         else if($angebot_typ == "Werkstatt") { // get information about specific order from database based on category
-            $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkstatt WHERE Werkstatt_ID = $orderID" ;
-            $result = $conn2->query($getOrderSql);
+            $getOrderSql = "SELECT ATitel, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkstatt WHERE Werkstatt_ID = $orderID" ;
             $preislabel = "PreisProTag";
         }
         else if($angebot_typ == "Dienstleistung") { // get information about specific order from database based on category
-            $getOrderSql = "SELECT ATitel, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, usernameErsteller, Preis FROM AngebotDienstleistung WHERE Dienstleistung_ID = $orderID" ;
-            $result = $conn2->query($getOrderSql);
+            $getOrderSql = "SELECT ATitel, PLZ, Ort, usernameErsteller, Preis FROM AngebotDienstleistung WHERE Dienstleistung_ID = $orderID" ;
             $preislabel = "Preis";
         }
 
-        if ($result->num_rows == 1) { 
+        if ($conn2->query($getOrderSql) === FALSE) { //create mistake page if order was not correctly found
 
-            $orderRow = $result->fetch_assoc();
-            $title = $orderRow["ATitel"];
-            $userErstell = $orderRow["usernameErsteller"];
-            $preis = $orderRow["$preislabel"];
-
-        } else { //create mistake page if order was not correctly found
             ?>     
             <div class="blog-content">
                 <h1>Etwas ist schiefgelaufen.</h1><br>
@@ -80,8 +70,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
                 <h3>Falls das Problem bestehen sollte, schreib uns doch bitte eine mail.</h3>
                 <input type='hidden' name='Fehlertyp' value='<?php echo "Error: " . $getOrderSql . "<br>" . $conn2->error;?>'/>
             <?php
-            
-        }
+
+        } else { 
+            $result = $conn2->query($getOrderSql);
+
+            $orderRow = $result->fetch_assoc();
+            $title = $orderRow["ATitel"];
+            $userErstell = $orderRow["usernameErsteller"];
+            $preis = $orderRow["$preislabel"];
 
         //create random booking number
         $number = rand(1000, 10000) + rand(1000, 10000) + rand(1000, 10000); 
@@ -119,8 +115,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
             
             }
         
+
 }
     $conn2->close();
+}
 }
 
 ?>
@@ -135,4 +133,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
 </body>
 
 </html>
-<?php

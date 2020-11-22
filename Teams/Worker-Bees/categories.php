@@ -18,7 +18,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/daterangepicker.css" />
     <link href="CSS/datepicker.css" rel="stylesheet">
-    <link href="JavaScript/datepicker.js"> -->
+    <link href="JavaScript/datepicker.js"> 
 
     <!-- pop up window for booking -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
