@@ -60,12 +60,16 @@ body, html {
 
 .search {
     padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+    float: center;
 }
 
 form.search input[type=text],
 #autocomplete {
     padding: 11px;
-    font-size: 17px;
+    font-size: 14px;
     height: 50px;
     border: 1px solid grey;
     border-right: white;

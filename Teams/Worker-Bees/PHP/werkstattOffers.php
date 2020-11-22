@@ -76,9 +76,9 @@ if ($result->num_rows > 0) {
                                 Das ist alles vorhanden:
                             </p>
 
-                        <script src="JavaScript/offerFunctions.js"></script>
+                        <script src="JavaScript/offerFunctions.js" ></script>
                         <ul class="modal-amenities" id="amenities" >
-                                <script>window.onload=createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
+                                <script defer>window.onload=createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
                                 <?php echo $aschleif ?>, <?php echo $asaege?>, <?php echo $akleinteil?>); </script>
                         </ul>
 
@@ -102,7 +102,7 @@ if ($result->num_rows > 0) {
 
                             <input id="bierInput" type="checkbox" name="bezInBier" value="1" unchecked>
                             <label id="bierLabel" for="bezInBier"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
-                            <script>
+                            <script defer>
                                 if (<?php echo $bezBier ?> != 1) { // only show "pay in beer" if option was selected at offer creation
                                     document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
                                     document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";

@@ -121,9 +121,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt wird füh
 }
 }
 
+if($angebot_typ == "Werkzeug") { // make link based on which page person is coming from
+    ?> <a class="button" href="werkzeugPage.php">Zurück</a> <?php
+}
+else if($angebot_typ == "Werkstatt") { 
+    ?> <a class="button" href="werkstattPage.php">Zurück</a> <?php
+}
+else if($angebot_typ == "Dienstleistung") { 
+    ?> <a class="button" href="dienstleistungPage.php">Zurück</a> <?php
+}
 ?>
 
-            <a class="button" href="categories.php#Werkzeug-Ang">Zurück</a>
+            
+
+
+
             <a class="button" href="index.php">Startseite</a>
 
         </div>

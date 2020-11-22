@@ -1,9 +1,5 @@
 <?php @session_start(); ?>
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <link rel="icon" href="images/logoBiene.png" />
     <title>Worker Bees</title>
     <meta name="description" content="">
@@ -32,8 +28,7 @@
 <div class="yellow-banner"></div>
 
         <?php include "PHP/searchField.php"; ?>
-        <?php include "PHP/werkzeugOffers.php"; ?>
-
+        <?php include "PHP/dienstOffers.php"; ?>
 
 <?php include "PHP/footer.php"; ?>
 

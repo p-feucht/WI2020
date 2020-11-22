@@ -26,7 +26,7 @@
 <?php include "PHP/header.php"; ?>
 
 <div class="yellow-banner"></div>
-   
+
         <?php include "PHP/searchField.php"; ?>
         <?php include "PHP/werkstattOffers.php"; ?>
 
