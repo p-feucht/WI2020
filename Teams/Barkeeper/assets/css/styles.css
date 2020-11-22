@@ -1,0 +1,7 @@
+.quill-editor-container {
+    margin-bottom: 100px;
+}
+
+.custom-file-label::after {
+    content: 'Datei Auswählen' !important;
+}
