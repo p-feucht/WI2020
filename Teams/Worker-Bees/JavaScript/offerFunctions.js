@@ -1,9 +1,6 @@
 function createAmenities(modalID, abohr, adrechsel, aschleif, asaege, akleinteil) {
 
-    console.log(modalID);
-
     element = modalID.querySelector("#amenities");
-    console.log(element);
 
     if (abohr == 1) {
 
