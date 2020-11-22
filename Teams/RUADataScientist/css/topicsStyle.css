@@ -62,7 +62,7 @@ und responsive gestaltet.*/
 /*In diesem Abschnitt werden die einzelnen Felder der Topics mit Inhalt gefüllt */
 
 .item1 {
-    background-image: url(../pictures/topic_MachineLearningSized2.png);
+    background-image: url(../pictures/topic_MachineLearningSizedsmall.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +78,7 @@ und responsive gestaltet.*/
 }
 
 .item2 {
-    background-image: url(../pictures/topic_HTSSized2.jpg);
+    background-image: url(../pictures/topic_HTSSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@ und responsive gestaltet.*/
 }
 
 .item3 {
-    background-image: url(../pictures/topic_AISized2.jpg);
+    background-image: url(../pictures/topic_AISizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ und responsive gestaltet.*/
 }
 
 .item4 {
-    background-image: url(../pictures/topic_DataMiningSized2.jpg);
+    background-image: url(../pictures/topic_DataMiningSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,7 +126,7 @@ und responsive gestaltet.*/
 }
 
 .item5 {
-    background-image: url(../pictures/topic_DeepLearningSized2.jpg);
+    background-image: url(../pictures/topic_DeepLearningSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,7 +142,7 @@ und responsive gestaltet.*/
 }
 
 .item6 {
-    background-image: url(../pictures/topic_ApplicationPageSized2.jpg);
+    background-image: url(../pictures/topic_ApplicationPageSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +158,7 @@ und responsive gestaltet.*/
 }
 
 .item7 {
-    background-image: url(../pictures/topic_CareerSized2.jpg);
+    background-image: url(../pictures/topic_CareerSizedsmall.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +174,7 @@ und responsive gestaltet.*/
 }
 
 .item8 {
-    background-image: url(../pictures/topic_FundaSized2.png);
+    background-image: url(../pictures/topic_FundaSizedsmall.png);
     display: flex;
     justify-content: center;
     align-items: center;
