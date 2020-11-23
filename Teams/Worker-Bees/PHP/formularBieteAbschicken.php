@@ -13,6 +13,13 @@ $password = "HKSZ52";
 $dbname = "workerbees_db1";
 
 
+// Username Ersteller aus 
+
+//$sql_2 = "SELECT password FROM user where username = '$username'";
+
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
@@ -49,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $title = $conn->real_escape_string($_POST["title"]);
                     }
 
+
                     //dass Zeitraum nicht leer ist, wird schon in html (required) überprüft
                     $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
                     $beginndatum =  substr($gesamtzeitraum,0,10);
@@ -57,7 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                    
                    //Beschreibung darf leer sein
                     $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
-                   
 
                     //Bild Dateiupload
                     include ("dateiupload.php");
