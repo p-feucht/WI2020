@@ -16,12 +16,13 @@ background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, r
 .container{
     width: 360px;
     height: 500px;
-    margin: 8% auto;
+    margin: 16vh auto;
     background: white;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
     background: rgb(243, 241, 246);
+    box-shadow: 3px 4px 10px rgba(5, 1, 1, 0.178); 
 }
 
 h2{

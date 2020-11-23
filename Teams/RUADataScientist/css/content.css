@@ -55,12 +55,14 @@
     .button {
         /*position: relative;
     top: 3vh;*/
-        background-color: #468FAF;
+        background-color: #2063df;
         color: white;
         padding: 15px;
         border-radius: 10px;
         transition-duration: 0.4s;
-        border: 2px solid #468FAF;
+        border-color: white;
+        border-style: solid;
+        border-width: 3px;
         text-align: center;
         display: inline-block;
         margin: 2px 2px;
@@ -152,7 +154,7 @@
         margin-left: 10%;
         margin-right: 10%;
         margin-bottom: 4vh;
-        font-size: 1.5vw;
+        font-size: 16px;
     }
 
     .infobox>div{
@@ -192,7 +194,7 @@
         transition: all ease 0.3s;
     }
     
-    @media(max-width:800px) {
+    @media(max-width:600px) {
 
         .infobox>div{
             text-align: justify;

@@ -14,7 +14,7 @@ if (isset($_GET['ID'])) {
 
     mysqli_query($connection, $delete_favorite);
 
-    header('Location: /pages/Startseite.php');
+    header('Location: ../pages/Favoriten.php');
     exit();
 
 }
