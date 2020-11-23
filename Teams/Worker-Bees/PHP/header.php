@@ -54,14 +54,5 @@
                     <?php
             } 
                 ?>
-
-=======
-                <a href="logout.php" class="headerButton">Abmelden</a>
-                <a class="headerButton" id="headerSearch" ><?php echo $_SESSION['username']?></a>
-                <?php
-            } 
-            ?>
-        
->>>>>>> 602875431b538b33b0a0836f9acf29c1570d7786
         </div>
     </div>
