@@ -20,7 +20,7 @@
             <div class="row">
                 <form action="../php/register.php" method="post">
                     E-Mail:<br>
-                    <input type="email" size="40" maxlength="250" name="email" required><br><br>
+                    <input type="email" size="40" maxlength="100" name="email" required><br><br>
 
                     Username:<br>
                     <input type="text" size="40" minlength="3" maxlength="50" name="username" required><br><br>
@@ -31,8 +31,7 @@
                     Passwort wiederholen:<br>
                     <input type="password" size="40" minlength="6" maxlength="250" name="password2" required><br><br>
 
-                    <p>Durch das Erstellen eines Accounts stimmen Sie den folgenden Bedingungen zu: <a href="#">Terms &
-                            Privacy</a>.</p>
+                    <p>Durch das Erstellen eines Accounts stimmen Sie unseren <a href="/pages/datenschutz.php"> Bedingungen</a> zu.</p>
 
                     <div class="buttonWrapper">
                         <input class="button" type="submit" name="submit" value="Abschicken">
@@ -44,7 +43,7 @@
         </div>
         <?php include('./structure/LoginForm.html'); ?>
     </main>
-    <?php include("./structure/Footer.php"); ?>
+    <?php include("./structure/Footer.html"); ?>
 
 
 

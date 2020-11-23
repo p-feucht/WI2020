@@ -9,6 +9,16 @@ window.addEventListener("click", function (event) {
 });
 
 
+var sortOrderListOfSeries = "alphabetical";
+
+function onClickAlphabetical(){
+  sortOrderListOfSeries = "alphabetical";
+  showSelectedGenre();
+}
+function onClickRating(){
+  sortOrderListOfSeries = "rating";
+  showSelectedGenre();
+}
 function showSelectedGenre() {
   var e = document.getElementById("Genre");
   var result = e.options[e.selectedIndex].value;
@@ -19,7 +29,7 @@ function showSelectedGenre() {
       document.getElementById("listOfSeries").innerHTML = this.responseText;
     }
   };
-  xmlhttp.open("GET", "/php/seriesList.php?genreID=" + result, true);
+  xmlhttp.open("GET", "/php/seriesList.php?genreID=" + result + "&orderBy=" + sortOrderListOfSeries, true);
   xmlhttp.send();
 
 }
@@ -33,3 +43,4 @@ function showSelectedGenre() {
     elem = document.getElementsByClassName('changePasswordWrapper');
     elem[0].classList.remove("show");
   }
+

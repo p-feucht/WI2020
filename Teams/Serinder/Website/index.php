@@ -12,52 +12,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <div class="logoWrapper">
-                <img src="./Bilder/Logo-Serinder.png" alt="Serinder">
-            </div>
-            <div class="navigationWrapper">
-                <nav id="naviMain" class="nav">
-                    <ul>
-                        <li>
-                            <a class="active" href="#">
-                                Startseite
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Liste der Serien
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Meine Favoriten
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Meine Kommentare
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Einstellungen
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" onclick="document.getElementById('modalLogin').style.display='block'">
-                                Log In
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="banner">
-            <img src="./Bilder/Banner.jpg" alt="Serinder">
-        </div>
-    </header>
+    <?php include("./pages/structure/Header.php"); ?>
     <main>
         <div class="inner">
             <h1>Um die Funktionalitäten freizuschalten bitte anmelden!<br></h1>
@@ -128,53 +83,7 @@
                 <a class="button" href="#">Überspringen</a>
             </div>
         </div>
-        <!--Login Form-->
-        <div id="modalLogin" class="modal">
-
-            <span onclick="document.getElementById('modalLogin').style.display='none'" class="close"
-                title="Close Modal">×</span>
-
-            <form class="modal-content animate" action="./php/login.php" method="POST">
-                <div class="container">
-                    <label><b>Benutzername</b></label>
-                    <input type="text" placeholder="Benutzername eingeben" name="username" required>
-
-                    <label><b>Passwort</b></label>
-                    <input type="password" placeholder="Passwort eingeben" name="password" required>
-
-                    <div class="clearfix">
-                        <button type="button" onclick="document.getElementById('modalLogin').style.display='none'"
-                            class="cancelbtn">Abbrechen</button>
-                        <button type="submit" name="submit" class="signupbtn">Login</button>
-                    </div>
-                    <p>Noch kein Mitglied? <a href="./pages/Registrierung.php">Registriere dich hier</a>.</p>
-                </div>
-            </form>
-        </div>
+        <?php include("./pages/structure/LoginForm.html"); ?>
     </main>
-    <footer>
-        <div class="footerWrapper">
-            <div class="footerNavWrapper">
-                <nav id="naviFooter" class="nav">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Kontakt
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Impressum
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Datenschutz
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </footer>
+    <?php include("./pages/structure/Footer.html"); ?>
 </body>

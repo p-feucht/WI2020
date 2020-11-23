@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $count = $result->num_rows;
 
     if ($count < 1) {
-        header('Location: ../index.html');
+        header('Location: ../index.php');
         exit();
     } else {
         // Ist das Passwort korrekt?
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
             $hashedPassword = password_verify($password, $row['Password']);
             
             if (!$hashedPassword) {
-                header("Location: ../index.html");
+                header("Location: ../index.php");
                 exit();
               // elseif fängt unvorhergesehene Fehler ab
             } elseif($hashedPassword){
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     }
 
 } else {
-    header('Location: ../index.html');
+    header('Location: ../index.php');
     exit();
 }
 ?>
