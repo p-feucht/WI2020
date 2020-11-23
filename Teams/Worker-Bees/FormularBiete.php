@@ -131,6 +131,10 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                             <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
                         <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/jpg,image/png">
+                        </label><label class="Fehlermeldung" id="FehlermeldungBild"> <?php echo $BildFehler?> </label>
+                        <div class="unterüberschrift">
+                            <label>maximale Größe 90 KB</label>
+                        </div>
                     </div>
 
                     <div class="formblock">

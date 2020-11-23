@@ -1,13 +1,15 @@
 <?php
 $imgData = "";
 $content = "";
+$BildFehler = "";
 
 /*echo "<pre>";
 echo "FILES:<br>";
 print_r ($_FILES );
 echo "</pre>";*/
 if ($_FILES['uploaddatei']['error'] == 2) {
-    echo '<script type="text/javascript">alert("Die hochgeladene Datei ist zu groß. Bitte wähle ein maximal 90 KB großes Bild.");</script>';
+    $BildFehler = "Bitte maximale Dateigröße von 90 KB beachten";
+    //echo '<script type="text/javascript">alert("Die hochgeladene Datei ist zu groß. Bitte wähle ein maximal 90 KB großes Bild.");</script>';
     $valid = false;
 } else if ($_FILES['uploaddatei']['name']  <> "") {
     // Ein Datei wurde durch HTML-Formular hochgeladen und kann nun weiterverarbeitet werden
@@ -15,12 +17,12 @@ if ($_FILES['uploaddatei']['error'] == 2) {
     $allowed_extensions = array('png', 'jpg', 'jpeg', 'gif');
     // Prüfen ob erlaubte Dateiendung
     if (!in_array($extension, $allowed_extensions)) {
-        echo '<script type="text/javascript">alert("Das Dateiformat ist nicht erlaubt.");</script>';
+        $BildFehler = "Bitte .jpeg, .jpg, .gif oder .png Datei wählen";
+        // echo '<script type="text/javascript">alert("Das Dateiformat ist nicht erlaubt. Bitte .jpeg, .jpg, .gif oder .png Datei wählen");</script>';
         $valid = false;
     } else {
         // Wenn Dateiendung erlaubt ist, Dateiname von Sonderzeichen bereinigen
         $_FILES['uploaddatei']['name'] = dateiname_bereinigen($_FILES['uploaddatei']['name']);
-        echo 'Dateiname ' .  $_FILES['uploaddatei']['name'];
 
         if ($_FILES['uploaddatei']['name'] <> '') {
             $localFileName = 'hochgeladeneBilder/' . $_FILES['uploaddatei']['name'];
@@ -29,18 +31,19 @@ if ($_FILES['uploaddatei']['error'] == 2) {
                 $_FILES['uploaddatei']['tmp_name'],
                 $localFileName
             )) {
-
-                echo "<p>Verschieben in Ordner war erfolgreich: ";
-                echo '<a href="hochgeladeneBilder/' . $_FILES['uploaddatei']['name'] . '">';
-                echo 'hochgeladeneBilder/' . $_FILES['uploaddatei']['name'];
-                echo '</a>';
+                $BildFehler = "";
+              //  echo "<p>Verschieben in Ordner war erfolgreich: ";
+              //  echo '<a href="hochgeladeneBilder/' . $_FILES['uploaddatei']['name'] . '">';
+              //  echo 'hochgeladeneBilder/' . $_FILES['uploaddatei']['name'];
+              //  echo '</a>';
 
                 // $imgData für DB-insert 
                 $imgData = addslashes(file_get_contents('hochgeladeneBilder/' . $_FILES['uploaddatei']['name']));
             }
         } else {
-            echo 'Dateiname ' .  $_FILES['uploaddatei']['name'];
-            echo '<script type="text/javascript">alert("Der Name deiner Datei ist leer und nicht zulässig");</script>';
+            // echo 'Dateiname ' .  $_FILES['uploaddatei']['name'];
+            $BildFehler = "Dateiname darf nicht leer sein";
+            // echo '<script type="text/javascript">alert("Der Name deiner Datei ist leer und nicht zulässig");</script>';
         }
     }
 }
