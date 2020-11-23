@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="images/logoBiene.png" />
-    <title>Worker Bees</title>
+    <title>Worker Bees - Werkzeug</title>
     <meta name="description" content="">
 
     <!-- Load icon library -->

@@ -4,9 +4,6 @@
 
 
 <head>
-    <meta charset="utf-8">
-    <title>Worker Bees</title>
-    <link rel="icon" href="images/logoBiene.png" />
     <meta name="description" content="">
     <link href="CSS/index.css" rel="stylesheet">
 
