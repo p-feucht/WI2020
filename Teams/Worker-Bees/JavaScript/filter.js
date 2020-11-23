@@ -23,15 +23,12 @@ function filterOffers() {
 
         if ((what != "") && !(title.includes(what))) {
             allCards[i].style.display = "none"; //hide card if it does not contain Search in Title
-            alert("point1");
         }
         if ((where != "") && !(location.includes(where))) {
             allCards[i].style.display = "none"; //hide card if it does not contain location
-            alert("point2");
         }
         if ((searchDate) && (when < start || when > end)) {
             allCards[i].style.display = "none"; //hide card if it does not contain date
-            alert("point3");
         }
 
     }
