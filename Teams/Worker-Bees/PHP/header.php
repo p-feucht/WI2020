@@ -6,9 +6,6 @@
         <!-- insert style sheet and media contents -->
         <link href="CSS/header.css" rel="stylesheet">
 
-        <!-- Load icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <head>
 
     
@@ -44,12 +41,10 @@
             else {
                 ?>
                 <a href="logout.php" class="headerButton">Abmelden</a>
+                <a class="headerButton" id="headerSearch" ><?php echo $_SESSION['username']?></a>
                 <?php
-                
-            
             } 
             ?>
         
-            <a href="categories.php" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
         </div>
     </div>
