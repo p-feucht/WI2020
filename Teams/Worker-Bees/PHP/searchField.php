@@ -1,5 +1,4 @@
 <!-- The search field -->
-<script src="JavaScript/filter.js"></script>
 <div class="search">
 
 <input type="text" class="free-text" id="free-text" placeholder="Was suchst du?">
