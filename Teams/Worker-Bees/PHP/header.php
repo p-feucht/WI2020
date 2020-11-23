@@ -6,9 +6,6 @@
         <!-- insert style sheet and media contents -->
         <link href="CSS/header.css" rel="stylesheet">
 
-        <!-- Load icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <head>
 
     
@@ -46,6 +43,7 @@
 
             else {
                 ?>
+<<<<<<< HEAD
                     <div class="dropdownProfile">
                         <a class="headerButton"><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></a>
                         <div class="dropdownProfileContent">
@@ -57,5 +55,13 @@
             } 
                 ?>
 
+=======
+                <a href="logout.php" class="headerButton">Abmelden</a>
+                <a class="headerButton" id="headerSearch" ><?php echo $_SESSION['username']?></a>
+                <?php
+            } 
+            ?>
+        
+>>>>>>> 602875431b538b33b0a0836f9acf29c1570d7786
         </div>
     </div>

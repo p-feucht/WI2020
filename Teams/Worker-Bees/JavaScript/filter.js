@@ -1,11 +1,14 @@
 function filterOffers() {
 
-    var what = document.getElementById("free-text").value.toLowerCase();
-    var where = document.getElementById("autocomplete").value.toLowerCase();
-    document.getElementById('date-search').value = new Date().toDateInputValue();
-    var when = document.getElementById("date-search");
+    var freetext = document.getElementById("free-text").value;
+    var what = freetext.toLowerCase()
 
-    alert(when);
+    var locationInput = document.getElementById("autocomplete").value;
+    var where = locationInput.toLowerCase();
+
+    var searchDate = document.getElementById("date-search").value;
+    var when = new Date(searchDate);
+
 
     var allCards = document.getElementsByClassName("card");
 
@@ -13,13 +16,19 @@ function filterOffers() {
 
         allCards[i].style.display = "block"; //set back each card, in case it was filtered out before
         
-        var content = allCards[i].textContent.toLowerCase(); //get whole card content
+        var title = allCards[i].querySelector("#cardTitle").textContent.toLowerCase();
+        var location = allCards[i].querySelector("#cardLocation").textContent.toLowerCase();
+        var start = new Date(allCards[i].querySelector("#startDate").value);
+        var end = new Date (allCards[i].querySelector("#endDate").value);
 
-        if (!(content.includes(what))) {
-            allCards[i].style.display = "none"; //hide card if it does not contain wanted filter
+        if ((what != "") && !(title.includes(what))) {
+            allCards[i].style.display = "none"; //hide card if it does not contain Search in Title
         }
-        if (!(content.includes(where))) {
-            allCards[i].style.display = "none"; //hide card if it does not contain wanted filter
+        if ((where != "") && !(location.includes(where))) {
+            allCards[i].style.display = "none"; //hide card if it does not contain location
+        }
+        if ((searchDate) && (when < start || when > end)) {
+            allCards[i].style.display = "none"; //hide card if it does not contain date
         }
 
     }
@@ -27,5 +36,5 @@ function filterOffers() {
     // delete text in search fields
     document.getElementById("free-text").value = "";
     document.getElementById("autocomplete").value = "";
-    document.getElementById("date-werkzeug").value = "";
+    document.getElementById("date-search").value = "";
 }

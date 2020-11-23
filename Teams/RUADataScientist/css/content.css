@@ -1,19 +1,17 @@
-    @charset "utf-8";
-    /* CSS Document */
     
     #autoWidth {
         list-style: none;
     }
     
     .item{
-    display: flex;
-    justify-content: center;
-    align-self: center;
+        display: flex;
+        justify-content: center;
+        align-self: center;
     }
     
     .item img{
-    border-radius: 5px;
-    max-width: 90%;
+        border-radius: 5px;
+        max-width: 90%;
     }
 
     .item label{
