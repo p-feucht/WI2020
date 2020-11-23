@@ -6,8 +6,11 @@
     text-align: justify;
 }
 
+
+/*The paralax is the picture at the top in the background with the titel*/
+
 .paralax {
-    background: url(../pictures/howToBeginADataScienceProject2.jpg) no-repeat center;
+    background: url(../pictures/howToBeginADataScienceProjectSized.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     height: 180px;
@@ -16,6 +19,7 @@
 
 .quoteText {
     font-style: italic;
+    border-radius: 5px;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     color: #ffffff;
@@ -47,6 +51,7 @@
 
 .contentBox>p {
     text-align: justify;
+    font-size: 16px;
 }
 
 .aboutContainer {
@@ -134,6 +139,8 @@
     }
     .aboutContainer>div>p {
         text-align: justify;
+        font-size: 18px;
+
     }
     .contentPictureBox {
         display: grid;

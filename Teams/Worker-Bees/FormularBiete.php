@@ -125,12 +125,16 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     </div>
 
                     <div class="formblock">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="90000"> <!--max. 90 KB großes Bild erlaubt -->
                         <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
                         <div class="unterüberschrift">
                             <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
-                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/png">
+                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/jpg,image/png">
+                        </label><label class="Fehlermeldung" id="FehlermeldungBild"> <?php echo $BildFehler?> </label>
+                        <div class="unterüberschrift">
+                            <label>maximale Größe 90 KB</label>
+                        </div>
                     </div>
 
                     <div class="formblock">
@@ -162,7 +166,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                          <label class="Fehlermeldung" id="FehlermeldungPLZ"></label>
                         <br>
                         <label>Ort
-                            <input type="text" name="Ort" value="<?php echo htmlspecialchars($ort);?>" size="30" maxlength="30">
+                            <input type="text" name="Ort" value="" size="30" maxlength="30">
                         </label>
                     </div>
 

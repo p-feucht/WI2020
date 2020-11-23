@@ -21,6 +21,8 @@ if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
 
+        $beginDat = $row["ABeginndat"];
+        $endDat = $row["AEndedat"];
         $orderID = $row["Werkstatt_ID"];
         $location = $row["Ort"];
         $title = $row["ATitel"];
@@ -76,9 +78,9 @@ if ($result->num_rows > 0) {
                                 Das ist alles vorhanden:
                             </p>
 
-                        <script src="JavaScript/offerFunctions.js"></script>
+                        <script src="JavaScript/offerFunctions.js" ></script>
                         <ul class="modal-amenities" id="amenities" >
-                                <script>window.onload=createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
+                                <script defer>window.onload=createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
                                 <?php echo $aschleif ?>, <?php echo $asaege?>, <?php echo $akleinteil?>); </script>
                         </ul>
 
@@ -96,13 +98,13 @@ if ($result->num_rows > 0) {
                             <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
 
                             <label for="bookingDate">Datum:</label>
-                            <input type="date" id="bookingDate" name="Date" value="<?php echo htmlspecialchars($date); ?>" required><br>
+                            <input type="date" name="Date" min="<?php echo $beginDat ?>" max="<?php echo $endDat ?>" value="<?php echo htmlspecialchars($date); ?>" required><br>
 
                             <p class="modal-booking-text">Gesamtbetrag: <?php echo $price ?> €<br></p>
 
                             <input id="bierInput" type="checkbox" name="bezInBier" value="1" unchecked>
                             <label id="bierLabel" for="bezInBier"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
-                            <script>
+                            <script defer>
                                 if (<?php echo $bezBier ?> != 1) { // only show "pay in beer" if option was selected at offer creation
                                     document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
                                     document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";

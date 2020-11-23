@@ -5,32 +5,37 @@
 }
 
 body{
-    background: rgb(54,54,153);
+    /*background: rgb(54,54,153);
     background: radial-gradient(circle, rgba(54,54,153,1) 0%, rgba(34,33,109,1) 9%, rgba(2,0,36,1) 100%, rgba(0,212,255,1) 100%);
+    */
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(240,241,255,1) 100%);
+
 }
 
 .container{
     width: 360px;
     height: 500px;
-    margin: 8% auto;
+    margin: 16vh auto;
     background: white;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
-    background: lightgrey;
+    background: rgb(243, 241, 246);
+    box-shadow: 3px 4px 10px rgba(5, 1, 1, 0.178); 
 }
 
 h2{
     text-align: center;
     margin-bottom: 1em;
-    color: rgb(26, 31, 109);
+    color: #001233;
 }
 
 h3{
     text-align: center;
     margin-top: 3em;
     margin-bottom: 1em;
-    color: rgb(26, 31, 109);
+    color: #001233;
 }
 
 .container form section{
@@ -39,6 +44,13 @@ h3{
     top: 80px;
     left: 40px;
     transition: 0.5s;
+}
+
+.return{
+    color: grey;
+    text-decoration: underline;
+    text-decoration-color: grey;
+    padding-top: 50%;
 }
 
 .seperator{
@@ -70,8 +82,7 @@ form section button{
     width: 40%;
     height: 35px;
     margin: 0 10px;
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);    transition: 0.5s;
+    background: #70befd;
     border-radius: 10px;
     border: 0;
     outline: none;
@@ -114,6 +125,7 @@ form section button{
     left: 450px;
 }
 
+
 .step-row{
     width: 360px;
     height: 40px;
@@ -136,8 +148,7 @@ form section button{
     position: absolute;
     height: 100%;
     width: 20px;
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);    
+    background-color: #70befd;
     transition: 0.5s;
 }
 
@@ -150,5 +161,5 @@ form section button{
     position: absolute;
     right: -20px;
     top: 0;
-    border-left: 20px solid #fcb045;
+    border-left: 20px solid #70befd;
 }
