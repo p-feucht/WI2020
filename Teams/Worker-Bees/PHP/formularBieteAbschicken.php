@@ -70,15 +70,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     include ("dateiupload.php");
 
                     if (!checkIfEmpty("Vorname")) {
-                        $vorname = $conn->real_escape_string($_POST["Vorname"]);//der Wert der in Vorname geschriben wurde wird aufbereitet und in Variable geschrieben
+                        $vorname = $conn->real_escape_string($_POST["Vorname"]);
                     }
 
                     if (!checkIfEmpty("Nachname")) {
-                        $nachname = $conn->real_escape_string($_POST["Nachname"]);//der Wert der in Nachname geschriben wurde wird aufbereitet und in Variable geschrieben
+                        $nachname = $conn->real_escape_string($_POST["Nachname"]);
                     }
 
                     if (!checkIfEmpty("Strasse")) {
-                        $strasse = $conn->real_escape_string($_POST["Strasse"]);//der Wert der in Straße geschriben wurde wird aufbereitet und in Variable geschrieben
+                        $strasse = $conn->real_escape_string($_POST["Strasse"]);
                     }
                     
                     if(!checkIfEmpty("Hnr")){
@@ -104,13 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     $radioAnswer = $_POST['kategorie'];  //oder: if (isset($kategorie) && $kategorie=="Werkzeug"){ echo WZ;}...
                     
                     if ($radioAnswer == "Werkzeug") {          
-                        //echo 'You chose Werkzeug';  
-                        
-                        //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])AND($_POST["PreisProTag"]>0)) {
-
-                            $preisProTag1 = $conn->real_escape_string($_POST["PreisProTag1"]);
-                       // }
-                        
+                       
+                        //Preis ist kein erforderliches Feld
+                        $preisProTag1 = $conn->real_escape_string($_POST["PreisProTag1"]);
+                    
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){
@@ -126,12 +123,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo "Entries written:";
                             echo $title;
-                            echo "<br>";*/
+                            echo "<br>";
                             echo $beginndatum;
                             echo "<br>";
                             echo $endedatum;
                             echo "<br>";
-                            echo 'Imagedata: '.$imgData;/*
+                            echo 'Imagedata: '.$imgData;
                             echo $beschreibung;
                             echo "<br>";
                             echo $vorname;
@@ -151,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo $bierBez1;*/
                             } else {
                                 echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                                echo "Error: " . $sql . "<br>" . $conn->error;
+                            //    echo "Error: " . $sql . "<br>" . $conn->error;
                          
                             }
                         }
@@ -160,13 +157,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     elseif($radioAnswer == "Werkstatt"){
-                        //echo 'You chose Werkstatt';   
-                        //if(!checkIfEmpty("PreisProTag")){
-                            $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
-                        //}
-                        //else{
-                        //    $valid=FALSE;
-                        //}
+                        // Preis ist kein erforderliches Feld 
+                        $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
+                        
                         
                         //checkboxes
                         $bierBez2 = $conn->real_escape_string($_POST["bierBez2"]);
@@ -219,7 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                                 echo $a4_saege;
                                 echo "<br>";
                                 echo $a5_kleinteil;*/
-                                echo "Error: " . $sql . "<br>" . $conn->error;
+                               // echo "Error: " . $sql . "<br>" . $conn->error;
                                 echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
                             } 
                         } else{
@@ -247,7 +240,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                                 } 
                                 else {
                                     echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                                    echo "Error: " . $sql . "<br>" . $conn->error;
+                                  //  echo "Error: " . $sql . "<br>" . $conn->error;
                                 }
                             }
                             else{
