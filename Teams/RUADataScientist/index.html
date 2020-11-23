@@ -8,8 +8,9 @@
   <link rel="icon" type="image/ico" href="pictures/icon.svg" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/content.css" />
-  <link rel="stylesheet" type="text/css" href="owl.carousel.css">
-  <link rel="stylesheet" type="text/css" href="owl.theme.default.min.css">
+  <!--CSS für Slider-Carousel-->
+  <link rel="stylesheet" type="text/css" href="./css/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="./css/owl.theme.default.min.css">
 </head>
 
 <body>
@@ -45,93 +46,75 @@
         </div>
         <div class="testButton">
           <a href="test.html" class="button">
-              <span>Test yourself now!</span>
+            <span>Test yourself now!</span>
           </a>
         </div>
       </div>
     </div>
 
     <div class="infobox">
-      <div>Data science is one of the most buzzed about fields right now. 
-           Data scientists are in extreme demand. 
-           And with good reason — data scientists are doing everything 
-           from creating self-driving cars to automatically captioning images.
-           Given all the interesting applications, 
-           it makes sense that data science is a very sought-after career.
-          </div>
+      <div>Data science is one of the most buzzed about fields right now.
+        Data scientists are in extreme demand.
+        And with good reason — data scientists are doing everything
+        from creating self-driving cars to automatically captioning images.
+        Given all the interesting applications,
+        it makes sense that data science is a very sought-after career.
+      </div>
     </div>
 
-    <div class ="carousel-header">Start your Journey here</div>
+    <div class="carousel-header">Start your Journey here</div>
 
-
-  <div class="carousel-container">
+    <!-- Slider Carousel für "Recent Topics"-->
+    <div class="carousel-container">
       <div class="owl-carousel owl-theme">
-        <a href="topic_Application.html"><div class="item">
+        <a href="topic_Application.html">
+          <div class="item">
             <img src="./pictures/topic_Application.jpg" alt="">
             <label>Applications</label>
-        </div></a>
-        <a href=""><div class="item">
+          </div>
+        </a>
+        <a href="topic_DataMining.html">
+          <div class="item">
             <img src="./pictures/topic_Application.jpg" alt="">
-            <label >Topic 2</label>
-        </div></a>
-        <a href=""><div class="item">
+            <label>Data Mining</label>
+          </div>
+        </a>
+        <a href="topic_ArtificialIntelligence.html">
+          <div class="item">
             <img src="./pictures/topic_Application.jpg" alt="">
-            <label >Topic 2</label>
-        </div></a>
-        <a href=""><div class="item">
-          <img src="./pictures/topic_Application.jpg" alt="">
-          <label >Topic 2</label>
-        </div></a>
+            <label>AI</label>
+          </div>
+        </a>
+        <a href="topic_DeepLearning.html">
+          <div class="item">
+            <img src="./pictures/topic_Application.jpg" alt="">
+            <label>Deep Learning</label>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
 
     <footer>
       <ul class="footer-elements">
-          <li>
-              <a class="footer-link" href="#">Imprint</a>
-          </li>
-          <li>
-              <a class="footer-link" href="#">Data Protection</a>
-          </li>
-          <li>
-              <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
-          </li>
-          <li>
-              <div class="footer-element">© Copyright 2020</div>
-          </li>
+        <li>
+          <a class="footer-link" href="#">Imprint</a>
+        </li>
+        <li>
+          <a class="footer-link" href="#">Data Protection</a>
+        </li>
+        <li>
+          <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
+        </li>
+        <li>
+          <div class="footer-element">© Copyright 2020</div>
+        </li>
       </ul>
-  </footer>
-  
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/slick.min.js"></script>
-    <script type="text/javascript" src="./js/Carousel.js"></script>
-    <script type="text/javascript" src="./js/slick.js"></script>
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="owl.carousel.js"></script>
-    <script>
-      $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav: false,
-        autoplay: true,
-        center: true,
-        responsive:{
-            0:{
-                items:1,
-                
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:3,
-                nav: true
-            }
-        }
-      })
-    </script>
-  
+    </footer>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/owl.carousel.js"></script>
+    <script type="text/javascript" src="./js/carouselConfigurations.js"></script>
+
   </body>
 
 </html>
