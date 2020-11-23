@@ -5,6 +5,8 @@
          
         <!-- insert style sheet and media contents -->
         <link href="CSS/header.css" rel="stylesheet">
+        <title>Worker Bees</title>
+        <link rel="icon" href="images/logoBiene.png" />
 
     <head>
 
