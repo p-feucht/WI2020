@@ -120,7 +120,7 @@
 
             if ($_SESSION["logged_in"]) {
                 //Greet the user and show him his most recent score.
-                echo "<h2 class='result-page-headline-2'>Hello, ". $_SESSION["currentuser"].".</h1>";
+                echo "<h2 class='result-page-headline-2'>Hello ". $_SESSION["currentuser"].".</h1>";
                 echo "<h1 class='result-page-headline'>Your most recent score is <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
             } else {
                 //Show the user his score.
