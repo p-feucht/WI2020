@@ -8,8 +8,7 @@
     <title>Worker Bees</title>
     <meta name="description" content="">
     <link rel="icon" href="images/logoBiene.png" />
-    <!-- same design as the blog that is still to come -->
-    <link href="CSS/blog.css" rel="stylesheet">
+    <link href="CSS/profile.css" rel="stylesheet">
 
 </head>
 
@@ -17,8 +16,7 @@
 
     <?php include "PHP/header.php"; ?>
 
-    <!-- same design as the blog that is still to come -->
-    <div class="blog-content">
+    <div class="profile-content">
     <h1>Diese Seite kommt bald...</h1>
         Du wirst in der nächsten Version die Möglichkeit haben, dein Profil nach deinen eigenen
         Wünschen bearbeiten zu können.

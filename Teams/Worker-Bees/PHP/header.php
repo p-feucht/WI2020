@@ -33,10 +33,6 @@
         </div>
 
         <div class="header-content-right">
-<<<<<<< HEAD
-=======
-
->>>>>>> 3039bb38913fbacaca5aec1fdf3f882abe210a6e
             <!-- change the header and its functions if the user is logged in --> 
             <?php 
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -56,6 +52,6 @@
                     </div>
                     <?php
             } 
-                ?>
+            ?>
         </div>
     </div>
