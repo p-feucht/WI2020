@@ -13,7 +13,7 @@
 
 
 body {
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(240, 240, 240);
 }
 
 
@@ -30,11 +30,12 @@ table, th, td {
 NAVIGATION BAR
 */
 nav {
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 7vh;
-    background-color: rgb(1, 42, 74);
+    background-color: #002244;
     width: 100%;
     position: fixed;
     top: 0;
@@ -45,6 +46,9 @@ nav h4 {
     font-weight: inherit;
     font-size: 3vh;
     text-align: left;
+}
+.nav-logo img{
+    width: 50%;
 }
 
 nav a {
@@ -60,7 +64,7 @@ nav a {
 }
 
 .nav-logo {
-    color: aliceblue;
+    color: aliceblue
 }
 
 .nav-links li{
@@ -120,7 +124,7 @@ CONTENT
 FOOTER
 */
 footer {
-    background-color: rgb(1, 42, 74);
+    background-color: #001020;
     color: aliceblue;
     width: 100%;
     text-align: center;
