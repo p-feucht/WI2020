@@ -4,9 +4,19 @@
     
     if(isset($_GET["genreID"]) && $_GET["genreID"] != ""){
         $genreValue = mysqli_real_escape_string($connection, $_GET["genreID"]);
-        $statement = $connection->prepare("SELECT ID, Name FROM series WHERE ID IN (SELECT series_id FROM series_genres WHERE genres_id = '$genreValue') ORDER BY Name ASC");
+        if(isset($_GET["orderBy"]) && $_GET["orderBy"] == "rating"){
+          $statement = $connection->prepare("SELECT s.ID, s.Name, ROUND(SUM(r.chosen)/COUNT(r.chosen)*100.0,2) as rated FROM series s LEFT JOIN rating r ON s.ID = r.series_id 
+                  WHERE s.ID IN (SELECT sg.series_id FROM series_genres sg WHERE sg.genres_id = '$genreValue') GROUP BY s.ID, s.Name ORDER BY rated DESC");
+        } else {
+          $statement = $connection->prepare("SELECT s.ID, s.Name FROM series s WHERE ID IN (SELECT series_id FROM series_genres WHERE genres_id = '$genreValue') ORDER BY Name ASC");
+        }
     } else {
-        $statement = $connection->prepare("SELECT ID, Name FROM series ORDER BY Name ASC");
+      if(isset($_GET["orderBy"]) && $_GET["orderBy"] == "rating"){
+        $statement = $connection->prepare("SELECT s.ID, s.Name, ROUND(SUM(r.chosen)/COUNT(r.chosen)*100.0,2) as rated FROM series s LEFT JOIN rating r ON s.ID = r.series_id 
+                GROUP BY s.ID, s.Name ORDER BY rated DESC");
+      } else {
+        $statement = $connection->prepare("SELECT s.ID, s.Name FROM series s ORDER BY Name ASC");
+      }
     }
     
     $statement->execute();

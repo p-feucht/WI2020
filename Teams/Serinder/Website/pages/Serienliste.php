@@ -21,7 +21,7 @@
                 <p>sortieren nach:</p>
                 <div class="filterInnerWrapper">
                     <div class="filterbuttonWrapper">
-                        <a class="button" href="#">Alphabetisch</a>
+                        <button id="sortierAlphabetisch" class="button" onclick="onClickAlphabetical()">Alphabetisch</button>
                     </div>
                     <div class="filterSelectWrapper">
                         <div class="selectWrapper">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="filterbuttonWrapper">
-                        <a class="button" href="#">Bewertung</a>
+                        <button id="sortierBewertung" class="button" onclick="onClickRating()">Bewertung</button>
                     </div>
                 </div>
                 <div class="filterResults">
@@ -44,7 +44,7 @@
         </div>
         <?php include('./structure/LoginForm.html'); ?>
     </main>
-    <?php include('./structure/Footer.php'); ?>
+    <?php include('./structure/Footer.html'); ?>
 </body>
 
 </html>

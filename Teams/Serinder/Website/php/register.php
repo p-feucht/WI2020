@@ -60,16 +60,16 @@ if(!$error){
   
     // Jetzt wird der Nutzer in die Datenbank übertragen
     $sql = "INSERT INTO accounts VALUES ('$email', '$username', '$hashPassword');";
-    $result = mysqli_query($connection, $sql);
+    mysqli_query($connection, $sql);
     // Der User wird bei einem erfolgreichen Prozess auf die Startseite geschickt
-    header('Location: ../index.html');
+    header('Location: ../index.php');
     exit();
 }
 
 } else {
 // Falls jemand die URL erraten hat, wird er durch
 // das else zum Registrierungsformular geschickt
-    header('Location: ../index.html');
+    header('Location: ../index.php');
     exit();
 }
 
