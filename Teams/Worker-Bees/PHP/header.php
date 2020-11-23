@@ -43,7 +43,7 @@
 
             else {
                 ?>
-<<<<<<< HEAD
+
                     <div class="dropdownProfile">
                         <a class="headerButton"><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></a>
                         <div class="dropdownProfileContent">
