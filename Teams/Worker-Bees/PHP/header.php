@@ -5,10 +5,9 @@
          
         <!-- insert style sheet and media contents -->
         <link href="CSS/header.css" rel="stylesheet">
+        <title>Worker Bees</title>
+        <link rel="icon" href="images/logoBiene.png" />
 
-        <!-- Load icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <head>
 
     
@@ -34,22 +33,25 @@
         </div>
 
         <div class="header-content-right">
-
+            <!-- change the header and its functions if the user is logged in --> 
             <?php 
-        if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-            ?> 
-            <a href="login.php" class="headerButton">Anmelden</a>
-            <?php
-        }
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+                ?> 
+                <a href="login.php" class="headerButton">Anmelden</a>
+                <?php 
+            }
+
             else {
                 ?>
-                <a href="logout.php" class="headerButton">Abmelden</a>
-                <?php
-                
-            
+                    <div class="dropdownProfile">
+                        <a class="headerButton"><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></a>
+                        <div class="dropdownProfileContent">
+                            <a href="profile.php">Profil ansehen</a>
+                            <a href="logout.php">Abmelden</a>
+                        </div>
+                    </div>
+                    <?php
             } 
             ?>
-        
-            <a href="categories.php" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
         </div>
     </div>

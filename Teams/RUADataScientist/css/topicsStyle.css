@@ -5,55 +5,32 @@ und responsive gestaltet.*/
 /* Hier wird der Titel der Topics formatiert. */
 
 .titel_link {
-    font-size: 24px;
+    font-size: 28px;
     max-width: 300px;
     text-overflow: ellipsis;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
-}
-
-.item1 .titel_link {
     color: white;
+    border: 10px outset rgb(63, 62, 62) 70%;
+    background-color: rgb(63, 62, 62);
+    line-height: 100%;
 }
 
-.item2 .titel_link {
-    color: black;
-}
-
-.item3 .titel_link {
-    color: white;
-}
-
-.item4 .titel_link {
-    color: white;
-}
-
-.item5 .titel_link {
-    color: black;
-}
-
-.item6 .titel_link {
-    color: white;
-}
-
-.item7 .titel_link {
-    color: black;
-}
-
-.item8 .titel_link {
-    color: black;
+.titel_link:active {
+    background-color: rgb(63, 62, 62);
+    border: 3px outset rgb(165, 109, 109) 70%;
 }
 
 
 /* Hier wird festgelegt, was passiert wenn man über die Topics hovert*/
 
-.grid_container div:hover {
+.grid_container .item:hover {
     /*Der Inhalt der einzelnen Felder wird um 50% transparenter*/
     opacity: 0.6;
 }
 
-.grid_container div:hover .titel_link {
+.grid_container .item:hover .titel_link {
     /*Beim Titel die Schriftgröße erhöht*/
     font-size: 30px;
 }
@@ -61,8 +38,9 @@ und responsive gestaltet.*/
 
 /*In diesem Abschnitt werden die einzelnen Felder der Topics mit Inhalt gefüllt */
 
-.item1 {
-    background-image: url(../pictures/topic_MachineLearningSizedsmall.png);
+.item {
+    border-radius: 5px;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,116 +55,40 @@ und responsive gestaltet.*/
     left: 0;
 }
 
+.item1 {
+    background-image: url(../pictures/topic_MachineLearningSizedsmall.png);
+}
+
 .item2 {
-    background-image: url(../pictures/topic_HTSSized.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    grid-row: span 1;
-    grid-column: span 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    background-image: url(../pictures/topic_Projekt.jpg);
 }
 
 .item3 {
     background-image: url(../pictures/topic_AISizedsmall.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    grid-row: span 1;
-    grid-column: span 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
 }
 
 .item4 {
     background-image: url(../pictures/topic_DataMiningSizedsmall.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    grid-row: span 1;
-    grid-column: span 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
 }
 
 .item5 {
-    background-image: url(../pictures/topic_DeepLearningSizedsmall.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    grid-row: span 1;
-    grid-column: span 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    background-image: url(../pictures/topic_DeepLearningNormal.jpg);
 }
 
 .item6 {
     background-image: url(../pictures/topic_ApplicationPageSizedsmall.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    grid-row: span 1;
-    grid-column: span 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
 }
 
 .item7 {
-    background-image: url(../pictures/topic_CareerSizedsmall.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    grid-row: span 1;
-    grid-column: span 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    background-image: url(../pictures/topic_Career.jpg);
 }
 
 .item8 {
     background-image: url(../pictures/topic_FundaSizedsmall.png);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    grid-row: span 1;
-    grid-column: span 1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+}
+
+.item9 {
+    background-image: url(../pictures/topic_FundaSizedsmall.png);
 }
 
 
@@ -206,13 +108,6 @@ und wir der Grid in der Seite angeordnet sein sill*/
 }
 
 
-/* Hier werden die Topics abgerundet*/
-
-.grid_container div {
-    border-radius: 5px;
-}
-
-
 /* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von 850 Pixel unterschreitet.
 Der Grid hat nur noch 2 Spalten undbekommt 4 Reihen. Auch die Schriftgröße und die Bilder werden angepasst*/
 
@@ -224,7 +119,7 @@ Der Grid hat nur noch 2 Spalten undbekommt 4 Reihen. Auch die Schriftgröße und
         top: 50%;
         text-align: center;
     }
-    .grid_container div:hover .titel_link {
+    .grid_container .item:hover .titel_link {
         font-size: 24px;
     }
     .grid_container {
@@ -237,67 +132,51 @@ Der Grid hat nur noch 2 Spalten undbekommt 4 Reihen. Auch die Schriftgröße und
         column-gap: 4%;
         padding-right: 10%;
         padding-left: 10%;
-        /*  height: 100%; */
     }
-    /*  .grid_container div {
-        height: 250px;
-        width: 250px;
-    }*/
 }
 
 
 /* Hier wird festgelegt was passiert, 
-wenn der Bildschirm eine Breite von  525 Pixel unterschreitet.
+wenn der Bildschirm eine Breite von  670 Pixel unterschreitet.
 */
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 670px) {
     .grid_container {
-        padding-right: 5%;
-        padding-left: 5%;
+        padding-right: 7%;
+        padding-left: 7%;
     }
 }
 
-
-/* Hier wird festgelegt was passiert, 
-wenn der Bildschirm eine Breite von  600 Pixel unterschreitet.
-Hier wird nochmal die Größe des Grids und der Bilder angepasst*/
-
-
-/*
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
     .grid_container {
-        grid-template-columns: 200px 200px;
-        grid-template-rows: repeat(4, 200px);
-    }
-    .grid_container div {
-        max-height: 33vh;
-        max-width: 33vh;
-    }
-    .titel_link {
-        font-size: 20px;
-    }
-}*/
-
-
-/* Hier wird festgelegt was passiert, wenn der Bildschirm eine Breite von 400 Pixel unterschreitet.
-Hier gibt es nur noch ein Spalte und dafür für jedes Topic eine eigene Reihe.
-Auch die Schrift und Bildergröße wurde angepasst.*/
-
-@media screen and (max-width: 400px) {
-    .grid_container {
-        grid-template-columns: 175px;
-        grid-template-rows: repeat(8, 175px);
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(9, 11%);
         margin-top: 10px;
         row-gap: 5px;
         column-gap: 1%;
         height: 99em;
         align-self: center;
+        padding-right: 7%;
+        padding-left: 7%;
     }
-    /* .titel_link {
-        font-size: 16px;
-    }*/
-    .grid_container div {
-        height: 175px;
-        width: 175px;
+}
+
+
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  320Pixel unterschreitet.
+*/
+
+@media screen and (max-width: 320px) {
+    .grid_container {
+        padding-right: 1%;
+        padding-left: 1%;
+        height: 75em;
+    }
+    .titel_link {
+        font-size: 18px;
+        max-width: 175px;
+    }
+    .grid_container .item:hover .titel_link {
+        font-size: 18px;
     }
 }
