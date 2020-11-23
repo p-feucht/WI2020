@@ -19,7 +19,7 @@
 
 .quoteText {
     font-style: italic;
-    border-radius: 5px;
+    border-radius: 3vw;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     color: #ffffff;
@@ -140,7 +140,6 @@
     .aboutContainer>div>p {
         text-align: justify;
         font-size: 18px;
-
     }
     .contentPictureBox {
         display: grid;
