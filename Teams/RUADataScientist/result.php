@@ -137,9 +137,11 @@
             HTML;
 
             //Show the scores percentage value and the appropriate recommendation.
+            $yourFeedbackSmiley = feedbackSmiley($percentage);
             $yourRecommedation = recommendation($percentage);
             echo <<<HTML
                 <h2 class='result-page-headline-2'>Thats <b>$percentage</b> percent!</h2>
+                <img class='feedback-smiley' src='$yourFeedbackSmiley'/>
                 <h3 class='result-page-recommendation'>$yourRecommedation</h3>
             HTML;
         } else {
@@ -267,6 +269,22 @@ function recommendation($score_percent) {
         }
     }
     return "An error occured while fetching your recommendation :(.";
+}
+
+//RETURN THE LOCATION OF THE CORRECT FEEDBACK SMILEY
+function feedbackSmiley($score_percent) {
+    global $RECOMMENDATIONS_ORDER;
+    $count = 1;
+    foreach($RECOMMENDATIONS_ORDER as $percentage) {
+        if($score_percent >= $percentage) {
+            return <<<ANSWER
+                    pictures/feedbackSmiley-$count.svg
+                    ANSWER;
+        } else {
+            $count++;
+        }
+    }
+    return "An error occured while fetching your feedback smiley :(.";
 }
 
 //CALCULATE THE USERS SCORE PERCENTAGE FROM HIS POINTS
