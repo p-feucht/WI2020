@@ -59,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
                     //dass Zeitraum nicht leer ist, wird schon in html (required) überprüft
                     $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
-                    $beginndatum =  substr($gesamtzeitraum,0,10);
-                    $endedatum =  substr($gesamtzeitraum,13);
-
-                   
+                    $firstdate =  substr($gesamtzeitraum,0,10);
+                    $lastdate =  substr($gesamtzeitraum,13);
+                    $beginndatum =  substr($firstdate,6,14).substr($firstdate,3,2).substr($firstdate,0,2);
+                    $endedatum =  substr($lastdate,6,14).substr($lastdate,3,2).substr($lastdate,0,2);;
                    //Beschreibung darf leer sein
                     $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
 
@@ -126,9 +126,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             echo "<br>";
                             echo "Entries written:";
                             echo $title;
+                            echo "<br>";*/
+                            echo $beginndatum;
                             echo "<br>";
-                            echo $zeitraum;
+                            echo $endedatum;
                             echo "<br>";
+                            echo 'Imagedata: '.$imgData;/*
                             echo $beschreibung;
                             echo "<br>";
                             echo $vorname;
