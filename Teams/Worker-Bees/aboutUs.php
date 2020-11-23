@@ -113,10 +113,6 @@
                         Während Corona hatte ich viel Möglichkeiten dazu, aber normalerweise ist das nicht der Fall.
                         Zum Glück gibt es jetzt Worker Bees für Leute wie mich!
                       </p>
-                        </br> 
-                        </br>
-                        </br>
-                        </br>
                         </br>
                         </br>
                         </br>
