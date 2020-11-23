@@ -34,7 +34,6 @@
 
         <div class="header-content-right">
 
-            <a href="categories.php" class="headerButton" id="headerSearch" ><i class="fa fa-search"></i></a>
             <!-- change the header and its functions if the user is logged in --> 
             <?php 
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
