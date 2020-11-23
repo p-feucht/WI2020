@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <title>Artificial Intelligence</title>
-<!-- Insert your Topic Name here-->
+<!--This Topic is about Artificial Intelligence -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/templateTopic.css">
 <link rel="stylesheet" href="style.css">
-<link rel="shortcut icon" type="image/x-icon" href="pictures/TopBarIcon.png">
-<link rel="icon" type="image/ico" href="pictures/icon.svg" />
+<link rel="icon" type="image/ico" href="pictures/icon.svg">
 
 <body>
     <nav>
@@ -25,7 +24,13 @@
                 <a href="about.html">About</a>
             </li>
         </ul>
+        <div class="burger">
+            <div class="bLine-1"></div>
+            <div class="bLine-2"></div>
+            <div class="bLine-3"></div>
+        </div>
     </nav>
+    <script src="js/nav.js"></script>
     <div class="nav-blocker">''</div>
 
     <div class="paralax">
@@ -40,7 +45,12 @@
         <div class="invisibleBox">''</div>
         <div class="contentPictureBox">
             <div class="contentBox">
-                <iframe class="topic_video" src="https://www.youtube.com/embed/2ePf9rue1Ao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!--In the video_container is a youtube video implementet-->
+                <div class="video_container">
+                    <iframe class="topic_video" src="https://www.youtube.com/embed/2ePf9rue1Ao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+
             </div>
         </div>
         <div class="contentBox">
@@ -56,14 +66,14 @@
 
         <div class="contentBox">
             <h1>Methods And Goals In AI </h1>
-            <p><b>Symbolic vs. connectionist approaches </b> <br> AI research follows two distinct, and to some extent competing, methods, the symbolic (or “top-down”) approach, and the connectionist (or “bottom-up”) approach. The top-down approach seeks
+            <p><b>Symbolic vs. Connectionist Approaches </b> <br> AI research follows two distinct, and to some extent competing, methods, the symbolic (or “top-down”) approach, and the connectionist (or “bottom-up”) approach. The top-down approach seeks
                 to replicate intelligence by analyzing cognition independent of the biological structure of the brain, in terms of the processing of symbols—whence the symbolic label. The bottom-up approach, on the other hand, involves creating artificial
                 neural networks in imitation of the brain’s structure—whence the connectionist label. <br> To illustrate the difference between these approaches, consider the task of building a system, equipped with an optical scanner, that recognizes
                 the letters of the alphabet. A bottom-up approach typically involves training an artificial neural network by presenting letters to it one by one, gradually improving performance by “tuning” the network. (Tuning adjusts the responsiveness
                 of different neural pathways to different stimuli.) In contrast, a top-down approach typically involves writing a computer program that compares each letter with geometric descriptions. Simply put, neural activities are the basis of the
                 bottom-up approach, while symbolic descriptions are the basis of the top-down approach. <br><br>
 
-                <b>Strong AI, applied AI, and cognitive simulation </b><br> Employing the methods outlined above, AI research attempts to reach one of three goals: strong AI, applied AI, or cognitive simulation. Strong AI aims to build machines that think.
+                <b>Strong AI, Applied AI, And Cognitive Simulation </b><br> Employing the methods outlined above, AI research attempts to reach one of three goals: strong AI, applied AI, or cognitive simulation. Strong AI aims to build machines that think.
                 (The term strong AI was introduced for this category of research in 1980 by the philosopher John Searle of the University of California at Berkeley.) The ultimate ambition of strong AI is to produce a machine whose overall intellectual
                 ability is indistinguishable from that of a human being. As is described in the section Early milestones in AI, this goal generated great interest in the 1950s and ’60s, but such optimism has given way to an appreciation of the extreme
                 difficulties involved. To date, progress has been meagre. Some critics doubt whether research will produce even a system with the overall intellectual ability of an ant in the foreseeable future. Indeed, some researchers working in AI’s
@@ -83,13 +93,16 @@
         <footer>
             <ul class="footer-elements">
                 <li>
-                    <div class="footer-element">© Copyright 2020</div>
-                </li>
-                <li>
                     <a class="footer-link" href="#">Imprint</a>
                 </li>
                 <li>
                     <a class="footer-link" href="#">Data Protection</a>
+                </li>
+                <li>
+                    <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
+                </li>
+                <li>
+                    <div class="footer-element">© Copyright 2020</div>
                 </li>
             </ul>
         </footer>

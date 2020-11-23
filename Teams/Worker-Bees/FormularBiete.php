@@ -1,12 +1,9 @@
 <?php session_start();
-// User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist. 
-//session_start();
+// User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist, ansonsten auf Anmelden-Seite
 if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
     header("location: login.php");
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="de">
@@ -30,7 +27,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Date Picker Links (https://www.daterangepicker.com/)-->
+    <!-- date picker links (https://www.daterangepicker.com/)-->
     <script  src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script  src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script  src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
@@ -39,8 +36,10 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 </head>
 
 <body>
-
-    <?php   include ("./PHP/header.php"); // Allgemeinen Header einfügen ?>
+    
+    <?php 
+    $site_name = "HTML5-Seite mit Grundstruktur";
+    include ("./PHP/header.php"); ?>
 
     <div class="content">
         <!--Slider-->
@@ -50,14 +49,17 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
             <img class="mySlides" src="images/tools.jpg"  alt="verschiedene Werkzeuge" style="width:100%">
         </section>
         <script src="JavaScript/formular.js"></script>
-        <!--Ende Slider-->
+        <!--End of Slider-->
 
 
         <div class="yellow-container">
+
+
             <div class="explanation_and_form">
 
 
             <?php include ("./PHP/formularBieteAbschicken.php"); ?>
+
 
 
                 <!-- Text über Formular -->
@@ -104,7 +106,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                             datePicker();
                         </script>
                     </div>
-<!--Alternative falls Datepicker nicht funktioniert:
+<!--
                     <div class="formblock">
                         <label for="begDat">
                   Beginndatum </label><br>
@@ -118,18 +120,17 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
-                        </textarea>
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1"></textarea>
                         <br>
                     </div>
 
                     <div class="formblock">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="20000">
                         <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
                         <div class="unterüberschrift">
                             <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
-                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/png">
+                        <input type="file" name="uploaddatei" accept="image/gif,image/jpg,image/jpeg,image/png">
                     </div>
 
                     <div class="formblock">
@@ -158,12 +159,11 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                         <label>Postleitzahl
                             <input type="number" id="plzinput" name="PLZ" value="" size="5" maxlength="5"> 
                          </label>
-                         <label class="Fehlermeldung" id="FehlermeldungPLZ">*</label>
+                         <label class="Fehlermeldung" id="FehlermeldungPLZ"></label>
                         <br>
                         <label>Ort
-                            <input type="text" id="OrtID" name="Ort" value="" size="30" maxlength="30">
+                            <input type="text" name="Ort" value="<?php echo htmlspecialchars($ort);?>" size="30" maxlength="30">
                         </label>
-                        <label class="Fehlermeldung" id="FehlermeldungOrt">*</label>
                     </div>
 
 

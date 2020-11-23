@@ -1,11 +1,13 @@
+<?php session_start(); ?>
 <!doctype html>
 <html class="no-js" lang="">
+
 
 <head>
     <meta charset="utf-8">
     <title>Worker Bees</title>
-    <meta name="description" content="">
     <link rel="icon" href="images/logoBiene.png" />
+    <meta name="description" content="">
     <link href="CSS/index.css" rel="stylesheet">
 
 </head>
@@ -29,19 +31,19 @@
     <!-- Category cards -->
     <div class="category-section">
         <div class="category">
-            <a href="categories.php#Werkzeug-Ang">
+            <a href="werkzeugPage.php">
                 <img class="categoryPics" src="images/Werkzeug.jpg" alt="Werkzeug">
                 <p class="categoryText">Brauchst du ein bestimmtes Werkzeug?</p>
             </a>
         </div>
         <div class="category">
-            <a href="categories.php#Werkstatt-Ang">
+            <a href="werkstattPage.php">
                 <img class="categoryPics" src="images/Flaeche.jpg" alt="Fläche">
                 <p class="categoryText">Brauchst du einen Ort, um dein Hobby auszuleben?</p>
             </a>
         </div>
         <div class="category">
-            <a href="categories.php#Dienst-Ang">
+            <a href="dienstleistungPage.php">
                 <img class="categoryPics" src="images/Dienst.jpg" alt="Dienst">
                 <p class="categoryText">Brauchst du jemanden, der dir unter die Arme greift?</p>
             </a>

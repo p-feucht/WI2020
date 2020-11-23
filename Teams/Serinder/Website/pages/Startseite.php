@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="buttonWrapper">
-                <a class="button" href="../php/randomSeries.php">Überspringen</a>
+                <a class="button" href="#">Überspringen</a>
             </div>
 
 
@@ -90,6 +90,6 @@
     </main>
     
 
-    <?php include('./structure/Footer.html'); ?>
+    <?php include('./structure/Footer.php'); ?>
 
 </body>

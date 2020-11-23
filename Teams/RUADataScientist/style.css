@@ -1,13 +1,21 @@
 /*
-GENERAL STYLES
+- GENERAL STYLES 
+- NAV BAR
+- FOOTER
 */
 
 * {
     margin: 0px;
     padding: 0px;
     border: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
+
+
+body {
+    background-color: rgb(237, 237, 237);
+}
+
 
 p {
     line-height: 2;
@@ -26,7 +34,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 7vh;
-    background-color: rgb(27, 53, 102);
+    background-color: rgb(1, 42, 74);
     width: 100%;
     position: fixed;
     top: 0;
@@ -36,11 +44,13 @@ nav {
 nav h4 {
     font-weight: inherit;
     font-size: 3vh;
+    text-align: left;
 }
 
 nav a {
     text-decoration: none;
     color: aliceblue;
+   
 }
 
 .nav-links {
@@ -86,6 +96,19 @@ a.active {
     height: 7vh;
 }
 
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: aliceblue;
+    margin: 5px;
+    transition: rotate, transform 0.3s ease;
+}
+
 /*
 CONTENT
 */
@@ -97,10 +120,11 @@ CONTENT
 FOOTER
 */
 footer {
-    background-color: rgb(27, 53, 102);
+    background-color: rgb(1, 42, 74);
     color: aliceblue;
     width: 100%;
     text-align: center;
+    margin-top: 6vh;
 }
 
 footer.fixed-footer {
@@ -122,11 +146,11 @@ footer.fixed-footer {
     color: #bdcbf5;
     text-decoration: none;
     font-weight: lighter;
-    font-size: 1.5vh;
+    font-size: 2vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
     display: block;
-    width: 20vh;   
+    width: 16vh;   
     text-align: center;
 }
 
@@ -141,12 +165,53 @@ RESPOSIVE
     .nav-links {
         width: 40%;
     }
+
+    .nav-links a{
+        width: 13vw;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 93vh;
+        top: 7vh;
+        background-color: rgb(1, 42, 74);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.25s ease-in;
+    }
+
+    .nav-links a:hover, a:active{
+        background-color: transparent;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    a.active {
+        background-color: transparent;
+    }
+
+    footer.fixed-footer{
+        position: static;
+    }
+
     .footer-elements {
         flex-direction: column;
         justify-content: center;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
     }
 
     .footer-element, .footer-link {
@@ -158,4 +223,21 @@ RESPOSIVE
     .nav-logo {
         padding: 1vh;
     }
+}
+
+/*
+TOGGLE CLASSES
+*/
+.nav-active {
+    transform: translateX(0%);
+}
+
+.toggle .bLine-1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .bLine-2 {
+    opacity: 0;
+}
+.toggle .bLine-3 {
+    transform: rotate(+45deg) translate(-5px, -6px);
 }
