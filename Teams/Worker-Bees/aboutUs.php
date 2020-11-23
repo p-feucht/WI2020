@@ -88,7 +88,7 @@
                     <p>"Kein Handwerk ohne Lehrzeit" (Jean de La Bruyère). Obwohl ich das immer wieder 
                       feststellen muss, spüre ich doch meist einen Funken Stolz, wenn ich an meiner selbst gebauten 
                       Kommode vorbeilaufe. Damit jeder die Möglichkeit hat, seine eigenen Unikate zu schaffen
-                      und dabei seine Fähigkeiten auszubauen, gibt es die Workerbees.
+                      und dabei seine Fähigkeiten auszubauen, gibt es die Worker Bees.
                     </p>
                       </br> 
                       <!-- button that opens email with suitable address of the founders to contact them -->
@@ -109,7 +109,10 @@
                       <p class="title">Gründer</p>
                       <p class="title">Verantwortlich für die Strategieplanung</p>
                         </br> 
-                      <p>Ich wollte schon immer badass sein.</p>
+                      <p>Es ist so ein toller Ausgleich, bei meinen Eltern im Garten auszuhelfen.
+                        Während Corona hatte ich viel Möglichkeiten dazu, aber normalerweise ist das nicht der Fall.
+                        Zum Glück gibt es jetzt Worker Bees für Leute wie mich!
+                      </p>
                         </br> 
                         </br>
                         </br>

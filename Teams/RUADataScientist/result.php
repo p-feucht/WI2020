@@ -112,7 +112,9 @@
 
     <!--CONTENT-->
     <?php
-    echo "<div class='result-page-content'><br><br>";
+    echo <<<HTML
+        <div class='result-page-content'><br><br>
+    HTML;
     if(!$logged_out) {
        if ($_SESSION["results"] != null) {
             $score = calculateScore($_SESSION["results"]);
@@ -120,50 +122,75 @@
 
             if ($_SESSION["logged_in"]) {
                 //Greet the user and show him his most recent score.
-                echo "<h2 class='result-page-headline-2'>Hello, ". $_SESSION["currentuser"].".</h1>";
-                echo "<h1 class='result-page-headline'>Your most recent score is <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
+                echo <<<HTML
+                    <h2 class='result-page-headline-2'>Hello {$_SESSION["currentuser"]}.</h1>
+                    <h1 class='result-page-headline'>Your most recent score is <b> $score</b> out of <b>$MAX_SCORE</b> possible Points!</h1>
+                HTML;
             } else {
                 //Show the user his score.
-                echo "<h1 class='result-page-headline'>You scored <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
+                echo <<<HTML
+                    <h1 class='result-page-headline'>You scored <b>$score</b> out of <b>$MAX_SCORE!</b> possible Points!</h1>
+                HTML;
             }
-            echo "<hr class='result-seperator'>";
+            echo <<<HTML
+                <hr class='result-seperator'>
+            HTML;
 
             //Show the scores percentage value and the appropriate recommendation.
-            echo "<h2 class='result-page-headline-2'>Thats <b>". $percentage . "</b> percent!</h2>";
-            echo "<h3 class='result-page-recommendation'>" . recommendation($percentage) . "</h3>";
+            $yourRecommedation = recommendation($percentage);
+            echo <<<HTML
+                <h2 class='result-page-headline-2'>Thats <b>$percentage</b> percent!</h2>
+                <h3 class='result-page-recommendation'>$yourRecommedation</h3>
+            HTML;
         } else {
-                echo "<h1 class='result-page-headline'>An error occured while retrieving your score.</h1>";
+                echo <<<HTML
+                    <h1 class='result-page-headline'>An error occured while retrieving your score.</h1>
+                HTML;
         }
         
         /* LOGIN FORM */
         if(!$_SESSION["logged_in"]) {
             if($login_success === false) {
-                echo "<h3 class='form-title'>An error occured while logging you in. Please try again.</h3>";
+                echo <<<HTML
+                    <h3 class='form-title'>An error occured while logging you in. Please try again.</h3>
+                HTML;
             } else {
-                echo "<h3 class='form-title'>Would like to save your score to review it in the future? Log in below or create a new account <a href='register.php'>here</a>.</h3>";
+                echo <<<HTML
+                    <h3 class='form-title'>Would like to save your score to review it in the future? Log in below or create a new account <a href='register.php'>here</a>.</h3>
+                HTML;
             }        
-            echo "<form method='POST'>";
-                echo "<label for='username'>Username: </label>";
-                echo "<input type='text' name='username' id='input-username'>";
-                echo "<br>";
-                echo "<label for='password'>Password: </label>";
-                echo "<input type='password' name='password' id='input-password'>";
-                echo "<br>";
-                echo "<input class='submit-button' type='submit' name='submit' value='". $LOGINBUTTON ."'>";
-            echo "</form>";
+            echo <<<HTML
+                <form method='POST'>
+                    <label for='username'>Username: </label>
+                    <input type='text' name='username' id='input-username'>
+                    <br>
+                    <label for='password'>Password: </label>
+                    <input type='password' name='password' id='input-password'>
+                    <br>
+                    <input class='submit-button' type='submit' name='submit' value='$LOGINBUTTON'>
+                </form>
+            HTML;
             
         } else {
-            echo "<form class='button-form' method='POST'>";
-            echo "<input class='submit-button' type ='submit' name='submit' value='". $LOGOUTBUTTON ."'>";
-            echo "</form>";
-            echo "<form class='button-from' action='test.html'>";
-            echo "<input class='submit-button' type ='submit' value='Retake Test'>";
-            echo "</form>";
+
+            /* LOGOUT FORM / RETAKE TEST FORM */
+            echo <<<HTML
+                <form class='button-form' method='POST'>
+                <input class='submit-button' type ='submit' name='submit' value='$LOGOUTBUTTON'>
+                </form>
+                <form class='button-from' action='test.html'>
+                <input class='submit-button' type ='submit' value='Retake Test'>
+                </form>
+            HTML;
         }
     } else {
-        echo "<h1 class = 'result-page-headline-2'>Logged out successfully.<h1>";
+        echo <<<HTML
+            <h1 class = 'result-page-headline-2'>Logged out successfully.<h1>
+        HTML;
     }
-    echo "</div>";      
+    echo <<<HTML
+        </div>
+    HTML;    
     ?>
 
     <!--FOOTER-->
