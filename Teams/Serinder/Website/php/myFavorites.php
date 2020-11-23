@@ -11,7 +11,7 @@
 
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          echo "<li><a href='../php/SeriesDescription.php?ID=".$row["ID"]."'>".$row["Name"]."</a></li>";
+          echo "<li><a href='../php/SeriesDescription.php?ID=".$row["ID"]."'>".$row["Name"]."</a> <a href='../php/removeFromFavorites.php?ID=".$row["ID"]."'>[entfernen]</a>  </li>";
         }
 
       } else {
