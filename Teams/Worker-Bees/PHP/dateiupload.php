@@ -12,13 +12,19 @@ if ( $_FILES['uploaddatei']['name']  <> "" )
     // Datei wurde durch HTML-Formular hochgeladen
     // und kann nun weiterverarbeitet werden
 
-    // Kontrolle, ob Dateityp zulässig ist
-    $zugelassenedateitypen = array("image/png", "image/jpeg", "image/gif");
+    //Überprüfung der Dateigröße
+    $max_size = 500*1024; //500 KB
+    if($_FILES['uploaddatei']['size'] > $max_size) {
+    echo '<script type="text/javascript">alert("Bitte nicht mehr als 500KB hochladen.");</script>';
+    $valid = false; //obwohl Bild nicht unbedingt erforderlich ist um ein Angebot zu stellen, hier verhindern, dass restliche Eingaben als Eintrag in DB gespeichert werden, da User vllt ein anderes Bild hochladen möchte. 
+    }
 
+    // Kontrolle, ob Dateityp zulässig ist
+    $zugelassenedateitypen = array("image/png", "image/jpg", "image/jpeg", "image/gif");
     if ( ! in_array( $_FILES['uploaddatei']['type'] , $zugelassenedateitypen ))
     {
         echo '<script type="text/javascript">alert("Der Dateityp deines Bilds ist nicht zugelassen");</script>';
-        $valid = false; //obwohl Bild nicht unbedingt erforderlich ist um ein Angebot zu stellen, hier verhindern, dass Rest in DB gespeichert wird, da User vllt ein anderes Bild hochladen möchte.  
+        $valid = false; //obwohl Bild nicht unbedingt erforderlich ist um ein Angebot zu stellen, hier verhindern, dass restliche Eingaben als Eintrag in DB gespeichert werden, da User vllt ein anderes Bild hochladen möchte.  
     }
     else
     {

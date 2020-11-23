@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+// User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist, ansonsten auf Anmelden-Seite
+if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
+    header("location: login.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -115,18 +120,17 @@
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
-                        </textarea>
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1"></textarea>
                         <br>
                     </div>
 
                     <div class="formblock">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="20000">
                         <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
                         <div class="unterüberschrift">
                             <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
-                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/png">
+                        <input type="file" name="uploaddatei" accept="image/gif,image/jpg,image/jpeg,image/png">
                     </div>
 
                     <div class="formblock">

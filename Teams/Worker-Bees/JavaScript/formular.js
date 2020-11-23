@@ -38,60 +38,6 @@ function datePicker() {
 
 
 
-
-/*
-function datePicker() {
-    $('.datefilter').datepicker({
-        multidate: true,
-        format: 'dd-mm-yyyy'
-    });
-}*/
-
-/*
-function pruefeFormular() {
-
-    var formValid = true;
-    var radios = document.getElementsByName("kategorie");
-
-    if (document.formularFuerAngebot.title.value == "") {
-        document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
-        //   alert("Bitte gib einen Angebotstitel ein.");
-        // document.Formular.title.focus();
-        formValid = false;
-    } else { document.getElementById("FehlermeldungTitle").innerHTML = ""; }
-
-    if (document.formularFuerAngebot.beschreibung.value.trim() == "") {
-        document.getElementById("FehlermeldungBeschr").innerHTML = "Bitte Angebotsbeschreibung eingeben";
-        //alert("Bitte gib eine Angebotsbeschreibung ein.");
-        // document.Formular.beschreibung.focus();
-        formValid = false;
-    } else { document.getElementById("FehlermeldungBeschr").innerHTML = ""; }
-
-    if (!radioIsValid()) {
-        formValid = false;
-    }
-    return formValid;
-}*/
-
-
-/*function radioIsValid() {
-    var i = 0;
-    formValid = false;
-    while (!formValid && i < radios.length) {
-        if (radios[i].checked) formValid = true;
-        i++;
-    }
-
-    if (!formValid) {
-        document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
-        document.getElementByID("wz").focus();
-        //alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
-    }
-    return formValid;
-}*/
-
-
-
 function pruefeFormular() {
 
 
@@ -125,11 +71,7 @@ function pruefeFormular() {
     } else {
         return true;
     }
-    /*let vorname = document.getElementByName("Vorname");
-    if (inputIsEmpty(vorname) == true) {
-        let vornameErrMess = document.getElementById("FehlermeldungVorname");
-        setErrorMessage(vornameErrMess, "Bitte Vornamen eingeben");
-        return false;*/
+
 }
 
 
@@ -138,10 +80,8 @@ function CheckPLZ() {
     var laenge = plz.length;
     var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
     if (laenge != anzahl) {
-        //window.alert("Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!");
         document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!";
         document.getElementById("plzinput").focus();
-        //document.formularFuerAngebot.PLZ.focus();
         return false;
     }
     if (laenge == anzahl) {
