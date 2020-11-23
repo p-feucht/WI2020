@@ -2,7 +2,10 @@ function filterOffers() {
 
     var what = document.getElementById("free-text").value.toLowerCase();
     var where = document.getElementById("autocomplete").value.toLowerCase();
-    var when = document.getElementById("date-werkzeug").value.toLowerCase();
+    document.getElementById('date-search').value = new Date().toDateInputValue();
+    var when = document.getElementById("date-search");
+
+    alert(when);
 
     var allCards = document.getElementsByClassName("card");
 

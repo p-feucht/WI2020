@@ -14,12 +14,15 @@ if ($conn->connect_error) {
 
 $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
 PLZ, Ort, Bild, usernameErsteller, Werkzeug_ID, PreisProTag, BezInBier, Erstellzeitpunkt FROM AngebotWerkzeug";
-$result = $conn->query($sql);
+$result = $result2 = $conn->query($sql);
+
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
 
+        $beginDat = $row["ABeginndat"];
+        $endDat = $row["AEndedat"];
         $orderID = $row["Werkzeug_ID"];
         $location = $row["Ort"];
         $title = $row["ATitel"];
@@ -46,6 +49,30 @@ if ($result->num_rows > 0) {
             <h2><?php echo $title ?></h2>
         </div>
 
+    
+<?php
+    }
+        while ($row = $result2->fetch_assoc()) { // separate loop for modals for faster loading
+
+            $beginDat = $row["ABeginndat"];
+            $endDat = $row["AEndedat"];
+            $orderID = $row["Werkzeug_ID"];
+            $location = $row["Ort"];
+            $title = $row["ATitel"];
+            $price = $row["PreisProTag"];
+            $offeruser = $row["usernameErsteller"];
+            $plz = $row["PLZ"];
+            $description = $city = $row["ABeschreibung"];
+            $bezBier = $row["BezInBier"];
+            $image = $row["Bild"];
+
+            $card_ID = "WZcard_" . (string)$orderID;
+            $modal_target = "#WZmodal_" . (string)$orderID;
+            $modal_ID = "WZmodal_" . (string)$orderID;
+
+            $bier = round($price, 0); // so that beer is counted in whole beers
+
+?>
         <!-- create modal for each card -->
         <div id=<?php echo $modal_ID ?> class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
@@ -81,7 +108,7 @@ if ($result->num_rows > 0) {
                             <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
 
                             <label for="bookingDate">Datum:</label>
-                            <input type="date" id="bookingDate" name="Date" value="<?php echo htmlspecialchars($date); ?>" required><br>
+                            <input type="date" name="Date" min="<?php echo $beginDat ?>" max="<?php echo $endDat ?>" value="<?php echo htmlspecialchars($date); ?>" required><br>
 
                             <p class="modal-booking-text">Gesamtbetrag: <?php echo $price ?> €<br></p>
 

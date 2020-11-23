@@ -66,8 +66,7 @@ body, html {
     float: center;
 }
 
-form.search input[type=text],
-#autocomplete {
+.free-text, #autocomplete {
     padding: 11px;
     font-size: 14px;
     height: 50px;
@@ -86,22 +85,23 @@ form.search input[type=text],
     border-left: 1px solid grey;
 }
 
-.icon {
-    padding: 10px;
-    height: 50px;
-    min-width: 40px;
-    border: 1px solid grey;
-    border-left: white;
-    border-right: white;
+.date-search {
     float: left;
-    width: 4%;
+    padding: 11px;
+    font-size: 14px;
+    height: 50px;
+    border: 1px solid grey;
+    border-right: white;
+    border-left: white;
+    float: left;
+    width: 25%;
     background: white;
+    outline: none;
 }
-
 
 /* Style the submit button */
 
-form.search button {
+.submitButton {
     float: left;
     width: 20%;
     padding: 10px;
@@ -116,6 +116,11 @@ form.search button {
     border-bottom-right-radius: 50px;
     outline: none;
 }
+
+form.search button:hover {
+    background: #d4a337;
+}
+
 
 form.search button:hover {
     background: #d4a337;
