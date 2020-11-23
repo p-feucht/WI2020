@@ -125,12 +125,12 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     </div>
 
                     <div class="formblock">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="20000">
                         <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
                         <div class="unterüberschrift">
                             <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
-                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/png">
+                        <input type="file" name="uploaddatei" accept="image/gif,image/jpg,image/jpeg,image/png">
                     </div>
 
                     <div class="formblock">

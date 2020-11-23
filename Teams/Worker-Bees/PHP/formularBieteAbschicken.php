@@ -20,8 +20,6 @@ $dbname = "workerbees_db1";
 
 
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
 //if(isset($_POST['formularFuerAngebot'])){
@@ -58,17 +56,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $title = $conn->real_escape_string($_POST["title"]);
                     }
 
-                    /*if (empty($_POST["zeitraum"])) {
-                        $zeitraumErr = "Bitte Zeitraum eingeben";
-                        $valid=FALSE;
-                    }
-                    else {*/
-                    $zeitraum = $conn->real_escape_string($_POST["datefilter"]);
-                   /* }*/
+
+                    //dass Zeitraum nicht leer ist, wird schon in html (required) überprüft
+                    $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
+                    $beginndatum =  substr($gesamtzeitraum,0,10);
+                    $endedatum =  substr($gesamtzeitraum,13);
+
+                   
                    //Beschreibung darf leer sein
-                    /*if (!checkIfEmpty("beschreibung")) {*/
-                        $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
-                    /*}*/
+                    $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
 
                     //Bild Dateiupload
                     include ("dateiupload.php");
@@ -118,8 +114,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){
-                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$preisProTag1', '$bierBez1')";
+                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$preisProTag1', '$bierBez1')";
 
                             //echo $sql;
                             //echo "<br>";
@@ -179,8 +175,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         
                         if($valid==true){
                         
-                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}','$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}','$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
                             //echo $sql;
                         
                             if ($conn->query($sql) === TRUE) {
