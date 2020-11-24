@@ -52,38 +52,47 @@ und responsive gestaltet.*/
 
 .item1 {
     background-image: url(../pictures/topic_MachineLearningSizedsmall.png);
+    /*   background-image: url(../pictures/topic_MLNewSize.jpg);*/
 }
 
 .item2 {
     background-image: url(../pictures/topic_HTSProjectNew.jpg);
+    /* background-image: url(../pictures/topic_HTSProjectNewSize.jpg);*/
 }
 
 .item3 {
-    background-image: url(../pictures/topic_AISizedsmall.jpg);
+    /*  background-image: url(../pictures/topic_AISizedsmall.jpg);*/
+    background-image: url(../pictures/topic_AINEWSize.jpg);
 }
 
 .item4 {
-    background-image: url(../pictures/topic_DataMiningOld.jpg);
+    /*  background-image: url(../pictures/topic_DataMiningOld.jpg);*/
+    background-image: url(../pictures/topic_DataMiningOldNewSize.jpg);
 }
 
 .item5 {
     background-image: url(../pictures/topic_DeepLearningNormal.jpg);
+    /*background-image: url(../pictures/topic_DeepLearningNormalNEWSize.jpg);*/
 }
 
 .item6 {
-    background-image: url(../pictures/topic_ApplicationPageSizedsmall.jpg);
+    /* background-image: url(../pictures/topic_ApplicationPageSizedsmall.jpg);*/
+    background-image: url(../pictures/topic_ApplicationNEWSize.jpg);
 }
 
 .item7 {
-    background-image: url(../pictures/topic_Career.jpg);
+    /*  background-image: url(../pictures/topic_Career.jpg);*/
+    background-image: url(../pictures/topic_CareerNEWSize.jpg);
 }
 
 .item8 {
     background-image: url(../pictures/topic_FundaSizedsmall.png);
+    /* background-image: url(../pictures/topic_FundaNEWSize.jpg);*/
 }
 
 .item9 {
-    background-image: url(../pictures/topic_DataMiningNew.jpg);
+    /* background-image: url(../pictures/topic_DataMiningNew.jpg);*/
+    background-image: url(../pictures/topic_DataMiningNEWSize.jpg);
 }
 
 
