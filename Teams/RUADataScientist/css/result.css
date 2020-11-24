@@ -71,6 +71,12 @@ a{
     color: #023E7D;
 }
 
+.feedback-smiley {
+    width: 22vh;
+    height: 22vh;
+    margin: 3vh;
+}
+
 @media screen and (max-width: 480px) {
     .result-page-recommendation{
         text-align: justify;
