@@ -13,7 +13,9 @@
 
 
 body {
-    background-color: rgb(237, 237, 237);
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(240,241,255,1) 100%);
+
 }
 
 
@@ -30,11 +32,12 @@ table, th, td {
 NAVIGATION BAR
 */
 nav {
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 7vh;
-    background-color: rgb(1, 42, 74);
+    background-color: #002244;
     width: 100%;
     position: fixed;
     top: 0;
@@ -45,6 +48,9 @@ nav h4 {
     font-weight: inherit;
     font-size: 3vh;
     text-align: left;
+}
+.nav-logo img{
+    width: 50%;
 }
 
 nav a {
@@ -60,7 +66,7 @@ nav a {
 }
 
 .nav-logo {
-    color: aliceblue;
+    color: aliceblue
 }
 
 .nav-links li{
@@ -120,7 +126,7 @@ CONTENT
 FOOTER
 */
 footer {
-    background-color: rgb(1, 42, 74);
+    background-color: #001020;
     color: aliceblue;
     width: 100%;
     text-align: center;
@@ -187,6 +193,7 @@ RESPOSIVE
         justify-content: start;
         align-items: center;
         width: 50%;
+        z-index: 2;
         transform: translateX(100%);
         transition: transform 0.25s ease-in;
     }

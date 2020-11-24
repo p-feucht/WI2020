@@ -43,8 +43,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Set parameters
             $param_username = $username;
-           /*  $hashed_password = mysqli_query($link, "SELECT password FROM user where username = $username");
-            echo $hashed_password; */
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -57,24 +55,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    /* echo $username;
-                    echo ' ,'; 
-                    echo $hashed_password;
-                    echo ' ,'; 
-                    echo $password; */
                    
 
                     if(mysqli_stmt_fetch($stmt)){
                         
-                        
-                        /* echo "fehler";
-                        echo $hashed_password;
-                        echo " ,"; */
+                        // get the hashed password from the database of the username that wants to login 
                         $sql_2 = "SELECT password FROM user where username = '$username'";
                         $password_query = mysqli_query($link, $sql_2);
                         $password_result = mysqli_fetch_assoc($password_query);
                         $hashed_password = $password_result['password'];
-                        /* echo $hashed_password; */
+                        
 
 
                         if(password_verify($password, $hashed_password)){
@@ -115,7 +105,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Worker Bees - Anmeldung</title>
+    <link rel="icon" href="images/logoBiene.png" />
     <link href="CSS/loginDesign.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"> -->
     <style type="text/css">

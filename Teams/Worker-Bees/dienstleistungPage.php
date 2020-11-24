@@ -1,7 +1,7 @@
 <?php @session_start(); ?>
 <meta charset="utf-8">
     <link rel="icon" href="images/logoBiene.png" />
-    <title>Worker Bees</title>
+    <title>Worker Bees - Dienstleistung</title>
     <meta name="description" content="">
 
     <!-- Load icon library -->

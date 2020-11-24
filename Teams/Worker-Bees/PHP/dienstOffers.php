@@ -26,6 +26,7 @@ if ($result->num_rows > 0) {
         $location = $row["Ort"];
         $title = $row["ATitel"];
         $price = $row["Preis"];
+        $pricetype = $row["Preisart"];
         $offeruser = $row["usernameErsteller"];
         $plz = $row["PLZ"];
         $description = $city = $row["ABeschreibung"];
@@ -43,9 +44,16 @@ if ($result->num_rows > 0) {
         <div class="card" id="<?php echo $card_ID ?>" data-toggle="modal" data-target=<?php echo $modal_target ?>>
             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" loading="lazy"
             alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
-            <p class="card-lp"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
-                <span class="price"><?php echo $price ?>€ / Tag</span></p>
-            <h2><?php echo $title ?></h2>
+            <p class="card-lp" id="cardLocation"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
+                <span class="price"><?php echo $price ?>€ <em id="preisArt">/ Stunde</em></span></p>
+                <script>
+                                if ("<?php echo $pricetype?>" == "Fixpreis") { // only show "pay in beer" if option was selected at offer creation
+                                    document.getElementById("<?php echo $card_ID ?>").querySelector("#preisArt").style.display = "none";
+                                }
+                            </script>
+            <h2 id="cardTitle"><?php echo $title ?></h2>
+            <input type='hidden' id="startDate" value='<?php echo $beginDat;?>'/>
+            <input type='hidden' id="endDate" value='<?php echo $endDat;?>'/>
         </div>
 
         <!-- create modal for each card -->

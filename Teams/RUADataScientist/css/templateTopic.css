@@ -19,16 +19,18 @@
 
 .quoteText {
     font-style: italic;
+    border-radius: 3vw;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     color: #ffffff;
     max-height: 150px;
     text-align: center;
+    font-size: 2vw;
 }
 
 .quoteText>h1 {
     padding: 20px 15px 20px 15px;
-    font-size: 200%;
+    /*  font-size: 200%;*/
     text-align: left;
 }
 
@@ -50,6 +52,7 @@
 
 .contentBox>p {
     text-align: justify;
+    font-size: 16px;
 }
 
 .aboutContainer {
@@ -96,6 +99,7 @@
     color: rgb(124, 122, 122);
     font-size: small;
     text-decoration: none;
+    word-break: break-all;
 }
 
 .source_link:hover {
@@ -137,6 +141,7 @@
     }
     .aboutContainer>div>p {
         text-align: justify;
+        font-size: 18px;
     }
     .contentPictureBox {
         display: grid;
@@ -150,5 +155,38 @@
     }
     .source a {
         margin-left: 10%;
+    }
+}
+
+
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  600Pixel unterschreitet.
+*/
+
+@media screen and (max-width: 600px) {
+    .quoteText {
+        font-size: 3vw;
+    }
+}
+
+
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  400Pixel unterschreitet.
+*/
+
+@media screen and (max-width: 400px) {
+    .quoteText {
+        font-size: 4.5vw;
+    }
+}
+
+
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  300Pixel unterschreitet.
+*/
+
+@media screen and (max-width: 300px) {
+    .quoteText {
+        font-size: 5vw;
     }
 }

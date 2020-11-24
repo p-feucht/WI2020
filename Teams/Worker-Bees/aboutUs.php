@@ -64,13 +64,11 @@
             </div>
 
                 <!-- information about the team -->
-                <div class="businessOwnerHeading">
-                    <div id="businessOwner2"> 
+                <div class="businessOwnerHeading"> 
                     </br>
                         <h2>Hier kannst Du unser Team näher kennenlernen
                         </h2>
                         </br>
-                    </div>
                 </div>
 
 
@@ -83,16 +81,17 @@
                     <div class="container">
                       <h2>Sarah Engelmayer</h2>
                     </br> 
+                    <!-- title: display text in grey -->
                     <p class="title">Gründer</p>
                     <p class="title">Verantwortlich für die Webseite</p>
                       </br> 
                     <p>"Kein Handwerk ohne Lehrzeit" (Jean de La Bruyère). Obwohl ich das immer wieder 
                       feststellen muss, spüre ich doch meist einen Funken Stolz, wenn ich an meiner selbst gebauten 
                       Kommode vorbeilaufe. Damit jeder die Möglichkeit hat, seine eigenen Unikate zu schaffen
-                      und dabei seine Fähigkeiten auszubauen, gibt es die Workerbees.
+                      und dabei seine Fähigkeiten auszubauen, gibt es die Worker Bees.
                     </p>
                       </br> 
-                      
+                      <!-- button that opens email with suitable address of the founders to contact them -->
                       <div role="button" class="buttonKontakt" onclick="location.href='mailto:engelmayer@workerbees.com';">Kontakt</div>
 
                     </div>
@@ -102,7 +101,7 @@
                 <div class="column">
                   <div class="card">
 
-                    <img src="images/Kati.jpg" alt="Kati" style="width:100%; object-fit:cover;object-position:100% 0">
+                    <img src="images/Kati.jpg" alt="Kati" style="width:100%">
 
                     <div class="container">
                       <h2>Katerina Matysova</h2>
@@ -110,11 +109,10 @@
                       <p class="title">Gründer</p>
                       <p class="title">Verantwortlich für die Strategieplanung</p>
                         </br> 
-                      <p>Ich wollte schon immer badass sein.</p>
-                        </br> 
-                        </br>
-                        </br>
-                        </br>
+                      <p>Es ist so ein toller Ausgleich, bei meinen Eltern im Garten auszuhelfen.
+                        Während Corona hatte ich viel Möglichkeiten dazu, aber normalerweise ist das nicht der Fall.
+                        Zum Glück gibt es jetzt Worker Bees für Leute wie mich!
+                      </p>
                         </br>
                         </br>
                         </br>
@@ -127,7 +125,7 @@
                 <div class="column">
                   <div class="card">
 
-                    <img src="images/Dani_fitted.jpg" alt="Dani" style="width:100%; object-fit:cover;object-position:100% 0">
+                    <img src="images/Dani_fitted.jpg" alt="Dani" style="width:100%">
 
                     <div class="container">
                       <h2>Daniel Birk</h2>
@@ -139,6 +137,8 @@
                         Trotzdem wollte ich am Wochenende mein Hobby ausleben und für meine WG neue Möbel bauen. 
                         Das ist jetzt durch Worker Bees möglich und das finde ich sehr cool. 
                       </p>
+                        </br>
+                        </br>
                         </br> 
                       
                          <div role="button" class="buttonKontakt" onclick="location.href='mailto:birk@workerbees.com';">Kontakt</div>
