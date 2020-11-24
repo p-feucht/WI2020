@@ -1,11 +1,4 @@
-
-.paralax {
-    background: url(../pictures/topic_AI.jpeg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 180px;
-    display: grid;
-}
+/* CSS for About-Page*/
 
 .paralax {
     background: url(../pictures/about_paralaxSized.jpg) no-repeat center;
