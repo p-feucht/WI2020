@@ -1,24 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
+/* CSS for Test-Form*/
 
 body{
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(240,241,255,1) 100%);
-}
-
-.container{
-    width: 360px;
-    height: 500px;
-    margin: 16vh auto;
-    background: white;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-    background: rgb(243, 241, 246);
-    box-shadow: 3px 4px 10px rgba(5, 1, 1, 0.178); 
 }
 
 h2{
@@ -34,25 +18,23 @@ h3{
     color: #001233;
 }
 
+.container{
+    width: 360px;
+    height: 500px;
+    margin: 16vh auto;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background: rgb(233, 231, 236);
+    box-shadow: 3px 4px 10px rgba(5, 1, 1, 0.178); 
+}
+
 .container form section{
     width: 280px;
     position: absolute;
     top: 80px;
     left: 40px;
     transition: 0.5s;
-}
-
-.return{
-    color: grey;
-    text-decoration: underline;
-    text-decoration-color: grey;
-    padding-top: 50%;
-}
-
-.seperator{
-    display: grid;
-    grid-template-columns: 40px auto;
-    padding-bottom: 15px;
 }
 
 form section{
@@ -72,6 +54,19 @@ form section input{
     margin: 10px auto;
     text-align: center;
     
+}
+
+.return{
+    color: grey;
+    text-decoration: underline;
+    text-decoration-color: grey;
+    margin-top: 50%;
+}
+
+.seperator{
+    display: grid;
+    grid-template-columns: 40px auto;
+    padding-bottom: 15px;
 }
 
 form section button{
@@ -121,7 +116,6 @@ form section button{
     left: 450px;
 }
 
-
 .step-row{
     width: 360px;
     height: 40px;
@@ -158,4 +152,77 @@ form section button{
     right: -20px;
     top: 0;
     border-left: 20px solid #70befd;
+}
+
+.range-container {
+	width: 90%;
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+    margin-bottom: 1.3em;
+}
+
+.label-container {
+	-webkit-flex-basis: 100%;
+	display: -webkit-flex;
+	-webkit-flex-wrap: nowrap;
+	-webkit-justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.label {
+	color:  #424242;
+	font-size: 10px;
+	margin-top: 3px;
+	text-align: center;
+	max-width: 20px;
+	-webkit-tap-highlight-color: transparent;  /*gets rid of black flash on click of track*/
+}
+.slider-container {
+	position: relative;
+	height: 100%;
+    width: 100%;
+}
+.slider {
+	position: absolute;
+	left:0;
+	width: 100%;
+}
+
+.range-fill {
+	position:absolute;
+	top:4px;
+	left:4px;
+	height: 30px;
+	pointer-events: none;
+	border-radius: 10px;
+}
+
+input[type=range] {
+	-webkit-appearance: none;
+	-webkit-flex-basis: 100%;
+	-webkit-tap-highlight-color: transparent;
+	background: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    border: 2px solid #505050;
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background: #70befd;
+    margin-top: -2px;
+    border: 2px ;
+    cursor: pointer;
+}
+
+input[type=range]:focus {
+    outline: none;
 }
