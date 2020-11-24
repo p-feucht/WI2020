@@ -27,19 +27,19 @@
         <div class="box">
             <h3>Deine Profildaten</h3>
             <div class="box-element">
-                <h5>Benutzername</h5>
+                <h4>Benutzername</h4>
                 <?php echo $username;?>
                
                 <button class="cent" type="button">Bearbeiten</button>
             </div>
             <div class="box-element">
-                <h5>E-Mail-Adresse</h5>
+                <h4>E-Mail-Adresse</h4>
                 <?php echo $email;?>
                 
                 <button class="cent" type="button">Bearbeiten</button>
             </div>
             <div class="box-element">
-                <h5>Passwort</h5>
+                <h4>Passwort</h4>
                 <label class="box-text" id="passwort">******</label>
                 <button class="cent" type="button">Bearbeiten</button>
             </div>
