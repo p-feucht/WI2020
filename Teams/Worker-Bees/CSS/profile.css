@@ -1,24 +1,75 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* add yellow background */
-.body {
-    width: 100%;
-    height: 500px;
-}
-
-.profile-content {
-    max-width: 60%;
-    width: 40%;
-    min-width:300px;
-    margin-left: auto;
-    margin-right:auto;
-    padding-top: 50px;
-    padding-bottom: 400px;
-    text-align: center;
-}
+        * {
+            margin: 0px;
+            padding: 0px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* add yellow background */
+        
+        .body {
+            width: 100%;
+            height: 500px;
+            font-size: 18px;
+        }
+        
+        .profile-content {
+            max-width: 60%;
+            width: 40%;
+            min-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        
+        .boxes-part {
+            size: 80%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: white;
+            display: flex;
+            /*Border*/
+            border-color: #bdc3c7;
+            border-width: 1px;
+            border-style: solid;
+            padding: 15px;
+        }
+        
+        label {
+            font-size: larger;
+            margin-right: 10%;
+            margin-bottom: 10%;
+        }
+        
+        .box1 {
+            size: 80%;
+            border-color: #bdc3c7;
+            border-width: 1px;
+            border-style: solid;
+            padding: 15px;
+        }
+        
+        .box {
+            float: left;
+            /* text:*/
+            text-align: left;
+            /*box:*/
+            /* border-radius: 50px;*/
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+            /*Border*/
+            border-color: #bdc3c7;
+            border-width: 1px;
+            width: 90%;
+            padding: 15px;
+        }
+        
+        .box a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .cent {
+            text-align: center;
+            padding: 10%
+        }
