@@ -6,20 +6,15 @@ und responsive gestaltet.*/
 
 .titel_link {
     font-size: 28px;
-    max-width: 300px;
+    width: 90%;
     text-overflow: ellipsis;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
     color: white;
-    border: 10px outset rgb(63, 62, 62) 70%;
-    background-color: rgb(63, 62, 62);
     line-height: 100%;
-}
-
-.titel_link:active {
-    background-color: rgb(63, 62, 62);
-    border: 3px outset rgb(165, 109, 109) 70%;
+    background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 5px;
 }
 
 
@@ -57,38 +52,47 @@ und responsive gestaltet.*/
 
 .item1 {
     background-image: url(../pictures/topic_MachineLearningSizedsmall.png);
+    /*   background-image: url(../pictures/topic_MLNewSize.jpg);*/
 }
 
 .item2 {
-    background-image: url(../pictures/topic_Projekt.jpg);
+    background-image: url(../pictures/topic_HTSProjectNew.jpg);
+    /* background-image: url(../pictures/topic_HTSProjectNewSize.jpg);*/
 }
 
 .item3 {
-    background-image: url(../pictures/topic_AISizedsmall.jpg);
+    /*  background-image: url(../pictures/topic_AISizedsmall.jpg);*/
+    background-image: url(../pictures/topic_AINEWSize.jpg);
 }
 
 .item4 {
-    background-image: url(../pictures/topic_DataMiningSizedsmall.jpg);
+    /*  background-image: url(../pictures/topic_DataMiningOld.jpg);*/
+    background-image: url(../pictures/topic_DataMiningOldNewSize.jpg);
 }
 
 .item5 {
     background-image: url(../pictures/topic_DeepLearningNormal.jpg);
+    /*background-image: url(../pictures/topic_DeepLearningNormalNEWSize.jpg);*/
 }
 
 .item6 {
-    background-image: url(../pictures/topic_ApplicationPageSizedsmall.jpg);
+    /* background-image: url(../pictures/topic_ApplicationPageSizedsmall.jpg);*/
+    background-image: url(../pictures/topic_ApplicationNEWSize.jpg);
 }
 
 .item7 {
-    background-image: url(../pictures/topic_Career.jpg);
+    /*  background-image: url(../pictures/topic_Career.jpg);*/
+    background-image: url(../pictures/topic_CareerNEWSize.jpg);
 }
 
 .item8 {
     background-image: url(../pictures/topic_FundaSizedsmall.png);
+    /* background-image: url(../pictures/topic_FundaNEWSize.jpg);*/
 }
 
 .item9 {
-    background-image: url(../pictures/topic_FundaSizedsmall.png);
+    /* background-image: url(../pictures/topic_DataMiningNew.jpg);*/
+    background-image: url(../pictures/topic_DataMiningNEWSize.jpg);
 }
 
 
@@ -146,6 +150,11 @@ wenn der Bildschirm eine Breite von  670 Pixel unterschreitet.
         padding-left: 7%;
     }
 }
+
+
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  550Pixel unterschreitet.
+*/
 
 @media screen and (max-width: 550px) {
     .grid_container {

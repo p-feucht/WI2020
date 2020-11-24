@@ -1,24 +1,85 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* add yellow background */
-.body {
-    width: 100%;
-    height: 500px;
-}
-
-.profile-content {
-    max-width: 60%;
-    width: 40%;
-    min-width:300px;
-    margin-left: auto;
-    margin-right:auto;
-    padding-top: 50px;
-    padding-bottom: 400px;
-    text-align: center;
-}
+    * {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    /* add yellow background */
+    
+    .body {
+        width: 100%;
+        height: 500px;
+        font-size: 18px;
+    }
+    
+    .profile-content {
+        max-width: 60%;
+        width: 40%;
+        min-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    
+    b {
+        color: #feca57;
+    }
+    
+    label,
+    fieldset,
+    button {
+        margin: 15px;
+    }
+    
+    .boxes-part {
+        border-color: #bdc3c7;
+        border-width: 1px;
+        border-style: solid;
+        padding: 15px;
+    }
+    
+    .box {
+        border-color: #bdc3c7;
+        border-width: 1px;
+        border-style: solid;
+        padding: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        text-align: left;
+    }
+    
+    .box-element {
+        padding: 5px;
+        margin: 20px;
+    }
+    
+    .box a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .cent {
+        padding: 0.4%
+    }
+    
+    button {
+        color: black;
+        border: 1px solid silver;
+        background-image: linear-gradient(to top, gainsboro 0%, white 60%);
+        border-radius: 20px;
+    }
+    
+    .box-text {
+        text-align: left;
+        padding: 0.5%;
+    }
+    
+    h5 {
+        margin-bottom: 1%;
+    }
+    
+    h3 {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }

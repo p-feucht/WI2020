@@ -14,7 +14,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
     <link rel="icon" href="images/logoBiene.png" />
     <meta name="description" content="">
     
-    <link href="CSS/headerDesign.css" rel="stylesheet">
+ <!--   <link href="CSS/headerDesign.css" rel="stylesheet">-->
     <link href="CSS/formularBiete.css" rel="stylesheet">
     <link href="CSS/datepicker.css" rel="stylesheet">
 
@@ -90,7 +90,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     <div class=formblock>
                         <label>Gib deinem Angebot einen <b>Titel</b></label><label class="Fehlermeldung" id="FehlermeldungTitle">*</label>
                         <br>
-                        <input id="title" type="text" name="title" value="" size="30" maxlength="30">
+                        <input id="title" type="text" name="title" value="<?php echo htmlspecialchars($title); ?>" size="30" maxlength="30">
                         <label class="Fehlermeldung" id="FehlermeldungTitle"></label>
                         <div class=unterüberschrift>
                             <label>Tipp: Nutze Begriffe, die andere Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
@@ -99,7 +99,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     </div>
 
                     <div class="formblock">
-                        <label>Wähle einen <b>Angebotszeitraum </b><label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>
+                        <label>Wähle einen <b>Angebotszeitraum </b><!--<label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>-->
                         <br>
                         <input type="text" name="datefilter" value="" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
                         <script type="text/javascript">
@@ -120,7 +120,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1"></textarea>
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1" value="<?php echo htmlspecialchars($beschreibung); ?>"></textarea>
                         <br>
                     </div>
 
@@ -144,30 +144,31 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                             klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
                         </div>
                         <label>Vorname 
-                            <input type="text" id="Vorname" name="Vorname" value="" size="20" maxlength="20">
+                            <input type="text" id="Vorname" name="Vorname" value="<?php echo htmlspecialchars($vorname); ?>" size="20" maxlength="20">
                            
                         </label> <label class="Fehlermeldung" id="FehlermeldungVorname">*</label>
                         <br>
                         <label>Nachname
-                            <input type="text" id="Nachname" name="Nachname" value="" size="30" maxlength="30"> 
+                            <input type="text" id="Nachname" name="Nachname" value="<?php echo htmlspecialchars($nachname); ?>" size="30" maxlength="30"> 
                         </label><label class="Fehlermeldung" id="FehlermeldungNachname">*</label>
                         <br>
                         <label>Straße
-                            <input type="text" id="StrasseID" name="Strasse" value="" size="30" maxlength="30">
+                            <input type="text" id="StrasseID" name="Strasse" value="<?php echo htmlspecialchars($strasse); ?>" size="30" maxlength="30">
                         </label><label class="Fehlermeldung" id="FehlermeldungStrasse">*</label>
                         <br>
                         <label>Hausnummer
-                            <input type="text" id="HnrID" name="Hnr" value="" size="4" maxlength="4"> 
+                            <input type="text" id="HnrID" name="Hnr" value="<?php echo htmlspecialchars($hnr); ?>" size="4" maxlength="4"> 
                         </label><label class="Fehlermeldung" id="FehlermeldungHnr">*</label>
                         <br>
                         <label>Postleitzahl
-                            <input type="number" id="plzinput" name="PLZ" value="" size="5" maxlength="5"> 
+                            <input type="number" id="plzinput" name="PLZ" value="<?php echo htmlspecialchars($plz); ?>" size="5" maxlength="5"> 
                          </label>
-                         <label class="Fehlermeldung" id="FehlermeldungPLZ"></label>
+                         <label class="Fehlermeldung" id="FehlermeldungPLZ">*</label>
                         <br>
                         <label>Ort
-                            <input type="text" name="Ort" value="" size="30" maxlength="30">
+                            <input type="text" name="Ort" id="OrtID" value="<?php echo htmlspecialchars($ort); ?>" size="30" maxlength="30">
                         </label>
+                        <label class="Fehlermeldung" id="FehlermeldungOrt">*</label>
                     </div>
 
 
