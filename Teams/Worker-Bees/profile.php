@@ -15,35 +15,44 @@
 <body>
 
     <?php include "PHP/header.php"; ?>
+    <?php include "PHP/profileData.php"; ?>
 
     <div class="profile-content">
-    <h1>Dein Account</h1>
+        <h1>Dein Account</h1>
         Du wirst in der nächsten Version die Möglichkeit haben, dein Profil nach deinen eigenen
         Wünschen bearbeiten zu können.
     </div>
 
-<div class="boxes-part">
-        <div class="box1">
-        <h3>Deine Profildaten</h3>
-            <label>Benutzername</label>
-            <p class="box-text" id="username">username</p>
-            <button class="cent" type="button">Bearbeiten</button>
-            <label>E-Mail-Adresse</label>
-            <p class="box-text" id="email">email</p>
-            <button class="cent" type="button">Bearbeiten</button>
-            <label>Passwort</label>
-            <p class="box-text" id="passwort">******</p>
-            <button class="cent" type="button">Bearbeiten</button>   
-        </div>
+    <div class="boxes-part">
         <div class="box">
-        <h3>Deine Angebote</h3>
+            <h3>Deine Profildaten</h3>
+            <div class="box-element">
+                <h5>Benutzername</h5>
+                <?php echo $username;?>
+               
+                <button class="cent" type="button">Bearbeiten</button>
+            </div>
+            <div class="box-element">
+                <h5>E-Mail-Adresse</h5>
+                <?php echo $email;?>
                 
+                <button class="cent" type="button">Bearbeiten</button>
+            </div>
+            <div class="box-element">
+                <h5>Passwort</h5>
+                <label class="box-text" id="passwort">******</label>
+                <button class="cent" type="button">Bearbeiten</button>
+            </div>
+        </div>
+        <div class="box">
+            <h3>Deine Angebote</h3>
+
         </div>
 
 
         <div class="box">
-        <h3>Deine Buchungen</h3>
-            
+            <h3>Deine Buchungen</h3>
+
         </div>
     </div>
 
@@ -52,3 +61,4 @@
 </body>
 
 </html>
+
