@@ -15,27 +15,7 @@ und responsive gestaltet.*/
     line-height: 100%;
     background-color: rgba(0, 0, 0, 0.555);
     border-radius: 5px;
-    /*  border: 10px outset rgb(63, 62, 62) 70%;
-    background-color: rgb(63, 62, 62);
-   */
 }
-
-
-/*
-.titel_box {
-    max-width: 300px;
-    background-color: rgba(0, 0, 0, 0.555);
-    border-radius: 5px;
-}
-*/
-
-
-/*
-.titel_link:active {
-    background-color: rgb(63, 62, 62);
-    border: 3px outset rgb(165, 109, 109) 70%;
-}
-*/
 
 
 /* Hier wird festgelegt, was passiert wenn man über die Topics hovert*/
@@ -161,6 +141,11 @@ wenn der Bildschirm eine Breite von  670 Pixel unterschreitet.
         padding-left: 7%;
     }
 }
+
+
+/* Hier wird festgelegt was passiert, 
+wenn der Bildschirm eine Breite von  550Pixel unterschreitet.
+*/
 
 @media screen and (max-width: 550px) {
     .grid_container {
