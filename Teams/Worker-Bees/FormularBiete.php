@@ -244,7 +244,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 
                     <div class="Dienstleistung selectt">
                         <div class="formblock">
-                            <label>Gib die <b>Art der Bezahlung</b> an </label>
+                            <label>Gib die <b>Art der Bezahlung</b> an</label>
                             <br>
                             <select name="Bezahlart">
                                 <option>Preis/Stunde</option>

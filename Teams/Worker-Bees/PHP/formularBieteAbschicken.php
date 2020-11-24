@@ -13,12 +13,6 @@ $password = "HKSZ52";
 $dbname = "workerbees_db1";
 
 
-// Username Ersteller aus 
-
-//$sql_2 = "SELECT password FROM user where username = '$username'";
-
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
 
