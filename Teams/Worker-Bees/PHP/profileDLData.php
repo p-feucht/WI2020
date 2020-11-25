@@ -7,8 +7,11 @@ if($connP==""){
 }
 else{
 
+    $username = $_SESSION["username"];
+    if($username!=""){
+
         $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung,
-        PLZ, Ort, Bild, usernameErsteller, Dienstleistung_ID, Preis, BezInBier, Preisart FROM AngebotDienstleistung";
+        PLZ, Ort, Bild, Dienstleistung_ID, Preis, BezInBier, Preisart FROM AngebotDienstleistung WHERE usernameErsteller='$username'";
         $result = $connP->query($sql);
         
         if ($result->num_rows > 0) {
@@ -22,7 +25,6 @@ else{
                 $title = $row["ATitel"];
                 $price = $row["Preis"];
                 $pricetype = $row["Preisart"];
-                $offeruser = $row["usernameErsteller"];
                 $plz = $row["PLZ"];
                 $description = $city = $row["ABeschreibung"];
                 $bezBier = $row["BezInBier"];
@@ -62,5 +64,6 @@ else{
         } else {
             echo "Keine Einträge gefunden.";
         }
+    }
 }
 ?>

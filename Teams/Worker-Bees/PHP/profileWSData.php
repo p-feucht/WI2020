@@ -6,63 +6,67 @@ if($connP==""){
     die("Connection failed: " . $connP->connect_error);
 }
 else{
+    
+    $username = $_SESSION["username"];
+    if($username!=""){
 
-    //offer data
-    $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, PLZ, Ort, Bild, 
-        usernameErsteller, Werkstatt_ID, PreisProTag, BezInBier, 
-        ABohr, ADrechsel, ASchleif, ASaege, AKleinteil FROM AngebotWerkstatt";
-    $result = $connP->query($sql);
+        //offer data
+        $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, PLZ, Ort, Bild, Werkstatt_ID, PreisProTag, BezInBier, 
+            ABohr, ADrechsel, ASchleif, ASaege, AKleinteil FROM AngebotWerkstatt WHERE usernameErsteller='$username'";
+        $result = $connP->query($sql);
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while ($row = $result->fetch_assoc()) {
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
 
-            $beginDat = $row["ABeginndat"];
-            $endDat = $row["AEndedat"];
-            $orderID = $row["Werkstatt_ID"];
-            $location = $row["Ort"];
-            $title = $row["ATitel"];
-            $price = $row["PreisProTag"];
-            $offeruser = $row["usernameErsteller"];
-            $plz = $row["PLZ"];
-            $description = $city = $row["ABeschreibung"];
-            $bezBier = $row["BezInBier"];
-            $image = $row["Bild"];
+                $beginDat = $row["ABeginndat"];
+                $endDat = $row["AEndedat"];
+                $orderID = $row["Werkstatt_ID"];
+                $location = $row["Ort"];
+                $title = $row["ATitel"];
+                $price = $row["PreisProTag"];
 
-            $abohr = $row["ABohr"];
-            $adrechsel = $row["ADrechsel"];
-            $aschleif = $row["ASchleif"];
-            $asaege = $row["ASaege"];
-            $akleinteil = $row["AKleinteil"];
+                $plz = $row["PLZ"];
+                $description = $city = $row["ABeschreibung"];
+                $bezBier = $row["BezInBier"];
+                $image = $row["Bild"];
 
-            $card_ID = "WScard_" . (string)$orderID;
+                $abohr = $row["ABohr"];
+                $adrechsel = $row["ADrechsel"];
+                $aschleif = $row["ASchleif"];
+                $asaege = $row["ASaege"];
+                $akleinteil = $row["AKleinteil"];
 
-            $bier = round($price, 0); // so that beer is counted in whole beers
-    ?>
-        
-                <div class="angebot" id="<?php echo $angebotID?>">
-                    <h4 id="title">Titel  </h2>
-                    <?php echo $title ?>
-                    <h4 id="description">Beschreibung  </h2>  
-                    <?php echo $description?>
-                    <h4 id="begDat">Beginndatum  </h2
-                    ><?php echo $beginDat?>
-                    <h4 id="endDat">Enddatum  </h2
-                    ><?php echo $endDat?>
-                    <h4 id="endDat">Ort  </h2
-                    ><?php echo $location?>
-                    <h4 id="endDat">Preis  </h2
-                    ><?php echo $price?>€
-                    <h4 id="endDat">In Bier bezahlbar  </h2
-                    ><?php echo $bezBier?>
-                    </br>
-                    <button class="cent" type="button" onclick="bearbeitenClick()"><p>Bearbeiten</p></button>
-                   
-                </div>
-    <?php
+                $card_ID = "WScard_" . (string)$orderID;
+
+                $bier = round($price, 0); // so that beer is counted in whole beers
+        ?>
+            
+                    <div class="angebot" id="<?php echo $angebotID?>">
+                        <h4 id="title">Titel  </h2>
+                        <?php echo $title ?>
+                        <h4 id="description">Beschreibung  </h2>  
+                        <?php echo $description?>
+                        <h4 id="begDat">Beginndatum  </h2
+                        ><?php echo $beginDat?>
+                        <h4 id="endDat">Enddatum  </h2
+                        ><?php echo $endDat?>
+                        <h4 id="endDat">Ort  </h2
+                        ><?php echo $location?>
+                        <h4 id="endDat">Preis  </h2
+                        ><?php echo $price?>€
+                        <h4 id="endDat">In Bier bezahlbar  </h2
+                        ><?php echo $bezBier?>
+                        </br>
+                        <?php echo $username; ?>
+                        <button class="cent" type="button" onclick="bearbeitenClick()"><p>Bearbeiten</p></button>
+                    
+                    </div>
+        <?php
+            }
+        } else {
+            echo "Keine Einträge gefunden.";
         }
-    } else {
-        echo "Keine Einträge gefunden.";
     }
 }
 ?>
