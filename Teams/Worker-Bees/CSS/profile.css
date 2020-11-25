@@ -51,7 +51,7 @@
     
     .box-element {
         padding: 5px;
-        margin: 20px;
+        margin: 5px;
     }
     
     .box a {
@@ -75,7 +75,7 @@
         padding: 0.5%;
     }
     
-    h4 {
+    .box-element h4 {
         margin-bottom: 0.2%;
         color: #feca57;
     }
@@ -83,4 +83,24 @@
     h3 {
         margin-top: 1%;
         margin-bottom: 1%;
+    }
+    
+    .Werkstatt-Angebote h4,
+    .Werkzeug-Angebote h4,
+    .Dienstleistung-Angebote h4 {
+        margin-bottom: 0.2%;
+        margin-top: 0.6%;
+        color: #feca57;
+    }
+    
+    .angebot {
+        border-color: #bdc3c7;
+        border-width: 1px;
+        border-style: solid;
+        padding: 1%;
+    }
+    
+    .angebot h4 {
+        color: black;
+        margin-bottom: 2px;
     }
