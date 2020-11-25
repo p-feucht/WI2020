@@ -24,7 +24,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
    
 
     <div class="boxes-part">
-        <div class="box">
+        <div class="box" id="profildaten">
             <h3>Deine Profildaten</h3>
             <div class="box-element">
                 <h4>Benutzername</h4>

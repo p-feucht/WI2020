@@ -112,6 +112,11 @@
     justify-content: center;*/
     }
     
+    #profildaten {
+        display: grid;
+        grid-template-columns: 20% 26.66% 26.66% 26.66%;
+    }
+    
     .angebot h4 {
         color: black;
         margin-bottom: 2px;
