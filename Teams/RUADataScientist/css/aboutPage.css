@@ -1,3 +1,14 @@
+body {
+    background-color: rgb(237, 237, 237);
+}
+
+.paralax {
+    background: url(../pictures/topic_AI.jpeg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 180px;
+    display: grid;
+}
 /* CSS for About-Page*/
 
 .paralax {
@@ -42,7 +53,7 @@
 .aboutContainer {
     display: block;
     color: rgb(39, 39, 39);
-    background-color: rgb(237, 237, 237);
+    /*background-color: rgb(237, 237, 237);*/
 }
 
 .aboutContainer>div {

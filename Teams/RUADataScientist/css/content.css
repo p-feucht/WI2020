@@ -5,6 +5,17 @@
     list-style: none;
 }
 
+    .item label{
+        position: absolute;
+        padding: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: aliceblue;
+        font-size: 2vw;
+        background-color: rgba(0, 0, 0, 0.555);
+        border-radius: 5px;
+    }
 .item{
     display: flex;
     justify-content: center;

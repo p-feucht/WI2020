@@ -9,6 +9,7 @@ body{
     padding-top: 2vh;
     margin-right: 4vw;
     margin-left: 4vw;
+    margin-bottom: 6vh;
 }
 
 .result-page-headline {
@@ -74,7 +75,7 @@ a{
 .feedback-smiley {
     width: 22vh;
     height: 22vh;
-    margin: 3vh;
+    margin-top: 2vh;
 }
 
 @media screen and (max-width: 480px) {
