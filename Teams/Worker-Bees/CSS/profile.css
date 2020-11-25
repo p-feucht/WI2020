@@ -41,9 +41,6 @@
     }
     
     .box {
-        border-color: #bdc3c7;
-        border-width: 1px;
-        border-style: solid;
         padding: 15px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         text-align: left;
@@ -94,14 +91,16 @@
     
     .Werkstatt-Angebote h4,
     .Werkzeug-Angebote h4,
-    .Dienstleistung-Angebote h4 {
+    .Dienstleistung-Angebote h4,
+    .Buchung-Angebote h4 {
         margin-bottom: 0.2%;
-        margin-top: 0.6%;
+        margin-top: 1%;
         color: #feca57;
     }
     
     .angebot {
-        border-color: #bdc3c7;
+        border-color: #ecf0f1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
         border-width: 1px;
         border-style: solid;
         padding: 1%;

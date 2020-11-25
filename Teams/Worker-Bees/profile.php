@@ -69,6 +69,10 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 
         <div class="box">
             <h3>Deine Buchungen</h3>
+            <div class="Buchung-Angebote">
+                <?php include "PHP/profileBuchung.php"; ?>
+                
+            </div>
 
         </div>
     </div>
