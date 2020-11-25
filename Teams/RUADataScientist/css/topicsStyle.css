@@ -5,7 +5,7 @@ und responsive gestaltet.*/
 /* Hier wird der Titel der Topics formatiert. */
 
 .titel_link {
-    font-size: 28px;
+    font-size: 2vw;
     width: 90%;
     text-overflow: ellipsis;
     font-weight: bold;
@@ -15,6 +15,7 @@ und responsive gestaltet.*/
     line-height: 100%;
     background-color: rgba(0, 0, 0, 0.555);
     border-radius: 5px;
+    padding: 10px;
 }
 
 
@@ -67,7 +68,7 @@ und responsive gestaltet.*/
 
 .item4 {
     /*  background-image: url(../pictures/topic_DataMiningOld.jpg);*/
-    background-image: url(../pictures/topic_DataMiningOldNewSize.jpg);
+    background-image: url(../pictures/topic_DataMiningNEWSize.jpg);
 }
 
 .item5 {
@@ -107,8 +108,8 @@ und wir der Grid in der Seite angeordnet sein sill*/
     gap: 2%;
     padding-top: 2%;
     padding-bottom: 5%;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding-right: 12%;
+    padding-left: 12%;
 }
 
 
@@ -124,7 +125,7 @@ Der Grid hat nur noch 2 Spalten undbekommt 4 Reihen. Auch die Schriftgröße und
         text-align: center;
     }
     .grid_container .item:hover .titel_link {
-        font-size: 24px;
+        font-size: 3vw;
     }
     .grid_container {
         grid-template-columns: 50% 50%;
@@ -167,6 +168,10 @@ wenn der Bildschirm eine Breite von  550Pixel unterschreitet.
         align-self: center;
         padding-right: 7%;
         padding-left: 7%;
+    }
+
+    .item{
+        margin-bottom: 10px;
     }
 }
 

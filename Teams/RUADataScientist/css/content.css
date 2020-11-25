@@ -5,6 +5,15 @@
     list-style: none;
 }
 
+.paralax{
+    background: url(../pictures/ZZZZZ488-01.svg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height:70vh;
+    display: grid;
+    margin-bottom: 6vh;
+}  
+
 .item{
     display: flex;
     justify-content: center;
@@ -23,6 +32,7 @@
     max-width: 90%;
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 /*Carousel Backgrounds*/
@@ -34,7 +44,7 @@
     background-image: url(../pictures/topic_AINEWSize.jpg);
 }
 .c3{
-    background-image: url(../pictures/topic_DataMiningOldNewSize.jpg);
+    background-image: url(../pictures/topic_DataMiningNEWSize.jpg);
 }
 .c4{
     background-image: url(../pictures/topic_ApplicationNEWSize.jpg);
@@ -46,20 +56,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: wheat;
+    color: white;
     font-size: 2vw;
     background-color: rgba(0, 0, 0, 0.555);
     border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
 }
-
-.paralax{
-    background: url(../pictures/ZZZZZ488-01.svg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
-    height:70vh;
-    display: grid;
-    margin-bottom: 6vh;
-}  
 
 .quoteText{
     font-style: italic; 
@@ -69,7 +72,7 @@
 }
 
 .quoteText>div{
-    font-size: 1vw;
+    font-size: 1.5vw;
 }
 
 .button {
@@ -164,12 +167,12 @@ left: 15%;*/
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 4vh;
-    font-size: 16px;
 }
 
 .infobox>div{
     text-align: center;
     line-height: 200%;
+    font-size: 16px;
 }
 
 .model {
@@ -218,10 +221,6 @@ left: 15%;*/
 
 @media(max-width:600px) {
 
-    .infobox{
-        font-size: 3vw;
-    }
-
     .infobox>div{
         text-align: justify;
     }
@@ -237,11 +236,15 @@ left: 15%;*/
         height: 275px;
     }
     .button span {
-        font-size: 6vw;
+        font-size: 8vw;
     }
 
     .quoteText>div{
-        font-size: 3vw;
+        font-size: 5vw;
+    }
+
+    .carousel-header{
+        font-size: 5vw;
     }
 
     .item img{
