@@ -1,3 +1,6 @@
+body {
+    background-color: rgb(237, 237, 237);
+}
 
 .paralax {
     background: url(../pictures/topic_AI.jpeg) no-repeat center;
@@ -6,6 +9,7 @@
     height: 180px;
     display: grid;
 }
+/* CSS for About-Page*/
 
 .paralax {
     background: url(../pictures/about_paralaxSized.jpg) no-repeat center;
@@ -17,7 +21,6 @@
 
 .quoteText {
     font-style: italic;
-    font-size: 3vw;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
@@ -25,10 +28,12 @@
 
 .quoteText>h1 {
     padding: 20px 15px 0px 15px;
+   font-size: 5vw;
 }
 
 .quoteText>h2 {
     padding: 5px 15px 20px 25px;
+    font-size: 3vw;
 }
 
 .contentBox {
@@ -49,7 +54,7 @@
 .aboutContainer {
     display: block;
     color: rgb(39, 39, 39);
-    background-color: rgb(237, 237, 237);
+    /*background-color: rgb(237, 237, 237);*/
 }
 
 .aboutContainer>div {
@@ -83,21 +88,29 @@
     .paralax {
         height: 300px;
     }
-    .quoteText {
-        font-size: 2vw;
-    }
 }
 
 @media screen and (min-width: 801px) {
     .quoteText {
         border-radius: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
     }
+
+    .quoteText>h1{
+        font-size: 2.5vw;;
+    }
+
+    .quoteText>h2{
+        font-size: 1vw;;
+    }
+
     .paralax {
         height: 300px;
     }
     .aboutContainer>div {
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 4%;
+        margin-right: 4%;
     }
     .aboutContainer>div>p {
         text-align: justify;

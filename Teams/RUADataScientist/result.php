@@ -113,7 +113,7 @@
     <!--CONTENT-->
     <?php
     echo <<<HTML
-        <div class='result-page-content'><br><br>
+        <div class='result-page-content'>
     HTML;
     if(!$logged_out) {
        if ($_SESSION["results"] != null) {
