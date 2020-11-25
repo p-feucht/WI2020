@@ -1,21 +1,10 @@
     
 /* CSS for Homepage (index.html) */
 
-    #autoWidth {
+#autoWidth {
     list-style: none;
 }
 
-    .item label{
-        position: absolute;
-        padding: 20px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: aliceblue;
-        font-size: 2vw;
-        background-color: rgba(0, 0, 0, 0.555);
-        border-radius: 5px;
-    }
 .item{
     display: flex;
     justify-content: center;
@@ -27,9 +16,33 @@
     max-width: 90%;
 }
 
+.carouselbox{
+    width: 90%;
+    height: 30vh;
+    border-radius: 5px;
+    max-width: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Carousel Backgrounds*/
+.c1{
+    background-image: url(../pictures/topic_DeepLearningNormal.jpg);
+
+}
+.c2{
+    background-image: url(../pictures/topic_AINEWSize.jpg);
+}
+.c3{
+    background-image: url(../pictures/topic_DataMiningOldNewSize.jpg);
+}
+.c4{
+    background-image: url(../pictures/topic_ApplicationNEWSize.jpg);
+}
+
 .item label{
     position: absolute;
-    padding: 20px;
+    padding: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -234,6 +247,7 @@ left: 15%;*/
     .item img{
         max-width: 70%;
         }
+
     .item label{
         font-size: large;
     }
