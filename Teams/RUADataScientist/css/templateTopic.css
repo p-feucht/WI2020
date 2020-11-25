@@ -58,7 +58,6 @@
 .aboutContainer {
     display: block;
     color: rgb(39, 39, 39);
-    background-color: rgb(237, 237, 237);
 }
 
 .aboutContainer>div {
@@ -85,7 +84,6 @@
 
 .source {
     padding: 30px;
-    background-color: rgb(237, 237, 237);
 }
 
 .source>h3 {
