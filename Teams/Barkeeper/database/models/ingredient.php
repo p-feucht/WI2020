@@ -40,7 +40,7 @@ class Ingredient {
         $stmt->execute();
     }
     public function update() {
-        $stmt = $this->db->prepare("UPDATE `ingredients` SET  `title`=?, `content`=?, `likes`=?, `dislikes`=?) WHERE `id`=?");
+        $stmt = $this->db->prepare("UPDATE `ingredients` SET  `title`=?, `content`=?, `likes`=?, `dislikes`=? WHERE `id`=?");
         $stmt->bind_param('ssiii', $this->title, $this->content, $this->likes, $this->dislikes, $this->id);
         $stmt->execute();
     }
