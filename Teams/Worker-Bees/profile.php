@@ -37,7 +37,7 @@
                 <h4>E-Mail-Adresse</h4>
                 <?php echo $email;?>
                 
-                <button class="cent" type="button">Bearbeiten</button>
+                <button class="cent" type="button" onclick="bearbeitenClick()">Bearbeiten</button>
             </div>
             <div class="box-element">
                 <h4>Passwort</h4>

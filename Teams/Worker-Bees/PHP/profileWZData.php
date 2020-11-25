@@ -49,6 +49,7 @@ else{
                     ><?php echo $bezBier?>
                     <!--<h4 id="endDat">Anzahl Buchungen </h2> 
                     ist noch auszufüllen-->
+                    </br>
                     <button class="cent" type="button" onclick="bearbeitenClick()"><p>Bearbeiten</p></button>
                 
                 </div>             

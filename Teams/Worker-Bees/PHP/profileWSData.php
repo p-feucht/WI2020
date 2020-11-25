@@ -55,7 +55,7 @@ else{
                     ><?php echo $price?>€
                     <h4 id="endDat">In Bier bezahlbar  </h2
                     ><?php echo $bezBier?>
-
+                    </br>
                     <button class="cent" type="button" onclick="bearbeitenClick()"><p>Bearbeiten</p></button>
                    
                 </div>
