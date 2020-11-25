@@ -58,7 +58,7 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="test.html">Test</a>
+                <a class="active" href="test.html">Test</a>
             </li>
             <li>
                 <a href="topics.html">Topics</a>
