@@ -38,7 +38,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 <body>
     
     <?php 
-    $site_name = "HTML5-Seite mit Grundstruktur";
+
     include ("./PHP/header.php"); ?>
 
     <div class="content">

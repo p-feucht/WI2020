@@ -21,11 +21,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
     <?php include "PHP/header.php"; ?>
     <?php include "PHP/profileUserData.php"; ?>
 
-    <div class="profile-content">
-        <h1>Dein Account</h1>
-        Du wirst in der nächsten Version die Möglichkeit haben, dein Profil nach deinen eigenen
-        Wünschen bearbeiten zu können.
-    </div>
+   
 
     <div class="boxes-part">
         <div class="box">

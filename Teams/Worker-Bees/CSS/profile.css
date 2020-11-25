@@ -69,6 +69,12 @@
         border: 1px solid silver;
         background-image: linear-gradient(to top, gainsboro 0%, white 60%);
         border-radius: 20px;
+        padding: 0px;
+        outline: none;
+    }
+    
+    .buttonline {
+        display: block;
     }
     
     .box-text {
@@ -99,9 +105,21 @@
         border-width: 1px;
         border-style: solid;
         padding: 1%;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        background-color: #f5f6fa;
+        /*flex-wrap: wrap;
+    justify-content: center;*/
     }
     
     .angebot h4 {
         color: black;
         margin-bottom: 2px;
+    }
+    
+    .Angebot-pic {
+        float: left;
+        width: 50%;
+        padding: 5px;
+        box-sizing: border-box;
     }
