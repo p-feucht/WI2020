@@ -4,6 +4,9 @@
 
 
 <head>
+    <meta charset="utf-8">
+    <title>Worker Bees</title>
+    <link rel="icon" href="images/logoBiene.png" />
     <meta name="description" content="">
     <link href="CSS/index.css" rel="stylesheet">
 
@@ -29,19 +32,19 @@
     <div class="category-section">
         <div class="category">
             <a href="werkzeugPage.php">
-                <img class="categoryPics" src="images/Werkzeug.jpg" alt="Werkzeug">
+                <img class="categoryPics" src="images/Werkzeug.jpg" alt="Werkzeug" loading="lazy">
                 <p class="categoryText">Brauchst du ein bestimmtes Werkzeug?</p>
             </a>
         </div>
         <div class="category">
             <a href="werkstattPage.php">
-                <img class="categoryPics" src="images/Flaeche.jpg" alt="Fläche">
+                <img class="categoryPics" src="images/Flaeche.jpg" alt="Fläche" loading="lazy">
                 <p class="categoryText">Brauchst du einen Ort, um dein Hobby auszuleben?</p>
             </a>
         </div>
         <div class="category">
             <a href="dienstleistungPage.php">
-                <img class="categoryPics" src="images/Dienst.jpg" alt="Dienst">
+                <img class="categoryPics" src="images/Dienst.jpg" alt="Dienst" loading="lazy">
                 <p class="categoryText">Brauchst du jemanden, der dir unter die Arme greift?</p>
             </a>
         </div>

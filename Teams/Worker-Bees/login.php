@@ -1,12 +1,6 @@
 <?php
 // start the session
 session_start();
-
-// Check if the user is already logged in, if yes then redirect him to welcome page
-/* if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: indexTest.php");
-    exit;
-} */
  
 // Include config file
 require_once "Login/config.php";
@@ -53,9 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
 
-                    
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                   
 
                     if(mysqli_stmt_fetch($stmt)){
                         
@@ -76,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
                             
-                            // Redirect user to welcome page
+                            // Redirect user to index page
                             header("location: index.php");
                         } else{
                             // Display an error message if password is not valid
@@ -103,22 +95,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Worker Bees - Anmeldung</title>
     <link rel="icon" href="images/logoBiene.png" />
     <link href="CSS/loginDesign.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"> -->
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; margin: 0 auto; }
     </style>
 </head>
+
 <body>
+
 <?php include "PHP/header.php";?>
+
     <div class="wrapper">
         <h2>Anmelden</h2>
         <p>Bitte gebe deine Daten ein, um dich einzuloggen.</p>
+        <!-- start the form  -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Benutzername</label>
@@ -133,10 +129,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Anmelden">
             </div>
+            
             <p>Du hast noch keinen Account? 
             </br> 
+            <!-- link to register page -->
             <a href="register.php">Hier kannst Du dich registrieren.</a></p>
         </form>
+
     </div>   
+
 </body>
+
 </html>

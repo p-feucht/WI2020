@@ -6,6 +6,15 @@
     text-align: justify;
 }
 
+ul.content-list {
+    margin-left: 10%;
+    font-weight: bold;
+    font-size: 16p;
+}
+
+ul.content-list>li{
+    padding-top: 1vh;
+}
 
 /*The paralax is the picture at the top in the background with the titel*/
 
@@ -58,7 +67,6 @@
 .aboutContainer {
     display: block;
     color: rgb(39, 39, 39);
-    background-color: rgb(237, 237, 237);
 }
 
 .aboutContainer>div {
@@ -85,7 +93,6 @@
 
 .source {
     padding: 30px;
-    background-color: rgb(237, 237, 237);
 }
 
 .source>h3 {

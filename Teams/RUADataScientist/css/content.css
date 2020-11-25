@@ -1,42 +1,8 @@
     
 /* CSS for Homepage (index.html) */
 
-    #autoWidth {
+#autoWidth {
     list-style: none;
-}
-
-    .item label{
-        position: absolute;
-        padding: 20px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: aliceblue;
-        font-size: 2vw;
-        background-color: rgba(0, 0, 0, 0.555);
-        border-radius: 5px;
-    }
-.item{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
-.item img{
-    border-radius: 5px;
-    max-width: 90%;
-}
-
-.item label{
-    position: absolute;
-    padding: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: wheat;
-    font-size: 2vw;
-    background-color: rgba(0, 0, 0, 0.555);
-    border-radius: 5px;
 }
 
 .paralax{
@@ -48,6 +14,56 @@
     margin-bottom: 6vh;
 }  
 
+.item{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.item img{
+    border-radius: 5px;
+    max-width: 90%;
+}
+
+.carouselbox{
+    width: 90%;
+    height: 30vh;
+    border-radius: 5px;
+    max-width: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+/*Carousel Backgrounds*/
+.c1{
+    background-image: url(../pictures/topic_DeepLearningNormal.jpg);
+
+}
+.c2{
+    background-image: url(../pictures/topic_AINEWSize.jpg);
+}
+.c3{
+    background-image: url(../pictures/topic_DataMiningNEWSize.jpg);
+}
+.c4{
+    background-image: url(../pictures/topic_ApplicationNEWSize.jpg);
+}
+
+.item label{
+    position: absolute;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2vw;
+    background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
 .quoteText{
     font-style: italic; 
     margin: auto;
@@ -56,7 +72,7 @@
 }
 
 .quoteText>div{
-    font-size: 1vw;
+    font-size: 1.5vw;
 }
 
 .button {
@@ -151,12 +167,12 @@ left: 15%;*/
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 4vh;
-    font-size: 16px;
 }
 
 .infobox>div{
     text-align: center;
     line-height: 200%;
+    font-size: 16px;
 }
 
 .model {
@@ -205,10 +221,6 @@ left: 15%;*/
 
 @media(max-width:600px) {
 
-    .infobox{
-        font-size: 3vw;
-    }
-
     .infobox>div{
         text-align: justify;
     }
@@ -224,16 +236,21 @@ left: 15%;*/
         height: 275px;
     }
     .button span {
-        font-size: 6vw;
+        font-size: 8vw;
     }
 
     .quoteText>div{
-        font-size: 3vw;
+        font-size: 5vw;
+    }
+
+    .carousel-header{
+        font-size: 5vw;
     }
 
     .item img{
         max-width: 70%;
         }
+
     .item label{
         font-size: large;
     }

@@ -39,7 +39,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
     
-
             // Close statement
             mysqli_stmt_close($stmt);
         }
@@ -111,7 +110,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Set parameters
             $param_username = $username;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            // Creates a password hash
+            $param_password = password_hash($password, PASSWORD_DEFAULT); 
             $param_email = $email;
             
             // Attempt to execute the prepared statement
@@ -139,7 +139,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Worker Bees - Registrierung</title>
     <link rel="icon" href="images/logoBiene.png" />
     <link href="CSS/loginDesign.css" rel="stylesheet">
-   <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"> -->
     <style type="text/css">
          body{ 
          font: 14px sans-serif;
@@ -151,11 +150,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     </style>
 </head>
+
 <body>
+
 <?php include "PHP/header.php";?>
+
     <div class="wrapper">
         <h2>Registrieren</h2>
         <p>Bitte fülle die Felder aus, um dich zu registrieren.</p>
+        
+        <!-- start the form -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Benutzername</label>
@@ -183,10 +187,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </br> 
                 <input type="reset" name="reset" class="btn btn-default" value="Daten zurücksetzen">
             </div>
+
             <p>Du hast schon einen Account? 
             </br> 
+           <!--  link to login page -->
             <a href="login.php">Hier geht es zum Login.</a></p>
         </form>
+
     </div>    
+
 </body>
+
 </html>
