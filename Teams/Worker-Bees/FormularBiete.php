@@ -225,7 +225,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                                     <li>
                                         <label>
                                 <input type="checkbox" name="a4_Saege" value="1">
-                                elektrische Standsägen
+                                elektrische Standsäge
                               </label>
                                     </li>
                                     <li>

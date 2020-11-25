@@ -28,4 +28,27 @@ function translateBoolFromDB ($aBinary){
     }
 }
 
+// this function returns the workshop equipment in textual form
+function tellEquipment($abohr, $adrechsel, $aschleif, $asaege, $akleinteil){
+    $equipment="";
+    if ($abohr=="ja"){
+        $equipment = $equipment ."Standbohrmaschine ";
+    }
+    if ($adrechsel=="ja"){
+        $equipment .= "Drechselbank/Drehbank ";
+    }
+    if ($aschleif=="ja"){
+        $equipment .= "Schleifmaschine ";
+    }
+    if ($asaege=="ja"){
+        $equipment .= "elektriche Standsäge ";
+    }
+    if ($akleinteil=="ja"){
+        $equipment .= "Grundausstattung Kleinteile ";
+    }if ($akleinteil!="ja" && $adrechsel!="ja" && $aschleif!="ja" && $asaege!="ja" && $akleinteil!="ja"){
+        $equipment = "keine Ausstattungsmerkmale genannt";
+    }
+    return $equipment;  
+}
+
 ?>

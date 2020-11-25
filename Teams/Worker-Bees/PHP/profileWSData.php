@@ -43,7 +43,17 @@ else{
                 $card_ID = "WScard_" . (string)$orderID;
 
                 // translates the information; makes "0" to "no" and "1" to "jes"
-                $bezBier = translateBoolFromDB($bezInBier); 
+                $bezBier = translateBoolFromDB($bezInBier);
+                $abohr = translateBoolFromDB($abohr); 
+                $adrechsel = translateBoolFromDB($adrechsel);
+                $aschleif = translateBoolFromDB($aschleif);
+                $asaege = translateBoolFromDB($asaege);
+                $akleinteil = translateBoolFromDB($akleinteil);
+
+                $textEquipment=tellEquipment($abohr, $adrechsel, $aschleif, $asaege, $akleinteil);
+                
+
+
         ?>
             
                     <div class="angebot">
@@ -61,6 +71,8 @@ else{
                         ><?php echo $price?>€
                         <h4>In Bier bezahlbar</h4
                         ><?php echo $bezBier?>
+                        <h4>Ausstattung</h4
+                        ><?php echo $textEquipment?>
                    
                         <div class="buttonline">
                             <button class="cent" type="button" onclick="bearbeitenClick()">Bearbeiten</button>
