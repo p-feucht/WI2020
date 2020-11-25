@@ -1,14 +1,13 @@
 <?php
 $servername = "localhost";
-$dbname = "barkeeper";
-$username = "root";
-$password = "";
+$username = "barkeeper_dbuser";
+$password = "JcNgS55uY2jQJK4a";
+$dbname = "barkeeper_cocktails";
 
 // Create connection
-$dbConnection = new mysqli($servername, $username, $password, $dbname);
-echo $dbConnection->connect_error;
+$dbConnection = mysqli_connect($servername, $username, $password, $dbname);
+
 // Check connection
-if ($dbConnection->connect_error) {
-  die("Connection failed: " . $dbConnection->connect_error);
-  echo "Connection failed: " . $dbConnection->connect_error;
+if (!$dbConnection) {
+    die("Connection failed: " . mysqli_connect_error());
 }
