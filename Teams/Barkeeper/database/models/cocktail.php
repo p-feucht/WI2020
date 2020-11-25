@@ -81,11 +81,25 @@ class Cocktail {
         $stmt->execute();        
     }
 
-    public function publish() {
+    public function publish($id) {
         $this->released = true;
+        $this->id = $id;
+        $stmt = $this->db->prepare("UPDATE `cocktails` SET `released`=? WHERE `id`=?");
+        if($stmt === false) {
+            print_r($this->db->error_list);
+        }
+        $stmt->bind_param('ii', $this->released, $this->id);
+        $stmt->execute();
     }
-    public function unpublish() {
+    public function unpublish($id) {
         $this->released = false;
+        $this->id = $id;
+        $stmt = $this->db->prepare("UPDATE `cocktails` SET `released`=? WHERE `id`=?");
+        if($stmt === false) {
+            print_r($this->db->error_list);
+        }
+        $stmt->bind_param('ii', $this->released, $this->id);
+        $stmt->execute();
     }
 
     public function getId() {
@@ -141,7 +155,7 @@ class Cocktail {
         if($this->alcoholic) {
             return "Alkoholisch";
         } else {
-            return "Unalkoholisch";
+            return "Alkoholfrei";
         }
     }
 

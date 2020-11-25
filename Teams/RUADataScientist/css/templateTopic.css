@@ -6,6 +6,15 @@
     text-align: justify;
 }
 
+ul.content-list {
+    margin-left: 10%;
+    font-weight: bold;
+    font-size: 16p;
+}
+
+ul.content-list>li{
+    padding-top: 1vh;
+}
 
 /*The paralax is the picture at the top in the background with the titel*/
 
