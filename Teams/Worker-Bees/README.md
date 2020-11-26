@@ -1,4 +1,4 @@
-![alt text](./images/logoBiene.png)
+![alt text](./images/logoBiene.png =100x)
 # Worker Bees
 This Webpage was built as a class project for Web Programming in Q4/2020 at DHBW Ravensburg.
 
@@ -6,7 +6,8 @@ This Webpage was built as a class project for Web Programming in Q4/2020 at DHBW
 Our goal was to create a platform with the ability to create offers and bookings in three different categories:
 - Tools
 - Workshops
-- Services\
+- Services
+<a/>
 This way, people can live out their hobbies more easily, while being able to share and recieve valable know-how. The website was created under the premise of increasing sustainability, providing flexibility, and creating a community of craftsmen and craftwomen of any kind and level of experience. The amount of learning we experienced on the way was only a side-effect to a passionate idea unfolding in front of our eyes.
 
 ## Code & Infrastructure
