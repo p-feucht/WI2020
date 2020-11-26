@@ -61,11 +61,11 @@ class Cocktail {
         }
     }
     public function update() {
-        $stmt = $this->db->prepare("UPDATE `cocktails` SET  `title`=?, `description`=?, `preparation`=?, `image`=?, `released`=?) WHERE `id`=?");
+        $stmt = $this->db->prepare("UPDATE `cocktails` SET  `title`=?, `description`=?, `preparation`=?, `image`=?, `released`=? WHERE `id`=?");
         if($stmt == false) {
             print_r($this->db->error_list);
         }
-        $stmt->bind_param('sssi', $this->title, $this->description, $this->preparation, $this->image, $this->released, $this->id);
+        $stmt->bind_param('ssssii', $this->title, $this->description, $this->preparation, $this->image, $this->released, $this->id);
         $succ = $stmt->execute();
         if($succ) {
             $this->id = $this->db->insert_id;
@@ -175,8 +175,4 @@ class Cocktail {
         }
         array_push($this->ingredients, $ingredient);
     }
-    public function removeIngredient($ingredientId) {
-
-    }
-
 }

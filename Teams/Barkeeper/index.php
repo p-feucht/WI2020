@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barkeeper | Home</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 </head>
 
@@ -33,7 +33,7 @@
                     Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst?
                 </p>
                 <p class="mb-0">
-                    <a href="/own-recipe.php" class="btn btn-secondary my-2">Erstelle dein eigenes Rezept</a>
+                    <a href="/cocktail-finder.php" class="btn btn-secondary my-2">Gieb hier deine Zutaten ein.</a>
                 </p>
             </div>
         </section>

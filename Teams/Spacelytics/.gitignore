@@ -164,3 +164,6 @@ certificates
 # Server definition for https folder. Must be in gitignore because for deployment happens directly from github 
 server.js 
 
+# Ignore yarn.lock 
+yarn.lock
+.vercel
