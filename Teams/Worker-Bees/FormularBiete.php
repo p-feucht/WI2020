@@ -14,15 +14,11 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
     <link rel="icon" href="images/logoBiene.png" />
     <meta name="description" content="">
     
- <!--   <link href="CSS/headerDesign.css" rel="stylesheet">-->
+
     <link href="CSS/formularBiete.css" rel="stylesheet">
     <link href="CSS/datepicker.css" rel="stylesheet">
 
     <link href="JavaScript/formular.js">
-    <!--
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
-    </script>
-    -->
 
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,13 +50,9 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 
         <div class="yellow-container">
 
-
             <div class="explanation_and_form">
 
-
             <?php include ("./PHP/formularBieteAbschicken.php"); ?>
-
-
 
                 <!-- Text über Formular -->
                 <h2>Schreibe ein Angebot</h2>
@@ -130,11 +122,8 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 
                     <div class="formblock">
                         <label>Gib bitte deine <b>Anschrift</b> an</label> <label class="Fehlermeldung" id="FehlermeldungAnschrift"></label>
-                        <div class="unterüberschrift">
-                            <!--wenn Dienstleistung gewählt, in Javascript noch ergänzen:<textarea readonly disabled="disabled">Falls deine angebotene Dienstleistung an einem bestimmten Ort stattfindet, gib bitte dessen gesamte Adresse an. Fall du die Dienstleistung bei den Interessenten ausführen möchtest, gib bitte mindestens deinen Ort an, damit
-                            klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
-                        </div>
-                        <label>Vorname 
+                        <br>
+                        <label>Vorname
                             <input type="text" id="Vorname" name="Vorname" value="<?php echo htmlspecialchars($vorname); ?>" size="20" maxlength="20">
                            
                         </label> <label class="Fehlermeldung" id="FehlermeldungVorname">*</label>
@@ -283,9 +272,6 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 
 
         </div>
-
-
-        <!--Notiz: <progress value="40" max="100"></progress> für Fortschrittsanzeige (wenn Formular über mehrere Seiten geht)-->
 
         
         <?php include ("./PHP/footer.php"); ?>

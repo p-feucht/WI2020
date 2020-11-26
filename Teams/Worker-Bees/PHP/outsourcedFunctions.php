@@ -22,7 +22,6 @@ function createConnToDB (){
 function translateBoolFromDB ($aBinary){
     if($aBinary==1){
         return "ja";
-
     } else{
         return "nein";
     }

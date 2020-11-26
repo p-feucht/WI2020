@@ -99,7 +99,7 @@ function timePeriodInputIsOk() {
     var timeWithoutSpace = timePeriod.replace(" ", ""); // delete whitespaces
     var timePeriodNumbers = timePeriod.replace(/\D+/g, ""); // delete all non-number-digits
 
-    //Validation 1
+    //validation 1
     var laenge = timePeriodNumbers.length; // after removing all non-numbers length must be 16
     if (laenge != 16) {
         return false;
@@ -138,22 +138,3 @@ function checkPLZ() {
         return true();
     }
 }
-
-
-
-
-/*
-function inputIsEmpty(InputElement) {
-
-    if (InputElement.value == "") {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function setErrorMessage(elementErrorMessage, errorMessage) {
-
-    elementErrorMessage.innerHTML = errorMessage;
-    elementErrorMessage.focus();
-}*/
