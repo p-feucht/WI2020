@@ -53,8 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
                     if (!checkIfEmpty("datefilter")){
                     $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
+                    $gesamtzeitraum = str_replace(" ","", $gesamtzeitraum); //whitespaces zwischen Daten entfernen
                     $firstdate =  substr($gesamtzeitraum,0,10);
-                    $lastdate =  substr($gesamtzeitraum,13);
+                    $lastdate =  substr($gesamtzeitraum,11);
                     $beginndatum =  substr($firstdate,6,14).substr($firstdate,3,2).substr($firstdate,0,2);
                     $endedatum =  substr($lastdate,6,14).substr($lastdate,3,2).substr($lastdate,0,2);;
                     }
