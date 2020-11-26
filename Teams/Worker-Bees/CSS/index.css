@@ -1,5 +1,5 @@
 /* browser-Einstellungen zurücksetzen */
-/* browser-Einstellungen zurücksetzen */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -7,7 +7,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* add yellow background */
+
 .body {
     width: 100%;
 }
@@ -74,7 +76,6 @@
 }
 
 .category:hover {
-    background-color:rgba(83, 83, 83, 0.164);
+    background-color: rgba(83, 83, 83, 0.164);
     cursor: pointer;
 }
-

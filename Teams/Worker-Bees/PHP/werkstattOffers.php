@@ -48,13 +48,12 @@ if ($result->num_rows > 0) {
 ?>
         <!-- create card for each offer data-target = modal-id-->
         <div class="card" id="<?php echo $card_ID ?>" data-toggle="modal" data-target=<?php echo $modal_target ?>>
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" loading="lazy"
-            alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" loading="lazy" alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
             <p class="card-lp" id="cardLocation"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
                 <span class="price"><?php echo $price ?>€ / Tag</span></p>
             <h2 id="cardTitle"><?php echo $title ?></h2>
-            <input type='hidden' id="startDate" value='<?php echo $beginDat;?>'/>
-            <input type='hidden' id="endDate" value='<?php echo $endDat;?>'/>
+            <input type='hidden' id="startDate" value='<?php echo $beginDat; ?>' />
+            <input type='hidden' id="endDate" value='<?php echo $endDat; ?>' />
         </div>
 
         <!-- create modal for each card -->
@@ -80,23 +79,25 @@ if ($result->num_rows > 0) {
                                 Das ist alles vorhanden:
                             </p>
 
-                        <script src="JavaScript/offerFunctions.js" ></script>
-                        <ul class="modal-amenities" id="amenities" >
-                                <script defer>window.onload=createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
-                                <?php echo $aschleif ?>, <?php echo $asaege?>, <?php echo $akleinteil?>); </script>
-                        </ul>
+                            <script src="JavaScript/offerFunctions.js"></script>
+                            <ul class="modal-amenities" id="amenities">
+                                <script defer>
+                                    window.onload = createAmenities(<?php echo $modal_ID ?>, <?php echo $abohr ?>, <?php echo $adrechsel ?>,
+                                        <?php echo $aschleif ?>, <?php echo $asaege ?>, <?php echo $akleinteil ?>);
+                                </script>
+                            </ul>
 
                         </div>
                         <div class="modal-content-split">
                             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" alt="Offer Photo" class="modal-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
                         </div>
 
-                        
-                         <!--Create booking window -->
-                        <form class="modal-booking-window" enctype="multipart/form-data" 
-                            action="../submitBooking.php" method = "post">
-                            <input type='hidden' name='orderID' value='<?php echo $orderID;?>'/> <!--Pass order ID in hidden element to php -->
-                            
+
+                        <!--Create booking window -->
+                        <form class="modal-booking-window" enctype="multipart/form-data" action="../submitBooking.php" method="post">
+                            <input type='hidden' name='orderID' value='<?php echo $orderID; ?>' />
+                            <!--Pass order ID in hidden element to php -->
+
                             <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
 
                             <label for="bookingDate">Datum:</label>
@@ -118,7 +119,7 @@ if ($result->num_rows > 0) {
                                 <option value="inPerson">vor Ort bezahlen</option>
                             </select>
 
-                            <button type="submit" class="submitBooking" onclick="<?php $_SESSION['category'] = 'Werkstatt';?>">Jetzt buchen</button>
+                            <button type="submit" class="submitBooking" onclick="<?php $_SESSION['category'] = 'Werkstatt'; ?>">Jetzt buchen</button>
                         </form>
 
 

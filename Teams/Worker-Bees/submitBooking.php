@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// redirect to login page if user is not logged in
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: ../login.php");
     exit;
@@ -36,7 +37,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         $conn2 = new mysqli($servername, $username, $password, $dbname);
 
         // Check connection
-        // Check connection
         if ($conn2->connect_error) {
             die("Connection failed: " . $conn2->connect_error);
         } else {
@@ -51,10 +51,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             if ($angebot_typ == "Werkzeug") { // get information about specific order from database based on category
                 $getOrderSql = "SELECT ATitel, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkzeug WHERE Werkzeug_ID = $orderID";
                 $preislabel = "PreisProTag";
-            } else if ($angebot_typ == "Werkstatt") { // get information about specific order from database based on category
+            } else if ($angebot_typ == "Werkstatt") {
                 $getOrderSql = "SELECT ATitel, PLZ, Ort, usernameErsteller, PreisProTag FROM AngebotWerkstatt WHERE Werkstatt_ID = $orderID";
                 $preislabel = "PreisProTag";
-            } else if ($angebot_typ == "Dienstleistung") { // get information about specific order from database based on category
+            } else if ($angebot_typ == "Dienstleistung") {
                 $getOrderSql = "SELECT ATitel, PLZ, Ort, usernameErsteller, Preis FROM AngebotDienstleistung WHERE Dienstleistung_ID = $orderID";
                 $preislabel = "Preis";
             }
@@ -69,7 +69,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <input type='hidden' name='Fehlertyp' value='<?php echo "Error: " . $getOrderSql . "<br>" . $conn2->error; ?>' />
                     <?php
 
-                } else {
+                } else { //proceed if order was correctly found
                     $result = $conn2->query($getOrderSql);
 
                     $orderRow = $result->fetch_assoc();
@@ -91,7 +91,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                             VALUES ('$buchung_id', '$order_id', '$angebot_typ', '$userErstell', '$emailErstell', '$userBuch', '$emailBuch', '$date', '$preis', '$title', '$bezinbier')";
 
 
-                    if ($conn2->query($sql2) === TRUE) {
+                    if ($conn2->query($sql2) === TRUE) { // if booking was inserted into database, create success page
 
                     ?>
                         <div class="blog-content">
@@ -101,7 +101,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
                         <?php
 
-                    } else {
+                    } else { // if booking was not inserted into database, create failure page
                         ?>
                             <div class="blog-content">
                                 <h1>Etwas ist schiefgelaufen.</h1><br>
@@ -119,22 +119,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
         if ($angebot_typ == "Werkzeug") { // make link based on which page person is coming from
                     ?> <a class="button" href="werkzeugPage.php">Zurück</a> <?php
-                                                        } else if ($angebot_typ == "Werkstatt") {
-                                                            ?> <a class="button" href="werkstattPage.php">Zurück</a> <?php
-                                                            } else if ($angebot_typ == "Dienstleistung") {
-                                                                ?> <a class="button" href="dienstleistungPage.php">Zurück</a> <?php
-                                                                }
-                                                                    ?>
+        } else if ($angebot_typ == "Werkstatt") {
+                    ?> <a class="button" href="werkstattPage.php">Zurück</a> <?php
+        } else if ($angebot_typ == "Dienstleistung") {
+                    ?> <a class="button" href="dienstleistungPage.php">Zurück</a> <?php
+        }
+                     ?>
 
 
+        <a class="button" href="index.php">Startseite</a>
 
+        </div>
 
-
-                <a class="button" href="index.php">Startseite</a>
-
-                            </div>
-
-                            <?php include "PHP/footer.php"; ?>
+        <?php include "PHP/footer.php"; ?>
 
 </body>
 
