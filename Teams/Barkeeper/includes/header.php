@@ -19,7 +19,7 @@ function isActive($linkPath) {
             <a href="index.php" class="navbar-brand d-flex align-items-center">
                 <img src="/assets/images/barkeeper_logo.png" alt="Barkeeper Logo" height="60">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
