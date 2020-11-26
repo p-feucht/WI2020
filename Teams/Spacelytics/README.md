@@ -9,7 +9,7 @@ Spacelytics uses ADS-B data  to show air-traffic 🛫 on a map 🗺
 ## Getting Started 🎉
 
 ### Development 💻
-**❗ Important ❗**: LogIn and LogOut doesn´t work in dev mode because the prod url is assigned on github.
+**❗ Important ❗**: LogIn and LogOut doesn´t work in dev mode(callback that is defined in the oauth application settings on github links to prod url)
 ````bash
 # Clone the repo and cd into the right directory 
 git clone https://github.com/p-feucht/WI2020.git
@@ -38,7 +38,7 @@ The following article describes how to set up an HTTPS connection to localhost: 
 - [Postgres](https://www.postgresql.org)
 - [React](https://reactjs.org)
 - [CSS-modules](https://github.com/css-modules/css-moduleshttps://github.com/css-modules/css-modules)
-- [Storybook] (https://storybook.js.org)
+- [Storybook](https://storybook.js.org)
 - [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/) (with a [react wrapper](https://visgl.github.io/react-map-gl/) made by Uber)
 
 ### Authors 🎉
