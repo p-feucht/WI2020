@@ -58,8 +58,8 @@ body {
 }
 
 .aboutContainer>div {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 .aboutContainer>div>div>p {
@@ -109,8 +109,8 @@ body {
         height: 300px;
     }
     .aboutContainer>div {
-        margin-left: 4%;
-        margin-right: 4%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
     .aboutContainer>div>p {
         text-align: justify;
