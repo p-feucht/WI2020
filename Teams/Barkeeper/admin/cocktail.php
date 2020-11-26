@@ -42,7 +42,7 @@
         </section>
         <div class="py-5">
             <div class="container">
-                <form action="/own-result.php" method="POST">
+                <form action="/admin/own-result.php?id=<?php echo $id; ?>" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="title-input">Cocktail Name</label>
@@ -79,6 +79,12 @@
                             <label for="recipe-input">Zubereitung</label>
                             <div id="recipe-input"></div>
                             <input type="text" class="form-control" id="recipe-text-input" name="recipe-input"  value="<?php echo $cocktail->getPreparation(); ?>" hidden>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="cocktail-image-input" name="cocktail-image-input">
+                            <label class="custom-file-label" for="cocktail-image-input"><?php echo $cocktail->getImage(); ?></label>
                         </div>
                     </div>
                     <div class="form-row">
