@@ -1,6 +1,7 @@
 <?php
-    include 'db.php';
 
+    include 'db.php';
+    
     $email = mysqli_real_escape_string($connection, $_SESSION["session_email"]);
     $statement = $connection->prepare("SELECT ID, Name FROM series WHERE ID IN (SELECT series_id FROM favorites WHERE account_email = '$email');");
     
@@ -11,7 +12,7 @@
 
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          echo "<li><a href='../php/SeriesDescription.php?ID=".$row["ID"]."'>".$row["Name"]."</a> <a href='../php/removeFromFavorites.php?ID=".$row["ID"]."'>[entfernen]</a>  </li>";
+          echo "<li><a href='../php/seriesDescription.php?ID=".$row["ID"]."'>".$row["Name"]."</a> <a href='../php/removeFromFavorites.php?ID=".$row["ID"]."'>[entfernen]</a>  </li>";
         }
 
       } else {

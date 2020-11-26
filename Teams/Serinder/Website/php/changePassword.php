@@ -1,6 +1,8 @@
 <?php
+
 // Sitzung starten, damit der Benutzer eingeloggt bleibt
 session_start();
+
 
 if (isset($_SESSION['session_email'])) {
 
