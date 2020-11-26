@@ -49,7 +49,7 @@ $cocktail = $cocktailsFactory->findById($id);
                 <h3 class="mt-5">Zubereitung:</h3>
                 <div class="row">
                     <div class="col-md-12">
-                        <p><?php $cocktail->getPreparation() ?></p>
+                        <p><?php echo $cocktail->getPreparation() ?></p>
                     </div>
                 </div>
             </div>

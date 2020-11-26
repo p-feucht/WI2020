@@ -7,6 +7,9 @@
     }
 
     require($_SERVER["DOCUMENT_ROOT"]."/database/cocktails.php");
+    $cocktail = new Cocktail();
+    $cocktail->setId($_GET["id"]);
+    $cocktail->delete();
     $cocktailsFactory = new Cocktails();
     $cocktails = $cocktailsFactory->findAll(false);
 ?>
@@ -50,9 +53,11 @@
                                         </div>
                                         <div class="card-footer text-right">';
                             if($cocktail->getReleased() === 1) {
-                                $html = $html .'<a href="/admin/cocktail-release.php?id='.$cocktail->getId().'&unpublish=true"><button type="button" class="btn btn-danger btn-sm">Ausblenden</button></a>';
+                                $html = $html .'<a href="/admin/cocktail-release.php?id='.$cocktail->getId().'&unpublish=true"><button type="button" class="btn btn-danger btn-sm">Ausblenden</button></a>
+                                                <a href="/admin/cocktails.php?id='. $cocktail->getId().'"><button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i></button></a>';
                             } else {
-                                $html = $html .'<a href="/admin/cocktail-release.php?id='.$cocktail->getId().'&unpublish=false"><button type="button" class="btn btn-secondary btn-sm">Veröffentlichen</button></a>';
+                                $html = $html .'<a href="/admin/cocktail-release.php?id='.$cocktail->getId().'&unpublish=false"><button type="button" class="btn btn-secondary btn-sm">Veröffentlichen</button></a>
+                                                <a href="/admin/cocktails.php?id='. $cocktail->getId().'"><button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i></button></a>';
                             }
                             $html = $html .'</div>
                                     </div>
