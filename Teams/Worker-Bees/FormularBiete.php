@@ -102,6 +102,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                         <label>Wähle einen <b>Angebotszeitraum </b><label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>
                         <br>
                         <input id="datefilter" type="text" name="datefilter" value="<?php echo htmlspecialchars($gesamtzeitraum); ?>" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
+                        <label class="Fehlermeldung" id="FehlermeldungZeitraum"></label>
                         <script type="text/javascript">
                             datePicker();
                         </script>

@@ -51,8 +51,9 @@ function pruefeFormular() {
         return false;
     } else { document.getElementById("FehlermeldungTitle").innerHTML = "*"; }
 
-    if (document.formularFuerAngebot.datefilter.value == "") {
-        document.getElementById("FehlermeldungZeitraum").innerHTML = "Bitte Zeitraum eingeben";
+
+    if (!timePeriodInputIsOk()) {
+        document.getElementById("FehlermeldungZeitraum").innerHTML = "Bitte gültigen Zeitraum eingeben";
         document.getElementById("datefilter").focus();
         return false;
     } else { document.getElementById("FehlermeldungZeitraum").innerHTML = "*"; }
@@ -93,9 +94,29 @@ function pruefeFormular() {
 
 }
 
-function checkTime() {
-    var timePeriod = trim(document.formularFuerAngebot.datefilter.value);
-    var laenge = timePeriod.length; // Länge after trim muss 
+function timePeriodInputIsOk() {
+    var timePeriod = document.formularFuerAngebot.datefilter.value; // datefilter should have a format like "DD.MM.YYYY - DD.MM.YYYY"
+    var timeWithoutSpace = timePeriod.replace(" ", ""); // delete whitespaces
+    var timePeriodNumbers = timePeriod.replace(/\D+/g, ""); // delete all non-number-digits
+
+    //Validation 1
+    var laenge = timePeriodNumbers.length; // after removing all non-numbers length must be 16
+    if (laenge != 16) {
+        return false;
+    }
+    let firstDate = timeWithoutSpace.substr(0, 10);
+    let secondDate = timeWithoutSpace.substr(10);
+
+    //validation 2 : there must be three parts (for day,month and year) between the points of a date.
+    var firstDateArray = firstDate.split('.');
+    if (firstDateArray.length != 3) {
+        return false;
+    }
+    var secondDateArray = secondDate.split('.');
+    if (secondDateArray.length != 3) {
+        return false;
+    }
+    return true;
 
 }
 
