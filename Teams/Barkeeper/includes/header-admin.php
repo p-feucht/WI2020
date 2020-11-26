@@ -16,7 +16,7 @@ function isActive($linkPath) {
 <header>
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #F7BFBF !important;">
         <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
+            <a href="index.php" class="navbar-brand d-flex align-items-center">
                 <img src="/assets/images/barkeeper_logo.png" alt="Barkeeper Logo" height="60">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
