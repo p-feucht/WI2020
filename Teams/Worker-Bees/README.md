@@ -1,5 +1,4 @@
-![alt text](./images/logoBiene.png =100x)
-# Worker Bees
+# Worker Bees  <img src="./images/logoBiene.png" alt="Logo" width="50"/>
 This Webpage was built as a class project for Web Programming in Q4/2020 at DHBW Ravensburg.
 
 ## Idea
