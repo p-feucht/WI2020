@@ -12,14 +12,14 @@ function filterOffers() {
 
     var allCards = document.getElementsByClassName("card");
 
-    for(var i=0; i<allCards.length; i++) {
+    for (var i = 0; i < allCards.length; i++) {
 
-        allCards[i].style.display = "block"; //set back each card, in case it was filtered out before
-        
+        allCards[i].style.display = "block"; //set back all cards, in case they were filtered out before
+
         var title = allCards[i].querySelector("#cardTitle").textContent.toLowerCase();
         var location = allCards[i].querySelector("#cardLocation").textContent.toLowerCase();
         var start = new Date(allCards[i].querySelector("#startDate").value);
-        var end = new Date (allCards[i].querySelector("#endDate").value);
+        var end = new Date(allCards[i].querySelector("#endDate").value);
 
         if ((what != "") && !(title.includes(what))) {
             allCards[i].style.display = "none"; //hide card if it does not contain Search in Title
