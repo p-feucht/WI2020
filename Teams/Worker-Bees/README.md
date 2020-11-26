@@ -17,7 +17,7 @@ The files are stored in a webspace provided by bplaced, which also includes the 
 
 ## Use
 The website is written to be used in all traditional browsers on a PC.\
-It can be accessed at [Worker Bees](https://workerbees.bplaced.net/).
+It can be accessed at [Worker Bees](http://workerbees.bplaced.net/).
 
 ## Features
 The main features of the website have been implemented in Version 1.0
@@ -38,4 +38,4 @@ The main features of the website have been implemented in Version 1.0
 
 ##### We hope you have fun with our website. Let us know about questions and feedback!
 
-Copyright © 2020, [Worker Bees Team](https://github.com/WI2020/Teams/Worker-Bees).
+Copyright © 2020, Worker Bees Team.
