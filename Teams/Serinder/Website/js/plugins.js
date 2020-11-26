@@ -1,14 +1,3 @@
-// Get the modal
-var modal = document.getElementById('modalLogin');
-
-// When the user clicks anywhere outside of the modal, close it
-window.addEventListener("click", function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
-
-
 var sortOrderListOfSeries = "alphabetical";
 
 function onClickAlphabetical(){

@@ -17,7 +17,7 @@
 
     <main>
         <div class="inner">
-            <h1>Was möchtest du tun?</h1>
+            <h1>Was möchtest du tun?</h1> <br>
             <div class="row">
                 <div class="col-12 col-md-6">
                     <a class="button" onclick="addClass()" href="#">Passwort ändern</a>

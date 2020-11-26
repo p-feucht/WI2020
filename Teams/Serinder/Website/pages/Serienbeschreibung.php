@@ -16,7 +16,9 @@
             <h1><?php echo $_SESSION["seriesName"];?></h1>
             <div class="row">
                 <div class="series-detail">
-                    <img src=<?php echo $_SESSION["seriesImage_Path"];?>>
+                    <div class="imgWrapper col-12 col-md-6"> 
+                        <img src=<?php echo $_SESSION["seriesImage_Path"];?>>
+                    </div>
                     <div class="interactionWrapper">
                             <div class="row">
                                 <div class="col-4">
@@ -26,7 +28,7 @@
                                     </a>
                                 </div>
                                 <div class="col-4">
-                                    <a href="#" class="button" onclick="addClass()" title="Kommentare">
+                                    <a href="#" onclick="addClass()" title="Kommentare">
                                         <img class="nohover" src="../Bilder/comment.png">
                                         <img class="hover" src="../Bilder/comment-hover.png">  
                                     </a>
