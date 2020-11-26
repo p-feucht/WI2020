@@ -61,14 +61,16 @@
 }
 
 .modal-booking-window button {
-    font-size: 18px;
-    padding: 10px;
-    margin-right: 55px;
-    border-radius: 50px;
-    border: 2px solid #feca57;
-    background-color: white;
-    outline: none;
-    margin: 10px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 2px solid #feca57;
+  background-color: white;
+  outline: none;
+  width: 50%;
+  float:left;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .modal-booking-window button:hover {
