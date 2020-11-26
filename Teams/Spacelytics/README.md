@@ -6,6 +6,8 @@
  
 Spacelytics uses ADS-B data  to show air-traffic 🛫 on a map 🗺
 
+[Go to deployed version](spacelytics-prod.vercel.app)🎉
+
 ## Getting Started 🎉
 
 ### Development 💻
