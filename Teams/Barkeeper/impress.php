@@ -24,12 +24,12 @@
             <div class="container">
                 <p>
                     Redaktion:
-                    Milan Wosel
-                    Niklas Sigg
+                    Milan Wosel,
+                    Niklas Sigg,
                     Julia Albrecht
                 </p>
                 <p>
-                    Inhalte und Haftungsausschluss
+                    Inhalte und Haftungsausschluss:
                     Die vorstehenden Informationen und Texte stellen keine Rechtsberatung dar. Insbesondere bilden sie nicht den konkreten Einzelfall ab. 
                     Für Richtigkeit und Aktualität kann daher keine Haftung übernommen werden. Falls Sie eine haftungssichere Auskunft wünschen, wenden Sie sich an unsere Kanzlei.
                     Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten 
