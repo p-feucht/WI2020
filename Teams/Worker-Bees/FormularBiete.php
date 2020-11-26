@@ -99,23 +99,13 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     </div>
 
                     <div class="formblock">
-                        <label>Wähle einen <b>Angebotszeitraum </b><!--<label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>-->
+                        <label>Wähle einen <b>Angebotszeitraum </b><label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>
                         <br>
                         <input type="text" name="datefilter" value="" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
                         <script type="text/javascript">
                             datePicker();
                         </script>
                     </div>
-<!--
-                    <div class="formblock">
-                        <label for="begDat">
-                  Beginndatum </label><br>
-                        <input type="date" id="begDat" required><br>
-                        <label for="endeDat">
-                  Endedatum </label><br>
-                        <input type="date" id="endeDat" required><br>
-                    </div>
-                    -->
 
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
