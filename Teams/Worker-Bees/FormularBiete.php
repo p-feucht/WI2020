@@ -38,7 +38,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
 <body>
     
     <?php 
-    $site_name = "HTML5-Seite mit Grundstruktur";
+
     include ("./PHP/header.php"); ?>
 
     <div class="content">
@@ -225,7 +225,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                                     <li>
                                         <label>
                                 <input type="checkbox" name="a4_Saege" value="1">
-                                elektrische Standsägen
+                                elektrische Standsäge
                               </label>
                                     </li>
                                     <li>

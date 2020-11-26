@@ -1,6 +1,8 @@
 <?php
 
-require_once('profileUserData.php');
+//require_once('profileUserData.php');
+include_once ("outsourcedFunctions.php"); 
+
 $connP = createConnToDB();
 if($connP==""){
     die("Connection failed: " . $connP->connect_error);
@@ -32,29 +34,35 @@ else{
                 $description = $city = $row["ABeschreibung"];
                 $bezBier = $row["BezInBier"];
                 $image = $row["Bild"];
+
+                // translates the information; makes "0" to "no" and "1" to "jes"
+                $bezBier = translateBoolFromDB($bezInBier); 
         
         ?>
         
                     <div class="angebot">
-                        <h4 id="title">Titel  </h2>
+                        <h4>Titel</h4>
                         <?php echo $title?>
-                        <h4 id="description">Beschreibung  </h2>  
+                        <h4>Beschreibung</h4>  
                         <?php echo $description?>
-                        <h4 id="begDat">Beginndatum  </h2
+                        <h4>Beginndatum</h4
                         ><?php echo $beginDat?>
-                        <h4 id="endDat">Enddatum  </h2>
+                        <h4>Enddatum</h4>
                         <?php echo $endDat?>
-                        <h4 id="endDat">Ort  </h2
+                        <h4>Ort</h4
                         ><?php echo $location?>
-                        <h4 id="endDat">Preis  </h2
+                        <h4>Preis</h4
                         ><?php echo $price?>€
-                        <h4 id="endDat">In Bier bezahlbar  </h2
+                        <h4>In Bier bezahlbar</h4
                         ><?php echo $bezBier?>
                         <!--<h4 id="endDat">Anzahl Buchungen </h2> 
                         ist noch auszufüllen-->
-                        </br>
-                        <button class="cent" type="button" onclick="bearbeitenClick()"><p>Bearbeiten</p></button>
-                    
+
+                        <div class="buttonline">
+                            <button class="cent" type="button" onclick="bearbeitenClick()">Bearbeiten</button>
+                            <button class="cent" type="button" onclick="bearbeitenClick()">Löschen</button>
+                        </div> 
+
                     </div>             
                     
     <?php

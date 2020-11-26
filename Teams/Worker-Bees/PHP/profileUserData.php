@@ -2,24 +2,7 @@
 $username="";
 $email = $image= $angebotID=$title=$image=$vorname="";
 
-
-//function that connects to the dataBase
-function createConnToDB (){
-    //Connection to bplaced server
-    $servername = "localhost";
-    $username = "workerbees";
-    $password = "HKSZ52";
-    $dbname = "workerbees_db1";
-
-    // Create connection
-    $connP = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($connP->connect_error) {
-        $connP="";
-      //  die("Connection failed: " . $connP->connect_error);
-    }
-    return $connP;
-}
+include_once ("outsourcedFunctions.php"); 
 
 $connP = createConnToDB();
 if($connP==""){

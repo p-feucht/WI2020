@@ -35,13 +35,13 @@ class Ingredient {
         
     }
     public function save() {
-        $stmt = $this->db->prepare("INSERT INTO `ingredients` (`title`, `content`, `likes`, `dislikes`) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param('ssii', $this->title, $this->content, $this->likes, $this->dislikes);
+        $stmt = $this->db->prepare("INSERT INTO `ingredients` (`title`) VALUES (?)");
+        $stmt->bind_param('s', $this->title);
         $stmt->execute();
     }
     public function update() {
-        $stmt = $this->db->prepare("UPDATE `ingredients` SET  `title`=?, `content`=?, `likes`=?, `dislikes`=? WHERE `id`=?");
-        $stmt->bind_param('ssiii', $this->title, $this->content, $this->likes, $this->dislikes, $this->id);
+        $stmt = $this->db->prepare("UPDATE `ingredients` SET  `title`=? WHERE `id`=?");
+        $stmt->bind_param('ii', $this->title, $this->id);
         $stmt->execute();
     }
     public function delete() {

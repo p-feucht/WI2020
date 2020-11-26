@@ -1,5 +1,11 @@
 <?php
+    session_start();
+    if($_SESSION["loggedIn"] !== true){
+        header("Location: /admin/login.php");
+        exit();
+    }
     require($_SERVER["DOCUMENT_ROOT"].'/database/models/cocktail.php');
+    require($_SERVER["DOCUMENT_ROOT"]."/database/cocktails.php");
     require($_SERVER["DOCUMENT_ROOT"]."/database/image-upload.php");
 
     $error_message = false;
@@ -27,7 +33,10 @@
         }
     }
 
-    $cocktail = new Cocktail();
+    $cocktailsFactory = new Cocktails();
+    $id = $_GET["id"];
+    $cocktail = $cocktailsFactory->findById($id);
+    $cocktail->setId($id);
     $cocktail->setTitle($_POST["title-input"]);
     $cocktail->setDescription($_POST["description-input"]);
     $cocktail->setPreparation($_POST["recipe-input"]);
@@ -41,7 +50,7 @@
             $cocktail->addIngredient($value, $_POST['ingredient-amount-'.$iId]);
         }
     }
-    $cocktail->save();
+    $cocktail->update();
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -57,7 +66,7 @@
 
 <body>
     <?php
-        include($_SERVER["DOCUMENT_ROOT"]."/includes/header.php");
+        include($_SERVER["DOCUMENT_ROOT"]."/includes/header-admin.php");
     ?>
     <main role="main">
 
@@ -67,9 +76,9 @@
                     if($error_message !== false) {
                         echo '<div class="alert alert-danger" role="alert">'.$error_message.'</div>';
                     }
-                    if(isset($cocktail) && $cocktail->getId()) {
+                    if(isset($cocktail)) {
                         echo '<div class="alert alert-success" role="alert">
-                        Dein Cocktail "' . $cocktail->getTitle() . '" wurde erfolgreich zu unserer Sammlung hinzugefügt!
+                        Der Cocktail "' . $cocktail->getTitle() . '" wurde erfolgreich bearbeitet!
                       </div>';
                     }
                 ?>

@@ -1,15 +1,25 @@
 <?php
-require($_SERVER["DOCUMENT_ROOT"].'/database/ingredients.php');
-$ingredientsFactory = new Ingredients();
-$ingredients = $ingredientsFactory->findAll();
+    session_start();
+    if($_SESSION["loggedIn"] !== true){
+        header("Location: /admin/login.php");
+        exit();
+    }
+    require($_SERVER["DOCUMENT_ROOT"]."/database/cocktails.php");
+    require($_SERVER["DOCUMENT_ROOT"]."/database/ingredients.php");
+    $ingredientsFactory = new Ingredients();
+    $ingredients = $ingredientsFactory->findAll();
+    $cocktailsFactory = new Cocktails();
+    $id = $_GET["id"];
+    $cocktail = $cocktailsFactory->findById($id);
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barkeeper | Eigenes Rezept</title>
+    <title>Document</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
@@ -21,34 +31,29 @@ $ingredients = $ingredientsFactory->findAll();
 
 <body>
     <?php
-        include($_SERVER["DOCUMENT_ROOT"]."/includes/header.php");
+    include($_SERVER["DOCUMENT_ROOT"]."/includes/header-admin.php");
     ?>
     <main role="main">
 
         <section class="jumbotron text-center">
             <div class="container">
-                <h1>Teile mit Uns dein Lieblingsrezept</h1>
-                <p class="lead">
-                    Du findest deinen Lieblingscocktail bei uns nicht? Dann teile uns das Rezept über folgendes Formular mit.
-                </P>
+                <h1>Cocktail bearbeiten</h1>
             </div>
         </section>
-
         <div class="py-5">
             <div class="container">
-                <h2>Dein Rezept:</h2>
-                <form action="/own-result.php" method="POST" enctype="multipart/form-data">
+                <form action="/admin/own-result.php?id=<?php echo $id; ?>" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="title-input">Cocktail Name</label>
-                            <input type="text" class="form-control" id="title-input" name="title-input">
+                            <input type="text" class="form-control" id="title-input" name="title-input" value="<?php echo $cocktail->getTitle(); ?>">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-12 quill-editor-container" id="description-input-fg">
                             <label for="description-input">Kurzebeschreibung</label>
                             <div id="description-input"></div>
-                            <input type="text" class="form-control" id="description-text-input" name="description-input" hidden>
+                            <input type="text" class="form-control" id="description-text-input"  value="<?php echo $cocktail->getDescription(); ?>" name="description-input" hidden>
                         </div>
                     </div>
                     <div class="form-group row ingredient-select-group" id="ingredient-select-group-0">
@@ -73,18 +78,18 @@ $ingredients = $ingredientsFactory->findAll();
                         <div class="col-md-12 quill-editor-container" id="recipe-input-fg">
                             <label for="recipe-input">Zubereitung</label>
                             <div id="recipe-input"></div>
-                            <input type="text" class="form-control" id="recipe-text-input" name="recipe-input" hidden>
+                            <input type="text" class="form-control" id="recipe-text-input" name="recipe-input"  value="<?php echo $cocktail->getPreparation(); ?>" hidden>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="cocktail-image-input" name="cocktail-image-input">
-                            <label class="custom-file-label" for="cocktail-image-input">Bild von Cocktail</label>
+                            <label class="custom-file-label" for="cocktail-image-input"><?php echo $cocktail->getImage(); ?></label>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <button type="submit" class="btn btn-success btn-block">Rezept hochladen</button>
+                            <button type="submit" class="btn btn-success btn-block">Änderungen Speichern</button>
                         </div>
                     </div>
                 </form>
@@ -93,8 +98,8 @@ $ingredients = $ingredientsFactory->findAll();
 
     </main>
     <?php
-        include($_SERVER["DOCUMENT_ROOT"]."/includes/footer.php");
-    ?>
+    include($_SERVER["DOCUMENT_ROOT"]."/includes/footer.php");
+    ?>    
     <script>
         // Hässlicher Workaround
         // Da wir ja dynamisch die Anzahl der Zutaten-Auswahl-Felder anpassen wollen, müssen wir im JavaScript 
