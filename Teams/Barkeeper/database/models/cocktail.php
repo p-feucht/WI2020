@@ -175,8 +175,4 @@ class Cocktail {
         }
         array_push($this->ingredients, $ingredient);
     }
-    public function removeIngredient($ingredientId) {
-
-    }
-
 }
