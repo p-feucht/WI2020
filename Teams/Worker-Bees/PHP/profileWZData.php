@@ -14,8 +14,7 @@ else{
     if($username!=""){
 
         //offer data
-        $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
-        PLZ, Ort, Bild, Werkzeug_ID, PreisProTag, BezInBier, Erstellzeitpunkt FROM AngebotWerkzeug WHERE usernameErsteller='$username'";
+        $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, PLZ, Ort, PreisProTag, BezInBier, Erstellzeitpunkt FROM AngebotWerkzeug WHERE usernameErsteller='$username'";
         $result = $connP->query($sql);
     //   $result2 = $connP->query($sql);
         
@@ -26,14 +25,15 @@ else{
         
                 $beginDat = $row["ABeginndat"];
                 $endDat = $row["AEndedat"];
-                $orderID = $row["Werkzeug_ID"];
-                $location = $row["Ort"];
-                $title = $row["ATitel"];
-                $price = $row["PreisProTag"];
                 $plz = $row["PLZ"];
+                $location = $row["Ort"];
+                $location = $plz. " ". $location;
+                $title = $row["ATitel"];
+                $price = $row["PreisProTag"];          
                 $description = $city = $row["ABeschreibung"];
                 $bezBier = $row["BezInBier"];
-                $image = $row["Bild"];
+                $erstellzeitpunkt=$row["Erstellzeitpunkt"];
+            
 
                 // translates the information; makes "0" to "no" and "1" to "jes"
                 $bezBier = translateBoolFromDB($bezInBier); 
@@ -55,6 +55,9 @@ else{
                         ><?php echo $price?>€
                         <h4>In Bier bezahlbar</h4
                         ><?php echo $bezBier?>
+                        <h4>Erstellzeitpunkt</h4
+                        ><?php echo $erstellzeitpunkt?>
+                        
                         <!--<h4 id="endDat">Anzahl Buchungen </h2> 
                         ist noch auszufüllen-->
 
