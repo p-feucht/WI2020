@@ -32,23 +32,42 @@ function translateBoolFromDB ($aBinary){
 function tellEquipment($abohr, $adrechsel, $aschleif, $asaege, $akleinteil){
     $equipment="";
     if ($abohr=="ja"){
-        $equipment = $equipment ."Standbohrmaschine ";
+        $equipment = $equipment ."Standbohrmaschine,";
     }
     if ($adrechsel=="ja"){
-        $equipment .= "Drechselbank/Drehbank ";
+        $equipment .= " Drechselbank/Drehbank,";
     }
     if ($aschleif=="ja"){
-        $equipment .= "Schleifmaschine ";
+        $equipment .= " Schleifmaschine,";
     }
     if ($asaege=="ja"){
-        $equipment .= "elektriche Standsäge ";
+        $equipment .= " elektriche Standsäge,";
     }
     if ($akleinteil=="ja"){
-        $equipment .= "Grundausstattung Kleinteile ";
+        $equipment .= " Grundausstattung Kleinteile";
     }if ($akleinteil!="ja" && $adrechsel!="ja" && $aschleif!="ja" && $asaege!="ja" && $akleinteil!="ja"){
         $equipment = "keine Ausstattungsmerkmale genannt";
     }
+    if(endsWith($equipment, ',')){
+        //letztes Zeichen wegschneiden
+        $equipment = substr($equipment, 0, -1);
+    }
+      
     return $equipment;  
 }
+
+ // Pruefen, ob ein String $check mit einer anderen Zeichenkette $endStr aufhoert.
+ function endsWith($check, $endStr) {
+    if (!is_string($check) || !is_string($endStr) || strlen($check)<strlen($endStr)) {
+        return false;
+    }
+
+    return (substr($check, strlen($check)-strlen($endStr), strlen($endStr)) === $endStr);
+}
+
+
+
+
+
 
 ?>
