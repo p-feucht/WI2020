@@ -40,7 +40,6 @@ function datePicker() {
 
 function pruefeFormular() {
 
-
     if (document.getElementById("ws").checked == false && document.getElementById("wz").checked == false && document.getElementById("dl").checked == false) {
         document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
         document.getElementById("wz").focus();
@@ -51,6 +50,12 @@ function pruefeFormular() {
         document.getElementById("title").focus();
         return false;
     } else { document.getElementById("FehlermeldungTitle").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.datefilter.value == "") {
+        document.getElementById("FehlermeldungZeitraum").innerHTML = "Bitte Zeitraum eingeben";
+        document.getElementById("datefilter").focus();
+        return false;
+    } else { document.getElementById("FehlermeldungZeitraum").innerHTML = "*"; }
 
     if (document.formularFuerAngebot.Vorname.value == "") {
         document.getElementById("FehlermeldungVorname").innerHTML = "Bitte Vorname eingeben";
@@ -78,8 +83,8 @@ function pruefeFormular() {
         document.getElementById("OrtID").focus();
         return false;
     } else { document.getElementById("FehlermeldungOrt").innerHTML = "*"; }
-    if (CheckPLZ() == false) {
-        CheckPLZ();
+    if (checkPLZ() == false) {
+        checkPLZ();
         return false;
     } else {
         document.getElementById("FehlermeldungPLZ").innerHTML = "*";
@@ -88,8 +93,14 @@ function pruefeFormular() {
 
 }
 
+function checkTime() {
+    var timePeriod = trim(document.formularFuerAngebot.datefilter.value);
+    var laenge = timePeriod.length; // Länge after trim muss 
 
-function CheckPLZ() {
+}
+
+
+function checkPLZ() {
     var plz = document.formularFuerAngebot.PLZ.value;
     var laenge = plz.length;
     var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
@@ -107,6 +118,10 @@ function CheckPLZ() {
     }
 }
 
+
+
+
+/*
 function inputIsEmpty(InputElement) {
 
     if (InputElement.value == "") {
@@ -120,4 +135,4 @@ function setErrorMessage(elementErrorMessage, errorMessage) {
 
     elementErrorMessage.innerHTML = errorMessage;
     elementErrorMessage.focus();
-}
+}*/

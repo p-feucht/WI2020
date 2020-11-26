@@ -101,7 +101,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     <div class="formblock">
                         <label>Wähle einen <b>Angebotszeitraum </b><label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>
                         <br>
-                        <input type="text" name="datefilter" value="" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
+                        <input id="datefilter" type="text" name="datefilter" value="<?php echo htmlspecialchars($gesamtzeitraum); ?>" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
                         <script type="text/javascript">
                             datePicker();
                         </script>
@@ -110,7 +110,7 @@ if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1" value="<?php echo htmlspecialchars($beschreibung); ?>"></textarea>
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1"><?php echo htmlspecialchars($beschreibung);?></textarea>
                         <br>
                     </div>
 

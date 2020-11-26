@@ -51,12 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
 
-                    //dass Zeitraum nicht leer ist, wird schon in html (required) überprüft
+                    if (!checkIfEmpty("datefilter")){
                     $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
                     $firstdate =  substr($gesamtzeitraum,0,10);
                     $lastdate =  substr($gesamtzeitraum,13);
                     $beginndatum =  substr($firstdate,6,14).substr($firstdate,3,2).substr($firstdate,0,2);
                     $endedatum =  substr($lastdate,6,14).substr($lastdate,3,2).substr($lastdate,0,2);;
+                    }
                    //Beschreibung darf leer sein
                     $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
 
@@ -95,11 +96,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
     
 
                     //je nachdem welcher radioButton gedrückt wurde zusätzliche Variablen behandeln
-                    $radioAnswer = $_POST['kategorie'];  //oder: if (isset($kategorie) && $kategorie=="Werkzeug"){ echo WZ;}...
+                    $radioAnswer = $_POST['kategorie']; 
                     
                     if ($radioAnswer == "Werkzeug") {          
                        
-                        //Preis ist kein erforderliches Feld
+                        //Preis ist kein zwingend erforderliches Feld
                         $preisProTag1 = $conn->real_escape_string($_POST["PreisProTag1"]);
                     
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
@@ -112,34 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             //echo "<br>";
 
                             if ($conn->query($sql) === TRUE) {
+                                $title = $gesamtzeitraum = $beschreibung = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 ="";
                                 echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
-                            /*echo "New record created successfully";
-                            echo "<br>";
-                            echo "Entries written:";
-                            echo $title;
-                            echo "<br>";
-                            echo $beginndatum;
-                            echo "<br>";
-                            echo $endedatum;
-                            echo "<br>";
-                            echo 'Imagedata: '.$imgData;
-                            echo $beschreibung;
-                            echo "<br>";
-                            echo $vorname;
-                            echo "<br>";
-                            echo $nachname;
-                            echo "<br>";
-                            echo $strasse;
-                            echo "<br>";
-                            echo $hnr;
-                            echo "<br>";
-                            echo $plz;
-                            echo "<br>";
-                            echo $ort;
-                            echo "<br>";
-                            echo $preisProTag;
-                            echo "<br>";
-                            echo $bierBez1;*/
                             } else {
                                 echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
                             //    echo "Error: " . $sql . "<br>" . $conn->error;
@@ -170,6 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                             //echo $sql;
                         
                             if ($conn->query($sql) === TRUE) {
+                                $title = $gesamtzeitraum = $beschreibung = $vorname = $nachname = $strasse = $hnr = $plz= $ort=$preisProTag2="";
                                 echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
                                 
                             } else {
@@ -230,6 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
                             if($valid==true){
                                 if ($conn->query($sql) === TRUE) {
+                                    $title = $gesamtzeitraum = $beschreibung = $vorname = $nachname = $strasse = $hnr = $plz= $ort=$preisBetrag="";
                                     echo '<script type="text/javascript">alert("Vielen Dank, das Angebot wurde aufgenommen");</script>';
                                 } 
                                 else {
