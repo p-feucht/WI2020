@@ -20,7 +20,7 @@ header .banner img { max-width: 100%; width: 100%; }
 .inner { max-width: 1000px; margin: 50px auto; }
 .row { margin-left: -10px; margin-right: -10px; display: flex; margin-bottom: 20px; }
 .row .col-md-6 { flex-basis: 50%; max-width: 50%; padding-left: 10px; padding-right: 10px; }
-.row .col-md-6 .imgWrapper img { width: 100%; height: 490px; object-fit: cover; }
+.row .col-md-6 .imgWrapper img { width: 100%; height: 600px; object-fit: fill; }
 .row .col-4 { flex-basis: calc(100% / 3); max-width: calc(100% / 3); padding-left: 10px; padding-right: 10px; display: flex; justify-content: center; }
 .row .col-4 a { position: relative; }
 
@@ -45,9 +45,9 @@ footer .footerWrapper .footerNavWrapper nav > ul > li > a:hover { color: #e5cccc
 .filterWrapper .filterInnerWrapper { display: flex; align-items: center; justify-content: center; max-width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 30px; }
 .filterWrapper .filterInnerWrapper > div { flex: 1 0 auto; display: flex; justify-content: center; }
 
-.selectWrapper { position: relative; max-width: 135px; width: 100%; }
-.selectWrapper::after { content: ''; display: block; width: 10px; height: 10px; border-style: solid; border-color: #7f0000; border-width: 0px 1px 1px 0px; transform: rotate(45deg); position: absolute; top: 13px; right: 15px; pointer-events: none; }
-.selectWrapper select { width: 135px; color: #7f0000; font-size: 1rem; padding: 12px 10px; -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 1px solid #7f0000; background-color: transparent; }
+.selectWrapper { position: relative; max-width: 155px; width: 100%; }
+.selectWrapper::after { content: ''; display: block; width:10px; height: 10px; border-style: solid; border-color: #7f0000; border-width: 0px 1px 1px 0px; transform: rotate(45deg); position: absolute; top: 13px; right: 15px; pointer-events: none; }
+.selectWrapper select { width: 155px; color: #7f0000; padding: 12px 10px; -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 1px solid #7f0000; background-color: transparent; }
 
 .filterResults ul { list-style-type: none; padding-left: 0; }
 .filterResults ul > li { text-align: center; }
@@ -73,52 +73,11 @@ footer .footerWrapper .footerNavWrapper nav > ul > li > a:hover { color: #e5cccc
   }
   /* set a style for all buttons*/
   button {
-      background-color: green;
-      color: white;
       padding: 14px 20px;
       margin: 8px 0;
       cursor: pointer;
       width: 100%;
   }
-  /*set styles for the cancel button*/
-  .cancelbtn {
-      padding: 14px 20px;
-      background-color: #FF2E00;
-  }
-  /*float cancel and signup buttons and add an equal width*/
-  .cancelbtn,
-  .signupbtn {
-      float: left;
-      width: 50%
-  }
-  /*add padding to container elements*/
-  .container {
-      padding: 16px;
-  }
-  /*define the modal’s background*/
-   
-  .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-      padding-top: 60px;
-  }
-  /*define the modal-content background*/
-   
-  .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto 15% auto;
-      border: 1px solid #888;
-      width: 80%;
-  }
-  /*define the close button*/
    
   .close {
       position: absolute;
@@ -136,16 +95,3 @@ footer .footerWrapper .footerNavWrapper nav > ul > li > a:hover { color: #e5cccc
       cursor: pointer;
   }
    
-  .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-  }
-   
-  @media screen and (max-width: 300px) {
-      .cancelbtn,
-      .signupbtn {
-          width: 100%;
-      }
-  }
-

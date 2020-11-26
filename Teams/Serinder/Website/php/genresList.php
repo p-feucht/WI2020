@@ -1,6 +1,7 @@
 <?php
-    include 'db.php';
 
+    include 'db.php';
+    
     $statement = $connection->prepare("SELECT id, name FROM genres ORDER BY Name ASC");
     $statement->execute();
     $result = $statement->get_result();
