@@ -1,4 +1,4 @@
-# Worker Bees  <img src="./images/logoBiene.png" alt="Logo" width="50" style="float:right;"/>
+<img src="./images/logoBiene.png" alt="Logo" width="50" style="float:right;"/> # Worker Bees
 This Webpage was built as a class project for Web Programming in Q4/2020 at DHBW Ravensburg.
 
 ## Idea
@@ -33,6 +33,7 @@ The main features of the website have been implemented in Version 1.0
 - [Daniel](https://github.com/DanielBirk98)
 - [Katerina](https://github.com/kmatysova2)
 <a/>
-###### We hope you have fun with our website. Let us know about questions and feedback!
 
-Copyright [2020] [Worker Bees Team]
+##### We hope you have fun with our website. Let us know about questions and feedback!
+
+Copyright (C) [2020] [Worker Bees Team]
