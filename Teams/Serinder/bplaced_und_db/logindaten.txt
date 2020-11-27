@@ -1,0 +1,10 @@
+Bplaced Login:
+E-Mail: kaiser.ju@stud.dhbw-ravensburg.de
+Passwort: |6\KFmWMQ+Bt?b<`Xjvu
+
+Bplaced DB Login:
+http://myadmin.serinder.bplaced.net/
+Benutzername: serinder
+Passwort: |6\KFmWMQ+Bt?b<`Xjvu
+
+
