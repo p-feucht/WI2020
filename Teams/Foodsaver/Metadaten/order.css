@@ -1,0 +1,161 @@
+html {
+    background: url("../Pictures/order-min_ws.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#Record_specific {
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Record_specific h1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#order_div {
+    border: 1px solid #4b4a4a;
+    background-color: white;
+    opacity: 0.9;
+    width: 75%;
+    margin-bottom: 30px;
+    padding: 15px;
+    padding-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#order_div h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+#order_div input,
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px;
+    border: 1px solid #4b4a4a;
+    border-radius: 8px;
+}
+
+#order_div button {
+    background: white;
+    border: 1px solid #4b4a4a;
+    border-radius: 25px;
+    padding: 8px;
+    float: right;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#order_div textarea {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#Record {
+    border: 1px solid #4b4a4a;
+    background-color: white;
+    opacity: 0.9;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Record h1 {
+    margin-bottom: 20px;
+}
+
+#Record h2 {
+    padding-bottom: 20px;
+    font-size: 24px;
+}
+
+#Record .zur_bestellung {
+    padding: 8px;
+    margin-top: 10px;
+}
+
+#record_bearbeiten {
+    width: 15%;
+}
+
+#record_bearbeiten,
+#myBtn {
+    opacity: 0.9;
+}
+
+#myBtn {
+    width: 15%;
+    margin-bottom: 20px;
+}
+
+#annotation {
+    border: 1px solid #4b4a4a;
+    background-color: white;
+    opacity: 0.9;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    padding-bottom: 50px;
+}
+
+#annotation h1 {
+    margin-bottom: 20px;
+}
+
+#annotation h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#annotation p {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#annotationtr .zur_bestellung {
+    padding: 5px;
+}
+
+#header_messages {
+    border: 2px solid#4B4A4A;
+}
+
+#listMyMessages .zur_bestellung {
+    margin-top: 10px;
+}
+
+.mehr_artikel {
+    padding-right: 15px;
+}
+
+#karte_anzeigen,
+#Route_anzeigen {
+    border: 1px solid#4B4A4A;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.modal-content {
+    height: 30%;
+}

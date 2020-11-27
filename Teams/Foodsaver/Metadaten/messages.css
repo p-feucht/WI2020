@@ -1,0 +1,103 @@
+html {
+    background: url("../Pictures/messages-min_ws.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#messages {
+    display: flex;
+    flex-direction: row;
+}
+
+#annotation {
+    padding: 25px;
+    padding-bottom: 50px;
+    margin: auto;
+    margin-left: 5px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #f9f9f9;
+    opacity: 0.9;
+    width: 75%;
+    border: 1px solid#4B4A4A;
+}
+
+#annotation h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+#annotation p {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#annotationtr {
+    background-color: lightgreen;
+    height: 50px;
+}
+
+#listMyMessages {
+    margin-top: 5px;
+    border: 1px solid#4B4A4A;
+}
+
+#listMyMessagesNeu {
+    margin-top: 5px;
+    border: 1px solid#4B4A4A;
+    background-color: lightgreen;
+}
+
+#listMyMessagesTable {
+    border: 0px solid#4B4A4A;
+}
+
+#linkMessageToolong {
+    text-decoration: none;
+    color: black;
+}
+
+#asideMessages {
+    width: 15%;
+    padding: 15px;
+    margin: 15px;
+    margin-top: 50px;
+}
+
+#messageEmpfangen {
+    text-decoration: none;
+    color: black;
+    border-radius: 3px;
+    background-color: white;
+    opacity: 0.9;
+    padding: 5px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border: 1px solid black;
+}
+
+#messageGesendet {
+    text-decoration: none;
+    color: black;
+    border-radius: 3px;
+    background-color: white;
+    opacity: 0.9;
+    padding: 11px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border: 1px solid black;
+}
+
+table {
+    border: 2px solid#4B4A4A;
+}
+
+td {
+    padding: 10px;
+}
+
+.zur_bestellung {
+    margin-top: 5px;
+}

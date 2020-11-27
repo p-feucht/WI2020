@@ -1,0 +1,94 @@
+html {
+    background: url("../Pictures/new_homepage.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#image1 {
+    position: relative;
+    padding-top: 50px;
+}
+
+#homepage_text {
+    width: 40%;
+    text-align: justify;
+    color: black;
+    font-weight: bolder;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    float: left;
+}
+
+#homepage_text p {
+    font-size: 20px;
+}
+
+#Record,
+#MeineRecords,
+#Record_specific {
+    padding: 50px;
+}
+
+#Record h1 {
+    color: black;
+    font-size: 36px;
+}
+
+#Record p {
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#Record table {
+    box-shadow: 3px 5px 5px grey;
+    opacity: 0.9;
+}
+
+.homepage_main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.homepage_main main {
+    width: 80%;
+}
+
+.homepage_main aside {
+    width: 20%;
+    padding-left: 30px;
+    padding-top: 5%;
+}
+
+.homepage_main .zur_bestellung {
+    margin-bottom: 75px;
+    background: white;
+    opacity: 0.9;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.homepage_main .mehr_details {
+    background-color: white;
+    opacity: 0.9;
+}
+
+.mehr_artikel {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: 1px solid#4B4A4A;
+    border-radius: 25px;
+    padding: 8px;
+    width: 100%;
+    opacity: 0.9;
+}
