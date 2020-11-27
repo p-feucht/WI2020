@@ -36,11 +36,11 @@ The main features of the website have been implemented in Version 1.0
 - [Katerina](https://github.com/kmatysova2)
 <a/>
 
-## How to contribute 
-### access data to the database
-username = "workerbees";
-password = "HKSZ52";
-dbname = "workerbees_db1";
+## How to contribute  ##### access data to the database
+
+username = "workerbees"
+password = "HKSZ52"
+dbname = "workerbees_db1"
 
 ##### We hope you have fun with our website. Let us know about questions and feedback!
 
