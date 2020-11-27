@@ -26,85 +26,100 @@
                 <a href="about.html">About</a>
             </li>
         </ul>
+        <div class="burger">
+            <div class="bLine-1"></div>
+            <div class="bLine-2"></div>
+            <div class="bLine-3"></div>
+        </div>
     </nav>
+    <script src="js/nav.js"></script>
     <div class="nav-blocker">''</div>
 
-
-
-
+    <!--In dem Grid Container werden die einzelnen Topics angeordnet
+    Jedes Topic ist gleich aufgebaut-->
     <div class="grid_container">
+        <!--In dem Link itemX werden die Topics erstellt und bekommen einen Link zu ihrer Seite-->
+        <a class="item item1" href="topic_Machine_Learning.html">
 
-        <div class="item1">
-            <a href="topic_Machine_Learning.html" class="titel_link">
-               Machine Learning 
-            </a>
+            <!-- Der Link ist auch gleichzeitig die Überschrift des Topics-->
+            <p class="titel_link">
+                Machine Learning
+            </p>
 
-        </div>
+        </a>
 
-        <div class="item2">
-
-
-            <a href="topic__HowToStartADataScienceProject.html" class="titel_link">How to start a data Science Project</a>
-
+        <a class="item item2" href="topic__HowToStartADataScienceProject.html">
 
 
-
-        </div>
-
-        <div class="item3">
-
-            <a href="topic_ArtificialIntelligence.html" class="titel_link">Artifial Intelligence</a>
+            <p class="titel_link">
+                How to start a DS Project
+            </p>
 
 
-        </div>
-
-        <div class="item4 ">
 
 
-            <a href="topic_DataMining.html" class="titel_link ">Data Mining 
-            </a>
+        </a>
+
+        <a class="item item3" href="topic_ArtificialIntelligence.html">
+            <p class="titel_link">
+                Artificial Intelligence
+            </p>
+        </a>
+
+        <a class="item item4 " href="topic_DataMining.html">
+            <p class="titel_link ">
+                Data Mining
+            </p>
+        </a>
+
+        <a class="item item5 " href="topic_DeepLearning.html">
+            <p class="titel_link ">
+                Deep Learning
+            </p>
+        </a>
+
+        <a class="item item6 " href="topic_Application.html">
+            <p class="titel_link ">
+                Application
+            </p>
+        </a>
+
+        <a class="item item7 " href="topic_Job.html">
+            <p class="titel_link ">
+                Jobs and Career
+            </p>
+        </a>
+
+        <a class="item item8 " href="topic_Fundamentals.html">
+            <p class="titel_link ">
+                Fundamental Skills
+            </p>
+        </a>
+
+        <a class="item item9 " href="topic_Tools.html">
+            <p class="titel_link ">
+                Tools
+            </p>
+        </a>
 
 
-        </div>
-
-        <div class="item5 ">
-            <a href="topic_DeepLearning.html" class="titel_link ">Deep Learning 
-            </a>
-
-        </div>
-
-        <div class="item6 ">
-
-            <a href="machinelearning.html " class="titel_link ">Application </a>
-
-        </div>
-        <div class="item7 ">
-
-            <a href="topic_Job.html" class="titel_link ">Career: Jobs </a>
-
-
-        </div>
-
-        <div class="item8 ">
-
-            <a href="topic_Fundamentals.html" class="titel_link ">Fundamental Skills  </a>
-
-
-        </div>
 
     </div>
 
 
     <footer>
-        <ul class="footer-elements ">
+        <ul class="footer-elements">
             <li>
-                <div class="footer-element ">© Copyright 2020</div>
+                <a class="footer-link" href="#">Imprint</a>
             </li>
             <li>
-                <a class="footer-link " href="# ">Impressum</a>
+                <a class="footer-link" href="#">Data Protection</a>
             </li>
             <li>
-                <a class="footer-link " href="# ">Datenschutz</a>
+                <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
+            </li>
+            <li>
+                <div class="footer-element">© Copyright 2020</div>
             </li>
         </ul>
     </footer>

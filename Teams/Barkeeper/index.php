@@ -1,57 +1,70 @@
+<?php
+    require($_SERVER["DOCUMENT_ROOT"]."/database/cocktails.php");
+    $cocktailsFactory = new Cocktails();
+    $cocktails = $cocktailsFactory->findAll();
+?>
+
 <!DOCTYPE html>
+<html lang="de">
+
 <head>
-    <meta charset = "utf-8">
-    <title>Barkeeper</title>
-    <link href="style/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barkeeper | Home</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 </head>
+
 <body>
-    <nav>
-        <?php 
-            include("php/menu.php");
-        ?>
-    </nav>
-    <div class="content">
-        <p>Mithilfe von uns Barkeepern kannst du deinen Cocktail mixen ohne extra einkaufen gehen zu müssen. Somit musst du deine Reste nicht wegschütten und sparst dir Geld für deinen nächsten Einkauf.</p>
-        <p>Du gibst einfach ein, was du noch zuhause hast, und schon kann die Party losgehen. Aber bei uns kannst du nicht nur deine "Reste verwerten"</p>
-        <p>Wir liefern dir auch die leckersten Cocktailrezepte, sowie Tippss und Tricks wie die dein perfekter Cocktail gelingt.</p>
-        <p>Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst? Dann teile dein Rezept <a href="php/rezeptidee.php">hier</a> mit uns</p>
-        <img src="images/Cocktail_des_Tages.jpg" alt="Unser Cocktail des Tages"
-            width="300"
-            height="300"/>
-        <p>Für den CAIPIRINHA brauchst du Folgendes</p>
-        <table class="ingredients">
-            <tr>
-                <th>Ztaten</th>
-                <th>Menge</th>
-            </tr>
-            <tr>
-                <td>Cachaca (Pitù)</td>
-                <td>6cl</td>
-            </tr>
-            <tr>
-                <td>Limette</td>
-                <td>1 Stück</td>
-            </tr>
-            <tr>
-                <td>Rohrzucker</td>
-                <td>2 EL</td>
-            </tr>
-            <tr>
-                <td>Crushed Ice</td>
-                <td>4 EL</td>
-            </tr>
-        </table>
-        <p>Vorgehensweise:
-            Die beiden Limettenenden der unbehandelten Limetten abschneiden, achteln und in ein Tumbler-Glas 
-            geben. Den braunen Zucker drüber verteilen und die Limettenstücke mit einem Stößel ausdrücken.
-            Zum Schluss Cachaca dazugeben. Das Glas mit Crushed Ice auffüllen und alles gut durchrühren. 
-            Eventuell noch einen Schuss Soadwasser hinzufügen und den Cocktail mit einem Trinkhalm servieren.
-        </p>
-        <p>Und fertig ist dein CAIPIRINHA</p>
-    </div>
-    <footer>
     <?php
-        include("php/aboutUs.php");
+        include($_SERVER["DOCUMENT_ROOT"]."/includes/header.php");
     ?>
-    </footer>
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Willkommen auf Barkeeper</h1>
+                <p class="lead">
+                    Mithilfe von uns Barkeepern kannst du deinen Cocktail mixen ohne extra einkaufen gehen zu müssen. Somit musst du deine Reste nicht 
+                    wegschütten und sparst dir Geld für deinen nächsten Einkauf. Du gibst einfach ein, was du noch zuhause hast, und schon kann die Party 
+                    losgehen. Aber bei uns kannst du nicht nur deine "Reste verwerten". Wir liefern dir auch die leckersten Cocktailrezepte, sowie Tipps 
+                    und Tricks wie dir dein perfekter Cocktail super schnell gelingt.
+                </P>
+                <p class="lead">
+                    Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst?
+                </p>
+                <p class="mb-0">
+                    <a href="/cocktail-finder.php" class="btn btn-secondary my-2">Gib hier deine Zutaten ein.</a>
+                </p>
+            </div>
+        </section>
+        <div class="py-5">
+            <div class="container">
+                <h2>Beliebte Cocktails</h2>
+                <div class="row">
+                    <?php
+                        foreach ($cocktails as $key => $cocktail) {
+                            echo '<div class="col-md-6 col-lg-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="/assets/images/cocktails/' . $cocktail->getImage() . '">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="/cocktail.php?id='.$cocktail->getId().'">' . $cocktail->getTitle() . '</a></h5>
+                                            <p class="card-text">' . $cocktail->getDescription() . '</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">' . $cocktail->isAlcoholic() . '</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>';
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <?php
+        include($_SERVER["DOCUMENT_ROOT"]."/includes/footer.php");
+    ?>
 </body>
+
+</html>

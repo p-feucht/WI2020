@@ -1,46 +1,52 @@
+body{
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(240,241,255,1) 100%);
+
+}
+
 .result-page-content {
     text-align: center;
+    padding-top: 2vh;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    margin-bottom: 6vh;
 }
 
 .result-page-headline {
     font-weight: normal;
-    font-size: 40px;
-}
-
-.result-seperator {
-    width: 30%;
-    height: 2px;
-    color: black;
+    font-size: 35;
+    margin-top: 4vh;
 }
 
 .result-page-headline-2 {
-    padding: 10px;
+    padding-top: 2vh;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 30;
 }
 
 .result-page-recommendation {
-    margin-top: 15px;
-    margin-right: 14vw;
-    margin-left: 14vw;
-    font-size: 20px;
+    margin-top: 4vh;
+    margin-bottom: 8vh;
+    font-size: 20;
     font-weight: normal;
 }
 
 .form-title {
-    font-size: 18px;
+    font-size: 18;
+    margin-bottom: 2vh;
 }
 
 input[type=submit], input[type=reset], input[type=button] {
-    background-color: royalblue; /* Green */
+    background-color: #70befd; 
     border: none;
     color: white;
     padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 17px;
-    margin: 3px;
+    font-size: 17;
+    margin: 2vh;
+    border-radius: 5px;
 }
 
 input[type=text], input[type=password] {
@@ -48,17 +54,43 @@ input[type=text], input[type=password] {
     border: 2px solid lightgray;
     border-radius: 4px;
     outline: none;
-    font-size: 15px;
+    font-size: 15;
     margin: 3px;
 }
 
 input[type=text]:focus, input[type=password]:focus {
-    border: 2px solid royalblue;
+    border: 2px solid #70befd;
 }
 
 label {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 15;
     display: inline-block;
     width: 100px;
 }
+
+a{
+    color: #023E7D;
+}
+
+.feedback-smiley {
+    width: 22vh;
+    height: 22vh;
+    margin-top: 2vh;
+}
+
+@media screen and (max-width: 480px) {
+    .result-page-recommendation{
+        text-align: justify;
+        margin-top: 4vh;
+        margin-bottom: 6vh;
+    }
+
+    label {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding-top: 1vh;
+    }
+}
+
+

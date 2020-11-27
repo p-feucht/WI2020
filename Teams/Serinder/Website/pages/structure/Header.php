@@ -7,6 +7,7 @@
             <div class="navigationWrapper">
                 <nav id="naviMain" class="nav">
                     <ul>
+                    <?php if(isset($_SESSION['session_username'])){ ?>
                         <li>
                             <a class="active" href="./Startseite.php">
                                 Startseite
@@ -18,21 +19,21 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../favoriten.html">
+                            <a href="./Favoriten.php">
                                 Meine Favoriten
                             </a>
                         </li>
                         <li>
-                            <a href="../kommentare.html">
+                            <a href="./Kommentare.php">
                                 Meine Kommentare
                             </a>
                         </li>
                         <li>
-                            <a href="../einstellungen.html">
+                            <a href="./Einstellungen.php">
                                 Einstellungen
                             </a>
                         </li>
-                        <?php if(isset($_SESSION['session_username'])){ ?>
+                        
                         <li>
                             <a href="../php/logout.php" onclick="document.getElementById('modalLogin').style.display='none'">
                                 Log Out
@@ -40,7 +41,12 @@
                         </li>
                         <?php }else { ?>
                         <li>
-                            <a href="#" onclick="document.getElementById('modalLogin').style.display='block'">
+                            <a class="active" href="/index.php">
+                                Startseite
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="addClass()">
                                 Log In
                             </a>
                         </li>

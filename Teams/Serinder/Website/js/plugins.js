@@ -1,14 +1,13 @@
-// Get the modal
-var modal = document.getElementById('modalLogin');
+var sortOrderListOfSeries = "alphabetical";
 
-// When the user clicks anywhere outside of the modal, close it
-window.addEventListener("click", function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
-
-
+function onClickAlphabetical(){
+  sortOrderListOfSeries = "alphabetical";
+  showSelectedGenre();
+}
+function onClickRating(){
+  sortOrderListOfSeries = "rating";
+  showSelectedGenre();
+}
 function showSelectedGenre() {
   var e = document.getElementById("Genre");
   var result = e.options[e.selectedIndex].value;
@@ -19,8 +18,18 @@ function showSelectedGenre() {
       document.getElementById("listOfSeries").innerHTML = this.responseText;
     }
   };
-  xmlhttp.open("GET", "/php/seriesList.php?genreID=" + result, true);
+  xmlhttp.open("GET", "/php/seriesList.php?genreID=" + result + "&orderBy=" + sortOrderListOfSeries, true);
   xmlhttp.send();
 
 }
+
+  function addClass(){
+    elem = document.getElementsByClassName('changePasswordWrapper');
+    elem[0].classList.add("show");
+  }
+
+  function removeClass(){
+    elem = document.getElementsByClassName('changePasswordWrapper');
+    elem[0].classList.remove("show");
+  }
 

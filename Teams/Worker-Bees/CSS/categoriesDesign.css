@@ -1,4 +1,4 @@
-/* browser-Einstellungen zurücksetzen */
+/* design for all 3 category pages */
 
 * {
     margin: 0px;
@@ -8,9 +8,11 @@
     box-sizing: border-box;
 }
 
-/* Set height of body and the document to 100% to enable "full page tabs" */
-body, html {
-    height: 100%;
+
+/* mark appropriate button in header */
+
+.header a.ichSuche {
+    background-color: #feca57;
 }
 
 .yellow-banner {
@@ -19,45 +21,21 @@ body, html {
     background-size: 100%;
 }
 
-.place-icon {
-    height: 25px;
-    vertical-align: top;
-}
-/* Style tab links */
-
-.tablink {
-    background-color: white;
-    color: black;
-    font-weight: normal;
-    float: left;
-    border-radius: 50px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 18px;
-    width: 33.33%;
-}
-
-.tablink:hover {
-    background-color: rgba(83, 83, 83, 0.164);
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-
-.tabcontent {
-    display: none;
-    background-color: white;
-    padding: 100px 20px;
-    height: 100%;
-}
 
 /* Style the search field */
 
-form.search input[type=text],
+.search {
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+    float: center;
+}
+
+.free-text,
 #autocomplete {
     padding: 11px;
-    font-size: 17px;
+    font-size: 14px;
     height: 50px;
     border: 1px solid grey;
     border-right: white;
@@ -74,22 +52,21 @@ form.search input[type=text],
     border-left: 1px solid grey;
 }
 
-.icon {
-    padding: 10px;
-    height: 50px;
-    min-width: 40px;
-    border: 1px solid grey;
-    border-left: white;
-    border-right: white;
+.date-search {
     float: left;
-    width: 4%;
+    padding: 11px;
+    font-size: 14px;
+    height: 50px;
+    border: 1px solid grey;
+    border-right: white;
+    border-left: white;
+    float: left;
+    width: 25%;
     background: white;
+    outline: none;
 }
 
-
-/* Style the submit button */
-
-form.search button {
+.submitButton {
     float: left;
     width: 20%;
     padding: 10px;
@@ -98,7 +75,7 @@ form.search button {
     color: white;
     font-size: 17px;
     border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
+    border-left: none;
     cursor: pointer;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -107,15 +84,6 @@ form.search button {
 
 form.search button:hover {
     background: #d4a337;
-}
-
-
-/* Clear floats */
-
-form.search::after {
-    content: "";
-    clear: both;
-    display: table;
 }
 
 
@@ -135,21 +103,28 @@ form.search::after {
     overflow: auto;
 }
 
+.place-icon {
+    height: 18px;
+}
+
 .card-lp {
     color: grey;
-    font-size: 20px;
+    font-size: 15px;
     text-align: left;
+    padding-top: 10px;
 }
 
 .card h2 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
+    padding-top: 6%;
 }
 
 .price {
     float: right;
     padding: 5px;
+    padding-top: 0;
 }
 
 .offer-image {
@@ -168,3 +143,6 @@ form.search::after {
 .iframe {
     border: none;
 }
+
+
+/* design for modals in bookingWindow.css */

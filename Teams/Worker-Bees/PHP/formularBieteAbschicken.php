@@ -1,9 +1,7 @@
 <?php
-//include 'header.php';
-// good example can be found here: https://www.cloudways.com/blog/custom-php-mysql-contact-form/
 
-//error-variables for validation
-$title = $beschreibung = $zeitraum = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = $a1_bohr = $a2_drechsel = $a3_schleif = $a4_saege = $a5_kleinteil = "";
+
+$title = $beschreibung = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 = $preisProTag2 = $preisBetrag = $a1_bohr = $a2_drechsel = $a3_schleif = $a4_saege = $a5_kleinteil = "";
 $valid=TRUE;
 
 //Connection to bplaced server
@@ -13,23 +11,8 @@ $password = "HKSZ52";
 $dbname = "workerbees_db1";
 
 
-// Username Ersteller aus 
-
-//$sql_2 = "SELECT password FROM user where username = '$username'";
-
-
-
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Folgendes aus
-
-//if(isset($_POST['formularFuerAngebot'])){
-    //Connection to xampp 
-    /*$servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "workerxampp";*/
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -40,8 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                 die("Connection failed: " . mysqli_connect_error());
             }
             else {
-                //echo "Connected successfully";
-                //echo "<br>";
                 
                 //wenn kein RadioButton gewählt, beenden und Fehlernachricht ausgeben
                 if(!isset($_POST["kategorie"])){
@@ -53,36 +34,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
                 //Variablen, die alle Angebotsarten enthalten behandeln
 
-                     //Validation  
+                     //Validation 
+                     
                     if (!checkIfEmpty("title")) {
                         $title = $conn->real_escape_string($_POST["title"]);
                     }
 
-                    /*if (empty($_POST["zeitraum"])) {
-                        $zeitraumErr = "Bitte Zeitraum eingeben";
-                        $valid=FALSE;
+
+                    if (!checkIfEmpty("datefilter")){
+                    $gesamtzeitraum = $conn->real_escape_string($_POST["datefilter"]);
+                    $gesamtzeitraum = str_replace(" ","", $gesamtzeitraum); //whitespaces zwischen Daten entfernen
+                    $firstdate =  substr($gesamtzeitraum,0,10);
+                    $lastdate =  substr($gesamtzeitraum,11);
+                    $beginndatum =  substr($firstdate,6,14).substr($firstdate,3,2).substr($firstdate,0,2);
+                    $endedatum =  substr($lastdate,6,14).substr($lastdate,3,2).substr($lastdate,0,2);;
                     }
-                    else {*/
-                    $zeitraum = $conn->real_escape_string($_POST["datefilter"]);
-                   /* }*/
-                   //Beschreibung darf leer sein
-                    /*if (!checkIfEmpty("beschreibung")) {*/
-                        $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
-                    /*}*/
+
+                   //Beschreibung darf leer sein, daher keine besondere Validierung
+                    $beschreibung = $conn->real_escape_string(trim($_POST["beschreibung"]));
 
                     //Bild Dateiupload
                     include ("dateiupload.php");
 
                     if (!checkIfEmpty("Vorname")) {
-                        $vorname = $conn->real_escape_string($_POST["Vorname"]);//der Wert der in Vorname geschriben wurde wird aufbereitet und in Variable geschrieben
+                        $vorname = $conn->real_escape_string($_POST["Vorname"]);
                     }
 
                     if (!checkIfEmpty("Nachname")) {
-                        $nachname = $conn->real_escape_string($_POST["Nachname"]);//der Wert der in Nachname geschriben wurde wird aufbereitet und in Variable geschrieben
+                        $nachname = $conn->real_escape_string($_POST["Nachname"]);
                     }
 
                     if (!checkIfEmpty("Strasse")) {
-                        $strasse = $conn->real_escape_string($_POST["Strasse"]);//der Wert der in Straße geschriben wurde wird aufbereitet und in Variable geschrieben
+                        $strasse = $conn->real_escape_string($_POST["Strasse"]);
                     }
                     
                     if(!checkIfEmpty("Hnr")){
@@ -100,60 +83,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $ort = $conn->real_escape_string($_POST["Ort"]);
                     }
 
-                    //Session abfragen um name des Erstellers zu speichern
+                    //Session abfragen um Name des Erstellers zu speichern
                    $username = $_SESSION["username"];
     
 
                     //je nachdem welcher radioButton gedrückt wurde zusätzliche Variablen behandeln
-                    $radioAnswer = $_POST['kategorie'];  //oder: if (isset($kategorie) && $kategorie=="Werkzeug"){ echo WZ;}...
+                    $radioAnswer = $_POST['kategorie']; 
                     
                     if ($radioAnswer == "Werkzeug") {          
-                        //echo 'You chose Werkzeug';  
-                        
-                        //if(!checkIfEmpty("PreisProTag")AND(is_numeric($_POST["PreisProTag"])AND($_POST["PreisProTag"]>0)) {
-
-                            $preisProTag1 = $conn->real_escape_string($_POST["PreisProTag1"]);
-                       // }
-                        
+                       
+                        //Preis ist kein zwingend erforderliches Feld
+                        $preisProTag1 = $conn->real_escape_string($_POST["PreisProTag1"]);
+                    
                         $bierBez1 = $conn->real_escape_string($_POST["bierBez1"]);
 
                         if($valid==TRUE){
-                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$preisProTag1', '$bierBez1')";
-
-                            //echo $sql;
-                            //echo "<br>";
+                            $sql = "INSERT INTO AngebotWerkzeug (ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$preisProTag1', '$bierBez1')";
 
                             if ($conn->query($sql) === TRUE) {
+                                $title = $gesamtzeitraum = $beschreibung = $vorname = $nachname = $strasse = $hnr = $plz= $ort = $preisProTag1 ="";
                                 echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
-                            /*echo "New record created successfully";
-                            echo "<br>";
-                            echo "Entries written:";
-                            echo $title;
-                            echo "<br>";
-                            echo $zeitraum;
-                            echo "<br>";
-                            echo $beschreibung;
-                            echo "<br>";
-                            echo $vorname;
-                            echo "<br>";
-                            echo $nachname;
-                            echo "<br>";
-                            echo $strasse;
-                            echo "<br>";
-                            echo $hnr;
-                            echo "<br>";
-                            echo $plz;
-                            echo "<br>";
-                            echo $ort;
-                            echo "<br>";
-                            echo $preisProTag;
-                            echo "<br>";
-                            echo $bierBez1;*/
                             } else {
                                 echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                                echo "Error: " . $sql . "<br>" . $conn->error;
-                         
                             }
                         }
                         else{
@@ -161,13 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                     }
 
                     elseif($radioAnswer == "Werkstatt"){
-                        //echo 'You chose Werkstatt';   
-                        //if(!checkIfEmpty("PreisProTag")){
-                            $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
-                        //}
-                        //else{
-                        //    $valid=FALSE;
-                        //}
+                        // Preis ist kein erforderliches Feld 
+                        $preisProTag2 = $conn->real_escape_string($_POST["PreisProTag2"]);
                         
                         //checkboxes
                         $bierBez2 = $conn->real_escape_string($_POST["bierBez2"]);
@@ -179,48 +126,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         
                         if($valid==true){
                         
-                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}','$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
+                            $sql = "INSERT INTO AngebotWerkstatt (ATitel, ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, PreisProTag, BezInBier, ABohr, ADrechsel, ASchleif, ASaege, AKleinteil)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort','{$imgData}','$username', '$preisProTag2', '$bierBez2', '$a1_bohr', '$a2_drechsel', '$a3_schleif', '$a4_saege', '$a5_kleinteil')";
                             //echo $sql;
                         
                             if ($conn->query($sql) === TRUE) {
+                                $title = $gesamtzeitraum = $beschreibung = $vorname = $nachname = $strasse = $hnr = $plz= $ort=$preisProTag2="";
                                 echo '<script type="text/javascript">alert("Dein Angebot wurde aufgenommen. Vielen Dank!");</script>';
                                 
                             } else {
-                                /*echo "Ausgabe zur Fehlersuche. Folgende Werte stehen in den PHP-Variablen:";
-                                echo "<br>";
-                                echo $title;
-                                echo "<br>";
-                                echo $zeitraum;
-                                echo "<br>";
-                                echo $beschreibung;
-                                echo "<br>";
-                                echo $vorname;
-                                echo "<br>";
-                                echo $nachname;
-                                echo "<br>";
-                                echo $strasse;
-                                echo "<br>";
-                                echo $hnr;
-                                echo "<br>";
-                                echo $plz;
-                                echo "<br>";
-                                echo $ort;
-                                echo "<br>";
-                                echo $preisProTag2;
-                                echo "<br>";
-                                echo $bierBez2;
-                                echo "<br>";
-                                echo $a1_bohr;
-                                echo "<br>";
-                                echo $a2_drechsel;
-                                echo "<br>";
-                                echo $a3_schleif;
-                                echo "<br>";
-                                echo $a4_saege;
-                                echo "<br>";
-                                echo $a5_kleinteil;*/
-                                echo "Error: " . $sql . "<br>" . $conn->error;
+                               
                                 echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
                             } 
                         } else{
@@ -234,19 +149,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
                         $preisBetrag = $conn->real_escape_string($_POST['Preis']);
                         $bierBez3 = $conn->real_escape_string($_POST['bierBez3']);
 
-                            $sql = "INSERT INTO Dienstleistung (ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
-                            VALUES ('$title', $zeitraum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' ,'$bezahlart', '$preisBetrag', '$bierBez3')";
-                        
-                            //echo $sql;
-                            //echo "<br>";
+
+                            $sql = "INSERT INTO AngebotDienstleistung (ATitel,  ABeginndat, AEndedat, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, PLZ, Ort, Bild, usernameErsteller, Preisart, Preis, BezInBier)
+                            VALUES ('$title', $beginndatum, $endedatum, '$beschreibung', '$vorname', '$nachname', '$strasse', '$hnr', '$plz', '$ort', '{$imgData}' , '$username', '$bezahlart', '$preisBetrag', '$bierBez3')";
+                      
 
                             if($valid==true){
                                 if ($conn->query($sql) === TRUE) {
+                                    $title = $gesamtzeitraum = $beschreibung = $vorname = $nachname = $strasse = $hnr = $plz= $ort=$preisBetrag="";
                                     echo '<script type="text/javascript">alert("Vielen Dank, das Angebot wurde aufgenommen");</script>';
                                 } 
                                 else {
                                     echo '<script type="text/javascript">alert("Es tut uns Leid, das Angebot konnte nicht in die Datenbank aufgenommen werden.");</script>';
-                                    echo "Error: " . $sql . "<br>" . $conn->error;
                                 }
                             }
                             else{
@@ -272,6 +186,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//wenn auf Submit gedrückt führe Fo
 
     }
     
-   //Dies war nach dem Preis input feld bei value ="<?php echo htmlspecialchars($preisBetragErr);? >"  
+
 ?>
 

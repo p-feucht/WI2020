@@ -12,6 +12,10 @@
     background-color: #feca57;
 }
 
+.header a.aboutus {
+  background-color: #feca57;
+}
+
 .background {
     background-image: url("../CSS/css-images/werkstatt.jpg");
     background-size: 100%;
@@ -25,6 +29,8 @@
     padding: 35px;
     text-align: center;
 }
+
+/* button that leads to the story on the same site */
 .storyButton {
     height: 40px;
     width: 145px;
@@ -36,6 +42,8 @@
     background-color: #d4a337;
     cursor: pointer;
 }
+
+/* button that leads to the team on the same site */
 .businessOwnerButton {
     height: 40px;
     width: 145px;
@@ -73,24 +81,16 @@
     padding: 0 8px;
   }
   
-  /* Display the columns below each other instead of side by side on small screens */
-  /* @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-      text-align: center;
-    }
-  } */
-  
   /* Add some shadows to create a card effect */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
+    height: 630px;
   }
   .card2 {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
-    /* font-size: 18px; */
+    
     
   }
   
@@ -110,6 +110,7 @@
     color: grey;
   }
   
+ /*  buttons that lead to the email addresses of the founders */
   .buttonKontakt {
     align-items: center;
     margin-bottom: 10px;
@@ -130,7 +131,5 @@
   .businessOwnerHeading{
     text-align: center;
   }
- /*  .textAboutUs {
-    text-align: center;
-  } */
+ 
  

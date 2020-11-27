@@ -1,42 +1,46 @@
+/* design for all offer modals */
+
 * {
-  margin: 0px;
-  padding: 0px;
-  border: none;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
-
 .headerLogo {
-  float: left;
-  height: 50px;
+    float: left;
+    height: 50px;
 }
 
 .modal-namelocation {
-  color: grey;
+    color: grey;
 }
 
 .modal-content-split {
-  width: 50%;
-  float: left;
-  margin-top: 40px;
+    width: 50%;
+    float: left;
+    margin-top: 40px;
 }
 
 .modal-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    object-fit: cover;
 }
 
 .modal-amenities {
-  padding-left: 20px;
+    padding-left: 20px;
 }
+
+
+/* booking area */
 
 .modal-booking-window {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border: 3px solid #feca57;
+    border: 10px outset #feca57;
     font-size: 12;
     text-align: center;
     width: 60%;
@@ -49,34 +53,32 @@
     float: left;
 }
 
-.modal-datepicker {
-  text-align: center;
-  color: grey;
+.modal-booking-window input[type=date] {
+    height: 20px;
+    border: solid 1px #feca57;
+    border-radius: 5px;
+    outline: none;
 }
 
 .modal-booking-text {
-  padding: 5px;
-  font-size: 14px;
-  font-weight: 600;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .modal-booking-window button {
-  float: none;
-  width: 80px;
-  margin-left: 40%;
-  margin-right: 40%;
-  padding: 10px;
-  background-color: #feca57;
-  outline: none;
-  border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 50px;
+    border: 2px solid #feca57;
+    background-color: white;
+    outline: none;
+    width: 50%;
+    float: left;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .modal-booking-window button:hover {
-  background-color: #d4a337;
-}
-
-.modal-booking-window input[type=date] {
-  outline: solid 2px #feca57;
-  height: 15px;
-
+    background-color: #feca57;
 }

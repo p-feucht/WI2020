@@ -1,23 +1,12 @@
-<!--Login Form-->
-<div id="modalLogin" class="modal">
-
-        <span onclick="document.getElementById('modalLogin').style.display='none'" class="close"
-            title="Close Modal">×</span>
-
-    <form class="modal-content animate" action="../php/login.php" method="POST">
-        <div class="container">
-            <label><b>Benutzername</b></label>
-            <input type="text" placeholder="Benutzername eingeben" name="username" required>
-
-            <label><b>Passwort</b></label>
-            <input type="password" placeholder="Passwort eingeben" name="password" required>
-
-            <div class="clearfix">
-                <button type="button" onclick="document.getElementById('modalLogin').style.display='none'"
-                    class="cancelbtn">Abbrechen</button>
-                <button type="submit" name="submit" class="signupbtn">Login</button>
-            </div>
-            <p>Noch kein Mitglied? <a href="./Registrierung.php">Registriere dich hier</a>.</p>
-        </div>
+<div class="changePasswordWrapper">
+    <span class="close" onclick="removeClass()"></span>
+    <form action="/php/login.php" method="POST">
+    <h2>Login</h2><br>
+    <label><b>Benutzername</b></label>
+    <input type="text" placeholder="Benutzername eingeben" minlength="3" maxlength="50" name="username" required>
+    <label><b>Passwort</b></label>
+    <input type="password" placeholder="Passwort eingeben" minlength="6" maxlength="250" name="password" required>
+    <button class="button" type="submit" name="submit">Login</button>
     </form>
+    <p>Noch kein Mitglied? <a href="pages/Registrierung.php">Registriere dich hier</a>.</p>
 </div>

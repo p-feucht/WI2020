@@ -1,7 +1,8 @@
 <?php
+
     session_start();
     include 'db.php';
-
+    
     $statement = $connection->prepare("SELECT id, Name, Overview, Image_Path FROM series ORDER BY RAND() LIMIT 2");
     $statement->execute();
     $result = $statement->get_result();

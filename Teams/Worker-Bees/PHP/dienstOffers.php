@@ -6,110 +6,126 @@ $password = "HKSZ52";
 $dbname = "workerbees_db1";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$dconn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($dconn->connect_error) {
+    die("Connection failed: " . $dconn->connect_error);
 }
 
-$sql = "SELECT ATitel, AZeitraum, ABeschreibung, Vorname, Nachname, Strasse, Hausnummer, 
-PLZ, Ort, Bild, usernameErsteller, Dienst_ID, Preis, BezInBier, Erstellzeitpunkt FROM AngebotDienst";
-$result = $conn->query($sql);
+$sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung,
+PLZ, Ort, Bild, usernameErsteller, Dienstleistung_ID, Preis, BezInBier, Preisart FROM AngebotDienstleistung";
+$result = $dconn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
 
-        $orderID = $row["Dienst_ID"];
+        $beginDat = $row["ABeginndat"];
+        $endDat = $row["AEndedat"];
+        $orderID = $row["Dienstleistung_ID"];
         $location = $row["Ort"];
         $title = $row["ATitel"];
-        $price = $row["PreisProTag"];
+        $price = $row["Preis"];
+        $pricetype = $row["Preisart"];
         $offeruser = $row["usernameErsteller"];
         $plz = $row["PLZ"];
-        $description = $row["ABeschreibung"];
+        $description = $city = $row["ABeschreibung"];
         $bezBier = $row["BezInBier"];
+        $image = $row["Bild"];
 
-        $card_ID = "Dcard_".(string)$orderID;
-        $modal_target = "#Dmodal_".(string)$orderID;
-        $modal_ID = "Dmodal_".(string)$orderID;
+        $card_ID = "Dcard_" . (string)$orderID;
+        $modal_target = "#Dmodal_" . (string)$orderID;
+        $modal_ID = "Dmodal_" . (string)$orderID;
 
-        $bier = round($price,0);
+        $bier = round($price, 0); // so that beer is counted in whole beers
 
-    ?>
-        <!-- create card for each offer -->
-        <div class="card" id=<?php echo $card_ID ?> data-toggle="modal" data-target=<?php echo $modal_target ?>>
-            <img src="images/werkstatt.jpg" alt="Denim Jeans" class="offer-image">
-            <p class="card-lp"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
-                <span class="price"><?php echo $price ?> €</span></p>
-            <h2><?php echo $title ?></h2>
+?>
+        <!-- create card for each offer data-target = modal-id-->
+        <div class="card" id="<?php echo $card_ID ?>" data-toggle="modal" data-target=<?php echo $modal_target ?>>
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" loading="lazy" alt="Offer Photo" class="offer-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
+            <p class="card-lp" id="cardLocation"><img src="images/place-icon.svg" alt="location" class="place-icon"> <?php echo $location ?>
+                <span class="price"><?php echo $price ?>€ <em id="preisArt">/ Stunde</em></span></p>
+            <script>
+                if ("<?php echo $pricetype ?>" == "Fixpreis") { // only show "pay in beer" if option was selected at offer creation
+                    document.getElementById("<?php echo $card_ID ?>").querySelector("#preisArt").style.display = "none";
+                }
+            </script>
+            <h2 id="cardTitle"><?php echo $title ?></h2>
+            <input type='hidden' id="startDate" value='<?php echo $beginDat; ?>' />
+            <input type='hidden' id="endDate" value='<?php echo $endDat; ?>' />
         </div>
 
         <!-- create modal for each card -->
         <div id=<?php echo $modal_ID ?> class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-lg">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <img class="headerLogo" src="images/logoKomplett.png">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <h3 class="modal-offerName"><?php echo $title ?></h3>
-                    <p class="modal-namelocation"><?php echo $offeruser ?>
-                        <img src="images/place-icon.svg" class="place-icon" alt="location"><?php echo $plz ?> <?php echo $location ?>
-                        <!--has to be the exact location here!-->
-                    </p>
-
-                    <div class="modal-content-split">
-                        <p class="offer-description">
-                            <?php echo $description ?>
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img class="headerLogo" src="images/logoKomplett.png" alt="Logo">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="modal-offerName"><?php echo $title ?></h3>
+                        <p class="modal-namelocation"><?php echo $offeruser ?>
+                            <img src="images/place-icon.svg" class="place-icon" alt="location"><?php echo $plz ?> <?php echo $location ?>
                         </p>
-                    </div>
-                    <div class="modal-content-split">
-                        <img src="images/Werkzeug.jpg" class="modal-image" alt="Angebot">
-                    </div>
 
-                    <form class="modal-booking-window">
-                        <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
-                        
+                        <div class="modal-content-split">
+                            <p class="offer-description">
+                                <?php echo $description ?>
+                            </p>
+
+                        </div>
+                        <div class="modal-content-split">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($image); ?>" alt="Offer Photo" class="modal-image" onerror="this.onerror=null; this.src='images/Werkzeug.jpg'" />
+                        </div>
+
+
+                        <!--Create booking window -->
+                        <form class="modal-booking-window" enctype="multipart/form-data" action="../submitBooking.php" method="post">
+                            <input type='hidden' name='orderID' value='<?php echo $orderID; ?>' />
+                            <!--Pass order ID in hidden element to php -->
+
+                            <h3 class="modal-booking-heading">Nur noch ein Schritt!</h3>
+
                             <label for="bookingDate">Datum:</label>
-                            <input type="date" id="bookingDate"><br>
+                            <input type="date" name="Date" min="<?php echo $beginDat ?>" max="<?php echo $endDat ?>" value="<?php echo htmlspecialchars($date); ?>" required><br>
 
                             <p class="modal-booking-text">Gesamtbetrag: <?php echo $price ?> €<br></p>
 
-                            <input id="bierInput" type="checkbox" name="bierZahlung">
-                            <label id="bierLabel" for="bierZahlung"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
-                                <script>
-                                    var bezBier = <?php echo $bezBier ?>;
-                                    if(bezBier!=1) {
-                                        document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
-                                        document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";
-                                    }
-                                </script>
+                            <input id="bierInput" type="checkbox" name="bezInBier" value="1" unchecked>
+                            <label id="bierLabel" for="bezInBier"> Ich möchte in Bier bezahlen (<?php echo $bier ?> Bier)</label><br>
+                            <script defer>
+                                if (<?php echo $bezBier ?> != 1) { // only show "pay in beer" if option was selected at offer creation
+                                    document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierLabel").style.display = "none";
+                                    document.getElementById("<?php echo $modal_ID ?>").querySelector("#bierInput").style.display = "none";
+                                }
+                            </script>
 
                             <label for="paymentType">Wähle die Bezahlart:</label>
                             <select name="paymentType" id="paymentType">
                                 <option value="inPerson">vor Ort bezahlen</option>
                             </select>
 
-                        <button type="button" class="submitBooking">Jetzt buchen</button>
-                    </form>
+                            <script></script>
+                            <button type="submit" class="submitBooking" onclick="<?php $_SESSION['category'] = 'Dienstleistung'; ?>">Jetzt buchen</button>
+                        </form>
 
 
 
+                    </div>
+                    <div class="modal-footer"></div>
                 </div>
-                <div class="modal-footer"></div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
 <?php
 
     }
 } else {
-    echo "0 results";
+    echo "Keine Einträge gefunden.";
 }
-$conn->close();
+$dconn->close();
 ?>

@@ -28,7 +28,7 @@ function datePicker() {
     });
 
     $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+        $(this).val(picker.startDate.format('DD.MM.YYYY') + ' - ' + picker.endDate.format('DD.MM.YYYY'));
     });
 
     $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
@@ -38,110 +38,96 @@ function datePicker() {
 
 
 
-
-/*
-function datePicker() {
-    $('.datefilter').datepicker({
-        multidate: true,
-        format: 'dd-mm-yyyy'
-    });
-}*/
-
-/*
 function pruefeFormular() {
-
-    var formValid = true;
-    var radios = document.getElementsByName("kategorie");
-
-    if (document.formularFuerAngebot.title.value == "") {
-        document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
-        //   alert("Bitte gib einen Angebotstitel ein.");
-        // document.Formular.title.focus();
-        formValid = false;
-    } else { document.getElementById("FehlermeldungTitle").innerHTML = ""; }
-
-    if (document.formularFuerAngebot.beschreibung.value.trim() == "") {
-        document.getElementById("FehlermeldungBeschr").innerHTML = "Bitte Angebotsbeschreibung eingeben";
-        //alert("Bitte gib eine Angebotsbeschreibung ein.");
-        // document.Formular.beschreibung.focus();
-        formValid = false;
-    } else { document.getElementById("FehlermeldungBeschr").innerHTML = ""; }
-
-    if (!radioIsValid()) {
-        formValid = false;
-    }
-    return formValid;
-}*/
-
-
-/*function radioIsValid() {
-    var i = 0;
-    formValid = false;
-    while (!formValid && i < radios.length) {
-        if (radios[i].checked) formValid = true;
-        i++;
-    }
-
-    if (!formValid) {
-        document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
-        document.getElementByID("wz").focus();
-        //alert("Bitte wähle eine Angebotskategorie aus, bevor du fortfährst");
-    }
-    return formValid;
-}*/
-
-
-
-function pruefeFormular() {
-
 
     if (document.getElementById("ws").checked == false && document.getElementById("wz").checked == false && document.getElementById("dl").checked == false) {
         document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
         document.getElementById("wz").focus();
         return false;
-    } else if (document.formularFuerAngebot.title.value == "") {
+    } else { document.getElementById("FehlermeldungAngebKat").innerHTML = "*"; }
+    if (document.formularFuerAngebot.title.value == "") {
         document.getElementById("FehlermeldungTitle").innerHTML = "Bitte Angebotstitel eingeben";
         document.getElementById("title").focus();
         return false;
-    } else if (document.formularFuerAngebot.Vorname.value == "") {
+    } else { document.getElementById("FehlermeldungTitle").innerHTML = "*"; }
+
+
+    if (!timePeriodInputIsOk()) {
+        document.getElementById("FehlermeldungZeitraum").innerHTML = "Bitte gültigen Zeitraum eingeben";
+        document.getElementById("datefilter").focus();
+        return false;
+    } else { document.getElementById("FehlermeldungZeitraum").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.Vorname.value == "") {
         document.getElementById("FehlermeldungVorname").innerHTML = "Bitte Vorname eingeben";
         document.getElementById("Vorname").focus();
         return false;
-    } else if (document.formularFuerAngebot.Nachname.value == "") {
+    } else { document.getElementById("FehlermeldungVorname").innerHTML = "*"; }
+    if (document.formularFuerAngebot.Nachname.value == "") {
         document.getElementById("FehlermeldungNachname").innerHTML = "Bitte Nachname eingeben";
         document.getElementById("Nachname").focus();
         return false;
-    } else if (document.formularFuerAngebot.Strasse.value == "") {
-        document.getElementById("FehlermeldungStrasseID").innerHTML = "Bitte Straße eingeben";
+    } else { document.getElementById("FehlermeldungNachname").innerHTML = "*"; }
+
+    if (document.formularFuerAngebot.Strasse.value == "") {
+        document.getElementById("FehlermeldungStrasse").innerHTML = "Bitte Straße eingeben";
         document.getElementById("StrasseID").focus();
         return false;
-    } else if (document.formularFuerAngebot.Hnr.value == "") {
-        document.getElementById("HnrID").innerHTML = "Bitte Hausnummer eingeben";
+    } else { document.getElementById("FehlermeldungStrasse").innerHTML = "*"; }
+    if (document.formularFuerAngebot.Hnr.value == "") {
+        document.getElementById("FehlermeldungHnr").innerHTML = "Bitte Hausnummer eingeben";
         document.getElementById("HnrID").focus();
         return false;
-    } else if (CheckPLZ() == false) {
-        CheckPLZ();
+    } else { document.getElementById("FehlermeldungHnr").innerHTML = "*"; }
+    if (document.formularFuerAngebot.Ort.value == "") {
+        document.getElementById("FehlermeldungOrt").innerHTML = "Bitte Ort eingeben";
+        document.getElementById("OrtID").focus();
+        return false;
+    } else { document.getElementById("FehlermeldungOrt").innerHTML = "*"; }
+    if (checkPLZ() == false) {
+        checkPLZ();
         return false;
     } else {
+        document.getElementById("FehlermeldungPLZ").innerHTML = "*";
         return true;
     }
-    /*let vorname = document.getElementByName("Vorname");
-    if (inputIsEmpty(vorname) == true) {
-        let vornameErrMess = document.getElementById("FehlermeldungVorname");
-        setErrorMessage(vornameErrMess, "Bitte Vornamen eingeben");
-        return false;*/
+
+}
+
+function timePeriodInputIsOk() {
+    var timePeriod = document.formularFuerAngebot.datefilter.value; // datefilter should have a format like "DD.MM.YYYY - DD.MM.YYYY"
+    var timeWithoutSpace = timePeriod.replace(" ", ""); // delete whitespaces
+    var timePeriodNumbers = timePeriod.replace(/\D+/g, ""); // delete all non-number-digits
+
+    //validation 1
+    var laenge = timePeriodNumbers.length; // after removing all non-numbers length must be 16
+    if (laenge != 16) {
+        return false;
+    }
+    let firstDate = timeWithoutSpace.substr(0, 10);
+    let secondDate = timeWithoutSpace.substr(10);
+
+    //validation 2 : there must be three parts (for day,month and year) between the points of a date.
+    var firstDateArray = firstDate.split('.');
+    if (firstDateArray.length != 3) {
+        return false;
+    }
+    var secondDateArray = secondDate.split('.');
+    if (secondDateArray.length != 3) {
+        return false;
+    }
+    return true;
+
 }
 
 
-function CheckPLZ() {
+function checkPLZ() {
     var plz = document.formularFuerAngebot.PLZ.value;
     var laenge = plz.length;
     var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
     if (laenge != anzahl) {
-        //window.alert("Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!");
-        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben nur " + laenge + " Stelle(n) eingegeben!";
+        document.getElementById("FehlermeldungPLZ").innerHTML = "Bitte " + anzahl + "-stellige PLZ eingeben! Sie haben " + laenge + " Stelle(n) eingegeben";
         document.getElementById("plzinput").focus();
-        //document.formularFuerAngebot.PLZ.focus();
         return false;
     }
     if (laenge == anzahl) {
@@ -151,19 +137,4 @@ function CheckPLZ() {
         }
         return true();
     }
-}
-
-function inputIsEmpty(InputElement) {
-
-    if (InputElement.value == "") {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function setErrorMessage(elementErrorMessage, errorMessage) {
-
-    elementErrorMessage.innerHTML = errorMessage;
-    elementErrorMessage.focus();
 }

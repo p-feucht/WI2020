@@ -1,12 +1,6 @@
 <?php
-// Initialize the session
-/* session_start(); */
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-/* if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: indexTest.php");
-    exit;
-} */
+// start the session
+session_start();
  
 // Include config file
 require_once "Login/config.php";
@@ -43,8 +37,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Set parameters
             $param_username = $username;
-           /*  $hashed_password = mysqli_query($link, "SELECT password FROM user where username = $username");
-            echo $hashed_password; */
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -55,26 +47,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
 
-                    
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    /* echo $username;
-                    echo ' ,'; 
-                    echo $hashed_password;
-                    echo ' ,'; 
-                    echo $password; */
-                   
 
                     if(mysqli_stmt_fetch($stmt)){
                         
-                        
-                        /* echo "fehler";
-                        echo $hashed_password;
-                        echo " ,"; */
+                        // get the hashed password from the database of the username that wants to login 
                         $sql_2 = "SELECT password FROM user where username = '$username'";
                         $password_query = mysqli_query($link, $sql_2);
                         $password_result = mysqli_fetch_assoc($password_query);
                         $hashed_password = $password_result['password'];
-                        /* echo $hashed_password; */
+                        
 
 
                         if(password_verify($password, $hashed_password)){
@@ -86,8 +68,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
                             
-                            // Redirect user to welcome page
-                            header("location: indexTest.php");
+                            // Redirect user to index page
+                            header("location: index.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "Das eingegebene Passwort ist falsch.";
@@ -113,21 +95,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Worker Bees - Anmeldung</title>
+    <link rel="icon" href="images/logoBiene.png" />
     <link href="CSS/loginDesign.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"> -->
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; margin: 0 auto; }
     </style>
 </head>
+
 <body>
+
 <?php include "PHP/header.php";?>
+
     <div class="wrapper">
         <h2>Anmelden</h2>
         <p>Bitte gebe deine Daten ein, um dich einzuloggen.</p>
+        <!-- start the form  -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Benutzername</label>
@@ -142,10 +129,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Anmelden">
             </div>
+            
             <p>Du hast noch keinen Account? 
             </br> 
+            <!-- link to register page -->
             <a href="register.php">Hier kannst Du dich registrieren.</a></p>
         </form>
+
     </div>   
+
 </body>
+
 </html>

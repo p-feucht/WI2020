@@ -3,7 +3,7 @@
      * STATIC VARIABLES
      */
     //MAPPING TABLE FOR KNOWLEGDE QUESTIONS AND THEIR RESULTS
-    $RESULTS_MAP = array("knowledge_1"=>"3", "knowledge_2"=>"3", "knowledge_3"=>"1", "knowledge_4"=>"2", "knowledge_5"=>"3");
+    $RESULTS_MAP = array("knowledge_1"=>"3", "knowledge_2"=>"2", "knowledge_3"=>"1", "knowledge_4"=>"2", "knowledge_5"=>"1");
     $RECOMMENDATIONS = array("0"=>"Your low results indicate that a profession in datascience is probably not your best option. However - if you're still interested you might like checking out our collection of datscience-related topics.",
                              "50"=>"You're allready quite well informed and your results indicate that datascience might be for you. We suggest you to gather some more information about the subject. You might consider starting in our topics tab.",
                              "80"=>"Wow! What an amazing result! You should consider doing a deep-dive into the subject of datascience.");
@@ -101,64 +101,98 @@
                 <a href="about.html">About</a>
             </li>
         </ul>
+        <div class="burger">
+            <div class="bLine-1"></div>
+            <div class="bLine-2"></div>
+            <div class="bLine-3"></div>
+        </div>
     </nav>
+    <script src="js/nav.js"></script>
     <div class="nav-blocker">''</div>
 
     <!--CONTENT-->
     <?php
-    echo "<div class='result-page-content'><br><br>";
+    echo <<<HTML
+        <div class='result-page-content'>
+    HTML;
     if(!$logged_out) {
        if ($_SESSION["results"] != null) {
             $score = calculateScore($_SESSION["results"]);
             $percentage = scorePercentage($score, $MAX_SCORE);
 
             if ($_SESSION["logged_in"]) {
-                echo "<h2 class='result-page-headline-2'>Hello, ". $_SESSION["currentuser"].".</h1><br><br>";
-                echo "<h1 class='result-page-headline'>Your most recent score is <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
+                //Greet the user and show him his most recent score.
+                echo <<<HTML
+                    <h2 class='result-page-headline-2'>Hello {$_SESSION["currentuser"]}.</h1>
+                    <h1 class='result-page-headline'>Your most recent score is <b> $score</b> out of <b>$MAX_SCORE</b> possible Points!</h1>
+                HTML;
             } else {
-                echo "<h1 class='result-page-headline'>You scored <b>" . (string)$score . "</b> out of <b>". $MAX_SCORE . "</b> possible Points!</h1>";
+                //Show the user his score.
+                echo <<<HTML
+                    <h1 class='result-page-headline'>You scored <b>$score</b> out of <b>$MAX_SCORE!</b> possible Points!</h1>
+                HTML;
             }
-            echo "<hr class='result-seperator'>";
-            echo "<h2 class='result-page-headline-2'>Thats <b>". $percentage . "</b> percent!</h2>";
-            echo "<br>";
-            echo "<h3 class='result-page-recommendation'>" . recommendation($percentage) . "</h3>";
+            echo <<<HTML
+                <hr class='result-seperator'>
+            HTML;
+
+            //Show the scores percentage value and the appropriate recommendation.
+            $yourFeedbackSmiley = feedbackSmiley($percentage);
+            $yourRecommedation = recommendation($percentage);
+            echo <<<HTML
+                <h2 class='result-page-headline-2'>Thats <b>$percentage</b> percent!</h2>
+                <img class='feedback-smiley' src='$yourFeedbackSmiley'/>
+                <h3 class='result-page-recommendation'>$yourRecommedation</h3>
+            HTML;
         } else {
-                echo "<h1 class='result-page-headline'>An error occured while retrieving your score.</h1>";
+                echo <<<HTML
+                    <h1 class='result-page-headline'>An error occured while retrieving your score.</h1>
+                HTML;
         }
         
+        /* LOGIN FORM */
         if(!$_SESSION["logged_in"]) {
-            echo "<br><br><br><br>";
-
             if($login_success === false) {
-                echo "<h3 class='form-title'>An error occured while logging you in. Please try again.</h3>";
+                echo <<<HTML
+                    <h3 class='form-title'>An error occured while logging you in. Please try again.</h3>
+                HTML;
             } else {
-                echo "<h3 class='form-title'>Would like to save your score to review it in the future? Log in below or create a new account <a href='register.php'>here</a>.</h3>";
+                echo <<<HTML
+                    <h3 class='form-title'>Would like to save your score to review it in the future? Log in below or create a new account <a href='register.php'>here</a>.</h3>
+                HTML;
             }        
-            echo "<br>";
-            echo "<form method='POST'>";
-                echo "<label for='username'>Username: </label>";
-                echo "<input type='text' name='username' id='input-username'>";
-                echo "<br>";
-                echo "<label for='password'>Password: </label>";
-                echo "<input type='password' name='password' id='input-password'>";
-                echo "<br>";
-                echo "<input class='submit-button' type='submit' name='submit' value='". $LOGINBUTTON ."'>";
-            echo "</form>";
+            echo <<<HTML
+                <form method='POST'>
+                    <label for='username'>Username: </label>
+                    <input type='text' name='username' id='input-username'>
+                    <br>
+                    <label for='password'>Password: </label>
+                    <input type='password' name='password' id='input-password'>
+                    <br>
+                    <input class='submit-button' type='submit' name='submit' value='$LOGINBUTTON'>
+                </form>
+            HTML;
             
         } else {
-            echo "<br><br><br><br>";
-            echo "<form class='button-form' method='POST'>";
-            echo "<input class='submit-button' type ='submit' name='submit' value='". $LOGOUTBUTTON ."'>";
-            echo "</form>";
-            echo "<form class='button-from' action='test.html'>";
-            echo "<input class='submit-button' type ='submit' value='Retake Test'>";
-            echo "</form>";
+
+            /* LOGOUT FORM / RETAKE TEST FORM */
+            echo <<<HTML
+                <form class='button-form' method='POST'>
+                <input class='submit-button' type ='submit' name='submit' value='$LOGOUTBUTTON'>
+                </form>
+                <form class='button-from' action='test.html'>
+                <input class='submit-button' type ='submit' value='Retake Test'>
+                </form>
+            HTML;
         }
     } else {
-        echo "<br><br><br>";
-        echo "<h1 class = 'result-page-headline-2'>Logged out successfully.<h1>";
+        echo <<<HTML
+            <h1 class = 'result-page-headline-2'>Logged out successfully.<h1>
+        HTML;
     }
-    echo "</div>";      
+    echo <<<HTML
+        </div>
+    HTML;    
     ?>
 
     <!--FOOTER-->
@@ -172,6 +206,9 @@
             </li>
             <li>
                 <a class="footer-link" href="#">Data Protection</a>
+            </li>
+            <li>
+                <a class="footer-link" href="mailto:ruadatascientist@gmail.com">Contact Us</a>
             </li>
         </ul>
     </footer>
@@ -191,7 +228,6 @@ function getResultsFromForm($posted_data) {
     foreach ($posted_data as $question => $answer) {
         if (preg_match($KNOWLEDGE, $question) || preg_match($LIKERT, $question)) {
             $results[$question] = test_input($answer);
-            echo $question . ": " . $answer;
         } 
     } 
     if(count($results) < 1){
@@ -209,6 +245,7 @@ function getLastResultFromDatabase($user) {
             question_6 'likert_1', question_7 'likert_2', question_8 'likert_3', question_9 'likert_4', question_10 'likert_5', question_11 'likert_6', question_12 'likert_7', question_13 'likert_8', question_14 'likert_9'
             FROM results WHERE username = '" . $user . "' AND timestamp = (SELECT MAX(timestamp) FROM results WHERE username = '" . $user . "')";
 
+    //check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         return null;
@@ -231,7 +268,23 @@ function recommendation($score_percent) {
             return $RECOMMENDATIONS[(string)$percentage];
         }
     }
-    return "an error occured in the recommendation() function";
+    return "An error occured while fetching your recommendation :(.";
+}
+
+//RETURN THE LOCATION OF THE CORRECT FEEDBACK SMILEY
+function feedbackSmiley($score_percent) {
+    global $RECOMMENDATIONS_ORDER;
+    $count = 1;
+    foreach($RECOMMENDATIONS_ORDER as $percentage) {
+        if($score_percent >= $percentage) {
+            return <<<ANSWER
+                    pictures/feedbackSmiley-$count.svg
+                    ANSWER;
+        } else {
+            $count++;
+        }
+    }
+    return "An error occured while fetching your feedback smiley :(.";
 }
 
 //CALCULATE THE USERS SCORE PERCENTAGE FROM HIS POINTS

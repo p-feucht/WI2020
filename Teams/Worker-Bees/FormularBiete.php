@@ -1,3 +1,10 @@
+<?php session_start();
+// User kommt nur auf Angebot erstellen-Seite nur, wenn er angemeldet ist, ansonsten auf Anmelden-Seite
+if (!isset($_SESSION ["loggedin"]) || $_SESSION["loggedin"] != true) {
+    header("location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -7,15 +14,11 @@
     <link rel="icon" href="images/logoBiene.png" />
     <meta name="description" content="">
     
-    <link href="CSS/headerDesign.css" rel="stylesheet">
+
     <link href="CSS/formularBiete.css" rel="stylesheet">
     <link href="CSS/datepicker.css" rel="stylesheet">
 
     <link href="JavaScript/formular.js">
-    <!--
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
-    </script>
-    -->
 
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +34,7 @@
 <body>
     
     <?php 
-    $site_name = "HTML5-Seite mit Grundstruktur";
+
     include ("./PHP/header.php"); ?>
 
     <div class="content">
@@ -47,13 +50,9 @@
 
         <div class="yellow-container">
 
-
             <div class="explanation_and_form">
 
-
             <?php include ("./PHP/formularBieteAbschicken.php"); ?>
-
-
 
                 <!-- Text über Formular -->
                 <h2>Schreibe ein Angebot</h2>
@@ -83,7 +82,7 @@
                     <div class=formblock>
                         <label>Gib deinem Angebot einen <b>Titel</b></label><label class="Fehlermeldung" id="FehlermeldungTitle">*</label>
                         <br>
-                        <input id="title" type="text" name="title" value="" size="30" maxlength="30">
+                        <input id="title" type="text" name="title" value="<?php echo htmlspecialchars($title); ?>" size="30" maxlength="30">
                         <label class="Fehlermeldung" id="FehlermeldungTitle"></label>
                         <div class=unterüberschrift>
                             <label>Tipp: Nutze Begriffe, die andere Heimwerker bei der Suche nach deinem Angebot verwenden würden.</label>
@@ -94,70 +93,62 @@
                     <div class="formblock">
                         <label>Wähle einen <b>Angebotszeitraum </b><label class="Fehlermeldung" id="FehlermeldungZeitraum">*</label>
                         <br>
-                        <input type="text" name="datefilter" value="" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
+                        <input id="datefilter" type="text" name="datefilter" value="<?php echo htmlspecialchars($gesamtzeitraum); ?>" placeholder="Wähle deinen Angebotszeitraum" size="27%" required />
+                        <label class="Fehlermeldung" id="FehlermeldungZeitraum"></label>
                         <script type="text/javascript">
                             datePicker();
                         </script>
                     </div>
-<!--
-                    <div class="formblock">
-                        <label for="begDat">
-                  Beginndatum </label><br>
-                        <input type="date" id="begDat" required><br>
-                        <label for="endeDat">
-                  Endedatum </label><br>
-                        <input type="date" id="endeDat" required><br>
-                    </div>
-                    -->
 
                     <div class="formblock">
                         <label>Füge eine <b>Beschreibung</b> hinzu</label>
                         <br>
-                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1">
-                        </textarea>
+                        <textarea id="beschreibung" name="beschreibung" rows="9" cols="1"><?php echo htmlspecialchars($beschreibung);?></textarea>
                         <br>
                     </div>
 
                     <div class="formblock">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="90000"> <!--max. 90 KB großes Bild erlaubt -->
                         <label>Füge ein <b>Bild</b>, das dein Angebot zeigt oder beschreibt, hinzu</label>
                         <div class="unterüberschrift">
                             <label>Dateiformate *.jpg, *.png oder *.gif </label>
                         </div>
-                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/png">
+                        <input type="file" name="uploaddatei" accept="image/gif,image/jpeg,image/jpg,image/png">
+                        </label><label class="Fehlermeldung" id="FehlermeldungBild"> <?php echo $BildFehler?> </label>
+                        <div class="unterüberschrift">
+                            <label>maximale Größe 90 KB</label>
+                        </div>
                     </div>
 
                     <div class="formblock">
                         <label>Gib bitte deine <b>Anschrift</b> an</label> <label class="Fehlermeldung" id="FehlermeldungAnschrift"></label>
-                        <div class="unterüberschrift">
-                            <!--wenn Dienstleistung gewählt, in Javascript noch ergänzen:<textarea readonly disabled="disabled">Falls deine angebotene Dienstleistung an einem bestimmten Ort stattfindet, gib bitte dessen gesamte Adresse an. Fall du die Dienstleistung bei den Interessenten ausführen möchtest, gib bitte mindestens deinen Ort an, damit
-                            klar ist, in welchem Gebiet die Dienstleistung stattfindet und da dein Angebot ansonsten nicht erscheint, wenn Interessenten nach einem Ort filtern.</textarea>-->
-                        </div>
-                        <label>Vorname 
-                            <input type="text" id="Vorname" name="Vorname" value="" size="20" maxlength="20">
+                        <br>
+                        <label>Vorname
+                            <input type="text" id="Vorname" name="Vorname" value="<?php echo htmlspecialchars($vorname); ?>" size="20" maxlength="20">
                            
                         </label> <label class="Fehlermeldung" id="FehlermeldungVorname">*</label>
                         <br>
                         <label>Nachname
-                            <input type="text" id="Nachname" name="Nachname" value="" size="30" maxlength="30"> 
+                            <input type="text" id="Nachname" name="Nachname" value="<?php echo htmlspecialchars($nachname); ?>" size="30" maxlength="30"> 
                         </label><label class="Fehlermeldung" id="FehlermeldungNachname">*</label>
                         <br>
                         <label>Straße
-                            <input type="text" id="StrasseID" name="Strasse" value="" size="30" maxlength="30">
+                            <input type="text" id="StrasseID" name="Strasse" value="<?php echo htmlspecialchars($strasse); ?>" size="30" maxlength="30">
                         </label><label class="Fehlermeldung" id="FehlermeldungStrasse">*</label>
                         <br>
                         <label>Hausnummer
-                            <input type="text" id="HnrID" name="Hnr" value="" size="4" maxlength="4"> 
+                            <input type="text" id="HnrID" name="Hnr" value="<?php echo htmlspecialchars($hnr); ?>" size="4" maxlength="4"> 
                         </label><label class="Fehlermeldung" id="FehlermeldungHnr">*</label>
                         <br>
                         <label>Postleitzahl
-                            <input type="number" id="plzinput" name="PLZ" value="" size="5" maxlength="5"> 
+                            <input type="number" id="plzinput" name="PLZ" value="<?php echo htmlspecialchars($plz); ?>" size="5" maxlength="5"> 
                          </label>
-                         <label class="Fehlermeldung" id="FehlermeldungPLZ"></label>
+                         <label class="Fehlermeldung" id="FehlermeldungPLZ">*</label>
                         <br>
                         <label>Ort
-                            <input type="text" name="Ort" value="<?php echo htmlspecialchars($ort);?>" size="30" maxlength="30">
+                            <input type="text" name="Ort" id="OrtID" value="<?php echo htmlspecialchars($ort); ?>" size="30" maxlength="30">
                         </label>
+                        <label class="Fehlermeldung" id="FehlermeldungOrt">*</label>
                     </div>
 
 
@@ -214,7 +205,7 @@
                                     <li>
                                         <label>
                                 <input type="checkbox" name="a4_Saege" value="1">
-                                elektrische Standsägen
+                                elektrische Standsäge
                               </label>
                                     </li>
                                     <li>
@@ -233,7 +224,7 @@
 
                     <div class="Dienstleistung selectt">
                         <div class="formblock">
-                            <label>Gib die <b>Art der Bezahlung</b> an </label>
+                            <label>Gib die <b>Art der Bezahlung</b> an</label>
                             <br>
                             <select name="Bezahlart">
                                 <option>Preis/Stunde</option>
@@ -281,9 +272,6 @@
 
 
         </div>
-
-
-        <!--Notiz: <progress value="40" max="100"></progress> für Fortschrittsanzeige (wenn Formular über mehrere Seiten geht)-->
 
         
         <?php include ("./PHP/footer.php"); ?>
