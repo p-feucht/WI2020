@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+#content {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#heading {
+  font-size: 60px;
+  letter-spacing: 0.242em;
+  line-height: 80px;
+  margin: 0;
+}
+
+#subheading {
+  font-size: 21px;
+  letter-spacing: 0.286em;
+  margin-bottom: 30px;
+}
+.primAction {
+  line-height: 1.2;
+  letter-spacing: 0.098em;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  border: 0.8px #fff solid;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  border: 1px #fff solid;
+  text-decoration: none;
+}
+
+.primAction:hover {
+  transform: scale(0.95);
+}

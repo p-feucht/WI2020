@@ -22,7 +22,6 @@
                         <?php include("../php/myFavorites.php");?>
                     </ul>
                 </div>
-            </div>
         </div>
         <?php include('./structure/LoginForm.html'); ?>
     </main>

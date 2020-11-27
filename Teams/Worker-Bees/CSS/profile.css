@@ -12,17 +12,6 @@
         font-size: 18px;
     }
     
-    .profile-content {
-        max-width: 60%;
-        width: 40%;
-        min-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        text-align: center;
-    }
-    
     b {
         color: #feca57;
     }
@@ -50,11 +39,6 @@
     .box-element {
         padding: 5px;
         margin: 5px;
-    }
-    
-    .box a {
-        text-decoration: none;
-        color: black;
     }
     
     .cent {
