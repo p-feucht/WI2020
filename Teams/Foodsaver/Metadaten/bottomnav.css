@@ -1,0 +1,28 @@
+html {
+    background: url("../Pictures/marble.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#impressum {
+    margin-top: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 80px;
+    text-align: justify;
+}
+
+#ueberuns {
+    text-align: justify;
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px;
+}
+
+#ueberuns p,
+li {
+    font-size: 20px;
+}

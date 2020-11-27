@@ -1,20 +1,10 @@
 html {
-    background: url("../Pictures/meine_anzeigen.jpg") no-repeat center center fixed;
+    background: url("../Pictures/meine_anzeigen-min_ws.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-
-
-/*body {
-    background-image: url("../Pictures/meine_anzeigen.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}*/
 
 #MeineRecords {
     margin: auto;
@@ -22,31 +12,43 @@ html {
 
 #MeineRecords h1 {
     color: black;
+    margin-bottom: 20px;
 }
 
 #MeineRecords p {
     color: black;
-}
-
-#MeineRecords table {
-    background-color: white;
-    margin-top: 20px;
-}
-
-#MeineRecords #artikel {
-    text-decoration: none;
-}
-
-#MeineRecords #benutzer {
-    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 #MeineRecords .zur_bestellung {
     background-color: white;
+    margin-left: 10px;
 }
 
 #MeineRecords .mehr_details {
-    border: 2px solid black;
-    text-decoration: none;
+    border: 1px solid #4b4a4a;
     background-color: white;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.modal-content {
+    height: 30%;
+}
+
+.delete_btn {
+    border-radius: 25px;
+    padding: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #4b4a4a;
+    background-color: white;
+    cursor: pointer;
+    font-size: 12pt;
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 6%;
 }
