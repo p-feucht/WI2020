@@ -1,6 +1,7 @@
-<?php
-    include 'db.php';
 
+<?php
+
+    include 'db.php';
     
     if(isset($_GET["genreID"]) && $_GET["genreID"] != ""){
         $genreValue = mysqli_real_escape_string($connection, $_GET["genreID"]);
@@ -26,7 +27,7 @@
 
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          echo "<li><a href='../php/SeriesDescription.php?ID=".$row["ID"]."'>".$row["Name"]."</a></li>";
+          echo "<li><a href=\"../php/seriesDescription.php?ID=".$row["ID"]."\">".$row["Name"]."</a></li>";
         }
 
       } else {

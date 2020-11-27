@@ -42,7 +42,7 @@
                                     </a>
                                 </div>
                                 <div class="col-4">
-                                    <a  href="#" class="button" onclick="addClass()" title="Kommentare">
+                                    <a  href="#" onclick="addClass()" title="Kommentare">
                                         <img class="nohover" src="../Bilder/comment.png">
                                         <img class="hover" src="../Bilder/comment-hover.png">
                                     </a>
@@ -64,7 +64,7 @@
                 <div class="col-12 col-md-6">
                     <div class="seriesWrapper">
                         <h3><?php echo $_SESSION["randomSeriesName2"];?></h3>
-                        <div class="imgWrapper">
+                        <div class="imgWrapper"> 
                         <a href=<?php echo "../php/rateSeries.php?ID=".$_SESSION["randomSeriesId2"];?>  title="Auswählen">
                             <img src=<?php echo $_SESSION["randomSeriesImage_Path2"];?> alt="<?php echo $_SESSION["randomSeriesName2"];?>">
                         </a>
@@ -84,7 +84,7 @@
                                     </a>
                                 </div>
                                 <div class="col-4">
-                                    <a  href="#" class="button" onclick="addClass()" title="Kommentare">
+                                    <a  href="#" onclick="addClass()" title="Kommentare">
                                         <img class="nohover" src="../Bilder/comment.png">
                                         <img class="hover" src="../Bilder/comment-hover.png">
                                     </a>

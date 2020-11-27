@@ -10,7 +10,7 @@ $ingredients = $ingredientsFactory->findAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barkeeper | Cocktail finden</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css">
 </head>
@@ -50,7 +50,7 @@ $ingredients = $ingredientsFactory->findAll();
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="all-ingredients-required" name="all-ingredients-required" checked>
+                            <input type="checkbox" class="custom-control-input" id="all-ingredients-required" name="all-ingredients-required" unchecked>
                             <label class="custom-control-label" id="all-ingredients-required" for="all-ingredients-required">Alle Zutaten sollen enthalten sein</label>
                         </div>
                     </div>

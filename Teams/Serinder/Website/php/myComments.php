@@ -1,6 +1,7 @@
 <?php
-    include 'db.php';
 
+    include 'db.php';
+    
     $email = mysqli_real_escape_string($connection, $_SESSION["session_email"]);
     $statement = $connection->prepare("SELECT s.ID, s.Name, c.comment, c.ID as commentID FROM series s INNER JOIN comments c ON s.ID = c.series_id WHERE account_email = '$email';");
     
@@ -12,11 +13,11 @@
       // output data of each row
       while($row = $result->fetch_assoc()) {
           $commentDeleteString = "<a href='../php/removeComment.php?ID=".$row["commentID"]."'> [entfernen]</a>";
-          echo "<li><a href='../php/SeriesDescription.php?ID=".$row["ID"]."'>".$row["Name"]."</a><p>".$row["comment"].$commentDeleteString."</p><br></li>";
+          echo "<li><a href='../php/seriesDescription.php?ID=".$row["ID"]."'>".$row["Name"]."</a><p>".$row["comment"].$commentDeleteString."</p><br></li>";
         }
 
       } else {
         echo "Keine Kommentare vorhanden.";
       }
-      exit();
+
 ?>

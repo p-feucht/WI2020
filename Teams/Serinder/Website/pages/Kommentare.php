@@ -22,11 +22,10 @@
                         <?php include("../php/myComments.php");?>
                     </ul>
                 </div>
-            </div>
         </div>
         <?php include('./structure/LoginForm.html'); ?>
     </main>
     <?php include('./structure/Footer.html'); ?>
 </body>
 
-</html>
+</html> 

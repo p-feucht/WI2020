@@ -48,7 +48,7 @@ else{
                         ><?php echo $datum?>
                         <h4>Preis</h4>
                         <?php echo $preis?>€
-                        <h4>In Bier bezahlbar</h4
+                        <h4>Ich bezahle in Bier</h4
                         ><?php echo $bezBier?>
 
                         <div class="buttonline">

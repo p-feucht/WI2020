@@ -40,7 +40,6 @@ function datePicker() {
 
 function pruefeFormular() {
 
-
     if (document.getElementById("ws").checked == false && document.getElementById("wz").checked == false && document.getElementById("dl").checked == false) {
         document.getElementById("FehlermeldungAngebKat").innerHTML = "Bitte Kategorie eingeben";
         document.getElementById("wz").focus();
@@ -51,6 +50,13 @@ function pruefeFormular() {
         document.getElementById("title").focus();
         return false;
     } else { document.getElementById("FehlermeldungTitle").innerHTML = "*"; }
+
+
+    if (!timePeriodInputIsOk()) {
+        document.getElementById("FehlermeldungZeitraum").innerHTML = "Bitte gültigen Zeitraum eingeben";
+        document.getElementById("datefilter").focus();
+        return false;
+    } else { document.getElementById("FehlermeldungZeitraum").innerHTML = "*"; }
 
     if (document.formularFuerAngebot.Vorname.value == "") {
         document.getElementById("FehlermeldungVorname").innerHTML = "Bitte Vorname eingeben";
@@ -78,8 +84,8 @@ function pruefeFormular() {
         document.getElementById("OrtID").focus();
         return false;
     } else { document.getElementById("FehlermeldungOrt").innerHTML = "*"; }
-    if (CheckPLZ() == false) {
-        CheckPLZ();
+    if (checkPLZ() == false) {
+        checkPLZ();
         return false;
     } else {
         document.getElementById("FehlermeldungPLZ").innerHTML = "*";
@@ -88,8 +94,34 @@ function pruefeFormular() {
 
 }
 
+function timePeriodInputIsOk() {
+    var timePeriod = document.formularFuerAngebot.datefilter.value; // datefilter should have a format like "DD.MM.YYYY - DD.MM.YYYY"
+    var timeWithoutSpace = timePeriod.replace(" ", ""); // delete whitespaces
+    var timePeriodNumbers = timePeriod.replace(/\D+/g, ""); // delete all non-number-digits
 
-function CheckPLZ() {
+    //validation 1
+    var laenge = timePeriodNumbers.length; // after removing all non-numbers length must be 16
+    if (laenge != 16) {
+        return false;
+    }
+    let firstDate = timeWithoutSpace.substr(0, 10);
+    let secondDate = timeWithoutSpace.substr(10);
+
+    //validation 2 : there must be three parts (for day,month and year) between the points of a date.
+    var firstDateArray = firstDate.split('.');
+    if (firstDateArray.length != 3) {
+        return false;
+    }
+    var secondDateArray = secondDate.split('.');
+    if (secondDateArray.length != 3) {
+        return false;
+    }
+    return true;
+
+}
+
+
+function checkPLZ() {
     var plz = document.formularFuerAngebot.PLZ.value;
     var laenge = plz.length;
     var anzahl = document.getElementById("plzinput").getAttributeNode("maxlength").nodeValue;
@@ -105,19 +137,4 @@ function CheckPLZ() {
         }
         return true();
     }
-}
-
-function inputIsEmpty(InputElement) {
-
-    if (InputElement.value == "") {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function setErrorMessage(elementErrorMessage, errorMessage) {
-
-    elementErrorMessage.innerHTML = errorMessage;
-    elementErrorMessage.focus();
 }

@@ -1,31 +1,42 @@
 html {
-    background: url("../Pictures/purchases.jpg") no-repeat center center fixed;
+    background: url("../Pictures/purchases-min_ws.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-
-/*body {
-    background-image: url("../Pictures/purchases.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}*/
-
-#Record table {
-    background-color: white;
+#Record {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
 }
 
 #Record h1 {
     color: white;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+#Record td {
+    padding: 20px;
 }
 
 #Record .zur_bestellung {
-    border-radius: 8px;
     padding: 8px;
+    border-radius: 25px;
+}
+
+.mehr_artikel {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: 1px solid#4B4A4A;
+    border-radius: 25px;
+    padding: 8px;
+    width: 100%;
+    opacity: 0.9;
 }

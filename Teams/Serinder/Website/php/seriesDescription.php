@@ -1,7 +1,8 @@
 <?php
+
     session_start();
     include 'db.php';
-
+    
     $statement = $connection->prepare("SELECT s.ID, s.Name, s.Overview, s.Image_Path, ROUND(SUM(r.chosen)/COUNT(r.chosen)*100.0,2) as rated FROM series s LEFT JOIN rating r ON s.ID = r.series_id WHERE s.ID = '$_GET[ID]' GROUP BY s.Name, s.Overview, s.Image_Path;");
     $statement->execute();
     $result = $statement->get_result();

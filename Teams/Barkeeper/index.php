@@ -33,7 +33,7 @@
                     Hast du ein eigenes Cocktail Rezept welches du unbedingt mit der Welt teilen willst?
                 </p>
                 <p class="mb-0">
-                    <a href="/own-recipe.php" class="btn btn-secondary my-2">Erstelle dein eigenes Rezept</a>
+                    <a href="/cocktail-finder.php" class="btn btn-secondary my-2">Gib hier deine Zutaten ein.</a>
                 </p>
             </div>
         </section>

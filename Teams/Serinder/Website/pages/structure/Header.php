@@ -46,7 +46,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" onclick="document.getElementById('modalLogin').style.display='block'">
+                            <a href="#" onclick="addClass()">
                                 Log In
                             </a>
                         </li>
