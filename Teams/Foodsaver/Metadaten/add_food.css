@@ -1,27 +1,17 @@
 html {
-    background: url("../Pictures/add_food.jpg") no-repeat center center fixed;
+    background: url("../Pictures/add_food-min.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-
-/*body {
-    background-image: url("../Pictures/add_food.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}*/
-
 #contact button[type="submit"] {
     margin-bottom: 10px;
 }
 
 .annotation_add_food p {
-    font-size: small;
+    font-size: 16px;
     color: #777;
 }
 
@@ -40,4 +30,10 @@ html {
 
 .add_food_data .add_food_contact_data {
     width: 50%;
+}
+
+.add_food_data select {
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #777;
 }

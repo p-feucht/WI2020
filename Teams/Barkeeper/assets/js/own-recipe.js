@@ -74,14 +74,17 @@ function renderAllIngredients() {
         addIngredientsSelect(i, ingredientSelects[i].value, ingredientSelects[i].amount);
     }
 }
-
+var descriptionEditor;
+var recipeEditor;  
 (() => {
     var quillOptions = {
         debug: 'warn',
         theme: 'snow'
     };
-    var descriptionEditor = new Quill('#description-input', quillOptions);
-    var recipeEditor = new Quill('#recipe-input', quillOptions);
+    descriptionEditor = new Quill('#description-input', quillOptions);
+    recipeEditor = new Quill('#recipe-input', quillOptions);
+    recipeEditor.root.innerHTML  = document.querySelector('#recipe-text-input').value;
+    descriptionEditor.root.innerHTML = document.querySelector('#description-text-input').value;
 
     // Quill Editor Inhalt wird leider nicht als Forumal Feld zur verfügung gestellt
     // Deshalb gibt es ein hidden Input welcher bei einer Änderung in Quill mit dem Inhalt des Editors gefüllt wird.

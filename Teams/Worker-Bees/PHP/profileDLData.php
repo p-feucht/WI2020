@@ -13,7 +13,7 @@ else{
     if($username!=""){
 
         $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung,
-        PLZ, Ort, Bild, Dienstleistung_ID, Preis, BezInBier, Preisart FROM AngebotDienstleistung WHERE usernameErsteller='$username'";
+        PLZ, Ort, Bild, Dienstleistung_ID, Preis, BezInBier, Preisart, Erstellzeitpunkt FROM AngebotDienstleistung WHERE usernameErsteller='$username'";
         $result = $connP->query($sql);
         
         if ($result->num_rows > 0) {
@@ -23,18 +23,15 @@ else{
                 $beginDat = $row["ABeginndat"];
                 $endDat = $row["AEndedat"];
                 $orderID = $row["Dienstleistung_ID"];
+                $plz = $row["PLZ"];
                 $location = $row["Ort"];
+                $location = $plz. " ". $location;
                 $title = $row["ATitel"];
                 $price = $row["Preis"];
                 $pricetype = $row["Preisart"];
-                $plz = $row["PLZ"];
                 $description = $city = $row["ABeschreibung"];
                 $bezBier = $row["BezInBier"];
-                $image = $row["Bild"];
-        
-                $card_ID = "Dcard_" . (string)$orderID;
-                $modal_target = "#Dmodal_" . (string)$orderID;
-                $modal_ID = "Dmodal_" . (string)$orderID;
+                $erstellzeitpunkt=$row["Erstellzeitpunkt"];
         
                 // translates the information; makes "0" to "no" and "1" to "jes"
                 $bezBier = translateBoolFromDB($bezInBier); 
@@ -58,6 +55,9 @@ else{
                     ><?php echo $price?>€
                     <h4>In Bier bezahlbar</h4
                     ><?php echo $bezBier?>
+                    <h4>Erstellzeitpunkt</h4
+                    ><?php echo $erstellzeitpunkt?>
+                    
                 
 
                     <div class="buttonline">

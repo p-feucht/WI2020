@@ -1,44 +1,69 @@
 html {
-    background: url("../Pictures/profile.jpg") no-repeat center center fixed;
+    background: url("../Pictures/profile-min_ws.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
+#Record {
+    margin-left: 50px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
 
-/*body {
-    background: linear-gradient(to right, white, green);
-}*/
-
-
-/*body {
-    background-image: url("../Pictures/profile.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}*/
-
-#Profile h1 {
-    padding-left: 50px;
-    padding-top: 50px;
+#profile_headline {
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 36px;
 }
 
 #Profile h2 {
     margin-bottom: 20px;
 }
 
-#Profile table {
-    background-color: white;
+#profil_bearbeiten {
+    width: 15%;
 }
 
-#Profile #profil_bearbeiten {
-    text-decoration: none;
-    border: 2px solid black;
+#myBtn {
+    width: 15%;
+}
+
+#karte_anzeigen,
+#Route_anzeigen {
+    border: 1px solid#4B4A4A;
     border-radius: 8px;
     padding: 8px;
+    cursor: pointer;
+    position: relative;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    width: 50%;
+}
+
+#annotation {
+    border: 1px solid #4b4a4a;
     background-color: white;
-    opacity: 0.8;
+    opacity: 0.9;
+    margin-top: 0px;
+    margin-left: 50px;
+    padding: 10px;
+    padding-bottom: 40px;
+}
+
+#annotation h1 {
+    margin-bottom: 20px;
+}
+
+#annotation p {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
 }

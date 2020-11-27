@@ -19,7 +19,7 @@
 
     <div class="blog-content">
         <h1>Diese Seite kommt bald...</h1>
-        Hier entsteht ein Ort, an dem man Ideen und Tipps teilen kann.
+        Hier entsteht ein Ort, an dem man Ideen, Tipps und Erfahrungen rund um das Handwerk teilen kann.
         Wir wollen eine Community schaffen, an die du dich wenden kannst
         wenn du etwas brauchst und wenn du anderen helfen möchtest.
         Komme wieder, um ein richtiger Worker Bee zu werden!

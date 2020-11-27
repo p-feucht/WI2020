@@ -14,8 +14,8 @@ else{
     if($username!=""){
 
         //offer data
-        $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, PLZ, Ort, Bild, Werkstatt_ID, PreisProTag, BezInBier, 
-            ABohr, ADrechsel, ASchleif, ASaege, AKleinteil FROM AngebotWerkstatt WHERE usernameErsteller='$username'";
+        $sql = "SELECT ATitel, ABeginndat, AEndedat, ABeschreibung, PLZ, Ort, PreisProTag, BezInBier, 
+            ABohr, ADrechsel, ASchleif, ASaege, AKleinteil, Erstellzeitpunkt FROM AngebotWerkstatt WHERE usernameErsteller='$username'";
         $result = $connP->query($sql);
 
         if ($result->num_rows > 0) {
@@ -25,22 +25,20 @@ else{
                 $beginDat = $row["ABeginndat"];
                 $endDat = $row["AEndedat"];
                 $orderID = $row["Werkstatt_ID"];
+                $plz = $row["PLZ"];
                 $location = $row["Ort"];
+                $location = $plz. " ". $location;
                 $title = $row["ATitel"];
                 $price = $row["PreisProTag"];
-
-                $plz = $row["PLZ"];
                 $description = $city = $row["ABeschreibung"];
                 $bezBier = $row["BezInBier"];
-                $image = $row["Bild"];
-
                 $abohr = $row["ABohr"];
                 $adrechsel = $row["ADrechsel"];
                 $aschleif = $row["ASchleif"];
                 $asaege = $row["ASaege"];
                 $akleinteil = $row["AKleinteil"];
+                $erstellzeitpunkt=$row["Erstellzeitpunkt"];
 
-                $card_ID = "WScard_" . (string)$orderID;
 
                 // translates the information; makes "0" to "no" and "1" to "jes"
                 $bezBier = translateBoolFromDB($bezInBier);
@@ -73,6 +71,8 @@ else{
                         ><?php echo $bezBier?>
                         <h4>Ausstattung</h4
                         ><?php echo $textEquipment?>
+                        <h4>Erstellzeitpunkt</h4>
+                        <?php echo $erstellzeitpunkt?>
                    
                         <div class="buttonline">
                             <button class="cent" type="button" onclick="bearbeitenClick()">Bearbeiten</button>
